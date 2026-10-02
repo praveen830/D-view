@@ -191,28 +191,28 @@ export const CITIES_SLIDES: LocationSlide[] = [
         elevation: 'Elevated Ridge-View Apartments',
         tag: 'Vertigo Elimination',
         desc: 'Solid structural tension support providing calm reassurance for seniors on elevated valley terraces.',
-        image: '/assets/locations/vijayawada.png'
+        image: '/assets/corridors/vijayawada-moghalrajpuram.jpg'
       },
       {
         name: 'Gunadala & Ramavarappadu',
         elevation: 'Premium Gated Societies',
         tag: '400 KG / Cable Load',
         desc: 'Multi-strand core cables withstand body impacts and heavy leaning without slackening.',
-        image: '/assets/locations/vijayawada.png'
+        image: '/assets/corridors/vijayawada-gunadala.jpg'
       },
       {
         name: 'Kanuru & Poranki Belt',
         elevation: 'Expanding Luxury Suburbs',
         tag: '100% Cross Ventilation',
         desc: 'Natural daylight and cross-ventilation flow freely, cutting AC power loads while assuring child safety.',
-        image: '/assets/locations/vijayawada.png'
+        image: '/assets/corridors/vijayawada-kanuru.jpg'
       },
       {
         name: 'Tadepalli Riverside Towers',
         elevation: 'Krishna Riverfront Penthouses',
         tag: 'River Humidity Proof',
         desc: 'Marine grade SS-316 cables chemically immune to Krishna river vapor mist and monsoon rains.',
-        image: '/assets/locations/vijayawada.png'
+        image: '/assets/corridors/vijayawada-tadepalli.jpg'
       }
     ]
   },
@@ -239,35 +239,35 @@ export const CITIES_SLIDES: LocationSlide[] = [
         elevation: 'Prime City Balcony Flats',
         tag: 'Architectural Luxury',
         desc: 'Sleek stainless cables replace clunky rusted iron grilles, elevating exterior apartment facades.',
-        image: '/assets/locations/guntur.png'
+        image: '/assets/corridors/guntur-brodipet.jpg'
       },
       {
         name: 'Arundelpet Modern Towers',
         elevation: 'High-Density Residential Hub',
         tag: 'Zero-Climb Spacing',
         desc: 'Vertical 2-inch intervals with zero horizontal footing prevent climbing hazards completely.',
-        image: '/assets/locations/guntur.png'
+        image: '/assets/corridors/guntur-arundelpet.jpg'
       },
       {
         name: 'Amaravati Road Corridor',
         elevation: 'Luxury Gated Towers',
         tag: 'Kondaveedu Ridge View',
         desc: 'Unblocked skyline vistas overlooking green ridges while providing structural safety.',
-        image: '/assets/locations/guntur.png'
+        image: '/assets/corridors/guntur-amaravatiroad.jpg'
       },
       {
         name: 'Namburu IT & University Belt',
         elevation: 'Fast-Growing Skyscraper Colonies',
         tag: 'Anti-Static Nylon',
         desc: 'Special clear nylon outer layer sheds dust with every rain shower, keeping maintenance zero.',
-        image: '/assets/locations/guntur.png'
+        image: '/assets/corridors/guntur-namburu.jpg'
       },
       {
         name: 'Kaza & Tadepalli Belt',
         elevation: 'Twin-City Expressway Towers',
         tag: '100% Daylighting',
         desc: 'Bright sunlight fills the interiors naturally without obstructing windows or balcony doors.',
-        image: '/assets/locations/guntur.png'
+        image: '/assets/corridors/guntur-kaza.jpg'
       }
     ]
   },
@@ -294,35 +294,35 @@ export const CITIES_SLIDES: LocationSlide[] = [
         elevation: 'Sea-Front Balcony Residences',
         tag: 'Marine-Grade Alloy',
         desc: 'Direct view of Vakalapudi lighthouse protected with Molybdenum-infused SS-316 for lifetime rust immunity.',
-        image: '/assets/locations/kakinada.png'
+        image: '/assets/corridors/kakinada-vakalapudi.jpg'
       },
       {
         name: 'Sarpavaram High-Rise Towers',
         elevation: 'Gated Residential Colonies',
         tag: 'Toddler Lockdown Safe',
         desc: 'Ensures absolute fall containment up to the highest floors while allowing sea breeze in.',
-        image: '/assets/locations/kakinada.png'
+        image: '/assets/corridors/kakinada-sarpavaram.jpg'
       },
       {
         name: 'Madhavapatnam Residential Hub',
         elevation: 'Family Apartment Balconies',
         tag: 'Bird Dropping Barrier',
         desc: 'Prevents pigeons from perching on balcony rails and contaminating air-conditioning compressors.',
-        image: '/assets/locations/kakinada.png'
+        image: '/assets/corridors/kakinada-madhavapatnam.jpg'
       },
       {
         name: 'Ramanayyapeta Urban Flatted Living',
         elevation: 'City Center Elevations',
         tag: '1-Min Safe Fire Egress',
         desc: 'Standard manual wire cutters sever cables easily during emergency evacuation.',
-        image: '/assets/locations/kakinada.png'
+        image: '/assets/corridors/kakinada-ramanayyapeta.jpg'
       },
       {
         name: 'Jagannaickpur Waterfront Enclaves',
         elevation: 'Canal & Coastal Flats',
         tag: 'Corrosion-Free Tracks',
         desc: 'Heavy-gauge anodized aluminum tracks anchored firmly into structural RCC concrete.',
-        image: '/assets/locations/kakinada.png'
+        image: '/assets/corridors/kakinada-jagannaickpur.jpg'
       }
     ]
   },
@@ -349,35 +349,35 @@ export const CITIES_SLIDES: LocationSlide[] = [
         elevation: 'Central Luxury Balconies',
         tag: 'Penna River Sunset View',
         desc: 'Framing peaceful sunset horizons over the river while providing solid edge perimeter protection.',
-        image: '/assets/locations/nellore.png'
+        image: '/assets/corridors/nellore-maguntalayout.jpg'
       },
       {
         name: 'Balaji Nagar Elevated Residencies',
         elevation: 'High-Floor Family Apartments',
         tag: '400 KG / Cable Strength',
         desc: 'Solid cable structural reassurance preventing vertigo and loss-of-balance fears.',
-        image: '/assets/locations/nellore.png'
+        image: '/assets/corridors/nellore-balajinagar.jpg'
       },
       {
         name: 'Dargamitta Corridors',
         elevation: 'Terrace & High Balcony Flats',
         tag: 'Anti-Sag Anchoring',
         desc: 'Calibrated tension turnbuckles prevent any cable sagging or loosening over time.',
-        image: '/assets/locations/nellore.png'
+        image: '/assets/corridors/nellore-dargamitta.jpg'
       },
       {
         name: 'Vedayapalem Riverfront Belt',
         elevation: 'Waterfront Damp-Shield Balconies',
         tag: 'Monsoon Proof SS-316',
         desc: 'Immune to moisture staining, rust tears, or weathering during humid coastal monsoons.',
-        image: '/assets/locations/nellore.png'
+        image: '/assets/corridors/nellore-vedayapalem.jpg'
       },
       {
         name: 'Podalakur Road & Kavali Belt',
         elevation: 'Expanding Gated Communities',
         tag: 'Pest & Pigeon Control',
         desc: '50mm spacing physically keeps pigeons out, ensuring clean and enjoyable morning tea sessions.',
-        image: '/assets/locations/nellore.png'
+        image: '/assets/corridors/nellore-podalakur.jpg'
       }
     ]
   }
@@ -554,25 +554,25 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
     cityId: "vijayawada"
   },
   "Moghalrajpuram": {
-    image: "/assets/locations/vijayawada.png",
+    image: "/assets/corridors/vijayawada-moghalrajpuram.jpg",
     title: "Moghalrajpuram Hillside Flats",
     spec: "Elevated Ridge-View Apartments",
     cityId: "vijayawada"
   },
   "Gunadala": {
-    image: "/assets/locations/vijayawada.png",
+    image: "/assets/corridors/vijayawada-gunadala.jpg",
     title: "Gunadala & Ramavarappadu",
     spec: "Premium Gated Societies | 400 KG Load",
     cityId: "vijayawada"
   },
   "Kanuru": {
-    image: "/assets/locations/vijayawada.png",
+    image: "/assets/corridors/vijayawada-kanuru.jpg",
     title: "Kanuru & Poranki Belt",
     spec: "Expanding Luxury Suburbs | Cross-Ventilation",
     cityId: "vijayawada"
   },
   "Tadepalli": {
-    image: "/assets/locations/vijayawada.png",
+    image: "/assets/corridors/vijayawada-tadepalli.jpg",
     title: "Tadepalli Riverside Towers",
     spec: "Krishna Riverfront Penthouses",
     cityId: "vijayawada"
@@ -580,31 +580,31 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
 
   // Guntur Corridors
   "Brodipet": {
-    image: "/assets/locations/guntur.png",
+    image: "/assets/corridors/guntur-brodipet.jpg",
     title: "Brodipet High-End Residencies",
     spec: "Prime City Balcony Flats | Architectural Luxury",
     cityId: "guntur"
   },
   "Arundelpet": {
-    image: "/assets/locations/guntur.png",
+    image: "/assets/corridors/guntur-arundelpet.jpg",
     title: "Arundelpet Modern Towers",
     spec: "High-Density Residential Hub | Zero-Climb",
     cityId: "guntur"
   },
   "Amaravati Road": {
-    image: "/assets/locations/guntur.png",
+    image: "/assets/corridors/guntur-amaravatiroad.jpg",
     title: "Amaravati Road Corridor",
     spec: "Luxury Gated Towers | Kondaveedu View",
     cityId: "guntur"
   },
   "Namburu": {
-    image: "/assets/locations/guntur.png",
+    image: "/assets/corridors/guntur-namburu.jpg",
     title: "Namburu IT & University Belt",
     spec: "Skyscraper Colonies | Anti-Static Nylon",
     cityId: "guntur"
   },
   "Kaza": {
-    image: "/assets/locations/guntur.png",
+    image: "/assets/corridors/guntur-kaza.jpg",
     title: "Kaza & Tadepalli Belt",
     spec: "Expressway Towers | 100% Daylighting",
     cityId: "guntur"
@@ -612,31 +612,31 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
 
   // Kakinada Corridors
   "Vakalapudi": {
-    image: "/assets/locations/kakinada.png",
+    image: "/assets/corridors/kakinada-vakalapudi.jpg",
     title: "Vakalapudi Port & Lighthouse Corridor",
     spec: "Sea-Front Balcony Residences | Marine-Grade Alloy",
     cityId: "kakinada"
   },
   "Sarpavaram": {
-    image: "/assets/locations/kakinada.png",
+    image: "/assets/corridors/kakinada-sarpavaram.jpg",
     title: "Sarpavaram High-Rise Towers",
     spec: "Gated Residential Colonies | Toddler Lockdown",
     cityId: "kakinada"
   },
   "Madhavapatnam": {
-    image: "/assets/locations/kakinada.png",
+    image: "/assets/corridors/kakinada-madhavapatnam.jpg",
     title: "Madhavapatnam Residential Hub",
     spec: "Family Balconies | Bird Dropping Barrier",
     cityId: "kakinada"
   },
   "Ramanayyapeta": {
-    image: "/assets/locations/kakinada.png",
+    image: "/assets/corridors/kakinada-ramanayyapeta.jpg",
     title: "Ramanayyapeta Urban Flatted Living",
     spec: "City Center Elevations | 1-Min Fire Egress",
     cityId: "kakinada"
   },
   "Jagannaickpur": {
-    image: "/assets/locations/kakinada.png",
+    image: "/assets/corridors/kakinada-jagannaickpur.jpg",
     title: "Jagannaickpur Waterfront Enclaves",
     spec: "Canal & Coastal Flats | Corrosion-Free Tracks",
     cityId: "kakinada"
@@ -644,31 +644,31 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
 
   // Nellore Corridors
   "Magunta Layout": {
-    image: "/assets/locations/nellore.png",
+    image: "/assets/corridors/nellore-maguntalayout.jpg",
     title: "Magunta Layout Premium Flats",
     spec: "Central Luxury Balconies | Sunset View",
     cityId: "nellore"
   },
   "Balaji Nagar": {
-    image: "/assets/locations/nellore.png",
+    image: "/assets/corridors/nellore-balajinagar.jpg",
     title: "Balaji Nagar Elevated Residencies",
     spec: "High-Floor Family Apartments | 400 KG Strength",
     cityId: "nellore"
   },
   "Dargamitta": {
-    image: "/assets/locations/nellore.png",
+    image: "/assets/corridors/nellore-dargamitta.jpg",
     title: "Dargamitta Corridors",
     spec: "Terrace & High Balcony Flats | Anti-Sag Anchoring",
     cityId: "nellore"
   },
   "Vedayapalem": {
-    image: "/assets/locations/nellore.png",
+    image: "/assets/corridors/nellore-vedayapalem.jpg",
     title: "Vedayapalem Riverfront Belt",
     spec: "Waterfront Balconies | Monsoon Proof SS-316",
     cityId: "nellore"
   },
   "Podalakur Road": {
-    image: "/assets/locations/nellore.png",
+    image: "/assets/corridors/nellore-podalakur.jpg",
     title: "Podalakur Road & Kavali Belt",
     spec: "Expanding Gated Communities | Pest Control",
     cityId: "nellore"
@@ -1693,7 +1693,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   href={`/safety-pillars/${activeSlide.id}?corridor=${encodeURIComponent(corridor.name)}`}
                   className="group rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/60 bg-[#111815] transition-all duration-300 flex flex-col hover:shadow-[0_0_35px_rgba(16,185,129,0.25)] cursor-pointer"
                 >
-                  {/* High-Definition Sunlit Balcony Visual */}
+                  {/* High-Definition Sunlit Balcony Visual - 100% CLEAN & UNOBSTRUCTED */}
                   <div className="relative h-64 sm:h-72 w-full overflow-hidden">
                     <img 
                       src={corridor.image} 
@@ -1710,22 +1710,23 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     {/* Clear Vertical Wire Simulation Overlay */}
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#111815] via-transparent to-transparent pointer-events-none" />
-                    
-                    {/* Elevation Badge */}
-                    <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 bg-black/75 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-emerald-500/40 text-[9px] sm:text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
-                      <MapPin className="w-3 h-3 text-emerald-400" />
-                      <span>{corridor.elevation}</span>
-                    </div>
-
-                    {/* Tag in Deep Green */}
-                    <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 bg-emerald-500 text-black text-[9px] font-black uppercase tracking-wider px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-lg">
-                      {corridor.tag}
-                    </div>
                   </div>
 
                   {/* Card Content in Brushed Silver & Deep Green */}
                   <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
+                      {/* Specifications Row Below Image */}
+                      <div className="flex flex-wrap items-center gap-2 mb-2.5">
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
+                          <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          {corridor.elevation}
+                        </span>
+                        <span className="text-white/20 text-xs">•</span>
+                        <span className="text-[10px] uppercase font-semibold tracking-wider text-[#cbd5e1] px-2 py-0.5 rounded-md bg-white/5 border border-white/10">
+                          {corridor.tag}
+                        </span>
+                      </div>
+
                       <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-400 transition mb-1.5 sm:mb-2">
                         {corridor.name}
                       </h3>
@@ -1843,7 +1844,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       key={idx}
                       className="group rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/50 bg-[#111815] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
                     >
-                      {/* High-Definition Sunlit Balcony Photography - NO DULL BLACK OVERLAYS */}
+                      {/* High-Definition Sunlit Balcony Photography - 100% CLEAN & UNOBSTRUCTED */}
                       <div className="relative h-64 w-full overflow-hidden">
                         <img 
                           src={card.image} 
@@ -1859,23 +1860,26 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                         {/* Wire simulation on card image */}
                         <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#111815] via-transparent to-transparent pointer-events-none" />
-                        
-                        <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md p-2.5 rounded-xl border border-emerald-500/40 text-emerald-400 shadow-md">
-                          <Icon className="w-5 h-5" />
-                        </div>
-
-                        <div className="absolute top-4 right-4 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-                          {card.stat}
-                        </div>
                       </div>
 
                       {/* Content in Deep Emerald Green & Brushed Silver */}
                       <div className="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                          {/* Badge in Deep Green */}
-                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-400 block mb-1">
-                            {card.badge}
-                          </span>
+                          {/* Specification Row Below Image */}
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <div className="flex items-center gap-2">
+                              <div className="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                                <Icon className="w-4 h-4 text-emerald-400" />
+                              </div>
+                              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-400">
+                                {card.badge}
+                              </span>
+                            </div>
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-200 px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
+                              {card.stat}
+                            </span>
+                          </div>
+
                           <h3 className="text-xl font-bold text-white mb-2">
                             {card.title}
                           </h3>
