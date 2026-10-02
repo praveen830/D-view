@@ -1,21 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  ShieldCheck, Phone, CheckCircle2, ChevronRight, ChevronLeft, X, 
-  Flame, Baby, Cat, HeartHandshake, Eye, Sparkles, QrCode, ArrowRight,
-  Shield, Droplets, Wrench, HelpCircle
+  ShieldCheck, Phone, CheckCircle2, ChevronRight, X, 
+  Flame, Baby, Cat, HeartHandshake, Eye, Sparkles, QrCode, 
+  Droplets, Menu, ArrowUpRight, HelpCircle
 } from 'lucide-react';
 
-// --- 6 LOCATIONS DATA (MATCHING EXACT INVISPROTECT ARCHITECTURAL STANDARD) ---
+// --- 6 LOCATIONS DATA (EXACT INVISPROTECT CLONE SPECIFICATION) ---
 export interface LocationSlide {
   id: string;
-  locationPath: string; // e.g. /locations/vizag
+  locationPath: string; // /locations/vizag
   slug: string;
   name: string;
   cityShort: string;
   categoryTag: string;
   mainTitle: string;
+  subline: string;
   subtext: string;
   buttonText: string;
+  microNote: string;
   badge: string;
   emotionHook: string;
   landmarkDesc: string;
@@ -34,11 +36,13 @@ export const CITIES_SLIDES: LocationSlide[] = [
     cityShort: 'VIZAG',
     categoryTag: 'COASTAL ARCHITECTURAL SAFETY',
     mainTitle: 'THE INVISIBLE THRESHOLD — VIZAG',
-    subtext: 'Architectural safety for modern sea-facing homes. 100% unblocked view.',
-    buttonText: '[ DISCOVER VIZAG ]',
+    subline: 'Balcony & Window Invisible Grills. Unobstructed RK Beach Panoramas.',
+    subtext: 'Architectural safety for modern sea-facing homes.',
+    buttonText: '[ DISCOVER ]',
+    microNote: 'Tap anywhere to explore Vizag high-rise coverage & pricing',
     badge: 'Coastal Marine Line SS-316',
     emotionHook: 'Wow! Mana Vizag sea coast view invisible grills valla asalu block avvakunda entha luxury ga undo!',
-    landmarkDesc: 'Luxury penthouse balcony with floor-to-ceiling vertical invisible wires overlooking RK Beach coastal waves & Kailasagiri hilltop.',
+    landmarkDesc: 'Luxury penthouse interior balcony framing RK Beach coastal waves and Kailasagiri hillside through vertical SS-316 invisible wire ropes.',
     heroImage: '/images/visakhapatnam-hero.jpg',
     activeBelts: ['Madhurawada (27-Floor High-Rises)', 'Yendada', 'Rushikonda', 'PM Palem', 'Anandapuram', 'Pendurthi', 'Gajuwaka'],
     weatherChallenge: "Vizag's high-salinity salt-air and marine damp humidity rapidly corrode low-grade steel within months.",
@@ -51,15 +55,17 @@ export const CITIES_SLIDES: LocationSlide[] = [
     name: 'Rajamahendravaram',
     cityShort: 'RAJAHMUNDRY',
     categoryTag: 'RIVERFRONT HERITAGE LIVING',
-    mainTitle: 'SAFEGUARDING GODAVARI PRIDE',
-    subtext: 'Preserving river breeze with 100% bird control and fall protection.',
-    buttonText: '[ DISCOVER RAJAHMUNDRY ]',
+    mainTitle: 'SAFEGUARDING GODAVARI PRIDE — RAJAHMUNDRY',
+    subline: '100% Bird & Fall Protection While Preserving Morning River Breeze.',
+    subtext: 'Uninterrupted river breeze with complete fall and bird protection.',
+    buttonText: '[ DISCOVER ]',
+    microNote: 'Tap anywhere to view Rajahmundry projects & pricing',
     badge: 'Godavari Riverfront Corridor',
     emotionHook: 'Pigeon problem lekunda, challani Godavari gaali & arch bridge view asalu aagakunda intiki 100% safety!',
-    landmarkDesc: 'Apartment balcony tiled floor and railing framing the iconic Godavari Arch Bridge and river cruise boats through vertical safety wires.',
+    landmarkDesc: 'High-rise apartment balcony interior tiles and sleek railing framing the historic Godavari Arch Bridge and river cruise boats through vertical stainless steel invisible cables.',
     heroImage: '/images/rajahmundry-hero.jpg',
-    activeBelts: ['Morampudi', 'Bommuru', 'Diwancheruvu', 'Lalacheruvu', 'Vemagiri', 'Danavaipeta', 'Kotilingala Ghat Road', 'Gadaala Residential Hubs'],
-    weatherChallenge: 'High river moisture vapor combined with aggressive pigeon nesting colonies on open balcony ledges.',
+    activeBelts: ['Morampudi', 'Bommuru', 'Diwancheruvu', 'Lalacheruvu', 'Vemagiri', 'Danavaipeta', 'Kotilingala Ghat Road', 'Gadaala Residential Belts'],
+    weatherChallenge: 'High river moisture mist combined with aggressive pigeon nesting colonies on open balcony ledges.',
     weatherSolution: 'Precision 2-inch SS-316 tensioned cables preventing bird entry while allowing 99% free river breeze.'
   },
   {
@@ -70,11 +76,13 @@ export const CITIES_SLIDES: LocationSlide[] = [
     cityShort: 'VIJAYAWADA',
     categoryTag: 'CAPITAL SKYLINE SAFETY',
     mainTitle: 'MODERN LIVING IN AMARAVATI',
+    subline: 'High-Rise Fall Security for Amaravati HappyNest & Riverside Residences.',
     subtext: 'High-rise elevation security for Amaravati HappyNest & riverside towers.',
-    buttonText: '[ DISCOVER VIJAYAWADA ]',
+    buttonText: '[ DISCOVER ]',
+    microNote: 'Tap anywhere to view Amaravati towers & pricing',
     badge: 'Capital & Krishna Waterfront',
     emotionHook: 'Modern luxury high-rise look ki taggattu, iron bars cage lekunda uncompromised open balcony!',
-    landmarkDesc: 'Modern high-rise balcony looking out at Prakasam Barrage lights and Krishna River horizon through vertical SS-316 cables.',
+    landmarkDesc: 'Skyscraper balcony overlooking Krishna River & illuminated Prakasam Barrage through vertical SS-316 cables.',
     heroImage: '/images/vijayawada-hero.jpg',
     activeBelts: ['Benz Circle', 'Moghalrajpuram', 'Gunadala', 'Kanuru', 'Poranki', 'Amaravati HappyNest (G+18)', 'Tadepalli', 'Undavalli'],
     weatherChallenge: 'Intense summer thermal expansion and high-velocity wind gusts on skyscraper floors above 15 levels.',
@@ -86,13 +94,15 @@ export const CITIES_SLIDES: LocationSlide[] = [
     slug: 'guntur',
     name: 'Guntur',
     cityShort: 'GUNTUR',
-    categoryTag: 'HIGH-RISE STRUCTURAL LIVING',
+    categoryTag: 'ELEVATION SAFETY & LIGHT',
     mainTitle: 'GUARDIAN OF GUNTUR',
+    subline: 'Replacing Obstructive Iron Bars with Pure Architectural Light.',
     subtext: 'Say goodbye to dark cage iron grills. Uncompromised daylight and fall safety.',
-    buttonText: '[ DISCOVER GUNTUR ]',
+    buttonText: '[ DISCOVER ]',
+    microNote: 'Tap anywhere to view Guntur corridors & pricing',
     badge: 'Kondaveedu Horizons Belt',
     emotionHook: 'Kondaveedu hill breeze intloki vasthundi, pillalu unna elevations bayam lekunda safe setup!',
-    landmarkDesc: 'High-rise terrace framing Kondaveedu Fort ridge and city skyline through invisible steel cables.',
+    landmarkDesc: 'Terrace balcony framing Kondaveedu Fort ridge and city skyline through high-tensile invisible wires.',
     heroImage: '/images/guntur-hero.jpg',
     activeBelts: ['Brodipet', 'Arundelpet', 'Amaravati Road', 'Namburu', 'Kaza & Tadepalli Growth Corridor', 'Gorantla'],
     weatherChallenge: 'Heavy dry winds carrying abrasive dust particulates that erode and dull conventional iron bars.',
@@ -106,11 +116,13 @@ export const CITIES_SLIDES: LocationSlide[] = [
     cityShort: 'KAKINADA',
     categoryTag: 'MARINE GRADE SS-316 CORRIDOR',
     mainTitle: "KAKINADA'S COASTAL SHIELD",
-    subtext: 'Permanent rust immunity against salty sea breezes.',
-    buttonText: '[ DISCOVER KAKINADA ]',
+    subline: 'Permanent Rust Immunity Against Heavy Salty Sea Breezes.',
+    subtext: 'Permanent rust immunity against salty coastal sea breezes.',
+    buttonText: '[ DISCOVER ]',
+    microNote: 'Tap anywhere to view Kakinada coastal specs & pricing',
     badge: 'Deepwater Port & Coastal Corridor',
     emotionHook: 'Uppu gaali thupattu pattakunda, high-grade Marine wire security tho lifetime durability!',
-    landmarkDesc: 'Coastal balcony framing Vakalapudi Lighthouse and palm shoreline with marine-grade SS-316 wires.',
+    landmarkDesc: 'Coastal apartment balcony framing Vakalapudi Lighthouse and palm shoreline with marine-grade SS-316 wires.',
     heroImage: '/images/kakinada-hero.jpg',
     activeBelts: ['Sarpavaram', 'Madhavapatnam', 'Ramanayyapeta', 'Vakalapudi', 'Jagannaickpur', 'Bhanugudi Junction'],
     weatherChallenge: 'Aggressive industrial port emissions mixed with salty maritime mist causing pitting corrosion.',
@@ -124,11 +136,13 @@ export const CITIES_SLIDES: LocationSlide[] = [
     cityShort: 'NELLORE',
     categoryTag: 'RIVER BARRAGE TRANQUILITY',
     mainTitle: 'TRANQUILITY & TRUST — NELLORE',
+    subline: 'Safe Haven for Children and Elders on High-Elevation Balconies.',
     subtext: 'Safe haven for children and elders on high-elevation balconies.',
-    buttonText: '[ DISCOVER NELLORE ]',
+    buttonText: '[ DISCOVER ]',
+    microNote: 'Tap anywhere to view Nellore projects & pricing',
     badge: 'Penna Riverfront Horizon',
     emotionHook: 'Pedda vallu, pillalu unna balcony lo nilabadataniki absolute strong and safe support!',
-    landmarkDesc: 'Sunset view over Nellore Barrage and Penna River through vertical safety wire barriers.',
+    landmarkDesc: 'High-elevation balcony sunset view over Nellore Barrage and Penna River through vertical safety wire barriers.',
     heroImage: '/images/nellore-hero.jpg',
     activeBelts: ['Magunta Layout', 'Balaji Nagar', 'Dargamitta', 'Vedayapalem', 'Podalakur Road', 'Kavali Road', 'Haranathapuram'],
     weatherChallenge: 'Continuous seasonal monsoon dampness loosening weak anchor points and corroding inferior wires.',
@@ -188,7 +202,6 @@ export const PROBLEM_SOLVERS = [
   }
 ];
 
-// --- FAQS DATA ---
 export const FAQS = [
   {
     q: "Can invisible grills really support a child's weight or adult impact?",
@@ -223,9 +236,12 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
     return idx >= 0 ? idx : 0;
   };
 
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(getIndexFromSlug(initialCitySlug));
-  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
-  
+  const initialIndex = getIndexFromSlug(initialCitySlug);
+  const activeSlide = CITIES_SLIDES[initialIndex];
+
+  // Mobile / Desktop Side Drawer Menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // Calculator State
   const [width, setWidth] = useState(12);
   const [height, setHeight] = useState(8);
@@ -235,43 +251,13 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
-  
-  const activeSlide = CITIES_SLIDES[currentSlideIndex];
   const [selectedHub, setSelectedHub] = useState(activeSlide.name);
 
-  // Sync if initialCitySlug changes
-  useEffect(() => {
-    if (initialCitySlug) {
-      const idx = getIndexFromSlug(initialCitySlug);
-      setCurrentSlideIndex(idx);
-      setSelectedHub(CITIES_SLIDES[idx].name);
-    }
-  }, [initialCitySlug]);
-
-  // Pricing calculations
+  // Pricing formula
   const calculatedArea = width * height;
   const ratePerSqFt = cableThickness === '2.0' ? 140 : cableThickness === '2.5' ? 165 : 190;
   const estimatedMin = calculatedArea * ratePerSqFt;
   const estimatedMax = Math.round(estimatedMin * 1.15);
-
-  // Slide navigation
-  const handlePrevSlide = () => {
-    setCurrentSlideIndex(prev => (prev === 0 ? CITIES_SLIDES.length - 1 : prev - 1));
-  };
-
-  const handleNextSlide = () => {
-    setCurrentSlideIndex(prev => (prev === CITIES_SLIDES.length - 1 ? 0 : prev + 1));
-  };
-
-  // Keyboard navigation for slides
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') handlePrevSlide();
-      if (e.key === 'ArrowRight') handleNextSlide();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
 
   const handleOpenBooking = (hubName?: string) => {
     setSelectedHub(hubName || activeSlide.name);
@@ -297,681 +283,728 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
   };
 
   return (
-    <div className="min-h-screen bg-[#070b09] text-[#f1f5f9] font-sans antialiased selection:bg-emerald-500 selection:text-black">
+    <div className="min-h-screen bg-[#000000] text-[#f1f5f9] font-sans antialiased selection:bg-emerald-500 selection:text-black">
       
       {/* ========================================================= */}
-      {/* 3. GLOBAL NAVIGATION (INVISPROTECT MINIMALISM)            */}
+      {/* 2. MINIMALIST TOP BAR (INVISPROTECT CLONE - ZERO BUTTONS) */}
       {/* ========================================================= */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#070b09]/80 backdrop-blur-xl border-b border-white/10 px-6 sm:px-12 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          
-          {/* Brand Mark: "D-VIEW" with "BALCONY SAFETY ENGINEERING" */}
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-emerald-500 to-teal-400 p-[1px] shadow-[0_0_20px_rgba(16,185,129,0.35)] transition transform group-hover:scale-105">
-              <div className="w-full h-full bg-[#070b09] rounded-xl flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-emerald-400 stroke-[2.2]" />
-              </div>
-            </div>
-            <div>
-              <span className="text-base sm:text-lg font-black tracking-[0.2em] text-white block">
-                D-VIEW
-              </span>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-emerald-400 font-semibold block">
-                BALCONY SAFETY ENGINEERING
-              </span>
-            </div>
-          </a>
-
-          {/* Nav Links: Solutions (Single Dropdown), Estimate Calculator, FAQ, Concierge */}
-          <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
-            
-            {/* Single Solutions Dropdown */}
-            <div className="relative">
-              <button 
-                type="button"
-                onClick={() => setSolutionsDropdownOpen(!solutionsDropdownOpen)}
-                onBlur={() => setTimeout(() => setSolutionsDropdownOpen(false), 200)}
-                className="flex items-center gap-1.5 hover:text-emerald-400 transition cursor-pointer"
-              >
-                Solutions <ChevronRight className={`w-3.5 h-3.5 transition-transform ${solutionsDropdownOpen ? 'rotate-90 text-emerald-400' : ''}`} />
-              </button>
-
-              {solutionsDropdownOpen && (
-                <div className="absolute top-full left-0 mt-3 w-64 bg-[#0d1411]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-3 shadow-2xl space-y-1">
-                  <a 
-                    href="#problem-solver"
-                    onClick={() => setSolutionsDropdownOpen(false)}
-                    className="block px-3 py-2 rounded-xl text-[11px] hover:bg-emerald-500/10 hover:text-emerald-400 transition"
-                  >
-                    <span className="font-bold text-white block">Balcony SS-316 Grills</span>
-                    <span className="text-slate-400 text-[10px]">Unblocked high-rise living</span>
-                  </a>
-                  <a 
-                    href="#problem-solver"
-                    onClick={() => setSolutionsDropdownOpen(false)}
-                    className="block px-3 py-2 rounded-xl text-[11px] hover:bg-emerald-500/10 hover:text-emerald-400 transition"
-                  >
-                    <span className="font-bold text-white block">Window Safety Grills</span>
-                    <span className="text-slate-400 text-[10px]">Child safe window security</span>
-                  </a>
-                  <a 
-                    href="#problem-solver"
-                    onClick={() => setSolutionsDropdownOpen(false)}
-                    className="block px-3 py-2 rounded-xl text-[11px] hover:bg-emerald-500/10 hover:text-emerald-400 transition"
-                  >
-                    <span className="font-bold text-white block">High-Rise Elevation Grills</span>
-                    <span className="text-slate-400 text-[10px]">Certified up to 30th floor</span>
-                  </a>
-                </div>
-              )}
-            </div>
-
-            <button 
-              type="button"
-              onClick={() => scrollToId('estimate-calculator')}
-              className="hover:text-emerald-400 transition cursor-pointer"
-            >
-              Estimate Calculator
-            </button>
-
-            <button 
-              type="button"
-              onClick={() => scrollToId('faq-section')}
-              className="hover:text-emerald-400 transition cursor-pointer"
-            >
-              FAQ
-            </button>
-
-            <a 
-              href="tel:+919494328999" 
-              className="flex items-center gap-1.5 text-slate-300 hover:text-emerald-400 transition"
-            >
-              <Phone className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Concierge: +91 94943 28999</span>
-            </a>
-          </nav>
-
-          {/* Right CTA Button */}
-          <button 
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/90 via-black/50 to-transparent py-5 px-6 sm:px-12 flex items-center justify-between pointer-events-auto transition-all">
+        
+        {/* Left: Minimal Menu Trigger + Brand */}
+        <div className="flex items-center gap-6">
+          <button
             type="button"
-            onClick={() => handleOpenBooking()}
-            className="bg-emerald-500 hover:bg-emerald-400 text-black px-5 py-2.5 rounded-full text-[11px] uppercase tracking-wider font-extrabold shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all transform hover:scale-[1.03] cursor-pointer"
+            onClick={() => setIsMenuOpen(true)}
+            className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-300 hover:text-emerald-400 transition cursor-pointer font-medium"
           >
-            Book Free Site Visit
+            <span className="text-base leading-none">≡</span> MENU
           </button>
 
+          <a href="/" className="flex items-center gap-2 group">
+            <span className="text-sm sm:text-base font-light tracking-[0.25em] text-white uppercase">
+              INVISPROTECT <span className="text-slate-500 font-extralight">/</span> <span className="font-semibold text-emerald-400">D-VIEW</span>
+            </span>
+          </a>
         </div>
+
+        {/* Right: Minimal Contact Link & Direct Call (NO BUTTONS) */}
+        <div className="flex items-center gap-6 sm:gap-8 text-xs uppercase tracking-[0.2em] text-slate-300 font-medium">
+          <button
+            type="button"
+            onClick={() => handleOpenBooking()}
+            className="hidden sm:inline-block hover:text-emerald-400 transition cursor-pointer"
+          >
+            CONTACT US
+          </button>
+          
+          <a
+            href="tel:+919494328999"
+            className="text-white hover:text-emerald-400 transition flex items-center gap-1.5"
+          >
+            <Phone className="w-3.5 h-3.5 text-emerald-400 stroke-[2]" />
+            <span className="hidden sm:inline">+91 94943 28999</span>
+          </a>
+        </div>
+
       </header>
 
-      {/* ==================================================================== */}
-      {/* 1. MAIN DASHBOARD: 100vh CINEMATIC FULL-SCREEN SLIDESHOW (NO CLUTTER) */}
-      {/* ==================================================================== */}
-      <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-        
-        {/* Full Viewport Cross-Fading Architectural Hero Backgrounds */}
-        {CITIES_SLIDES.map((slide, idx) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlideIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-            }`}
-          >
-            {/* Interior Balcony Image: Tiled floor, railing, and city background */}
-            <div 
-              className="w-full h-full bg-cover bg-center transform scale-105 transition-transform duration-10000"
-              style={{ backgroundImage: `url(${slide.heroImage})` }}
-            />
-
-            {/* Vertical SS-316 Invisible Wire Lines Simulation (2-inch spacing) */}
-            <div 
-              className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.15)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
-              aria-hidden="true"
-            />
-
-            {/* Balcony Ceiling & Floor Track Shadows */}
-            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/85 via-black/40 to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#070b09] via-[#070b09]/80 to-transparent pointer-events-none" />
-            
-            {/* Luxury Vignette */}
-            <div className="absolute inset-0 bg-radial-vignette from-transparent via-black/30 to-black/75 pointer-events-none" />
-          </div>
-        ))}
-
-        {/* Center Overlay (Invisprotect Minimalist Luxury Style - NO BUTTON CLUTTER) */}
-        <div className="relative z-20 max-w-4xl px-6 text-center flex flex-col items-center">
-          
-          {/* Category Tag */}
-          <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/15 px-4 py-1.5 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-            <span className="text-[11px] uppercase tracking-[0.3em] text-emerald-400 font-bold">
-              {activeSlide.categoryTag}
-            </span>
-          </div>
-
-          {/* Main Title */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-[0.08em] uppercase leading-[1.08] mb-5 drop-shadow-2xl">
-            {activeSlide.mainTitle}
-          </h1>
-
-          {/* Subtext */}
-          <p className="text-sm sm:text-lg text-slate-200/90 font-light tracking-wide max-w-2xl mb-8 leading-relaxed">
-            {activeSlide.subtext}
-          </p>
-
-          {/* Action Element: Minimal centered pill button [ DISCOVER ... ] */}
-          <div className="flex justify-center">
-            <a
-              href={activeSlide.locationPath}
-              className="border border-white/60 hover:border-emerald-400 text-white hover:text-emerald-300 px-9 py-3.5 rounded-full text-xs font-semibold uppercase tracking-[0.25em] bg-black/40 backdrop-blur-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(0,0,0,0.6)] cursor-pointer"
-            >
-              {activeSlide.buttonText}
-            </a>
-          </div>
-
-        </div>
-
-        {/* Prev / Next Arrows */}
-        <button
-          type="button"
-          onClick={handlePrevSlide}
-          aria-label="Previous Location"
-          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white hover:text-emerald-400 hover:border-emerald-400/60 flex items-center justify-center transition cursor-pointer"
-        >
-          <ChevronLeft className="w-6 h-6 stroke-[1.5]" />
-        </button>
-
-        <button
-          type="button"
-          onClick={handleNextSlide}
-          aria-label="Next Location"
-          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white hover:text-emerald-400 hover:border-emerald-400/60 flex items-center justify-center transition cursor-pointer"
-        >
-          <ChevronRight className="w-6 h-6 stroke-[1.5]" />
-        </button>
-
-        {/* Minimal City Dock at Bottom */}
-        <div className="absolute bottom-8 left-0 right-0 z-30 flex flex-col items-center gap-3">
-          <div className="flex items-center gap-1.5 sm:gap-3 bg-black/60 backdrop-blur-xl border border-white/10 p-1.5 sm:p-2 rounded-full max-w-[95vw] overflow-x-auto scrollbar-none">
-            {CITIES_SLIDES.map((slide, idx) => (
-              <button
-                key={slide.id}
-                type="button"
-                onClick={() => setCurrentSlideIndex(idx)}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold tracking-wider uppercase transition-all duration-300 cursor-pointer whitespace-nowrap ${
-                  currentSlideIndex === idx
-                    ? 'bg-emerald-500 text-black font-bold shadow-[0_0_15px_rgba(16,185,129,0.5)]'
-                    : 'text-slate-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {slide.cityShort}
-              </button>
-            ))}
-          </div>
-
-          <div className="text-[10px] uppercase tracking-[0.25em] text-slate-400 flex items-center gap-2">
-            <span>0{currentSlideIndex + 1}</span>
-            <span className="w-8 h-[1px] bg-slate-700" />
-            <span>06</span>
-          </div>
-        </div>
-
-      </section>
-
       {/* ========================================================= */}
-      {/* 2. LOCATION SUB-PAGE SYSTEM (SECTION A, B, C, D)          */}
+      {/* SLEEK LUXURY SIDE DRAWER MENU                             */}
       {/* ========================================================= */}
-      <main id="location-subpage">
-        
-        {/* --------------------------------------------------------- */}
-        {/* SECTION A: MEGA VISUAL CONNECTION & LOCAL IDENTITY       */}
-        {/* --------------------------------------------------------- */}
-        <section className="relative py-24 px-6 sm:px-12 border-t border-emerald-500/20 bg-gradient-to-b from-[#070b09] via-[#0a110e] to-[#070b09]">
-          <div className="max-w-7xl mx-auto">
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 flex">
+          <div 
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          <div className="relative w-full max-w-sm bg-[#090d0b] border-r border-white/10 h-full p-8 z-10 flex flex-col justify-between overflow-y-auto">
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
-              {/* Left Column: Local Emotional Hook & Residential Belts */}
-              <div className="lg:col-span-7 space-y-6">
-                
-                <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-full">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-xs uppercase tracking-[0.2em] text-emerald-400 font-bold">
-                    {activeSlide.badge}
-                  </span>
-                </div>
-
-                <h2 className="text-3xl sm:text-5xl font-black uppercase text-white tracking-tight leading-[1.1]">
-                  {activeSlide.name} Balcony Safety
-                </h2>
-
-                {/* Emotional Local Hook (Telugu) */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-emerald-950/20 border-l-4 border-emerald-400 border-y border-r border-emerald-500/20">
-                  <p className="text-emerald-300 font-medium text-base sm:text-lg italic leading-relaxed">
-                    "{activeSlide.emotionHook}"
-                  </p>
-                </div>
-
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  {activeSlide.landmarkDesc} D-VIEW replaces traditional obstructive black iron bars with high-tensile 316-grade stainless steel cables, delivering 100% certified fall protection while preserving total architectural aesthetics.
-                </p>
-
-                {/* Target Localities Showcase */}
-                <div className="pt-2">
-                  <span className="text-xs uppercase tracking-[0.2em] text-slate-400 font-bold block mb-3">
-                    Target Residential Corridors:
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {activeSlide.activeBelts.map((belt, i) => (
-                      <span 
-                        key={i} 
-                        className="bg-white/5 border border-white/10 hover:border-emerald-500/40 px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-200 transition"
-                      >
-                        📍 {belt}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Actions */}
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <button 
-                    type="button"
-                    onClick={() => handleOpenBooking(activeSlide.name)}
-                    className="bg-emerald-500 hover:bg-emerald-400 text-black px-7 py-3 rounded-full text-xs font-black uppercase tracking-wider shadow-[0_0_20px_rgba(16,185,129,0.35)] transition cursor-pointer"
-                  >
-                    Book Free Site Survey in {activeSlide.name}
-                  </button>
-                  <button 
-                    type="button"
-                    onClick={() => scrollToId('estimate-calculator')}
-                    className="border border-white/20 hover:border-emerald-400 text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/5 transition cursor-pointer"
-                  >
-                    Estimate Cost
-                  </button>
-                </div>
-
-              </div>
-
-              {/* Right Column: Architectural Photography Balcony Frame */}
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-[0_0_40px_rgba(0,0,0,0.8)] group">
-                  <img 
-                    src={activeSlide.heroImage} 
-                    alt={`${activeSlide.name} interior balcony view invisible grills`} 
-                    className="w-full h-[460px] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {/* Vertical SS-316 Wires Simulation */}
-                  <div 
-                    className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_24px,rgba(255,255,255,0.15)_25px,rgba(255,255,255,0.04)_26px)] pointer-events-none" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
-                  
-                  <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
-                    <span className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold block">
-                      Interior Perspective Standard
-                    </span>
-                    <p className="text-xs text-slate-200 mt-1">
-                      Indoor floor, modern glass railing & floor-to-ceiling SS-316 vertical wires.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* --------------------------------------------------------- */}
-        {/* SECTION B: THE COMPLETE PROBLEM-SOLVER GRID (IMAGE-FIRST) */}
-        {/* --------------------------------------------------------- */}
-        <section id="problem-solver" className="py-24 px-6 sm:px-12 border-t border-white/10 bg-[#070b09]">
-          <div className="max-w-7xl mx-auto">
-            
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
-                REAL ARCHITECTURAL SOLUTIONS
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-black uppercase text-white mt-2 tracking-tight">
-                The 6-Card Problem-Solver Grid
-              </h2>
-              <p className="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
-                Real high-rise balcony photography demonstrating certified SS-316 invisible wire engineering.
-              </p>
-            </div>
-
-            {/* 6 Grid Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {PROBLEM_SOLVERS.map((card, idx) => {
-                const Icon = card.icon;
-                return (
-                  <div 
-                    key={idx}
-                    className="group rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/50 bg-[#0d1411]/70 backdrop-blur-md transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]"
-                  >
-                    {/* Architectural Balcony Image */}
-                    <div className="relative h-56 w-full overflow-hidden">
-                      <img 
-                        src={card.image} 
-                        alt={card.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      {/* Wire simulation */}
-                      <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.12)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0d1411] via-[#0d1411]/30 to-transparent" />
-                      
-                      <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md p-2.5 rounded-xl border border-emerald-500/30 text-emerald-400">
-                        <Icon className="w-5 h-5" />
-                      </div>
-
-                      <div className="absolute top-4 right-4 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full">
-                        {card.stat}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6 flex-1 flex flex-col justify-between">
-                      <div>
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-400 block mb-1">
-                          {card.tagline}
-                        </span>
-                        <h3 className="text-xl font-bold text-white mb-2">
-                          {card.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                          {card.desc}
-                        </p>
-                      </div>
-
-                      <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-                        <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-                          <CheckCircle2 className="w-3.5 h-3.5" /> Certified SS-316
-                        </span>
-                        <span className="uppercase text-[10px] tracking-wider text-slate-400">
-                          100% Reliable
-                        </span>
-                      </div>
-                    </div>
-
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Impact Tagline in Telugu */}
-            <div className="mt-14 text-center p-6 rounded-2xl bg-white/5 border border-emerald-500/30 max-w-4xl mx-auto">
-              <p className="text-emerald-300 font-semibold text-sm sm:text-base italic">
-                "Okke Okka Balcony Installation... Enno High-Alert Safety Problems Nundi Mee Intiki Life-Time Premium Protection!"
-              </p>
-            </div>
-
-          </div>
-        </section>
-
-        {/* --------------------------------------------------------- */}
-        {/* SECTION C: COASTAL WEATHER SHIELD & SS-316 METALLURGY     */}
-        {/* --------------------------------------------------------- */}
-        <section className="py-20 px-6 sm:px-12 border-t border-white/10 bg-gradient-to-b from-[#070b09] to-[#0d1411]">
-          <div className="max-w-7xl mx-auto">
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
-              <div className="lg:col-span-7 space-y-6">
-                <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold block">
-                  TECHNICAL TRUST & METALLURGY
+            <div>
+              <div className="flex items-center justify-between pb-6 border-b border-white/10">
+                <span className="text-xs uppercase tracking-[0.25em] text-emerald-400 font-bold">
+                  D-VIEW INVISIBLE SAFETY
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">
-                  Coastal Weather Shield: Marine Grade SS-316
-                </h2>
+                <button 
+                  type="button"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-slate-400 hover:text-white p-1 cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Service Locations List */}
+              <div className="mt-8">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold block mb-4">
+                  SELECT RESIDENTIAL HUB
+                </span>
+                <div className="space-y-2">
+                  {CITIES_SLIDES.map((slide) => (
+                    <a
+                      key={slide.id}
+                      href={slide.locationPath}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block p-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-emerald-500/20 transition group"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-semibold text-white group-hover:text-emerald-300">
+                          {slide.name}
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 text-slate-600 group-hover:text-emerald-400" />
+                      </div>
+                      <span className="text-[11px] text-slate-400 block mt-0.5">
+                        {slide.categoryTag}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div className="mt-8 pt-6 border-t border-white/10 space-y-3 text-xs tracking-wider text-slate-300 uppercase">
+                <a 
+                  href="#problem-solver"
+                  onClick={() => { setIsMenuOpen(false); scrollToId('problem-solver'); }}
+                  className="block hover:text-emerald-400 transition"
+                >
+                  6-Pillar Safety Gallery
+                </a>
+                <a 
+                  href="#estimate-calculator"
+                  onClick={() => { setIsMenuOpen(false); scrollToId('estimate-calculator'); }}
+                  className="block hover:text-emerald-400 transition"
+                >
+                  Cost Estimator
+                </a>
+                <a 
+                  href="#faq-section"
+                  onClick={() => { setIsMenuOpen(false); scrollToId('faq-section'); }}
+                  className="block hover:text-emerald-400 transition"
+                >
+                  Technical FAQs
+                </a>
+              </div>
+            </div>
+
+            {/* Concierge Info at Bottom */}
+            <div className="pt-8 border-t border-white/10 text-xs text-slate-400 space-y-1">
+              <p className="text-white font-bold tracking-wider">Direct Concierge</p>
+              <p>+91 94943 28999</p>
+              <p>contact@dviewsolutions.com</p>
+            </div>
+
+          </div>
+        </div>
+      )}
+
+      {/* ==================================================================== */}
+      {/* IF ON HOMEPAGE: 6 FULL-SCREEN 100vh SNAP-SCROLL SLIDES (TAP-TO-NAV)   */}
+      {/* ==================================================================== */}
+      {!isSubPageDirect ? (
+        <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+          {CITIES_SLIDES.map((slide, idx) => (
+            <section
+              key={slide.id}
+              onClick={() => { window.location.href = slide.locationPath; }}
+              className="relative w-full h-screen snap-start snap-always overflow-hidden flex items-end justify-center cursor-pointer select-none pb-12 sm:pb-16 px-6"
+            >
+              {/* Full Bleed Interior Luxury Balcony Photography */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-[1.02]"
+                style={{ backgroundImage: `url(${slide.heroImage})` }}
+              >
+                {/* Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation (2-inch spacing) */}
+                <div 
+                  className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.15)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
+                  aria-hidden="true"
+                />
+
+                {/* Balcony Ceiling & Floor Track Shadows */}
+                <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-b from-black/85 via-black/40 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-radial-vignette from-transparent via-black/25 to-black/70 pointer-events-none" />
+              </div>
+
+              {/* Invisprotect Minimal Text Overlay (Centered in bottom third, elegant subtle tracking) */}
+              <div className="relative z-20 max-w-3xl text-center flex flex-col items-center">
                 
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Why cheap steel fails in Andhra Pradesh: coastal salt-air and river mists cause immediate pitting and corrosion on ordinary mild steel and cheap SS-202 cables within months.
+                {/* Kicker */}
+                <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-slate-300 font-semibold mb-2 block">
+                  {slide.categoryTag}
+                </span>
+
+                {/* Main Title */}
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-white tracking-[0.1em] uppercase leading-tight mb-2 drop-shadow-xl">
+                  {slide.mainTitle}
+                </h2>
+
+                {/* Subline / Subtext */}
+                <p className="text-xs sm:text-sm text-slate-300/90 font-light tracking-wide max-w-xl mb-5">
+                  {slide.subtext}
                 </p>
 
-                <div className="space-y-4 pt-2">
-                  <div className="flex items-start gap-4 p-4 rounded-2xl bg-black/40 border border-white/10">
-                    <Droplets className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="text-sm font-bold text-white uppercase">The Problem: Environmental Corrosion</h4>
-                      <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherChallenge}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-2xl bg-black/40 border border-emerald-500/30">
-                    <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="text-sm font-bold text-emerald-400 uppercase">The Material: Molybdenum-Infused SS-316</h4>
-                      <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherSolution}</p>
-                    </div>
-                  </div>
+                {/* Single Elegant Ghost Button: [ DISCOVER ] */}
+                <div className="inline-block">
+                  <a
+                    href={slide.locationPath}
+                    onClick={(e) => { e.stopPropagation(); }}
+                    className="inline-block border border-white/50 hover:border-emerald-400 text-white hover:text-emerald-300 px-8 py-2.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-black/40 backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,0,0,0.6)] cursor-pointer"
+                  >
+                    {slide.buttonText}
+                  </a>
                 </div>
 
-                {/* Trust Guarantees */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                  <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
-                    <span className="text-xl sm:text-2xl font-black text-emerald-400 block">10 YEARS</span>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
-                      Anti-Rust Warranty
+                {/* Micro-note */}
+                <span className="text-[10px] uppercase tracking-[0.25em] text-slate-400 mt-3 block font-light">
+                  {slide.microNote}
+                </span>
+
+              </div>
+
+              {/* Slide Counter on Side */}
+              <div className="absolute bottom-8 right-8 z-20 hidden md:block text-[11px] uppercase tracking-[0.25em] text-slate-400 font-mono">
+                0{idx + 1} / 06
+              </div>
+
+            </section>
+          ))}
+        </main>
+      ) : (
+        /* ==================================================================== */
+        /* IF ON SUBPAGE: DEDICATED LOCATION LANDING PAGE (SECTIONS A, B, C, D)  */
+        /* ==================================================================== */
+        <main id="location-subpage" className="pt-20">
+          
+          {/* ----------------------------------------------------------------- */}
+          {/* SECTION A: FIRST IMPRESSION: MEGA VISUAL CONNECTION & CORRIDORS  */}
+          {/* ----------------------------------------------------------------- */}
+          <section className="relative min-h-[90vh] flex items-center justify-center px-6 sm:px-12 py-16 overflow-hidden">
+            {/* Full-bleed interior balcony view */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${activeSlide.heroImage})` }}
+            >
+              {/* Floor-to-ceiling vertical wire ropes simulation */}
+              <div 
+                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.15)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/70 to-black/60" />
+            </div>
+
+            <div className="relative z-20 max-w-5xl mx-auto text-center flex flex-col items-center">
+              
+              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-4 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs uppercase tracking-[0.25em] text-emerald-400 font-bold">
+                  {activeSlide.badge}
+                </span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-light uppercase text-white tracking-[0.08em] leading-tight mb-6">
+                {activeSlide.mainTitle}
+              </h1>
+
+              {/* Localized Telugu Emotional Hook */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 backdrop-blur-md max-w-3xl mb-8">
+                <p className="text-emerald-300 font-medium text-base sm:text-lg italic leading-relaxed">
+                  "{activeSlide.emotionHook}"
+                </p>
+              </div>
+
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
+                {activeSlide.landmarkDesc} D-VIEW replaces traditional obstructive black iron bars with high-tensile 316-grade stainless steel cables, delivering 100% certified fall protection while preserving total architectural daylight.
+              </p>
+
+              {/* Active Local Corridors (Clean badges) */}
+              <div className="w-full pt-4">
+                <span className="text-xs uppercase tracking-[0.25em] text-slate-400 font-bold block mb-4">
+                  Active High-Rise Corridors:
+                </span>
+                <div className="flex flex-wrap justify-center gap-2.5">
+                  {activeSlide.activeBelts.map((belt, i) => (
+                    <span 
+                      key={i} 
+                      className="bg-white/5 border border-white/10 hover:border-emerald-500/40 px-4 py-2 rounded-full text-xs font-medium text-slate-200 backdrop-blur-sm transition"
+                    >
+                      📍 {belt}
                     </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action */}
+              <div className="mt-10">
+                <button 
+                  type="button"
+                  onClick={() => handleOpenBooking(activeSlide.name)}
+                  className="bg-emerald-500 hover:bg-emerald-400 text-black px-8 py-3.5 rounded-full text-xs font-extrabold uppercase tracking-[0.2em] shadow-[0_0_25px_rgba(16,185,129,0.35)] transition cursor-pointer"
+                >
+                  Book Free Site Measurement in {activeSlide.name}
+                </button>
+              </div>
+
+            </div>
+          </section>
+
+          {/* ----------------------------------------------------------------- */}
+          {/* SECTION B: 6-PILLAR PROBLEM-SOLVER GRID (IMAGE-FIRST, REAL PHOTOS)*/}
+          {/* ----------------------------------------------------------------- */}
+          <section id="problem-solver" className="py-24 px-6 sm:px-12 border-t border-white/10 bg-[#000000]">
+            <div className="max-w-7xl mx-auto">
+              
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
+                  REAL ARCHITECTURAL SOLUTIONS
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-light uppercase text-white mt-2 tracking-tight">
+                  The Complete 6-Pillar Problem-Solver Grid
+                </h2>
+                <p className="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
+                  Real balcony photography demonstrating high-tensile SS-316 invisible wire engineering.
+                </p>
+              </div>
+
+              {/* 6 Grid Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {PROBLEM_SOLVERS.map((card, idx) => {
+                  const Icon = card.icon;
+                  return (
+                    <div 
+                      key={idx}
+                      className="group rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/50 bg-[#090d0b] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]"
+                    >
+                      {/* High-definition balcony photography */}
+                      <div className="relative h-56 w-full overflow-hidden">
+                        <img 
+                          src={card.image} 
+                          alt={card.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Wire simulation on card image */}
+                        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.12)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#090d0b] via-[#090d0b]/30 to-transparent" />
+                        
+                        <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md p-2.5 rounded-xl border border-emerald-500/30 text-emerald-400">
+                          <Icon className="w-5 h-5" />
+                        </div>
+
+                        <div className="absolute top-4 right-4 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full">
+                          {card.stat}
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-400 block mb-1">
+                            {card.tagline}
+                          </span>
+                          <h3 className="text-xl font-bold text-white mb-2">
+                            {card.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            {card.desc}
+                          </p>
+                        </div>
+
+                        <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+                          <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                            <CheckCircle2 className="w-3.5 h-3.5" /> Certified SS-316
+                          </span>
+                          <span className="uppercase text-[10px] tracking-wider text-slate-400">
+                            100% Reliable
+                          </span>
+                        </div>
+                      </div>
+
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Closing Tagline in Telugu */}
+              <div className="mt-14 text-center p-6 rounded-2xl bg-white/5 border border-emerald-500/30 max-w-4xl mx-auto">
+                <p className="text-emerald-300 font-semibold text-sm sm:text-base italic">
+                  "Okke Okka Balcony Installation... Enno High-Alert Safety Problems Nundi Mee Intiki Life-Time Premium Protection!"
+                </p>
+              </div>
+
+            </div>
+          </section>
+
+          {/* ----------------------------------------------------------------- */}
+          {/* SECTION C: SPECIFIC LOCAL WEATHER GUIDE (SS-316 TECHNICAL TRUST) */}
+          {/* ----------------------------------------------------------------- */}
+          <section className="py-20 px-6 sm:px-12 border-t border-white/10 bg-gradient-to-b from-[#000000] to-[#090d0b]">
+            <div className="max-w-7xl mx-auto">
+              
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div className="lg:col-span-7 space-y-6">
+                  <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold block">
+                    SS-316 METALLURGY TRUST
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl font-light uppercase text-white tracking-tight">
+                    Specific Weather Shield ({activeSlide.name})
+                  </h2>
+                  
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Why cheap steel fails in Andhra Pradesh: coastal salt-air and river mists cause immediate pitting and corrosion on ordinary mild steel and cheap SS-202 cables within months.
+                  </p>
+
+                  <div className="space-y-4 pt-2">
+                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-black/40 border border-white/10">
+                      <Droplets className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-sm font-bold text-white uppercase">The Environmental Challenge</h4>
+                        <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherChallenge}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-black/40 border border-emerald-500/30">
+                      <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-sm font-bold text-emerald-400 uppercase">The Material: Molybdenum-Infused SS-316</h4>
+                        <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherSolution}</p>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
-                    <span className="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
-                      Tension Inspection
-                    </span>
+                  {/* Trust Guarantees */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                    <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
+                      <span className="text-xl sm:text-2xl font-black text-emerald-400 block">10 YEARS</span>
+                      <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
+                        Replacement Warranty
+                      </span>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                      <span className="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
+                      <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
+                        Tension Inspection
+                      </span>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                      <span className="text-xl sm:text-2xl font-black text-emerald-400 block">FREE GIFT</span>
+                      <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
+                        Shine Spray & Cloth Kit
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
-                    <span className="text-xl sm:text-2xl font-black text-emerald-400 block">FREE GIFT</span>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
-                      Shine Spray & Cloth Kit
-                    </span>
+                </div>
+
+                {/* Maintenance Gift Kit Photo */}
+                <div className="lg:col-span-5 relative">
+                  <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl">
+                    <img 
+                      src="/images/maintenance-kit.jpg" 
+                      alt="D-VIEW SS-316 Care Kit and Shine Spray" 
+                      className="w-full h-80 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                    
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="inline-flex items-center gap-2 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                        Special Free Gift On Installation
+                      </div>
+                      <h4 className="text-lg font-bold text-white">SS-316 Maintenance Gift Kit</h4>
+                      <p className="text-xs text-slate-300 mt-1">
+                        High-grade microfiber cloth and special SS shine spray to keep your cables looking pristine for decades.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
               </div>
 
-              {/* Maintenance Gift Kit Photo */}
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl">
-                  <img 
-                    src="/images/maintenance-kit.jpg" 
-                    alt="D-VIEW SS-316 Care Kit and Shine Spray" 
-                    className="w-full h-80 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            </div>
+          </section>
+
+          {/* ----------------------------------------------------------------- */}
+          {/* SECTION D: BALCONY ESTIMATE CALCULATOR & DYNAMIC WHATSAPP QR      */}
+          {/* ----------------------------------------------------------------- */}
+          <section id="estimate-calculator" className="py-24 px-6 sm:px-12 border-t border-white/10 bg-[#000000]">
+            <div className="max-w-5xl mx-auto">
+              
+              <div className="text-center max-w-2xl mx-auto mb-14">
+                <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
+                  TRANSPARENT PRICING
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-light uppercase text-white mt-2 tracking-tight">
+                  Balcony Estimate Calculator
+                </h2>
+                <p className="text-slate-400 text-xs sm:text-sm mt-2">
+                  Instant indicative investment calculation for {activeSlide.name}.
+                </p>
+              </div>
+
+              <div className="bg-[#090d0b] border border-emerald-500/30 rounded-3xl p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                {/* Sliders Column */}
+                <div className="lg:col-span-7 space-y-7">
                   
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="inline-flex items-center gap-2 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
-                      Special Free Gift On Installation
+                  {/* Width Slider */}
+                  <div>
+                    <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
+                      <span>Width (Feet)</span>
+                      <span className="text-emerald-400 text-base font-black">{width} Feet</span>
                     </div>
-                    <h4 className="text-lg font-bold text-white">SS-316 Maintenance Gift Kit</h4>
-                    <p className="text-xs text-slate-300 mt-1">
-                      High-grade microfiber cloth and special SS shine spray to keep your cables looking pristine for decades.
+                    <input 
+                      type="range" 
+                      min="4" 
+                      max="35" 
+                      value={width} 
+                      onChange={(e) => setWidth(Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                    />
+                    <div className="flex justify-between text-[10px] text-slate-500 mt-1">
+                      <span>4 ft</span>
+                      <span>18 ft</span>
+                      <span>35 ft</span>
+                    </div>
+                  </div>
+
+                  {/* Height Slider */}
+                  <div>
+                    <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
+                      <span>Height (Feet)</span>
+                      <span className="text-emerald-400 text-base font-black">{height} Feet</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="3" 
+                      max="14" 
+                      value={height} 
+                      onChange={(e) => setHeight(Number(e.target.value))}
+                      className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                    />
+                    <div className="flex justify-between text-[10px] text-slate-500 mt-1">
+                      <span>3 ft</span>
+                      <span>8 ft</span>
+                      <span>14 ft</span>
+                    </div>
+                  </div>
+
+                  {/* Wire Gauge Selector */}
+                  <div>
+                    <label className="block text-xs uppercase font-bold text-slate-300 mb-2">
+                      Wire Gauge Specification
+                    </label>
+                    <div className="grid grid-cols-3 gap-2">
+                      {[
+                        { val: '2.0', label: '2.0 mm Standard', desc: 'Standard Windows' },
+                        { val: '2.5', label: '2.5 mm High-Tensile', desc: 'Most Popular' },
+                        { val: '3.0', label: '3.0 mm Heavy Duty', desc: 'High Floors (G+15)' }
+                      ].map(spec => (
+                        <button
+                          key={spec.val}
+                          type="button"
+                          onClick={() => setCableThickness(spec.val)}
+                          className={`p-3 rounded-2xl border text-left transition cursor-pointer ${
+                            cableThickness === spec.val
+                              ? 'bg-emerald-500/15 border-emerald-400 text-white'
+                              : 'bg-black/40 border-white/10 text-slate-400 hover:text-white'
+                          }`}
+                        >
+                          <span className="text-xs font-bold block">{spec.label}</span>
+                          <span className="text-[10px] text-emerald-400 block mt-0.5">{spec.desc}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Estimate Summary Column */}
+                <div className="lg:col-span-5 bg-[#000000] border border-white/10 rounded-2xl p-6 sm:p-8 text-center flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
+                      Calculated Area
+                    </span>
+                    <div className="text-3xl font-black text-white mt-1 mb-4">
+                      {calculatedArea} <span className="text-sm font-normal text-slate-400">sq.ft</span>
+                    </div>
+
+                    <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
+                      Real-Time Estimated Total
+                    </span>
+                    <div className="text-3xl sm:text-4xl font-black text-emerald-400 mt-1 mb-2">
+                      ₹{estimatedMin.toLocaleString()} - ₹{estimatedMax.toLocaleString()}
+                    </div>
+                    <p className="text-[11px] text-slate-400 leading-normal">
+                      Includes SS-316 high-tension wires, anodized mounting tracks, laser installation & 10-year warranty.
                     </p>
                   </div>
+
+                  <div className="mt-8 space-y-3">
+                    <button 
+                      type="button"
+                      onClick={() => handleOpenBooking()}
+                      className="w-full bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-[0_0_20px_rgba(16,185,129,0.35)] transition cursor-pointer"
+                    >
+                      Book Free Site Measurement With This Quote →
+                    </button>
+                    <span className="text-[10px] text-emerald-400 block font-medium">
+                      🎁 Includes Complimentary SS Shine Spray & Microfiber Kit!
+                    </span>
+                  </div>
                 </div>
+
               </div>
 
             </div>
+          </section>
 
-          </div>
-        </section>
+          {/* ----------------------------------------------------------------- */}
+          {/* FAQS SECTION                                                      */}
+          {/* ----------------------------------------------------------------- */}
+          <section id="faq-section" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
+                  FREQUENTLY ASKED QUESTIONS
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-light uppercase text-white mt-2">
+                  Architectural Safety Insights
+                </h2>
+              </div>
 
-        {/* --------------------------------------------------------- */}
-        {/* SECTION D: BALCONY ESTIMATE CALCULATOR & QR BOOKING       */}
-        {/* --------------------------------------------------------- */}
-        <section id="estimate-calculator" className="py-24 px-6 sm:px-12 border-t border-white/10 bg-[#070b09]">
-          <div className="max-w-5xl mx-auto">
-            
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
-                TRANSPARENT PRICING
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-black uppercase text-white mt-2 tracking-tight">
-                Balcony Estimate Calculator
-              </h2>
-              <p className="text-slate-400 text-xs sm:text-sm mt-2">
-                Instant indicative investment calculation for {activeSlide.name}.
-              </p>
+              <div className="space-y-4">
+                {FAQS.map((faq, i) => (
+                  <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10">
+                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
+                      <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                      {faq.q}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-6">
+                      {faq.a}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
+          </section>
 
-            <div className="bg-[#0e1613] border border-emerald-500/30 rounded-3xl p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* =============================================================== */}
+          {/* 4. LUXURY EDITORIAL FOOTER                                      */}
+          {/* =============================================================== */}
+          <footer className="border-t border-white/10 bg-[#000000] pt-16 pb-12 px-6 sm:px-12 text-slate-400 text-xs">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
               
-              {/* Sliders Column */}
-              <div className="lg:col-span-7 space-y-7">
-                
-                {/* Width Slider */}
-                <div>
-                  <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
-                    <span>Width (Feet)</span>
-                    <span className="text-emerald-400 text-base font-black">{width} Feet</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="4" 
-                    max="35" 
-                    value={width} 
-                    onChange={(e) => setWidth(Number(e.target.value))}
-                    className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
-                  />
-                  <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-                    <span>4 ft</span>
-                    <span>18 ft</span>
-                    <span>35 ft</span>
-                  </div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                  <span className="text-white font-bold tracking-widest text-sm uppercase">D-VIEW INVISIBLE SAFETY</span>
                 </div>
-
-                {/* Height Slider */}
-                <div>
-                  <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
-                    <span>Height (Feet)</span>
-                    <span className="text-emerald-400 text-base font-black">{height} Feet</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="3" 
-                    max="14" 
-                    value={height} 
-                    onChange={(e) => setHeight(Number(e.target.value))}
-                    className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
-                  />
-                  <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-                    <span>3 ft</span>
-                    <span>8 ft</span>
-                    <span>14 ft</span>
-                  </div>
+                <p className="text-[11px] leading-relaxed text-slate-400">
+                  India's premier architectural invisible grill specialist for modern luxury high-rises and private residences.
+                </p>
+                <div className="space-y-1.5 text-slate-300 text-[11px] pt-2">
+                  <p className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-emerald-400" /> Call: +91 94943 28999
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-emerald-400 font-bold">WA:</span> WhatsApp: +91 94943 28999
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <span className="text-emerald-400 font-bold">@:</span> contact@dviewsolutions.com
+                  </p>
                 </div>
+              </div>
 
-                {/* Cable Thickness Selector */}
-                <div>
-                  <label className="block text-xs uppercase font-bold text-slate-300 mb-2">
-                    Wire Gauge Specification
-                  </label>
-                  <div className="grid grid-cols-3 gap-2">
-                    {[
-                      { val: '2.0', label: '2.0 mm Standard', desc: 'Standard Windows' },
-                      { val: '2.5', label: '2.5 mm High-Tensile', desc: 'Most Popular' },
-                      { val: '3.0', label: '3.0 mm Heavy Duty', desc: 'High Floors (G+15)' }
-                    ].map(spec => (
-                      <button
-                        key={spec.val}
-                        type="button"
-                        onClick={() => setCableThickness(spec.val)}
-                        className={`p-3 rounded-2xl border text-left transition cursor-pointer ${
-                          cableThickness === spec.val
-                            ? 'bg-emerald-500/15 border-emerald-400 text-white'
-                            : 'bg-black/40 border-white/10 text-slate-400 hover:text-white'
-                        }`}
+              <div>
+                <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3">
+                  Collections
+                </h4>
+                <ul className="space-y-2 text-[11px]">
+                  <li><a href="#problem-solver" className="hover:text-emerald-400 transition">Balcony SS-316 Grills</a></li>
+                  <li><a href="#problem-solver" className="hover:text-emerald-400 transition">Window Safety Grills</a></li>
+                  <li><a href="#problem-solver" className="hover:text-emerald-400 transition">High-Rise Elevation Grills</a></li>
+                  <li><a href="#problem-solver" className="hover:text-emerald-400 transition">Pigeon Prevention Mesh</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3">
+                  Tools & Standards
+                </h4>
+                <ul className="space-y-2 text-[11px]">
+                  <li><a href="#estimate-calculator" className="hover:text-emerald-400 transition">Instant Cost Estimator</a></li>
+                  <li><span className="text-slate-300">Virgin SS-316 Metallurgy</span></li>
+                  <li><span className="text-slate-300">10-Year Warranty Terms</span></li>
+                  <li><span className="text-slate-300">1-Year Free Tension Inspection</span></li>
+                  <li><span className="text-slate-300">Complimentary SS Shine Kit</span></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3">
+                  Service Regions
+                </h4>
+                <ul className="space-y-2 text-[11px]">
+                  {CITIES_SLIDES.map((slide) => (
+                    <li key={slide.id}>
+                      <a 
+                        href={slide.locationPath}
+                        className="hover:text-emerald-400 transition flex items-center justify-between"
                       >
-                        <span className="text-xs font-bold block">{spec.label}</span>
-                        <span className="text-[10px] text-emerald-400 block mt-0.5">{spec.desc}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Estimate Summary Column */}
-              <div className="lg:col-span-5 bg-[#080d0a] border border-white/10 rounded-2xl p-6 sm:p-8 text-center flex flex-col justify-between">
-                <div>
-                  <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
-                    Calculated Area
-                  </span>
-                  <div className="text-3xl font-black text-white mt-1 mb-4">
-                    {calculatedArea} <span className="text-sm font-normal text-slate-400">sq.ft</span>
-                  </div>
-
-                  <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
-                    Real-Time Estimated Total
-                  </span>
-                  <div className="text-3xl sm:text-4xl font-black text-emerald-400 mt-1 mb-2">
-                    ₹{estimatedMin.toLocaleString()} - ₹{estimatedMax.toLocaleString()}
-                  </div>
-                  <p className="text-[11px] text-slate-400 leading-normal">
-                    Includes SS-316 high-tension wires, anodized mounting tracks, laser installation & 10-year warranty.
-                  </p>
-                </div>
-
-                <div className="mt-8 space-y-3">
-                  <button 
-                    type="button"
-                    onClick={() => handleOpenBooking()}
-                    className="w-full bg-emerald-500 hover:bg-emerald-400 text-black py-4 rounded-xl text-xs font-black uppercase tracking-wider shadow-[0_0_20px_rgba(16,185,129,0.35)] transition cursor-pointer"
-                  >
-                    Book Free Site Measurement With This Quote →
-                  </button>
-                  <span className="text-[10px] text-emerald-400 block font-medium">
-                    🎁 Includes Complimentary SS Shine Spray & Microfiber Kit!
-                  </span>
-                </div>
+                        <span>{slide.name}</span>
+                        <span className="text-[10px] text-slate-500">→</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[10px] text-slate-500 mt-4 leading-normal">
+                  Doorstep laser measurement across all gated societies and high-rise apartments.
+                </p>
               </div>
 
             </div>
 
-          </div>
-        </section>
-
-        {/* --------------------------------------------------------- */}
-        {/* FAQS SECTION                                              */}
-        {/* --------------------------------------------------------- */}
-        <section id="faq-section" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#0a110e]">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
-                FREQUENTLY ASKED QUESTIONS
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-black uppercase text-white mt-2">
-                Architectural Safety Insights
-              </h2>
+            <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+              <p>© {new Date().getFullYear()} D-VIEW INVISIBLE SAFETY. All Rights Reserved. Architectural Safety Engineering.</p>
+              <div className="flex gap-4">
+                <span className="text-emerald-400 font-semibold">100% Invisible Grills</span>
+                <span>•</span>
+                <span>Zero Safety Nets</span>
+                <span>•</span>
+                <span>SS-316 Marine Grade</span>
+              </div>
             </div>
+          </footer>
 
-            <div className="space-y-4">
-              {FAQS.map((faq, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10">
-                  <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                    <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                    {faq.q}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-6">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-      </main>
+        </main>
+      )}
 
       {/* ========================================================= */}
       {/* WHATSAPP LEAD MODAL WITH DYNAMIC QR CODE                  */}
       {/* ========================================================= */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="relative w-full max-w-md bg-[#0d1411] border border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          <div className="relative w-full max-w-md bg-[#090d0b] border border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
             
             <button 
               type="button"
@@ -1063,98 +1096,6 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
           </div>
         </div>
       )}
-
-      {/* ========================================================= */}
-      {/* 3. GLOBAL FOOTER (INVISPROTECT MINIMALISM)                */}
-      {/* ========================================================= */}
-      <footer className="border-t border-white/10 bg-[#050806] pt-16 pb-12 px-6 sm:px-12 text-slate-400 text-xs">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-emerald-400" />
-              <span className="text-white font-bold tracking-widest text-sm uppercase">D-VIEW INVISIBLE SAFETY</span>
-            </div>
-            <p className="text-[11px] leading-relaxed text-slate-400">
-              India's premier architectural invisible grill specialist for modern luxury high-rises and private residences.
-            </p>
-            <div className="space-y-1.5 text-slate-300 text-[11px] pt-2">
-              <p className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-emerald-400" /> Call: +91 94943 28999
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-emerald-400 font-bold">WA:</span> WhatsApp: +91 94943 28999
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-emerald-400 font-bold">@:</span> contact@dviewsolutions.com
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3">
-              Collections
-            </h4>
-            <ul className="space-y-2 text-[11px]">
-              <li><a href="#problem-solver" className="hover:text-emerald-400 transition">Balcony SS-316 Grills</a></li>
-              <li><a href="#problem-solver" className="hover:text-emerald-400 transition">Window Safety Grills</a></li>
-              <li><a href="#problem-solver" className="hover:text-emerald-400 transition">High-Rise Elevation Grills</a></li>
-              <li><a href="#problem-solver" className="hover:text-emerald-400 transition">Pigeon Prevention Mesh</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3">
-              Tools & Standards
-            </h4>
-            <ul className="space-y-2 text-[11px]">
-              <li><a href="#estimate-calculator" className="hover:text-emerald-400 transition">Instant Cost Estimator</a></li>
-              <li><span className="text-slate-300">Virgin SS-316 Metallurgy</span></li>
-              <li><span className="text-slate-300">10-Year Warranty Terms</span></li>
-              <li><span className="text-slate-300">1-Year Free Tension Inspection</span></li>
-              <li><span className="text-slate-300">Complimentary SS Shine Kit</span></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3">
-              Service Regions
-            </h4>
-            <ul className="space-y-2 text-[11px]">
-              {CITIES_SLIDES.map((slide, idx) => (
-                <li key={slide.id}>
-                  <a 
-                    href={slide.locationPath}
-                    onClick={() => {
-                      setCurrentSlideIndex(idx);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="hover:text-emerald-400 transition flex items-center justify-between"
-                  >
-                    <span>{slide.name}</span>
-                    <span className="text-[10px] text-slate-500">→</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <p className="text-[10px] text-slate-500 mt-4 leading-normal">
-              Doorstep laser measurement across all gated societies and high-rise apartments.
-            </p>
-          </div>
-
-        </div>
-
-        <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-          <p>© {new Date().getFullYear()} D-VIEW INVISIBLE SAFETY. All Rights Reserved. Architectural Safety Engineering.</p>
-          <div className="flex gap-4">
-            <span className="text-emerald-400 font-semibold">100% Invisible Grills</span>
-            <span>•</span>
-            <span>Zero Safety Nets</span>
-            <span>•</span>
-            <span>SS-316 Marine Grade</span>
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
