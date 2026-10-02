@@ -1,129 +1,133 @@
 ---
-import { ALL_LOCATIONS } from '../data/locations';
 ---
 
 <footer class="bg-[#080A09] border-t border-[#24322B] text-[#C7CDD1] pt-16 pb-12 relative overflow-hidden">
-  
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#24322B]">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#24322B]">
       
-      {/* Brand Column */}
-      <div class="lg:col-span-2 space-y-4">
+      {/* Left Column: D-VIEW SOLUTIONS Branding & Direct Concierge */}
+      <div class="lg:col-span-4 space-y-5">
         <a href="/" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-[#151C19] border border-[#24322B] flex items-center justify-center">
-            <svg class="w-5 h-5 text-[#7CFF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="w-10 h-10 rounded-xl bg-[#131b17] border border-[#22c55e]/30 flex items-center justify-center shadow-lg">
+            <svg class="w-5 h-5 text-[#22c55e]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           </div>
           <div>
             <div class="flex items-center gap-1.5">
-              <span class="text-xl font-extrabold text-white">D-VIEW</span>
-              <span class="text-xs px-1.5 py-0.5 rounded bg-[#7CFF3A]/10 text-[#7CFF3A] font-semibold border border-[#7CFF3A]/20">
+              <span class="text-xl font-black text-white">D-VIEW</span>
+              <span class="text-xs px-1.5 py-0.5 rounded bg-[#22c55e]/15 text-[#22c55e] font-black uppercase border border-[#22c55e]/30">
                 SOLUTIONS
               </span>
             </div>
-            <span class="text-[10px] text-[#94A3B8] uppercase tracking-wider block">
-              Architectural Balcony Safety Engineering
+            <span class="text-[9px] text-[#94a3b8] uppercase tracking-widest block font-bold">
+              BALCONY SAFETY ENGINEERING
             </span>
           </div>
         </a>
 
-        <p class="text-xs text-[#94A3B8] leading-relaxed max-w-sm">
-          Engineering certified SS-316 high-tensile invisible safety grills and balcony containment systems across Andhra Pradesh. Preserving panoramic views while safeguarding families and pets.
+        <p class="text-xs text-[#94a3b8] leading-relaxed max-w-sm">
+          India's premier architectural invisible grill specialist for modern luxury high-rises and private residences.
         </p>
 
-        <div class="pt-2 flex items-center gap-4 text-xs">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-[#7CFF3A]"></span>
-            <span class="text-white font-semibold">SS-316 Marine Metallurgy</span>
+        {/* Direct Concierge Block */}
+        <div class="pt-2 p-4 rounded-xl bg-[#131b17] border border-[#24322B] space-y-2 text-xs">
+          <span class="block text-[10px] font-black text-[#22c55e] uppercase tracking-wider">
+            DIRECT CONCIERGE
+          </span>
+          <div class="flex items-center gap-2 text-white">
+            <span class="text-[#94a3b8]">Call:</span>
+            <a href="tel:+919494328999" class="font-bold hover:text-[#22c55e] transition-colors">
+              +91 94943 28999
+            </a>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-[#7CFF3A]"></span>
-            <span class="text-white font-semibold">5-10 Year Rust Warranty</span>
+          <div class="flex items-center gap-2 text-white">
+            <span class="text-[#94a3b8]">WhatsApp:</span>
+            <a href="https://wa.me/919494328999" target="_blank" rel="noopener noreferrer" class="font-bold text-[#22c55e] hover:underline">
+              +91 94943 28999
+            </a>
+          </div>
+          <div class="flex items-center gap-2 text-white">
+            <span class="text-[#94a3b8]">Email:</span>
+            <a href="mailto:contact@dviewsolutions.com" class="hover:text-[#22c55e] transition-colors">
+              contact@dviewsolutions.com
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Solutions */}
-      <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
-          Safety Solutions
+      {/* Middle Column 1: Collections */}
+      <div class="lg:col-span-2">
+        <h4 class="text-xs font-black uppercase tracking-wider text-white mb-4">
+          Collections
         </h4>
-        <ul class="space-y-2.5 text-xs text-[#94A3B8]">
-          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Premium Invisible Grills</a></li>
-          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Balcony Safety Nets</a></li>
-          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Pigeon & Bird Screens</a></li>
-          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">High-Rise Duct Containment</a></li>
-          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Children Balcony Safety</a></li>
-          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Pet Balcony Barriers</a></li>
+        <ul class="space-y-3 text-xs text-[#94a3b8]">
+          <li><a href="#solutions" class="hover:text-[#22c55e] transition-colors">Balcony SS-316 Grills</a></li>
+          <li><a href="#solutions" class="hover:text-[#22c55e] transition-colors">Window Safety Grills</a></li>
+          <li><a href="#solutions" class="hover:text-[#solutions] hover:text-[#22c55e] transition-colors">Staircase Safety Grills</a></li>
+          <li><a href="#solutions" class="hover:text-[#22c55e] transition-colors">High-Rise Elevation Grills</a></li>
         </ul>
       </div>
 
-      {/* 6 City Hubs */}
-      <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
-          Location Hubs (AP)
+      {/* Middle Column 2: Standards */}
+      <div class="lg:col-span-2">
+        <h4 class="text-xs font-black uppercase tracking-wider text-white mb-4">
+          Standards
         </h4>
-        <ul class="space-y-2.5 text-xs text-[#94A3B8]">
-          {ALL_LOCATIONS.map((loc) => (
-            <li>
-              <a href={`/locations/${loc.slug}`} class="hover:text-[#7CFF3A] transition-colors flex items-center justify-between">
-                <span>{loc.name}</span>
-                <span class="text-[10px] text-[#64748B]">{loc.district}</span>
-              </a>
-            </li>
-          ))}
-          <li class="pt-1">
-            <a href="/locations" class="text-[#7CFF3A] font-semibold hover:underline">
-              All 6 Hubs Directory →
-            </a>
-          </li>
+        <ul class="space-y-3 text-xs text-[#94a3b8]">
+          <li><a href="#calculator" class="hover:text-[#22c55e] transition-colors">Estimate Calculator</a></li>
+          <li><a href="#technical" class="hover:text-[#22c55e] transition-colors">Virgin SS-316 Metallurgy</a></li>
+          <li><a href="#gallery" class="hover:text-[#22c55e] transition-colors">Real Installation Gallery</a></li>
+          <li><a href="#trust" class="hover:text-[#22c55e] transition-colors">10-Year Warranty Terms</a></li>
         </ul>
       </div>
 
-      {/* Contact & Support */}
-      <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
-          Contact & Bookings
+      {/* Right Column: Service Regions & Sub-banner */}
+      <div class="lg:col-span-4 space-y-4">
+        <h4 class="text-xs font-black uppercase tracking-wider text-white mb-4">
+          Service Regions (Andhra Pradesh)
         </h4>
-        <div class="space-y-3 text-xs text-[#94A3B8]">
-          <div>
-            <span class="block text-[10px] uppercase text-[#64748B]">Central Helpline</span>
-            <a href="tel:+919494328999" class="text-sm font-bold text-white hover:text-[#7CFF3A]">
-              +91 94943 28999
-            </a>
-          </div>
-          <div>
-            <span class="block text-[10px] uppercase text-[#64748B]">WhatsApp Consultations</span>
-            <a href="https://wa.me/919494328999" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#7CFF3A] hover:underline">
-              Chat on WhatsApp
-            </a>
-          </div>
-          <div>
-            <span class="block text-[10px] uppercase text-[#64748B]">Corporate Email</span>
-            <a href="mailto:contact@dviewsolutions.in" class="text-xs text-white hover:underline">
-              contact@dviewsolutions.in
-            </a>
-          </div>
-          <div>
-            <span class="block text-[10px] uppercase text-[#64748B]">Operating Hours</span>
-            <span class="text-xs text-[#C7CDD1]">Mon - Sun: 8:00 AM – 8:00 PM</span>
-          </div>
+        <div class="grid grid-cols-2 gap-2 text-xs text-[#cbd5e1]">
+          <a href="/locations/vizag" class="p-2 rounded-lg bg-[#131b17] border border-[#24322B] hover:border-[#22c55e] hover:text-[#22c55e] transition-all">
+            Visakhapatnam (Vizag)
+          </a>
+          <a href="/locations/rajahmundry" class="p-2 rounded-lg bg-[#131b17] border border-[#24322B] hover:border-[#22c55e] hover:text-[#22c55e] transition-all">
+            Rajamahendravaram
+          </a>
+          <a href="/locations/vijayawada-amaravati" class="p-2 rounded-lg bg-[#131b17] border border-[#24322B] hover:border-[#22c55e] hover:text-[#22c55e] transition-all">
+            Vijayawada & Amaravati
+          </a>
+          <a href="/locations/guntur" class="p-2 rounded-lg bg-[#131b17] border border-[#24322B] hover:border-[#22c55e] hover:text-[#22c55e] transition-all">
+            Guntur
+          </a>
+          <a href="/locations/kakinada" class="p-2 rounded-lg bg-[#131b17] border border-[#24322B] hover:border-[#22c55e] hover:text-[#22c55e] transition-all">
+            Kakinada
+          </a>
+          <a href="/locations/nellore" class="p-2 rounded-lg bg-[#131b17] border border-[#24322B] hover:border-[#22c55e] hover:text-[#22c55e] transition-all">
+            Nellore
+          </a>
+        </div>
+
+        {/* Sub-banner */}
+        <div class="p-3.5 rounded-xl bg-gradient-to-r from-[#131b17] to-[#1a2420] border border-[#22c55e]/30">
+          <p class="text-xs font-semibold text-[#22c55e] flex items-center gap-2">
+            <span>📐</span>
+            <span>Doorstep laser measurement across all gated societies and high-rise apartments.</span>
+          </p>
         </div>
       </div>
 
     </div>
 
     {/* Bottom Legal Row */}
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748b]">
       <div>
-        © 2026 D-VIEW SOLUTIONS. All rights reserved. Registered architectural safety contractor in Andhra Pradesh.
+        © 2026 D-VIEW SOLUTIONS. All rights reserved. Architectural invisible safety grills engineering specialist.
       </div>
       <div class="flex items-center gap-6">
-        <a href="/about" class="hover:text-[#94A3B8] transition-colors">About Us</a>
-        <a href="/projects" class="hover:text-[#94A3B8] transition-colors">Projects</a>
-        <a href="/contact" class="hover:text-[#94A3B8] transition-colors">Contact</a>
-        <a href="#book-visit" class="hover:text-[#94A3B8] transition-colors">Disclaimer</a>
+        <a href="/about" class="hover:text-[#94a3b8] transition-colors">About Us</a>
+        <a href="#projects" class="hover:text-[#94a3b8] transition-colors">Projects</a>
+        <a href="#book-visit" class="hover:text-[#94a3b8] transition-colors">Book Free Visit</a>
       </div>
     </div>
 

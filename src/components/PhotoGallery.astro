@@ -1,0 +1,140 @@
+---
+interface Props {
+  cityName?: string;
+}
+
+const { cityName = 'Andhra Pradesh' } = Astro.props;
+
+const galleryItems = [
+  {
+    title: 'Living Room Horizon View',
+    subtitle: 'From Inside Living Room to Endless Sea & River Vistas',
+    description: 'Optical clarity that completely dissolves heavy barriers. Residents enjoy 99% unblocked natural light and coastal breezes.',
+    image: '/images/visakhapatnam-hero.jpg',
+    tag: 'INTERIOR PERSPECTIVE',
+    metric: '99% View Clarity'
+  },
+  {
+    title: '2-Inch Child & Pet Safety Interval',
+    subtitle: 'Strict 50mm Spacing With Zero Horizontal Footholds',
+    description: 'Precision vertical spacing prevents toddlers from climbing or slipping, while keeping dogs and cats safely contained.',
+    image: '/images/child-safety-balcony.jpg',
+    tag: 'FALL PREVENTION',
+    metric: 'Zero Foothold'
+  },
+  {
+    title: 'Clean Architectural Corner Anchoring',
+    subtitle: 'Concealed Fasteners & Powder-Coated Aluminum Track Fixtures',
+    description: '6063-T6 heavy-gauge aluminum profiles anchor firmly into structural concrete, hiding all tension bolts for a flush minimalist line.',
+    image: '/images/wire-engineering.jpg',
+    tag: 'HARDWARE PRECISION',
+    metric: '6063-T6 Aluminum'
+  },
+  {
+    title: 'High-Rise Balcony Cross-Ventilation',
+    subtitle: 'Natural River & Ocean Airflow Without Pigeon Intrusion',
+    description: 'Unlike solid glass or bulky box bars, high-tensile SS-316 cables preserve 100% natural air circulation and eliminate pigeons.',
+    image: '/images/rajahmundry-hero.jpg',
+    tag: 'VENTILATION & HYGIENE',
+    metric: '100% Airflow'
+  },
+  {
+    title: 'Penthouse & Corner Balcony Elevation',
+    subtitle: 'Wind-Load Tested For 15+ Floor Towers & Coastal Gusts',
+    description: 'Engineered with >400 kgf breaking load per strand, delivering safety for coastal penthouses and high-elevation residences.',
+    image: '/images/project-penthouse.jpg',
+    tag: 'HIGH-RISE ENGINEERING',
+    metric: '>400kg Breaking Load'
+  },
+  {
+    title: 'Smooth Paw-Safe Polyamide Sheath',
+    subtitle: 'Virgin Nylon-12 Coating Gentle On Hands & Pet Paws',
+    description: 'Transparent protective outer jacket resists claws, eliminates sharp edges, and prevents salt-water chloride accumulation.',
+    image: '/images/pet-safety.jpg',
+    tag: 'PET & CHILD CARE',
+    metric: 'Paw-Safe Nylon-12'
+  }
+];
+---
+
+<section id="gallery" class="py-20 bg-[#0a0f0d] border-t border-[#24322B] relative overflow-hidden">
+  {/* Ambient glow */}
+  <div class="absolute top-1/3 left-0 w-96 h-96 bg-[#22c55e]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    {/* Section Header - 80% Image / 20% Concise Text Priority */}
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#131b17] border border-[#22c55e]/30 text-xs font-bold text-[#22c55e] uppercase tracking-wider mb-3">
+          <span>Real Balcony Installations</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+          VISUAL PROOF: <span class="text-[#22c55e]">LUXURY INVISIBLE GRILLS</span>
+        </h2>
+      </div>
+      <p class="mt-3 md:mt-0 text-xs sm:text-sm text-[#94a3b8] max-w-md">
+        Real installation photography showing inside-out balcony horizons, 2-inch child safety spacing, and flush architectural corner tracks.
+      </p>
+    </div>
+
+    {/* Image-First Gallery Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {galleryItems.map((item) => (
+        <div class="group relative rounded-2xl overflow-hidden bg-[#131b17] border border-[#24322B] hover:border-[#22c55e]/60 transition-all duration-300 shadow-xl hover:-translate-y-1.5 flex flex-col justify-between">
+          
+          {/* 80% High-Definition Visual Frame */}
+          <div class="relative h-72 sm:h-80 overflow-hidden">
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 contrast-[1.05]"
+              loading="lazy"
+            />
+            {/* Subtle Gradient vignette */}
+            <div class="absolute inset-0 bg-gradient-to-t from-[#131b17] via-transparent to-black/30"></div>
+            
+            {/* Wire overlay texture */}
+            <div class="absolute inset-0 wire-grid-overlay opacity-20 pointer-events-none"></div>
+
+            {/* Top pill tags */}
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#0a0f0d]/80 text-[#22c55e] border border-[#22c55e]/30 backdrop-blur-md">
+                {item.tag}
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-black text-white bg-black/60 border border-white/10 backdrop-blur-md">
+                {item.metric}
+              </span>
+            </div>
+          </div>
+
+          {/* 20% Concise Modern Micro-copy */}
+          <div class="p-6 space-y-2">
+            <h3 class="text-lg font-black text-white group-hover:text-[#22c55e] transition-colors">
+              {item.title}
+            </h3>
+            <span class="block text-xs font-bold text-[#22c55e] leading-snug">
+              {item.subtitle}
+            </span>
+            <p class="text-xs text-[#94a3b8] leading-relaxed line-clamp-2">
+              {item.description}
+            </p>
+          </div>
+
+          {/* Bottom Action Line */}
+          <div class="px-6 pb-5 pt-0">
+            <a 
+              href="#calculator" 
+              class="w-full py-2.5 rounded-xl bg-[#0a0f0d] text-xs font-bold text-[#cbd5e1] group-hover:bg-[#22c55e] group-hover:text-black transition-colors text-center flex items-center justify-center gap-1.5 border border-[#24322B] group-hover:border-[#22c55e]"
+            >
+              <span>Calculate For Your Balcony</span>
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

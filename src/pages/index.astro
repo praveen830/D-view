@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar';
 import LuxuryCitySlider from '../components/LuxuryCitySlider.tsx';
 import PriceCalculator from '../components/PriceCalculator';
+import PhotoGallery from '../components/PhotoGallery.astro';
 import ProblemSolutionGrid from '../components/ProblemSolutionGrid.astro';
-import MaterialSection from '../components/MaterialSection.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import FormulaSection from '../components/FormulaSection.astro';
 import ServicesGrid from '../components/ServicesGrid.astro';
@@ -198,33 +198,33 @@ const locationHighlights = [
           </div>
         </a>
 
-        {/* Card 3: Core Safety Nets - The Weightless Embrace */}
+        {/* Card 3: Balcony Invisible Grills - The Weightless Embrace */}
         <a 
-          href="/solutions"
-          class="group relative h-96 rounded-2xl overflow-hidden border border-[#24322B] hover:border-[#7CFF3A] transition-all duration-300 flex flex-col justify-end p-6 shadow-2xl hover:-translate-y-1"
+          href="/locations/vizag"
+          class="group relative h-96 rounded-2xl overflow-hidden border border-[#24322B] hover:border-[#22c55e] transition-all duration-300 flex flex-col justify-end p-6 shadow-2xl hover:-translate-y-1"
         >
           <img 
             src="/images/child-safety-balcony.jpg" 
-            alt="Balcony & Children Safety Nets" 
+            alt="Balcony Invisible Safety Grills" 
             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-75"
             loading="lazy"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/40 to-transparent"></div>
           <div class="relative z-10 space-y-2">
-            <span class="inline-block text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded bg-[#1A2420] text-[#7CFF3A] border border-[#7CFF3A]/30">
-              CORE SAFETY NETS
+            <span class="inline-block text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded bg-[#1A2420] text-[#22c55e] border border-[#22c55e]/30">
+              BALCONY SAFETY
             </span>
-            <span class="block text-xs text-[#7CFF3A] font-bold tracking-wider uppercase">
+            <span class="block text-xs text-[#22c55e] font-bold tracking-wider uppercase">
               The Weightless Embrace
             </span>
-            <h3 class="text-xl font-black text-white group-hover:text-[#7CFF3A] transition-colors leading-tight">
-              Children & Pet Containment
+            <h3 class="text-xl font-black text-white group-hover:text-[#22c55e] transition-colors leading-tight">
+              Children & Pet Fall Defense
             </h3>
             <p class="text-xs text-[#C7CDD1] line-clamp-2">
-              High-density UV-stabilized mesh for complete peace of mind across high-elevation balconies.
+              SS-316 high-tensile 2-inch vertical cables for complete peace of mind across high-elevation balconies.
             </p>
-            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-[#7CFF3A] pt-1">
-              <span>Explore Solutions</span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-[#22c55e] pt-1">
+              <span>Explore Balcony Grills</span>
               <span>→</span>
             </span>
           </div>
@@ -339,8 +339,8 @@ const locationHighlights = [
   {/* Problem-Solution Grid */}
   <ProblemSolutionGrid location={defaultLocation} />
 
-  {/* Engineering Hardware Specs */}
-  <MaterialSection />
+  {/* Visual-First Photo Gallery & Proof */}
+  <PhotoGallery cityName="Andhra Pradesh" />
 
   {/* Trust & Maintenance Kit */}
   <TrustBadges location={defaultLocation} />

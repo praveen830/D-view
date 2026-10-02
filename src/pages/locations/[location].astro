@@ -4,8 +4,7 @@ import Navbar from '../../components/Navbar';
 import Hero from '../../components/Hero.astro';
 import PriceCalculator from '../../components/PriceCalculator';
 import ProblemSolutionGrid from '../../components/ProblemSolutionGrid.astro';
-import TechnicalGuide from '../../components/TechnicalGuide.astro';
-import MaterialSection from '../../components/MaterialSection.astro';
+import PhotoGallery from '../../components/PhotoGallery.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import FormulaSection from '../../components/FormulaSection.astro';
 import AreasServed from '../../components/AreasServed.astro';
@@ -64,11 +63,8 @@ const { location } = Astro.props;
   {/* 5. Problem/Solution Grid */}
   <ProblemSolutionGrid location={location} />
 
-  {/* 6. Local Environment / Technical Guide */}
-  <TechnicalGuide location={location} />
-
-  {/* 7. Material & Engineering */}
-  <MaterialSection />
+  {/* 6. Visual-First Photo Gallery & Proof */}
+  <PhotoGallery cityName={location.name} />
 
   {/* 8. Warranty / Service / Trust & Complimentary Maintenance Kit */}
   <TrustBadges location={location} />

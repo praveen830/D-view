@@ -171,7 +171,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     
     seoTitle: 'Premium Invisible Grills in Rajahmundry | D-VIEW Solutions',
     seoDescription: 'Engineered SS-316 invisible grills for balconies in Rajahmundry & Rajamahendravaram. Unobstructed Godavari river views, child safety & pigeon protection. Free site measurement.',
-    keywords: ['invisible grills in rajahmundry', 'balcony safety nets rajamahendravaram', 'invisible safety grill morampudi', 'ss 316 invisible grills rajahmundry']
+    keywords: ['invisible grills in rajahmundry', 'balcony invisible grills rajamahendravaram', 'invisible safety grill morampudi', 'ss 316 invisible grills rajahmundry']
   },
 
   visakhapatnam: {
@@ -455,7 +455,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     
     seoTitle: 'Invisible Grills in Kakinada | SS-316 Balcony Safety | D-VIEW',
     seoDescription: 'High-grade SS-316 invisible safety grills in Kakinada. Coastal-resistant, child-safe, pigeon-proof balconies. Free site visits in Sarpavaram & Vakalapudi.',
-    keywords: ['invisible grills kakinada', 'balcony safety nets kakinada', 'ss 316 grills sarpavaram', 'pigeon nets kakinada']
+    keywords: ['invisible grills kakinada', 'balcony invisible grills kakinada', 'ss 316 grills sarpavaram', 'pigeon barrier grills kakinada']
   },
 
   guntur: {
@@ -539,7 +539,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     
     seoTitle: 'Invisible Grills in Guntur | Balcony Safety Solutions | D-VIEW',
     seoDescription: 'Architectural SS-316 invisible safety grills in Guntur. Brodipet, Arundelpet & Amaravati Road. Child safety, pigeon nets & modern aesthetics. Free quote.',
-    keywords: ['invisible grills in guntur', 'balcony safety grills brodipet', 'invisible grills amaravati road', 'pigeon nets guntur']
+    keywords: ['invisible grills in guntur', 'balcony safety grills brodipet', 'invisible grills amaravati road', 'pigeon barrier grills guntur']
   },
 
   nellore: {
@@ -623,7 +623,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     
     seoTitle: 'Invisible Grills in Nellore | Balcony Safety Solutions | D-VIEW',
     seoDescription: 'SS-316 invisible safety grills for apartments in Nellore. Magunta Layout, Balaji Nagar & Dargamitta. Child-safe, pigeon-proof, Penna river views.',
-    keywords: ['invisible grills in nellore', 'balcony safety grills magunta layout', 'pigeon nets nellore', 'safety grills balaji nagar']
+    keywords: ['invisible grills in nellore', 'balcony safety grills magunta layout', 'pigeon barrier grills nellore', 'safety grills balaji nagar']
   }
 };
 
