@@ -10,51 +10,63 @@ const { location } = Astro.props;
 const cards = [
   {
     id: 'child',
-    title: 'CHILD SAFETY',
-    subtitle: 'Fall prevention with uncompromised views',
-    desc: 'Create a safer balcony environment while preserving the openness of the space. Installed with rigid 2-inch vertical intervals, eliminating footholds so toddlers cannot climb or squeeze through.',
-    tag: 'Zero-Climb Spacing',
-    icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'
+    title: "CHILDREN'S SAFETY",
+    teluguTitle: 'చిన్న పిల్లల రక్షణ',
+    subtitle: 'Zero-climb vertical wire barrier',
+    desc: 'High-rise balcony railings matching frames degghara full safe setup. 2-inch vertical intervals with zero horizontal footholds prevent climbing or slipping through.',
+    tag: 'Zero-Climb Barrier',
+    image: '/images/child-safety-balcony.jpg',
+    highlight: 'Rigid 50mm wire gap certified safe for toddlers'
   },
   {
     id: 'pet',
-    title: 'PET SAFETY',
+    title: 'PETS SAFETY',
+    teluguTitle: 'పెంపుడు జంతువుల భద్రత',
     subtitle: 'Gap protection for active dogs & cats',
-    desc: 'Reduce exposure to wide balcony railings while maintaining complete ventilation and natural sightlines. The smooth polyamide outer sheath prevents claw and paw abrasions.',
+    desc: 'Cats and dogs cannot slip through balcony gaps. Smooth clear polyamide coating protects pet paws and resists aggressive claw scratching.',
     tag: 'Scratch-Proof Coating',
-    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+    image: '/images/pet-safety.jpg',
+    highlight: 'Continuous perimeter containment without blocking breeze'
   },
   {
     id: 'elderly',
-    title: 'ELDERLY REASSURANCE',
+    title: 'OLD AGE PERSONS SAFETY',
+    teluguTitle: 'పెద్దవారికి భరోసా & సపోర్ట్',
     subtitle: 'Psychological comfort at high elevations',
-    desc: 'Provides reassuring perimeter containment for seniors enjoying morning fresh air on high-floor balconies in {location.name}, preventing accidental slips or vertigo-induced hazards.',
-    tag: 'Structural Rigidity',
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+    desc: 'Provides firm structural reassurance for seniors on high-floor balconies, preventing accidental slips, loss of balance, or vertigo hazards.',
+    tag: 'Firm Structural Support',
+    image: '/images/project-penthouse.jpg',
+    highlight: 'Tension calibrated to withstand human body impacts'
   },
   {
     id: 'pigeon',
-    title: 'PIGEON & BIRD SHIELD',
-    subtitle: 'Zero nesting & stain-free balconies',
-    desc: 'Pigeons cannot squeeze through the 50mm wire intervals or perch on the smooth, thin tensioned cables. Restores clean, hygienic balcony living without ugly, sagging dark bird nets.',
-    tag: '50mm Bird Defense',
-    icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z'
+    title: 'PIGEONS & BIRD DEFENSE',
+    teluguTitle: 'పావురాలు & పక్షుల రక్షణ',
+    subtitle: 'Zero nesting & stain-free clean balconies',
+    desc: '50mm wire intervals strictly prevent pigeons and common birds from entering or perching, keeping your floor clean and hygienic with zero view obstruction.',
+    tag: '50mm Bird Screen',
+    image: '/images/kakinada-hero.jpg',
+    highlight: 'Hygienic living without ugly sagging dark nets'
   },
   {
     id: 'emergency',
-    title: 'EMERGENCY FIRE EGRESS',
-    subtitle: 'Tested compliance & emergency planning',
-    desc: 'Unlike immovable welded iron box grilles that trap families during high-rise fire accidents, high-tensile SS-316 cables can be severed in urgent emergencies using a standard manual cable cutter.',
-    tag: 'Fire Rescue Compliant',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+    title: 'EMERGENCY FIRE ESCAPE',
+    teluguTitle: 'అత్యవసర ఫైర్ ఎస్కేప్ సిస్టమ్',
+    subtitle: '1-Minute manual wire cutter escape',
+    desc: 'Traditional heavy welded iron grilles trap families during fire accidents. D-VIEW high-tensile SS-316 cables can be safely cut in just 1 minute using standard wire cutters.',
+    tag: '1-Min Safe Egress',
+    image: '/images/wire-engineering.jpg',
+    highlight: 'Compliant with emergency rescue guidelines'
   },
   {
-    id: 'architectural',
-    title: 'MODERN ARCHITECTURAL LOOK',
-    subtitle: 'Maximum light, breeze & property value',
-    desc: 'From 5 meters away, the high-tensile cables virtually disappear against the horizon. Maximizes cross-ventilation, floods interiors with daylight, and meets upscale apartment facade rules.',
-    tag: '99% Light & Airflow',
-    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'
+    id: 'luxury',
+    title: 'MODERN LUXURY & FREE AIR',
+    teluguTitle: 'లగ్జరీ లుక్ & సహజ గాలివెలుతురు',
+    subtitle: 'Unblocked 99% light and sea/river breeze',
+    desc: 'Replaces old jail-like iron bars with slim stainless cables that disappear from 5 meters away. Maximizes cross-ventilation and natural daylight in {location.name}.',
+    tag: '99% View & Breeze',
+    image: '/images/visakhapatnam-hero.jpg',
+    highlight: 'Luxury apartment association (RWA) facade approved'
   }
 ];
 ---
@@ -65,9 +77,9 @@ const cards = [
     {/* Section Header */}
     <div class="text-center max-w-3xl mx-auto mb-16">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/30 text-xs font-semibold text-[#7CFF3A] uppercase tracking-wider mb-4">
-        <span>Comprehensive Balcony Protection</span>
+        <span>The Complete Problem-Solver Grid</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
         ONE BALCONY. <br />
         <span class="text-[#7CFF3A]">MULTIPLE SAFETY CONCERNS.</span>
       </h2>
@@ -76,47 +88,79 @@ const cards = [
       </p>
     </div>
 
-    {/* 6 Cards Grid */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {/* 6 Real Solutions Grid with Actual Images */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
       {cards.map((card) => (
-        <div class="group relative bg-[#121816] rounded-2xl border border-[#24322B] p-7 transition-all duration-300 hover:border-[#7CFF3A]/50 hover:bg-[#151C19] hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+        <div class="group bg-[#121816] rounded-3xl border border-[#24322B] overflow-hidden hover:border-[#7CFF3A] transition-all duration-300 flex flex-col justify-between shadow-xl hover:-translate-y-1.5">
           
           <div>
-            {/* Header row */}
-            <div class="flex items-center justify-between mb-5">
-              <div class="w-12 h-12 rounded-xl bg-[#1A2420] border border-[#24322B] group-hover:border-[#7CFF3A]/40 flex items-center justify-center text-[#7CFF3A] transition-colors">
-                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={card.icon} />
-                </svg>
-              </div>
-              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#1A2420] text-[#7CFF3A] border border-[#7CFF3A]/20">
+            {/* Image Frame */}
+            <div class="relative h-52 overflow-hidden">
+              <img 
+                src={card.image} 
+                alt={`${card.title} - D-VIEW Balcony Safety`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#121816] via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 bg-[#0B0D0C]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#24322B] text-[11px] font-bold text-[#7CFF3A]">
                 {card.tag}
               </span>
             </div>
 
-            {/* Title & Sub */}
-            <h3 class="text-xl font-extrabold text-white group-hover:text-[#7CFF3A] transition-colors mb-1">
-              {card.title}
-            </h3>
-            <span class="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wider mb-3">
-              {card.subtitle}
-            </span>
+            {/* Content */}
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-1">
+                <h3 class="text-lg font-black text-white group-hover:text-[#7CFF3A] transition-colors">
+                  {card.title}
+                </h3>
+                <span class="text-[11px] text-[#7CFF3A] font-semibold">
+                  {card.teluguTitle}
+                </span>
+              </div>
+              <span class="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wider mb-3">
+                {card.subtitle}
+              </span>
 
-            {/* Description */}
-            <p class="text-sm text-[#C7CDD1] leading-relaxed">
-              {card.desc.replace('{location.name}', location.name)}
-            </p>
+              <p class="text-xs text-[#C7CDD1] leading-relaxed mb-4">
+                {card.desc.replace('{location.name}', location.name)}
+              </p>
+
+              <div class="p-2.5 rounded-xl bg-[#151C19] border border-[#24322B] text-[11px] text-[#7CFF3A] font-medium flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#7CFF3A] shrink-0"></span>
+                <span>{card.highlight}</span>
+              </div>
+            </div>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-[#24322B] flex items-center justify-between text-xs text-[#94A3B8]">
-            <span>D-VIEW Certified System</span>
-            <span class="text-[#7CFF3A] font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-              Learn more →
-            </span>
+          <div class="px-6 pb-6 pt-0">
+            <a
+              href="#book-visit"
+              class="w-full py-2.5 rounded-xl bg-[#1A2420] text-xs font-bold text-white group-hover:bg-[#7CFF3A] group-hover:text-[#0B0D0C] transition-colors flex items-center justify-center gap-1.5"
+            >
+              <span>Get Free Site Measurement</span>
+              <span>→</span>
+            </a>
           </div>
 
         </div>
       ))}
+    </div>
+
+    {/* The Closing Statement Line requested by user */}
+    <div class="bg-gradient-to-r from-[#151C19] via-[#1A2420] to-[#151C19] rounded-3xl border-2 border-[#7CFF3A] p-6 sm:p-10 text-center shadow-[0_0_35px_rgba(124,255,58,0.25)]">
+      <div class="max-w-3xl mx-auto space-y-2">
+        <span class="text-xs font-black uppercase tracking-widest text-[#7CFF3A]">
+          THE D-VIEW PROMISE
+        </span>
+        <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight leading-snug">
+          "Okke Okka Balcony Installation... <br class="hidden sm:inline" />
+          <span class="text-[#7CFF3A]">Enno High-Alert Safety Problems Nundi Mee Intiki Life-Time Premium Protection!"</span>
+        </h3>
+        <p class="text-xs sm:text-sm text-[#C7CDD1] pt-2">
+          One single precision installation protects children, pets, and elders while preserving 100% of your open views and fresh breezes.
+        </p>
+      </div>
     </div>
 
   </div>

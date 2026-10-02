@@ -1,5 +1,6 @@
 ---
 import type { LocationData } from '../data/locations';
+import HeroPriceCalculator from './HeroPriceCalculator';
 
 interface Props {
   location: LocationData;
@@ -8,89 +9,85 @@ interface Props {
 const { location } = Astro.props;
 ---
 
-<section class="relative min-h-[90vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+<section class="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
   
-  {/* Full-bleed Architectural Hero Image */}
+  {/* Full-bleed Architectural Hero Image with Crystal Clear Invisible Grill Effect */}
   <div class="absolute inset-0 z-0">
     <img 
       src={location.heroImage} 
       alt={location.heroImageAlt}
-      class="w-full h-full object-cover object-center filter brightness-[0.75] contrast-[1.05]"
+      class="w-full h-full object-cover object-center filter brightness-[0.72] contrast-[1.05]"
       loading="eager"
       fetchpriority="high"
     />
-    {/* Cinematic Overlays */}
-    <div class="absolute inset-0 bg-gradient-to-r from-[#0B0D0C]/95 via-[#0B0D0C]/75 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D0C] via-transparent to-[#0B0D0C]/40"></div>
-    {/* Invisible Grill Wire Texture Effect */}
-    <div class="absolute inset-0 wire-grid-overlay opacity-25 pointer-events-none"></div>
+    {/* Dark subtle architectural vignette overlays */}
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0B0D0C]/90 via-[#0B0D0C]/60 to-[#0B0D0C]/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0B0D0C] via-transparent to-[#0B0D0C]/50"></div>
+    {/* Clean, subtle vertical wire-grid overlay */}
+    <div class="absolute inset-0 wire-grid-overlay opacity-30 pointer-events-none"></div>
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
-    <div class="max-w-3xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       
-      {/* City Badge */}
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121816]/90 border border-[#7CFF3A]/40 backdrop-blur-md mb-6 shadow-lg">
-        <span class="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse"></span>
-        <span class="text-xs font-bold uppercase tracking-wider text-[#7CFF3A]">
-          {location.badge}
-        </span>
+      {/* Left Column: Floating Price Calculator Card (Reference Mockup Style) */}
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <HeroPriceCalculator client:load citySlug={location.slug} cityName={location.name} />
       </div>
 
-      {/* Main Headline */}
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] mb-6">
-        {location.heroHeadline.split(' IN ')[0]} <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#7CFF3A] via-[#A6FF7A] to-white">
-          IN {location.name.toUpperCase()}
-        </span>
-      </h1>
-
-      {/* Subheading */}
-      <p class="text-lg sm:text-xl text-[#E2E8F0] font-normal leading-relaxed mb-8 max-w-2xl text-shadow-sm">
-        {location.heroSubhead}
-      </p>
-
-      {/* Primary & Secondary CTAs */}
-      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-        <a 
-          href="#book-visit" 
-          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-extrabold text-[#0B0D0C] bg-[#7CFF3A] hover:bg-[#8FFF52] transition-all duration-200 shadow-[0_0_30px_rgba(124,255,58,0.35)] hover:shadow-[0_0_40px_rgba(124,255,58,0.5)] hover:-translate-y-0.5 active:translate-y-0 text-center"
-        >
-          <span>BOOK A FREE SITE VISIT</span>
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
-
-        <a 
-          href="#calculator" 
-          class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-base font-bold text-white bg-[#151C19]/80 hover:bg-[#1A2420] border border-[#24322B] hover:border-[#7CFF3A]/60 backdrop-blur-md transition-all text-center"
-        >
-          <svg class="w-5 h-5 text-[#7CFF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-          <span>CHECK ESTIMATED PRICE</span>
-        </a>
-      </div>
-
-      {/* Engineering Trust Pillars */}
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-[#24322B]/80 backdrop-blur-sm">
-        <div class="bg-[#0B0D0C]/60 rounded-xl p-3 border border-[#24322B]/80">
-          <span class="block text-[11px] uppercase tracking-wider text-[#94A3B8] font-medium">Metallurgy</span>
-          <span class="text-sm font-extrabold text-white">SS-316 Marine</span>
+      {/* Right Column: Hero Heading, Subtitle & Action (Reference Mockup Style) */}
+      <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 text-center lg:text-left">
+        
+        {/* Location Badge */}
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#121816]/90 border border-[#7CFF3A]/50 backdrop-blur-md shadow-[0_0_20px_rgba(124,255,58,0.2)]">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#7CFF3A] animate-ping"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#7CFF3A]">
+            {location.badge}
+          </span>
         </div>
-        <div class="bg-[#0B0D0C]/60 rounded-xl p-3 border border-[#24322B]/80">
-          <span class="block text-[11px] uppercase tracking-wider text-[#94A3B8] font-medium">Tensile Load</span>
-          <span class="text-sm font-extrabold text-[#7CFF3A]">&gt; 400 kg / wire</span>
+
+        {/* Big Bold Headline matching Reference Image */}
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+          PREMIUM INVISIBLE GRILLS <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#7CFF3A] via-[#A6FF7A] to-white">
+            IN {location.name.toUpperCase()}
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p class="text-base sm:text-xl text-[#E2E8F0] font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
+          {location.heroSubhead}
+        </p>
+
+        {/* Big Pill CTA Button (Matching Reference Mockup) */}
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <a 
+            href="#book-visit" 
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm sm:text-base font-extrabold text-[#0B0D0C] bg-[#7CFF3A] hover:bg-[#8FFF52] transition-all duration-200 shadow-[0_0_30px_rgba(124,255,58,0.35)] hover:shadow-[0_0_40px_rgba(124,255,58,0.5)] hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <span>SCHEDULE A FREE MEASUREMENT VISIT IN {location.name.toUpperCase()}</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </div>
-        <div class="bg-[#0B0D0C]/60 rounded-xl p-3 border border-[#24322B]/80">
-          <span class="block text-[11px] uppercase tracking-wider text-[#94A3B8] font-medium">Transparency</span>
-          <span class="text-sm font-extrabold text-white">99% Unblocked</span>
+
+        {/* Trust metrics bar */}
+        <div class="grid grid-cols-3 gap-3 pt-6 border-t border-[#24322B]/80 max-w-lg mx-auto lg:mx-0">
+          <div class="bg-[#121816]/80 backdrop-blur-md p-3 rounded-xl border border-[#24322B] text-center">
+            <span class="block text-[10px] text-[#94A3B8] uppercase font-bold">Grade</span>
+            <span class="text-xs sm:text-sm font-extrabold text-[#7CFF3A]">SS-316 Marine</span>
+          </div>
+          <div class="bg-[#121816]/80 backdrop-blur-md p-3 rounded-xl border border-[#24322B] text-center">
+            <span class="block text-[10px] text-[#94A3B8] uppercase font-bold">Visibility</span>
+            <span class="text-xs sm:text-sm font-extrabold text-white">99% Unblocked</span>
+          </div>
+          <div class="bg-[#121816]/80 backdrop-blur-md p-3 rounded-xl border border-[#24322B] text-center">
+            <span class="block text-[10px] text-[#94A3B8] uppercase font-bold">Warranty</span>
+            <span class="text-xs sm:text-sm font-extrabold text-[#7CFF3A]">5-10 Yrs Rust</span>
+          </div>
         </div>
-        <div class="bg-[#0B0D0C]/60 rounded-xl p-3 border border-[#24322B]/80">
-          <span class="block text-[11px] uppercase tracking-wider text-[#94A3B8] font-medium">Warranty</span>
-          <span class="text-sm font-extrabold text-[#7CFF3A]">5-10 Year Rust</span>
-        </div>
+
       </div>
 
     </div>
