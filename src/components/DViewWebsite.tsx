@@ -50,7 +50,7 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Coastal Marine Line SS-316',
     emotionHook: 'Mana Vizag sea coast view invisible grills valla asalu block avvakunda entha luxury ga undo!',
     landmarkDesc: 'Luxury penthouse interior balcony framing RK Beach coastal waves and Kailasagiri hillside through vertical SS-316 cables.',
-    heroImage: '/assets/locations/visakhapatnam.png',
+    heroImage: '/assets/locations/vizag-novotel-straight.jpg',
     activeBelts: ['Madhurawada (27-Floor High-Rises)', 'Yendada', 'Rushikonda', 'PM Palem', 'Anandapuram', 'Pendurthi', 'Gajuwaka'],
     weatherChallenge: "Vizag's high-salinity salt-air and marine damp humidity rapidly corrode cheap iron or low-grade steel wires within months.",
     weatherSolution: 'Strictly Marine Grade SS-316 infused with Molybdenum core for zero-decay corrosion resistance.',
