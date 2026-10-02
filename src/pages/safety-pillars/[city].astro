@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   return Object.entries(cityAliases).map(([alias, targetSlug]) => {
     const loc = ALL_LOCATIONS.find(l => l.slug === targetSlug) || ALL_LOCATIONS[0];
     return {
-      params: { location: alias },
+      params: { city: alias },
       props: { location: loc, slug: alias }
     };
   });
@@ -35,12 +35,12 @@ const { location, slug } = Astro.props;
 ---
 
 <Layout
-  title={`${location.name} SS-316 Invisible Safety Grills | D-VIEW Architectural Safety`}
-  description={location.seoDescription}
-  canonicalUrl={`https://dviewsolutions.in/locations/${slug}`}
+  title={`${location.name} The 6-Pillar Problem Solver | D-VIEW Luxury Architectural Safety`}
+  description={`Discover the 6 architectural proof solutions of D-VIEW SS-316 invisible safety grills in ${location.name}. Child safety, pet protection, pigeon defense, 1-minute fire egress, and transparent luxury airflow.`}
+  canonicalUrl={`https://dviewsolutions.in/safety-pillars/${slug}`}
   cityName={location.name}
   ogImage={location.heroImage}
   keywords={location.keywords}
 >
-  <DViewWebsite client:load initialCitySlug={slug} tier="tier2" />
+  <DViewWebsite client:load initialCitySlug={slug} tier="tier3" />
 </Layout>

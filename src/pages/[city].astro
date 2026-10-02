@@ -41,5 +41,5 @@ const { location, slug } = Astro.props;
   ogImage={location.heroImage}
   keywords={location.keywords}
 >
-  <DViewWebsite client:load initialCitySlug={slug} isSubPageDirect={true} />
+  <DViewWebsite client:load initialCitySlug={slug} tier="tier2" />
 </Layout>
