@@ -176,14 +176,14 @@ export const CITIES_SLIDES: LocationSlide[] = [
         elevation: '15th-Floor Skyscraper Elevation',
         tag: 'Urban High-Rise Shield',
         desc: 'Vertical invisible cables protecting high-floor balconies while providing a grand view of wide avenues and night lights.',
-        image: '/assets/locations/vijayawada.png'
+        image: '/assets/corridors/vijayawada-benzcircle.jpg'
       },
       {
         name: 'Amaravati HappyNest (G+18)',
         elevation: 'G+18 IT & Gov Housing Enclave',
         tag: 'High-Rise Certified',
         desc: 'Precision 50mm vertical wire spacing delivering 100% toddler fall security for HappyNest apartments.',
-        image: '/assets/locations/vijayawada.png'
+        image: '/assets/corridors/vijayawada-happynest.jpg'
       },
       {
         name: 'Moghalrajpuram Hillside Flats',
@@ -382,6 +382,298 @@ export const CITIES_SLIDES: LocationSlide[] = [
   }
 ];
 
+// --- CORRIDOR SPECIFIC ASSET REGISTRY (BRIGHT BALCONY PERSPECTIVES) ---
+export interface CorridorAssetInfo {
+  image: string;
+  title: string;
+  spec: string;
+  cityId?: string;
+}
+
+export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
+  // Vizag Corridors
+  "Madhurawada": {
+    image: "/assets/corridors/vizag-madhurawada.jpg",
+    title: "Madhurawada 27-Floor High-Rises",
+    spec: "Valley Elevation | 27 Towers Lockdown",
+    cityId: "vizag"
+  },
+  "Madhurawada (27-Floor High-Rises)": {
+    image: "/assets/corridors/vizag-madhurawada.jpg",
+    title: "Madhurawada 27-Floor High-Rises",
+    spec: "Valley Elevation | 27 Towers Lockdown",
+    cityId: "vizag"
+  },
+  "Yendada": {
+    image: "/assets/corridors/vizag-yendada.jpg",
+    title: "Yendada Sea-Facing Corridor",
+    spec: "High-Altitude Bay Panoramas",
+    cityId: "vizag"
+  },
+  "Yendada Sea-Facing Corridor": {
+    image: "/assets/corridors/vizag-yendada.jpg",
+    title: "Yendada Sea-Facing Corridor",
+    spec: "High-Altitude Bay Panoramas",
+    cityId: "vizag"
+  },
+  "Rushikonda": {
+    image: "/assets/corridors/vizag-rushikonda.jpg",
+    title: "Rushikonda Luxury Hillside",
+    spec: "Coastal Villa Balconies | Unblocked Waves",
+    cityId: "vizag"
+  },
+  "Rushikonda Luxury Hillside": {
+    image: "/assets/corridors/vizag-rushikonda.jpg",
+    title: "Rushikonda Luxury Hillside",
+    spec: "Coastal Villa Balconies | Unblocked Waves",
+    cityId: "vizag"
+  },
+  "PM Palem": {
+    image: "/assets/corridors/vizag-pmpalem.jpg",
+    title: "PM Palem (Cricket Stadium Road)",
+    spec: "Gated Community High-Rise | Toddler Safe",
+    cityId: "vizag"
+  },
+  "PM Palem (Cricket Stadium Road)": {
+    image: "/assets/corridors/vizag-pmpalem.jpg",
+    title: "PM Palem (Cricket Stadium Road)",
+    spec: "Gated Community High-Rise | Toddler Safe",
+    cityId: "vizag"
+  },
+  "Anandapuram": {
+    image: "/assets/corridors/vizag-anandapuram.jpg",
+    title: "Anandapuram Growth Corridor",
+    spec: "Valley Elevation Penthouses | Cross-Airflow",
+    cityId: "vizag"
+  },
+  "Anandapuram Growth Corridor": {
+    image: "/assets/corridors/vizag-anandapuram.jpg",
+    title: "Anandapuram Growth Corridor",
+    spec: "Valley Elevation Penthouses | Cross-Airflow",
+    cityId: "vizag"
+  },
+  "Gajuwaka": {
+    image: "/assets/corridors/vizag-gajuwaka.jpg",
+    title: "Gajuwaka & Pendurthi Belt",
+    spec: "Industrial & Urban Towers | Anti-Dust",
+    cityId: "vizag"
+  },
+  "Gajuwaka & Pendurthi Belt": {
+    image: "/assets/corridors/vizag-gajuwaka.jpg",
+    title: "Gajuwaka & Pendurthi Belt",
+    spec: "Industrial & Urban Towers | Anti-Dust",
+    cityId: "vizag"
+  },
+
+  // Rajahmundry Corridors
+  "Morampudi": {
+    image: "/assets/corridors/rajahmundry-morampudi.jpg",
+    title: "Morampudi Residential Towers",
+    spec: "Riverfront Airflow | High-Rise Shield",
+    cityId: "rajahmundry"
+  },
+  "Morampudi Residential Towers": {
+    image: "/assets/corridors/rajahmundry-morampudi.jpg",
+    title: "Morampudi Residential Towers",
+    spec: "Riverfront Airflow | High-Rise Shield",
+    cityId: "rajahmundry"
+  },
+  "Godavari Arch Bridge": {
+    image: "/assets/locations/rajahmundry.png",
+    title: "Godavari Arch Bridge Riverfront",
+    spec: "Iconic Heritage View | 100% Pigeon Shield",
+    cityId: "rajahmundry"
+  },
+  "Godavari Arch Bridge Riverfront": {
+    image: "/assets/locations/rajahmundry.png",
+    title: "Godavari Arch Bridge Riverfront",
+    spec: "Iconic Heritage View | 100% Pigeon Shield",
+    cityId: "rajahmundry"
+  },
+  "Bommuru": {
+    image: "/assets/corridors/rajahmundry-bommuru.jpg",
+    title: "Bommuru Gated Communities",
+    spec: "Zero Bird Droppings | 2-Inch Safe Spacing",
+    cityId: "rajahmundry"
+  },
+  "Bommuru Gated Communities": {
+    image: "/assets/corridors/rajahmundry-bommuru.jpg",
+    title: "Bommuru Gated Communities",
+    spec: "Zero Bird Droppings | 2-Inch Safe Spacing",
+    cityId: "rajahmundry"
+  },
+  "Diwancheruvu": {
+    image: "/assets/corridors/rajahmundry-diwancheruvu.jpg",
+    title: "Diwancheruvu & Lalacheruvu Hub",
+    spec: "Elevated Highway Towers | Wind & Dust Shield",
+    cityId: "rajahmundry"
+  },
+  "Diwancheruvu & Lalacheruvu Hub": {
+    image: "/assets/corridors/rajahmundry-diwancheruvu.jpg",
+    title: "Diwancheruvu & Lalacheruvu Hub",
+    spec: "Elevated Highway Towers | Wind & Dust Shield",
+    cityId: "rajahmundry"
+  },
+  "Vemagiri": {
+    image: "/assets/corridors/rajahmundry-vemagiri.jpg",
+    title: "Vemagiri Riverfront Belts",
+    spec: "Riverbank Apartment Terrace | Zero Fall Hazard",
+    cityId: "rajahmundry"
+  },
+  "Vemagiri Riverfront Belts": {
+    image: "/assets/corridors/rajahmundry-vemagiri.jpg",
+    title: "Vemagiri Riverfront Belts",
+    spec: "Riverbank Apartment Terrace | Zero Fall Hazard",
+    cityId: "rajahmundry"
+  },
+
+  // Vijayawada Corridors
+  "Benz Circle": {
+    image: "/assets/corridors/vijayawada-benzcircle.jpg",
+    title: "Benz Circle Corridor Towers",
+    spec: "15th-Floor Skyscraper Elevation | Urban View",
+    cityId: "vijayawada"
+  },
+  "Benz Circle Corridor Towers": {
+    image: "/assets/corridors/vijayawada-benzcircle.jpg",
+    title: "Benz Circle Corridor Towers",
+    spec: "15th-Floor Skyscraper Elevation | Urban View",
+    cityId: "vijayawada"
+  },
+  "Amaravati HappyNest": {
+    image: "/assets/corridors/vijayawada-happynest.jpg",
+    title: "Amaravati HappyNest (G+18)",
+    spec: "G+18 Floodplain Panoramas | 100% Toddler Safe",
+    cityId: "vijayawada"
+  },
+  "Amaravati HappyNest (G+18)": {
+    image: "/assets/corridors/vijayawada-happynest.jpg",
+    title: "Amaravati HappyNest (G+18)",
+    spec: "G+18 Floodplain Panoramas | 100% Toddler Safe",
+    cityId: "vijayawada"
+  },
+  "Moghalrajpuram": {
+    image: "/assets/locations/vijayawada.png",
+    title: "Moghalrajpuram Hillside Flats",
+    spec: "Elevated Ridge-View Apartments",
+    cityId: "vijayawada"
+  },
+  "Gunadala": {
+    image: "/assets/locations/vijayawada.png",
+    title: "Gunadala & Ramavarappadu",
+    spec: "Premium Gated Societies | 400 KG Load",
+    cityId: "vijayawada"
+  },
+  "Kanuru": {
+    image: "/assets/locations/vijayawada.png",
+    title: "Kanuru & Poranki Belt",
+    spec: "Expanding Luxury Suburbs | Cross-Ventilation",
+    cityId: "vijayawada"
+  },
+  "Tadepalli": {
+    image: "/assets/locations/vijayawada.png",
+    title: "Tadepalli Riverside Towers",
+    spec: "Krishna Riverfront Penthouses",
+    cityId: "vijayawada"
+  },
+
+  // Guntur Corridors
+  "Brodipet": {
+    image: "/assets/locations/guntur.png",
+    title: "Brodipet High-End Residencies",
+    spec: "Prime City Balcony Flats | Architectural Luxury",
+    cityId: "guntur"
+  },
+  "Arundelpet": {
+    image: "/assets/locations/guntur.png",
+    title: "Arundelpet Modern Towers",
+    spec: "High-Density Residential Hub | Zero-Climb",
+    cityId: "guntur"
+  },
+  "Amaravati Road": {
+    image: "/assets/locations/guntur.png",
+    title: "Amaravati Road Corridor",
+    spec: "Luxury Gated Towers | Kondaveedu View",
+    cityId: "guntur"
+  },
+  "Namburu": {
+    image: "/assets/locations/guntur.png",
+    title: "Namburu IT & University Belt",
+    spec: "Skyscraper Colonies | Anti-Static Nylon",
+    cityId: "guntur"
+  },
+  "Kaza": {
+    image: "/assets/locations/guntur.png",
+    title: "Kaza & Tadepalli Belt",
+    spec: "Expressway Towers | 100% Daylighting",
+    cityId: "guntur"
+  },
+
+  // Kakinada Corridors
+  "Vakalapudi": {
+    image: "/assets/locations/kakinada.png",
+    title: "Vakalapudi Port & Lighthouse Corridor",
+    spec: "Sea-Front Balcony Residences | Marine-Grade Alloy",
+    cityId: "kakinada"
+  },
+  "Sarpavaram": {
+    image: "/assets/locations/kakinada.png",
+    title: "Sarpavaram High-Rise Towers",
+    spec: "Gated Residential Colonies | Toddler Lockdown",
+    cityId: "kakinada"
+  },
+  "Madhavapatnam": {
+    image: "/assets/locations/kakinada.png",
+    title: "Madhavapatnam Residential Hub",
+    spec: "Family Balconies | Bird Dropping Barrier",
+    cityId: "kakinada"
+  },
+  "Ramanayyapeta": {
+    image: "/assets/locations/kakinada.png",
+    title: "Ramanayyapeta Urban Flatted Living",
+    spec: "City Center Elevations | 1-Min Fire Egress",
+    cityId: "kakinada"
+  },
+  "Jagannaickpur": {
+    image: "/assets/locations/kakinada.png",
+    title: "Jagannaickpur Waterfront Enclaves",
+    spec: "Canal & Coastal Flats | Corrosion-Free Tracks",
+    cityId: "kakinada"
+  },
+
+  // Nellore Corridors
+  "Magunta Layout": {
+    image: "/assets/locations/nellore.png",
+    title: "Magunta Layout Premium Flats",
+    spec: "Central Luxury Balconies | Sunset View",
+    cityId: "nellore"
+  },
+  "Balaji Nagar": {
+    image: "/assets/locations/nellore.png",
+    title: "Balaji Nagar Elevated Residencies",
+    spec: "High-Floor Family Apartments | 400 KG Strength",
+    cityId: "nellore"
+  },
+  "Dargamitta": {
+    image: "/assets/locations/nellore.png",
+    title: "Dargamitta Corridors",
+    spec: "Terrace & High Balcony Flats | Anti-Sag Anchoring",
+    cityId: "nellore"
+  },
+  "Vedayapalem": {
+    image: "/assets/locations/nellore.png",
+    title: "Vedayapalem Riverfront Belt",
+    spec: "Waterfront Balconies | Monsoon Proof SS-316",
+    cityId: "nellore"
+  },
+  "Podalakur Road": {
+    image: "/assets/locations/nellore.png",
+    title: "Podalakur Road & Kavali Belt",
+    spec: "Expanding Gated Communities | Pest Control",
+    cityId: "nellore"
+  }
+};
+
 // --- 6-CARD PROBLEM SOLVER GALLERY (IMAGE-FIRST, REAL BALCONY SOLUTIONS) ---
 export const PROBLEM_SOLVERS = [
   {
@@ -490,7 +782,14 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Selected Corridor for Sub-locations drill-down
-  const [selectedCorridor, setSelectedCorridor] = useState<string>(activeSlide.subLocations[0]?.name || activeSlide.activeBelts[0]);
+  const [selectedCorridor, setSelectedCorridor] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const c = params.get('corridor');
+      if (c) return c;
+    }
+    return activeSlide.subLocations[0]?.name || activeSlide.activeBelts[0] || '';
+  });
 
   // Read corridor from URL if available
   useEffect(() => {
@@ -502,6 +801,62 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
       }
     }
   }, []);
+
+  // Helper to resolve active corridor asset for dynamic Tier 3 Hero
+  const getActiveCorridorAsset = () => {
+    const q = (selectedCorridor || '').trim();
+    if (!q) {
+      const defaultSub = activeSlide.subLocations[0];
+      return {
+        name: defaultSub?.name || activeSlide.name,
+        title: defaultSub?.name || activeSlide.name,
+        image: defaultSub?.image || activeSlide.heroImage,
+        spec: defaultSub?.tag || activeSlide.badge
+      };
+    }
+
+    const cleanQ = q.toLowerCase();
+
+    // 1. Direct or fuzzy lookup in CORRIDOR_ASSETS
+    for (const [key, val] of Object.entries(CORRIDOR_ASSETS)) {
+      const cleanKey = key.toLowerCase();
+      if (cleanKey === cleanQ || cleanKey.includes(cleanQ) || cleanQ.includes(cleanKey)) {
+        return {
+          name: q,
+          title: val.title || key,
+          image: val.image,
+          spec: val.spec
+        };
+      }
+    }
+
+    // 2. Lookup in activeSlide.subLocations
+    const subMatch = activeSlide.subLocations.find(s => {
+      const cleanSub = s.name.toLowerCase();
+      return cleanSub === cleanQ || cleanSub.includes(cleanQ) || cleanQ.includes(cleanSub);
+    });
+
+    if (subMatch) {
+      return {
+        name: subMatch.name,
+        title: subMatch.name,
+        image: subMatch.image,
+        spec: subMatch.tag
+      };
+    }
+
+    // 3. Fallback
+    return {
+      name: q,
+      title: q,
+      image: activeSlide.subLocations[0]?.image || activeSlide.heroImage,
+      spec: activeSlide.badge
+    };
+  };
+
+  const activeCorridorAsset = getActiveCorridorAsset();
+  const currentHeroImage = activeCorridorAsset.image;
+  const currentCorridorDisplayName = activeCorridorAsset.title || selectedCorridor || activeSlide.name;
 
   // Calculator State
   const [width, setWidth] = useState(12);
@@ -531,7 +886,7 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
       `Hello D-View Invisible Safety Concierge!\n` +
       `I want to book a Free Site Visit & Measurement.\n\n` +
       `📍 City Hub: ${selectedHub}\n` +
-      `🏢 Community / Corridor: ${selectedCorridor}\n` +
+      `🏢 Community / Corridor: ${currentCorridorDisplayName}\n` +
       `📐 Dimensions: ${width} ft (W) x ${height} ft (H) = ${calculatedArea} sq.ft\n` +
       `🛡️ Wire Grade: SS-316 Marine Grade (${cableThickness} mm)\n` +
       `💰 Indicative Range: ₹${estimatedMin.toLocaleString()} - ₹${estimatedMax.toLocaleString()}\n` +
@@ -864,31 +1219,53 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
       {/* OPENS ONLY AFTER CLICKING A TIER 2 SUB-LOCATION CARD!                 */}
       {/* ==================================================================== */}
       {tier === 'tier3' && (
-        <main id="location-tier3" className="pt-24 min-h-screen">
+        <main id="location-tier3" className="min-h-screen pb-20">
           
-          {/* Top Breadcrumb & Focused Corridor Bar */}
-          <div className="max-w-7xl mx-auto px-6 sm:px-12 pt-4 pb-8">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
-              
-              {/* Back to Tier 2 Sub-Locations */}
-              <a 
-                href={`/locations/${activeSlide.id}`}
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition group"
-              >
-                <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
-                <span>Back to {activeSlide.name} Corridors (Tier 2)</span>
-              </a>
+          {/* Dynamic Top Hero Section (Height: 40vh to 45vh) */}
+          <section className="relative h-[42vh] min-h-[340px] w-full overflow-hidden flex items-end justify-start">
+            {/* Bright Corridor-Specific Interior Balcony Background - NO DULL MASKS */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
+              style={{ backgroundImage: `url(${currentHeroImage})` }}
+            >
+              {/* Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation */}
+              <div 
+                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
+                aria-hidden="true"
+              />
+              {/* Clean, subtle gradient at bottom blending into the 6-pillar grid below */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-black/10 to-black/35 pointer-events-none" />
+            </div>
 
-              {/* Active Focused Corridor Badge */}
-              {selectedCorridor && (
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-400">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Focused Corridor: <strong className="text-white">{selectedCorridor}</strong></span>
+            {/* Header Micro-Copy in Bottom-Left */}
+            <div className="relative z-20 max-w-5xl px-6 sm:px-12 pb-8">
+              
+              {/* Top Back Link & Focused Corridor Badge */}
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <a 
+                  href={`/locations/${activeSlide.id}`} 
+                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition group font-medium"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
+                  <span>← Back to {activeSlide.name} Corridors (Tier 2)</span>
+                </a>
+
+                {/* Corridor Pill Badge with Deep Emerald Green #10b981 border and glow */}
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#10b981] text-[11px] font-semibold text-[#10b981] shadow-[0_0_15px_rgba(16,185,129,0.35)]">
+                  <span>📍 Focused Corridor: {currentCorridorDisplayName}</span>
                 </div>
-              )}
+              </div>
+
+              {/* Heading (Silver & Emerald) */}
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase text-[#10b981] tracking-tight drop-shadow-[0_2px_15px_rgba(16,185,129,0.3)]">
+                THE 6-PILLAR PROBLEM-SOLVER SOLUTIONS
+              </h1>
+              <p className="text-xs sm:text-sm md:text-base text-[#cbd5e1] font-light tracking-wide mt-2 drop-shadow-md">
+                Tailored architectural invisible grill engineering for {currentCorridorDisplayName} residences.
+              </p>
 
             </div>
-          </div>
+          </section>
 
           {/* ----------------------------------------------------------------- */}
           {/* SECTION A: THE 6-PILLAR PROBLEM-SOLVER GRID                       */}
@@ -896,15 +1273,15 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
           <section id="pillars-section" className="py-12 px-6 sm:px-12">
             <div className="max-w-7xl mx-auto">
               
-              <div className="text-center max-w-3xl mx-auto mb-16">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-3">
-                  <span>TIER 3 • THE 6-PILLAR REAL PROOF SOLUTIONS</span>
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-2">
+                  <span>REAL PROOF SOLUTIONS • SS-316 ARCHITECTURAL CERTIFIED</span>
                 </div>
-                <h1 className="text-3xl sm:text-5xl font-light uppercase text-emerald-400 mt-1 tracking-tight drop-shadow-[0_2px_15px_rgba(16,185,129,0.25)]">
-                  The 6 Problem-Solver Pillar Solutions
-                </h1>
-                <p className="text-[#cbd5e1] text-sm sm:text-base mt-3 leading-relaxed font-light">
-                  High-definition architectural proof solutions certified for {activeSlide.name} high-rises and residential balconies.
+                <h2 className="text-2xl sm:text-3xl font-light uppercase text-slate-100 tracking-tight">
+                  High-Definition Balcony Protection
+                </h2>
+                <p className="text-[#cbd5e1] text-xs sm:text-sm mt-2 leading-relaxed font-light">
+                  Engineered specifically for {currentCorridorDisplayName} high-rises and residential balconies.
                 </p>
               </div>
 
@@ -1085,7 +1462,7 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
                   Balcony Estimate Calculator
                 </h2>
                 <p className="text-[#cbd5e1] text-xs sm:text-sm mt-2">
-                  Instant indicative investment calculation for {activeSlide.name} • {selectedCorridor}.
+                  Instant indicative investment calculation for {activeSlide.name} • {currentCorridorDisplayName}.
                 </p>
               </div>
 
