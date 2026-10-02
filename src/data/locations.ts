@@ -27,6 +27,7 @@ export interface LocationData {
   altName?: string;
   district: string;
   badge: string;
+  emotionHook?: string;
   heroHeadline: string;
   heroSubhead: string;
   heroImage: string;
@@ -75,6 +76,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     altName: 'Rajamahendravaram',
     district: 'East Godavari',
     badge: 'RAJAHMUNDRY • GODAVARI BALCONY SAFETY',
+    emotionHook: 'Mana Godavari river breeze view invisible grills valla asalu block avvakunda entha peaceful ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN RAJAHMUNDRY',
     heroSubhead: 'Experience the sweeping Godavari river breeze from a new elevation with uncompromising, certified architectural safety.',
     heroImage: '/images/rajahmundry-hero.jpg',
@@ -178,6 +180,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     altName: 'Vizag',
     district: 'Visakhapatnam',
     badge: 'VISAKHAPATNAM • COASTAL BALCONY SAFETY',
+    emotionHook: 'Mana Vizag sea coast view invisible grills valla asalu block avvakunda entha luxury ga undo!',
     heroHeadline: 'UNBLOCKED VIZAG VIEWS, 101% BREATHTAKING & SECURE',
     heroSubhead: 'RK Beach to Kailasagiri - Experience uninterrupted coastal panoramic views with zero safety compromise.',
     heroImage: '/images/visakhapatnam-hero.jpg',
@@ -277,6 +280,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     altName: 'Amaravati Capital Region',
     district: 'NTR / Guntur',
     badge: 'VIJAYAWADA & AMARAVATI • CAPITAL REGION SAFETY',
+    emotionHook: 'Mana Krishna river & Amaravati skyline view invisible grills valla asalu block avvakunda entha modern ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN VIJAYAWADA & AMARAVATI',
     heroSubhead: 'Architectural safety tailored for the capital region’s prestigious towers, overlooking the majestic Krishna River and vibrant skyline.',
     heroImage: '/images/vijayawada-hero.jpg',
@@ -376,6 +380,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     altName: 'Kakinada Smart City',
     district: 'Kakinada',
     badge: 'KAKINADA • COASTAL RESIDENTIAL SAFETY',
+    emotionHook: 'Mana Kakinada coastal palm & port breeze view invisible grills valla asalu block avvakunda entha fresh ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN KAKINADA',
     heroSubhead: 'Harmonize your living space with coastal palm vistas and fresh marine air through high-grade stainless steel invisible safety grills.',
     heroImage: '/images/kakinada-hero.jpg',
@@ -459,6 +464,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     altName: 'Guntur City & Capital Belt',
     district: 'Guntur',
     badge: 'GUNTUR • MODERN RESIDENTIAL SAFETY',
+    emotionHook: 'Mana Guntur high-rise skyline view invisible grills valla asalu block avvakunda entha safe & open ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN GUNTUR',
     heroSubhead: 'Elevate your apartment living with sleek, modern balcony safety that replaces archaic iron bars with crystal-clear panoramic freedom.',
     heroImage: '/images/guntur-hero.jpg',
@@ -542,6 +548,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     altName: 'Simhapuri',
     district: 'SPSR Nellore',
     badge: 'NELLORE • PENNA RIVER & URBAN SAFETY',
+    emotionHook: 'Mana Penna riverfront sunset view invisible grills valla asalu block avvakunda entha serene ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN NELLORE',
     heroSubhead: 'Enjoy unobstructed Penna River and sunset panoramas with modern architectural safety engineered for high-floor coastal living.',
     heroImage: '/images/nellore-hero.jpg',

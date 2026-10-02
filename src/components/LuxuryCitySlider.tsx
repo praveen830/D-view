@@ -166,7 +166,7 @@ export default function LuxuryCitySlider() {
               href={getCityUrl(currentCity)}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm sm:text-base font-extrabold text-[#0B0D0C] bg-[#7CFF3A] hover:bg-[#8FFF52] transition-all duration-200 shadow-[0_0_30px_rgba(124,255,58,0.35)] hover:shadow-[0_0_40px_rgba(124,255,58,0.55)] hover:-translate-y-0.5 active:translate-y-0"
             >
-              <span>EXPLORE {currentCity.name.toUpperCase()} HUB</span>
+              <span>Explore {currentCity.name} Balcony View & Services</span>
               <ArrowRight className="w-5 h-5" />
             </a>
 

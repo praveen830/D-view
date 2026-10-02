@@ -33,6 +33,14 @@ interface ThicknessOption {
 
 const THICKNESS_OPTIONS: ThicknessOption[] = [
   {
+    value: '1.5mm',
+    label: '1.5 mm Ultra-Slim',
+    minRate: 115,
+    maxRate: 135,
+    description: 'Lightweight SS-316 slim wire for small window openings & low-load grills.',
+    recommendedFor: 'Lower floors (G+1 to G+3), stairwell safety, and small interior atrium balustrades.'
+  },
+  {
     value: '2.0mm',
     label: '2.0 mm Standard',
     minRate: 135,
@@ -378,7 +386,15 @@ Please arrange a Free On-Site Digital Measurement and confirmation.`;
               <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
                 ₹{minEstimate.toLocaleString('en-IN')} <span className="text-lg text-[#94A3B8] font-normal">to</span> ₹{maxEstimate.toLocaleString('en-IN')}
               </div>
-              <p className="mt-2 text-xs text-[#94A3B8] leading-relaxed">
+              {/* Complimentary Gift Hook */}
+              <div className="p-3 rounded-xl bg-[#1A2420] border border-[#7CFF3A]/30 flex items-center gap-2.5">
+                <Sparkles className="w-4 h-4 text-[#7CFF3A] shrink-0" />
+                <span className="text-xs font-semibold text-[#E2E8F0]">
+                  <strong className="text-[#7CFF3A]">Free Bonus:</strong> Includes complimentary Microfiber Cloth + SS Shine Spray Kit.
+                </span>
+              </div>
+
+              <p className="text-xs text-[#94A3B8] leading-relaxed">
                 Includes: SS-316 high-tensile wire rope, 6063-T6 aluminum tracks, stainless steel tensioners, and certified installation.
               </p>
             </div>

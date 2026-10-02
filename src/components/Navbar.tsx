@@ -132,6 +132,20 @@ export default function Navbar({ currentSlug }: NavbarProps) {
             </div>
 
             <a 
+              href="/" 
+              className="px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
+            >
+              Home
+            </a>
+
+            <a 
+              href="/locations" 
+              className="px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
+            >
+              Locations
+            </a>
+
+            <a 
               href="#calculator" 
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
             >
@@ -140,38 +154,24 @@ export default function Navbar({ currentSlug }: NavbarProps) {
             </a>
 
             <a 
-              href="#problems" 
-              className="px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
-            >
-              Solutions
-            </a>
-
-            <a 
               href="#technical" 
               className="px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
             >
-              Weather Guide
+              SS-316 Weather Guide
             </a>
 
             <a 
-              href="#engineering" 
+              href="#trust" 
               className="px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
             >
-              Materials & Specs
+              Trust Badges
             </a>
 
             <a 
-              href="#projects" 
+              href="#book-visit" 
               className="px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
             >
-              Projects
-            </a>
-
-            <a 
-              href="#faq" 
-              className="px-3 py-2 rounded-lg text-sm text-[#C7CDD1] hover:text-white hover:bg-[#151C19] transition-colors"
-            >
-              FAQ
+              Contact
             </a>
           </nav>
 
@@ -187,9 +187,9 @@ export default function Navbar({ currentSlug }: NavbarProps) {
 
             <a
               href="#book-visit"
-              className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-[#0B0D0C] bg-[#7CFF3A] hover:bg-[#8FFF52] transition-all duration-200 shadow-[0_0_20px_rgba(124,255,58,0.25)] hover:shadow-[0_0_30px_rgba(124,255,58,0.45)] hover:-translate-y-0.5 active:translate-y-0"
+              className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-black bg-[#22c55e] hover:bg-[#16a34a] transition-all duration-200 shadow-[0_0_20px_rgba(34,197,94,0.35)] hover:shadow-[0_0_30px_rgba(34,197,94,0.55)] hover:-translate-y-0.5 active:translate-y-0"
             >
-              <span>Book Free Site Visit</span>
+              <span>Book Free Site Measurement</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
