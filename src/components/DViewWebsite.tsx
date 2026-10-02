@@ -1095,6 +1095,20 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   ['--bg-pos-mob' as any]: getMobileFocalPosition(slide.id)
                 }}
               >
+                {/* High Priority Eager Download for Slide 0 LCP Core Web Vitals */}
+                {idx === 0 && (
+                  <img
+                    src={slide.heroImage}
+                    alt=""
+                    aria-hidden="true"
+                    className="hidden"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 1920px"
+                  />
+                )}
+
                 {/* Crisp Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation - Portrait High Density on Mobile */}
                 <div 
                   className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
@@ -1206,6 +1220,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       alt={`${corridor.name} Balcony SS-316 Invisible Grills`} 
                       style={{ objectPosition: getMobileFocalPosition(corridor.name) }}
                       className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${getMobileLandmarkClass(corridor.name)}`}
+                      loading={idx === 0 ? "eager" : "lazy"}
+                      fetchPriority={idx === 0 ? "high" : "auto"}
+                      decoding="async"
+                      width="640"
+                      height="360"
+                      sizes="(max-width: 768px) 100vw, 1920px"
                     />
                     {/* Clear Vertical Wire Simulation Overlay */}
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
@@ -1375,6 +1395,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                           src={card.image} 
                           alt={card.title} 
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading={idx === 0 ? "eager" : "lazy"}
+                          fetchPriority={idx === 0 ? "high" : "auto"}
+                          decoding="async"
+                          width="640"
+                          height="360"
+                          sizes="(max-width: 768px) 100vw, 1920px"
                         />
                         {/* Wire simulation on card image */}
                         <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />

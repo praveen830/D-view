@@ -7,6 +7,7 @@ interface Props {
   canonicalUrl?: string;
   cityName?: string;
   ogImage?: string;
+  preloadHeroImage?: string;
   keywords?: string[];
   hideFloatingButtons?: boolean;
 }
@@ -17,6 +18,7 @@ const {
   canonicalUrl = 'https://dviewsolutions.com',
   cityName = 'Andhra Pradesh',
   ogImage = '/assets/locations/visakhapatnam.png',
+  preloadHeroImage,
   keywords = ['invisible grills andhra pradesh', 'balcony safety solutions', 'ss 316 invisible grills', 'coastal balcony safety'],
   hideFloatingButtons = false
 } = Astro.props;
@@ -88,6 +90,11 @@ const schemaData = {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
+
+    <!-- High-Priority LCP Hero Image Preload for Mobile Core Web Vitals -->
+    {preloadHeroImage && (
+      <link rel="preload" as="image" href={preloadHeroImage} fetchpriority="high" />
+    )}
 
     <!-- Google Font: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

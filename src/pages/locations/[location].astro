@@ -75,6 +75,7 @@ const cityMeta = CITY_SEO[location.slug] || CITY_SEO['visakhapatnam'];
   canonicalUrl={`https://dviewsolutions.com/locations/${slug}`}
   cityName={location.name}
   ogImage={location.heroImage}
+  preloadHeroImage={location.heroImage}
   keywords={location.keywords}
 >
   <DViewWebsite client:load initialCitySlug={slug} tier="tier2" />
