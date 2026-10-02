@@ -1,0 +1,131 @@
+---
+import { ALL_LOCATIONS } from '../data/locations';
+---
+
+<footer class="bg-[#080A09] border-t border-[#24322B] text-[#C7CDD1] pt-16 pb-12 relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#24322B]">
+      
+      {/* Brand Column */}
+      <div class="lg:col-span-2 space-y-4">
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-[#151C19] border border-[#24322B] flex items-center justify-center">
+            <svg class="w-5 h-5 text-[#7CFF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl font-extrabold text-white">D-VIEW</span>
+              <span class="text-xs px-1.5 py-0.5 rounded bg-[#7CFF3A]/10 text-[#7CFF3A] font-semibold border border-[#7CFF3A]/20">
+                SOLUTIONS
+              </span>
+            </div>
+            <span class="text-[10px] text-[#94A3B8] uppercase tracking-wider block">
+              Architectural Balcony Safety Engineering
+            </span>
+          </div>
+        </a>
+
+        <p class="text-xs text-[#94A3B8] leading-relaxed max-w-sm">
+          Engineering certified SS-316 high-tensile invisible safety grills and balcony containment systems across Andhra Pradesh. Preserving panoramic views while safeguarding families and pets.
+        </p>
+
+        <div class="pt-2 flex items-center gap-4 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#7CFF3A]"></span>
+            <span class="text-white font-semibold">SS-316 Marine Metallurgy</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#7CFF3A]"></span>
+            <span class="text-white font-semibold">5-10 Year Rust Warranty</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Solutions */}
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          Safety Solutions
+        </h4>
+        <ul class="space-y-2.5 text-xs text-[#94A3B8]">
+          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Premium Invisible Grills</a></li>
+          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Balcony Safety Nets</a></li>
+          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Pigeon & Bird Screens</a></li>
+          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">High-Rise Duct Containment</a></li>
+          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Children Balcony Safety</a></li>
+          <li><a href="/solutions" class="hover:text-[#7CFF3A] transition-colors">Pet Balcony Barriers</a></li>
+        </ul>
+      </div>
+
+      {/* 6 City Hubs */}
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          Location Hubs (AP)
+        </h4>
+        <ul class="space-y-2.5 text-xs text-[#94A3B8]">
+          {ALL_LOCATIONS.map((loc) => (
+            <li>
+              <a href={`/locations/${loc.slug}`} class="hover:text-[#7CFF3A] transition-colors flex items-center justify-between">
+                <span>{loc.name}</span>
+                <span class="text-[10px] text-[#64748B]">{loc.district}</span>
+              </a>
+            </li>
+          ))}
+          <li class="pt-1">
+            <a href="/locations" class="text-[#7CFF3A] font-semibold hover:underline">
+              All 6 Hubs Directory →
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contact & Support */}
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">
+          Contact & Bookings
+        </h4>
+        <div class="space-y-3 text-xs text-[#94A3B8]">
+          <div>
+            <span class="block text-[10px] uppercase text-[#64748B]">Central Helpline</span>
+            <a href="tel:+919494328999" class="text-sm font-bold text-white hover:text-[#7CFF3A]">
+              +91 94943 28999
+            </a>
+          </div>
+          <div>
+            <span class="block text-[10px] uppercase text-[#64748B]">WhatsApp Consultations</span>
+            <a href="https://wa.me/919494328999" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-[#7CFF3A] hover:underline">
+              Chat on WhatsApp
+            </a>
+          </div>
+          <div>
+            <span class="block text-[10px] uppercase text-[#64748B]">Corporate Email</span>
+            <a href="mailto:contact@dviewsolutions.in" class="text-xs text-white hover:underline">
+              contact@dviewsolutions.in
+            </a>
+          </div>
+          <div>
+            <span class="block text-[10px] uppercase text-[#64748B]">Operating Hours</span>
+            <span class="text-xs text-[#C7CDD1]">Mon - Sun: 8:00 AM – 8:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Bottom Legal Row */}
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748B]">
+      <div>
+        © 2026 D-VIEW SOLUTIONS. All rights reserved. Registered architectural safety contractor in Andhra Pradesh.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="/about" class="hover:text-[#94A3B8] transition-colors">About Us</a>
+        <a href="/projects" class="hover:text-[#94A3B8] transition-colors">Projects</a>
+        <a href="/contact" class="hover:text-[#94A3B8] transition-colors">Contact</a>
+        <a href="#book-visit" class="hover:text-[#94A3B8] transition-colors">Disclaimer</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

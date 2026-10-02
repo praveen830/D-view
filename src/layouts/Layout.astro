@@ -1,0 +1,107 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  cityName?: string;
+  ogImage?: string;
+  keywords?: string[];
+}
+
+const {
+  title,
+  description,
+  canonicalUrl = 'https://dviewsolutions.in',
+  cityName = 'Andhra Pradesh',
+  ogImage = '/images/rajahmundry-hero.jpg',
+  keywords = ['invisible grills andhra pradesh', 'balcony safety solutions', 'ss 316 invisible grills']
+} = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": `D-VIEW Solutions - ${cityName}`,
+  "image": `https://dviewsolutions.in${ogImage}`,
+  "url": canonicalUrl,
+  "telephone": "+919494328999",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": cityName,
+    "addressRegion": "Andhra Pradesh",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "17.0005",
+    "longitude": "81.8040"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "20:00"
+  },
+  "areaServed": [
+    "Visakhapatnam",
+    "Kakinada",
+    "Rajahmundry",
+    "Vijayawada",
+    "Guntur",
+    "Nellore"
+  ],
+  "description": description
+};
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(', ')} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Google Font: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body class="bg-[#0B0D0C] text-[#F8FAFC] antialiased selection:bg-[#7CFF3A] selection:text-[#0B0D0C]">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #0B0D0C;
+  --color-brand-charcoal: #121816;
+  --color-brand-card: #151C19;
+  --color-brand-card-hover: #1A2420;
+  --color-brand-border: #24322B;
+  --color-brand-border-light: #384C42;
+  --color-brand-green: #7CFF3A;
+  --color-brand-green-accent: #22C55E;
+  --color-brand-green-deep: #16A34A;
+  --color-brand-green-dark: #0D4A22;
+  --color-brand-silver: #C7CDD1;
+  --color-brand-silver-light: #E2E8F0;
+  --color-brand-silver-muted: #94A3B8;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #0B0D0C;
+    color: #F8FAFC;
+  }
+
+  body {
+    background-color: #0B0D0C;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0D0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #24322B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #384C42;
+}
+
+/* Invisible Grill Wire Texture Utility */
+.wire-grid-overlay {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(199, 205, 209, 0.08) 0px,
+    rgba(199, 205, 209, 0.08) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+}
+
+.wire-grid-fine {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(124, 255, 58, 0.12) 0px,
+    rgba(124, 255, 58, 0.12) 1px,
+    transparent 1px,
+    transparent 16px
+  );
+}
+
+/* Subtle glow effects */
+.glow-green-sm {
+  box-shadow: 0 0 16px rgba(124, 255, 58, 0.2);
+}
+
+.glow-green-md {
+  box-shadow: 0 0 30px rgba(124, 255, 58, 0.25);
+}
+
+.glow-green-border {
+  border-color: rgba(124, 255, 58, 0.6);
+  box-shadow: 0 0 20px rgba(124, 255, 58, 0.18);
+}

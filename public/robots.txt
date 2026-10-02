@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dviewsolutions.in/sitemap.xml

@@ -1,0 +1,123 @@
+---
+import type { LocationData } from '../data/locations';
+
+interface Props {
+  location: LocationData;
+}
+
+const { location } = Astro.props;
+
+const cards = [
+  {
+    id: 'child',
+    title: 'CHILD SAFETY',
+    subtitle: 'Fall prevention with uncompromised views',
+    desc: 'Create a safer balcony environment while preserving the openness of the space. Installed with rigid 2-inch vertical intervals, eliminating footholds so toddlers cannot climb or squeeze through.',
+    tag: 'Zero-Climb Spacing',
+    icon: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'
+  },
+  {
+    id: 'pet',
+    title: 'PET SAFETY',
+    subtitle: 'Gap protection for active dogs & cats',
+    desc: 'Reduce exposure to wide balcony railings while maintaining complete ventilation and natural sightlines. The smooth polyamide outer sheath prevents claw and paw abrasions.',
+    tag: 'Scratch-Proof Coating',
+    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+  },
+  {
+    id: 'elderly',
+    title: 'ELDERLY REASSURANCE',
+    subtitle: 'Psychological comfort at high elevations',
+    desc: 'Provides reassuring perimeter containment for seniors enjoying morning fresh air on high-floor balconies in {location.name}, preventing accidental slips or vertigo-induced hazards.',
+    tag: 'Structural Rigidity',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+  },
+  {
+    id: 'pigeon',
+    title: 'PIGEON & BIRD SHIELD',
+    subtitle: 'Zero nesting & stain-free balconies',
+    desc: 'Pigeons cannot squeeze through the 50mm wire intervals or perch on the smooth, thin tensioned cables. Restores clean, hygienic balcony living without ugly, sagging dark bird nets.',
+    tag: '50mm Bird Defense',
+    icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z'
+  },
+  {
+    id: 'emergency',
+    title: 'EMERGENCY FIRE EGRESS',
+    subtitle: 'Tested compliance & emergency planning',
+    desc: 'Unlike immovable welded iron box grilles that trap families during high-rise fire accidents, high-tensile SS-316 cables can be severed in urgent emergencies using a standard manual cable cutter.',
+    tag: 'Fire Rescue Compliant',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+  },
+  {
+    id: 'architectural',
+    title: 'MODERN ARCHITECTURAL LOOK',
+    subtitle: 'Maximum light, breeze & property value',
+    desc: 'From 5 meters away, the high-tensile cables virtually disappear against the horizon. Maximizes cross-ventilation, floods interiors with daylight, and meets upscale apartment facade rules.',
+    tag: '99% Light & Airflow',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'
+  }
+];
+---
+
+<section id="problems" class="py-20 bg-[#0B0D0C] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Header */}
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/30 text-xs font-semibold text-[#7CFF3A] uppercase tracking-wider mb-4">
+        <span>Comprehensive Balcony Protection</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        ONE BALCONY. <br />
+        <span class="text-[#7CFF3A]">MULTIPLE SAFETY CONCERNS.</span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-[#C7CDD1]">
+        Traditional welded iron grilles feel like heavy prison bars, obstruct views, and rust quickly. D-VIEW invisible safety grills deliver verified structural protection while preserving light, breeze, and freedom in {location.name}.
+      </p>
+    </div>
+
+    {/* 6 Cards Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cards.map((card) => (
+        <div class="group relative bg-[#121816] rounded-2xl border border-[#24322B] p-7 transition-all duration-300 hover:border-[#7CFF3A]/50 hover:bg-[#151C19] hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+          
+          <div>
+            {/* Header row */}
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-[#1A2420] border border-[#24322B] group-hover:border-[#7CFF3A]/40 flex items-center justify-center text-[#7CFF3A] transition-colors">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d={card.icon} />
+                </svg>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#1A2420] text-[#7CFF3A] border border-[#7CFF3A]/20">
+                {card.tag}
+              </span>
+            </div>
+
+            {/* Title & Sub */}
+            <h3 class="text-xl font-extrabold text-white group-hover:text-[#7CFF3A] transition-colors mb-1">
+              {card.title}
+            </h3>
+            <span class="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wider mb-3">
+              {card.subtitle}
+            </span>
+
+            {/* Description */}
+            <p class="text-sm text-[#C7CDD1] leading-relaxed">
+              {card.desc.replace('{location.name}', location.name)}
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-[#24322B] flex items-center justify-between text-xs text-[#94A3B8]">
+            <span>D-VIEW Certified System</span>
+            <span class="text-[#7CFF3A] font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Learn more →
+            </span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
