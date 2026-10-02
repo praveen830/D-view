@@ -4,35 +4,43 @@ import DViewWebsite from '../../components/DViewWebsite.tsx';
 import { ALL_LOCATIONS, type LocationData } from '../../data/locations';
 
 export async function getStaticPaths() {
-  const paths = ALL_LOCATIONS.map((loc) => ({
-    params: { location: loc.slug },
-    props: { location: loc }
-  }));
-  // Alias /locations/vizag directly to Visakhapatnam
-  const vizagData = ALL_LOCATIONS.find(l => l.slug === 'visakhapatnam');
-  if (vizagData) {
-    paths.push({
-      params: { location: 'vizag' },
-      props: { location: vizagData }
-    });
-  }
-  return paths;
+  const cityAliases: Record<string, string> = {
+    'vizag': 'visakhapatnam',
+    'visakhapatnam': 'visakhapatnam',
+    'rajahmundry': 'rajahmundry',
+    'rajamahendravaram': 'rajahmundry',
+    'vijayawada': 'vijayawada-amaravati',
+    'amaravati': 'vijayawada-amaravati',
+    'vijayawada-amaravati': 'vijayawada-amaravati',
+    'guntur': 'guntur',
+    'kakinada': 'kakinada',
+    'nellore': 'nellore'
+  };
+
+  return Object.entries(cityAliases).map(([alias, targetSlug]) => {
+    const loc = ALL_LOCATIONS.find(l => l.slug === targetSlug) || ALL_LOCATIONS[0];
+    return {
+      params: { location: alias },
+      props: { location: loc, slug: alias }
+    };
+  });
 }
 
 interface Props {
   location: LocationData;
+  slug: string;
 }
 
-const { location } = Astro.props;
+const { location, slug } = Astro.props;
 ---
 
 <Layout
-  title={location.seoTitle}
+  title={`${location.name} SS-316 Invisible Safety Grills | D-VIEW Architectural Safety`}
   description={location.seoDescription}
-  canonicalUrl={`https://dviewsolutions.in/locations/${location.slug}`}
+  canonicalUrl={`https://dviewsolutions.in/locations/${slug}`}
   cityName={location.name}
   ogImage={location.heroImage}
   keywords={location.keywords}
 >
-  <DViewWebsite client:load initialCitySlug={location.slug} />
+  <DViewWebsite client:load initialCitySlug={slug} isSubPageDirect={true} />
 </Layout>
