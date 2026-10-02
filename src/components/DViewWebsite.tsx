@@ -759,10 +759,11 @@ export const FAQS = [
 
 interface DViewWebsiteProps {
   initialCitySlug?: string;
+  initialCorridor?: string;
   tier?: 'tier1' | 'tier2' | 'tier3';
 }
 
-export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewWebsiteProps) {
+export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 'tier1' }: DViewWebsiteProps) {
   const getIndexFromSlug = (slug?: string) => {
     if (!slug) return 0;
     const clean = slug.toLowerCase();
@@ -783,6 +784,7 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
 
   // Selected Corridor for Sub-locations drill-down
   const [selectedCorridor, setSelectedCorridor] = useState<string>(() => {
+    if (initialCorridor) return initialCorridor;
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const c = params.get('corridor');
@@ -794,13 +796,21 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
   // Read corridor from URL if available
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const corridorParam = params.get('corridor');
-      if (corridorParam) {
-        setSelectedCorridor(corridorParam);
-      }
+      const updateFromUrl = () => {
+        const params = new URLSearchParams(window.location.search);
+        const corridorParam = params.get('corridor');
+        if (corridorParam) {
+          setSelectedCorridor(corridorParam);
+        } else if (initialCorridor) {
+          setSelectedCorridor(initialCorridor);
+        }
+      };
+
+      updateFromUrl();
+      window.addEventListener('popstate', updateFromUrl);
+      return () => window.removeEventListener('popstate', updateFromUrl);
     }
-  }, []);
+  }, [initialCorridor]);
 
   // Helper to resolve active corridor asset for dynamic Tier 3 Hero
   const getActiveCorridorAsset = () => {
@@ -1247,7 +1257,7 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
                   className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition group font-medium"
                 >
                   <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
-                  <span>← Back to {activeSlide.name} Corridors (Tier 2)</span>
+                  <span>Back to {activeSlide.name} Corridors (Tier 2)</span>
                 </a>
 
                 {/* Corridor Pill Badge with Deep Emerald Green #10b981 border and glow */}

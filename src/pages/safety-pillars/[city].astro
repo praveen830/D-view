@@ -32,6 +32,7 @@ interface Props {
 }
 
 const { location, slug } = Astro.props;
+const corridorParam = Astro.url.searchParams.get('corridor') || undefined;
 ---
 
 <Layout
@@ -42,5 +43,5 @@ const { location, slug } = Astro.props;
   ogImage={location.heroImage}
   keywords={location.keywords}
 >
-  <DViewWebsite client:load initialCitySlug={slug} tier="tier3" />
+  <DViewWebsite client:load initialCitySlug={slug} initialCorridor={corridorParam} tier="tier3" />
 </Layout>
