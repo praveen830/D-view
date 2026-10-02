@@ -1,23 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ShieldCheck, Phone, CheckCircle2, ChevronRight, X, 
   Flame, Baby, Cat, HeartHandshake, Eye, Sparkles, QrCode, 
-  Droplets, Menu, ArrowUpRight, HelpCircle
+  Droplets, ArrowUpRight, HelpCircle
 } from 'lucide-react';
 
-// --- 6 LOCATIONS DATA (EXACT INVISPROTECT CLONE SPECIFICATION) ---
+// --- 6 LOCATIONS DATA (MASTER PRODUCTION PROMPT SPECIFICATION) ---
 export interface LocationSlide {
   id: string;
-  locationPath: string; // /locations/vizag
+  locationPath: string; // /vizag, /rajahmundry, etc.
   slug: string;
   name: string;
   cityShort: string;
   categoryTag: string;
   mainTitle: string;
   subline: string;
-  subtext: string;
-  buttonText: string;
-  microNote: string;
+  microCue: string;
   badge: string;
   emotionHook: string;
   landmarkDesc: string;
@@ -30,133 +28,122 @@ export interface LocationSlide {
 export const CITIES_SLIDES: LocationSlide[] = [
   {
     id: 'vizag',
-    locationPath: '/locations/vizag',
+    locationPath: '/vizag',
     slug: 'visakhapatnam',
     name: 'Visakhapatnam',
     cityShort: 'VIZAG',
     categoryTag: 'COASTAL ARCHITECTURAL SAFETY',
     mainTitle: 'THE INVISIBLE THRESHOLD — VIZAG',
     subline: 'Balcony & Window Invisible Grills. Unobstructed RK Beach Panoramas.',
-    subtext: 'Architectural safety for modern sea-facing homes.',
-    buttonText: '[ DISCOVER ]',
-    microNote: 'Tap anywhere to explore Vizag high-rise coverage & pricing',
+    microCue: 'Tap anywhere to explore Vizag corridors & pricing',
     badge: 'Coastal Marine Line SS-316',
     emotionHook: 'Wow! Mana Vizag sea coast view invisible grills valla asalu block avvakunda entha luxury ga undo!',
-    landmarkDesc: 'Luxury penthouse interior balcony framing RK Beach coastal waves and Kailasagiri hillside through vertical SS-316 invisible wire ropes.',
+    landmarkDesc: 'Luxury penthouse interior balcony framing RK Beach coastal waves and Kailasagiri hillside through vertical SS-316 cables.',
     heroImage: '/images/visakhapatnam-hero.jpg',
     activeBelts: ['Madhurawada (27-Floor High-Rises)', 'Yendada', 'Rushikonda', 'PM Palem', 'Anandapuram', 'Pendurthi', 'Gajuwaka'],
-    weatherChallenge: "Vizag's high-salinity salt-air and marine damp humidity rapidly corrode low-grade steel within months.",
-    weatherSolution: 'Strictly Marine Grade SS-316 infused with Molybdenum for zero-decay corrosion resistance.'
+    weatherChallenge: "Vizag's high-salinity salt-air and marine damp humidity rapidly corrode cheap iron or low-grade steel wires within months.",
+    weatherSolution: 'Strictly Marine Grade SS-316 infused with Molybdenum core for zero-decay corrosion resistance.'
   },
   {
     id: 'rajahmundry',
-    locationPath: '/locations/rajahmundry',
+    locationPath: '/rajahmundry',
     slug: 'rajahmundry',
     name: 'Rajamahendravaram',
     cityShort: 'RAJAHMUNDRY',
     categoryTag: 'RIVERFRONT HERITAGE LIVING',
     mainTitle: 'SAFEGUARDING GODAVARI PRIDE — RAJAHMUNDRY',
-    subline: '100% Bird & Fall Protection While Preserving Morning River Breeze.',
-    subtext: 'Uninterrupted river breeze with complete fall and bird protection.',
-    buttonText: '[ DISCOVER ]',
-    microNote: 'Tap anywhere to view Rajahmundry projects & pricing',
+    subline: '100% bird and fall protection while preserving fresh river breeze.',
+    microCue: 'Tap anywhere to view Rajahmundry projects & pricing',
     badge: 'Godavari Riverfront Corridor',
     emotionHook: 'Pigeon problem lekunda, challani Godavari gaali & arch bridge view asalu aagakunda intiki 100% safety!',
-    landmarkDesc: 'High-rise apartment balcony interior tiles and sleek railing framing the historic Godavari Arch Bridge and river cruise boats through vertical stainless steel invisible cables.',
+    landmarkDesc: 'Modern apartment balcony with floor tiles, railing, and vertical invisible safety wires framing the Godavari Arch Bridge and river cruise boats.',
     heroImage: '/images/rajahmundry-hero.jpg',
-    activeBelts: ['Morampudi', 'Bommuru', 'Diwancheruvu', 'Lalacheruvu', 'Vemagiri', 'Danavaipeta', 'Kotilingala Ghat Road', 'Gadaala Residential Belts'],
-    weatherChallenge: 'High river moisture mist combined with aggressive pigeon nesting colonies on open balcony ledges.',
-    weatherSolution: 'Precision 2-inch SS-316 tensioned cables preventing bird entry while allowing 99% free river breeze.'
+    activeBelts: ['Morampudi', 'Bommuru', 'Diwancheruvu', 'Lalacheruvu', 'Vemagiri', 'Gadaala Residential Belts'],
+    weatherChallenge: 'Daily river vapor mist and heavy pigeon nesting colonies on open balcony ledges.',
+    weatherSolution: 'Precision 2-inch SS-316 tensioned cables preventing bird entry while allowing 99% free river cross-ventilation.'
   },
   {
     id: 'vijayawada',
-    locationPath: '/locations/vijayawada',
+    locationPath: '/vijayawada',
     slug: 'vijayawada-amaravati',
     name: 'Vijayawada & Amaravati',
     cityShort: 'VIJAYAWADA',
     categoryTag: 'CAPITAL SKYLINE SAFETY',
     mainTitle: 'MODERN LIVING IN AMARAVATI',
-    subline: 'High-Rise Fall Security for Amaravati HappyNest & Riverside Residences.',
-    subtext: 'High-rise elevation security for Amaravati HappyNest & riverside towers.',
-    buttonText: '[ DISCOVER ]',
-    microNote: 'Tap anywhere to view Amaravati towers & pricing',
+    subline: 'High-rise elevation security for Amaravati HappyNest & riverside towers.',
+    microCue: 'Tap anywhere to view Amaravati towers & pricing',
     badge: 'Capital & Krishna Waterfront',
     emotionHook: 'Modern luxury high-rise look ki taggattu, iron bars cage lekunda uncompromised open balcony!',
-    landmarkDesc: 'Skyscraper balcony overlooking Krishna River & illuminated Prakasam Barrage through vertical SS-316 cables.',
+    landmarkDesc: 'Skyscraper balcony overlooking Krishna River & illuminated Prakasam Barrage lights through vertical SS-316 cables.',
     heroImage: '/images/vijayawada-hero.jpg',
-    activeBelts: ['Benz Circle', 'Moghalrajpuram', 'Gunadala', 'Kanuru', 'Poranki', 'Amaravati HappyNest (G+18)', 'Tadepalli', 'Undavalli'],
+    activeBelts: ['Benz Circle', 'Moghalrajpuram', 'Gunadala', 'Kanuru', 'Poranki', 'Amaravati HappyNest (G+18)', 'Tadepalli'],
     weatherChallenge: 'Intense summer thermal expansion and high-velocity wind gusts on skyscraper floors above 15 levels.',
     weatherSolution: 'High-tensile multi-strand core cables certified up to 400kg load per strand with thermal compensation.'
   },
   {
     id: 'guntur',
-    locationPath: '/locations/guntur',
+    locationPath: '/guntur',
     slug: 'guntur',
     name: 'Guntur',
     cityShort: 'GUNTUR',
-    categoryTag: 'ELEVATION SAFETY & LIGHT',
+    categoryTag: 'HIGH-RISE STRUCTURAL LIVING',
     mainTitle: 'GUARDIAN OF GUNTUR',
-    subline: 'Replacing Obstructive Iron Bars with Pure Architectural Light.',
-    subtext: 'Say goodbye to dark cage iron grills. Uncompromised daylight and fall safety.',
-    buttonText: '[ DISCOVER ]',
-    microNote: 'Tap anywhere to view Guntur corridors & pricing',
+    subline: 'Say goodbye to dark cage iron grills. Uncompromised daylight and fall safety.',
+    microCue: 'Tap anywhere to view Guntur corridors & pricing',
     badge: 'Kondaveedu Horizons Belt',
     emotionHook: 'Kondaveedu hill breeze intloki vasthundi, pillalu unna elevations bayam lekunda safe setup!',
-    landmarkDesc: 'Terrace balcony framing Kondaveedu Fort ridge and city skyline through high-tensile invisible wires.',
+    landmarkDesc: 'Balcony terrace framing Kondaveedu Fort ridge and city skyline through high-tensile invisible wires.',
     heroImage: '/images/guntur-hero.jpg',
-    activeBelts: ['Brodipet', 'Arundelpet', 'Amaravati Road', 'Namburu', 'Kaza & Tadepalli Growth Corridor', 'Gorantla'],
+    activeBelts: ['Brodipet', 'Arundelpet', 'Amaravati Road', 'Namburu', 'Kaza & Tadepalli Belt (900+ listings)'],
     weatherChallenge: 'Heavy dry winds carrying abrasive dust particulates that erode and dull conventional iron bars.',
     weatherSolution: 'Anti-static smooth nylon-12 coated SS-316 cables shed dust effortlessly and maintain lifelong shine.'
   },
   {
     id: 'kakinada',
-    locationPath: '/locations/kakinada',
+    locationPath: '/kakinada',
     slug: 'kakinada',
     name: 'Kakinada',
     cityShort: 'KAKINADA',
     categoryTag: 'MARINE GRADE SS-316 CORRIDOR',
     mainTitle: "KAKINADA'S COASTAL SHIELD",
-    subline: 'Permanent Rust Immunity Against Heavy Salty Sea Breezes.',
-    subtext: 'Permanent rust immunity against salty coastal sea breezes.',
-    buttonText: '[ DISCOVER ]',
-    microNote: 'Tap anywhere to view Kakinada coastal specs & pricing',
+    subline: 'Permanent rust immunity against salty coastal sea breezes.',
+    microCue: 'Tap anywhere to view Kakinada coastal specs & pricing',
     badge: 'Deepwater Port & Coastal Corridor',
     emotionHook: 'Uppu gaali thupattu pattakunda, high-grade Marine wire security tho lifetime durability!',
     landmarkDesc: 'Coastal apartment balcony framing Vakalapudi Lighthouse and palm shoreline with marine-grade SS-316 wires.',
     heroImage: '/images/kakinada-hero.jpg',
-    activeBelts: ['Sarpavaram', 'Madhavapatnam', 'Ramanayyapeta', 'Vakalapudi', 'Jagannaickpur', 'Bhanugudi Junction'],
+    activeBelts: ['Sarpavaram', 'Madhavapatnam', 'Ramanayyapeta', 'Vakalapudi', 'Jagannaickpur'],
     weatherChallenge: 'Aggressive industrial port emissions mixed with salty maritime mist causing pitting corrosion.',
     weatherSolution: 'Certified Marine Grade SS-316 tested against ASTM B117 standards for extreme saline resistance.'
   },
   {
     id: 'nellore',
-    locationPath: '/locations/nellore',
+    locationPath: '/nellore',
     slug: 'nellore',
     name: 'Nellore',
     cityShort: 'NELLORE',
     categoryTag: 'RIVER BARRAGE TRANQUILITY',
     mainTitle: 'TRANQUILITY & TRUST — NELLORE',
-    subline: 'Safe Haven for Children and Elders on High-Elevation Balconies.',
-    subtext: 'Safe haven for children and elders on high-elevation balconies.',
-    buttonText: '[ DISCOVER ]',
-    microNote: 'Tap anywhere to view Nellore projects & pricing',
+    subline: 'Safe haven for children and elders on high-elevation balconies.',
+    microCue: 'Tap anywhere to view Nellore projects & pricing',
     badge: 'Penna Riverfront Horizon',
     emotionHook: 'Pedda vallu, pillalu unna balcony lo nilabadataniki absolute strong and safe support!',
-    landmarkDesc: 'High-elevation balcony sunset view over Nellore Barrage and Penna River through vertical safety wire barriers.',
+    landmarkDesc: 'High-rise balcony sunset view over Nellore Barrage and Penna River through vertical safety cables.',
     heroImage: '/images/nellore-hero.jpg',
-    activeBelts: ['Magunta Layout', 'Balaji Nagar', 'Dargamitta', 'Vedayapalem', 'Podalakur Road', 'Kavali Road', 'Haranathapuram'],
+    activeBelts: ['Magunta Layout', 'Balaji Nagar', 'Dargamitta', 'Vedayapalem', 'Podalakur Road', 'Kavali Road'],
     weatherChallenge: 'Continuous seasonal monsoon dampness loosening weak anchor points and corroding inferior wires.',
     weatherSolution: 'Precision aluminum track tensioners anchored deep in structural concrete with non-corrosive fasteners.'
   }
 ];
 
-// --- 6-CARD PROBLEM SOLVER GALLERY (IMAGE-FIRST) ---
+// --- 6-CARD PROBLEM SOLVER GALLERY (IMAGE-FIRST, REAL BALCONY SOLUTIONS) ---
 export const PROBLEM_SOLVERS = [
   {
     icon: Baby,
     title: "Children's Safety",
     tagline: 'High-Rise Balcony Lockdown',
-    desc: 'High-rise balcony railings with zero-fall lockdown coverage for high elevations. 2-inch safe spacing strictly prevents climbing accidents or head entrapment.',
+    desc: 'High-rise balcony railings with zero-fall lockdown coverage for high elevations.',
+    teluguDesc: 'Chinna pillalu unna elevations bayam lekunda safe lockdown coverage.',
     image: '/images/child-safety-balcony.jpg',
     stat: '400 KG / Cable'
   },
@@ -164,7 +151,8 @@ export const PROBLEM_SOLVERS = [
     icon: Cat,
     title: 'Pets Safety',
     tagline: 'Zero-Gap Paw Architecture',
-    desc: '2-inch precision spacing preventing cats and dogs from slipping through. Smooth nylon-sheathed wires protect paws from cuts and pinches.',
+    desc: '2-inch precision spacing preventing cats and dogs from slipping through.',
+    teluguDesc: 'Cats leda dogs small space gaps nundi kindhaki slip avvakunda absolute zero gap safety wire structures.',
     image: '/images/pet-safety.jpg',
     stat: 'Zero Gap Hazard'
   },
@@ -172,7 +160,8 @@ export const PROBLEM_SOLVERS = [
     icon: HeartHandshake,
     title: 'Old Age Persons Safety',
     tagline: 'Vertigo & Tension Elimination',
-    desc: 'Solid structural tension support eliminating height anxiety and loose railing fears. Creates a secure physical boundary for elderly parents.',
+    desc: 'Solid structural tension support eliminating height anxiety and loose railing fears.',
+    teluguDesc: 'Pedda vallu loose railings or heights valla tension padakunda absolute strong support balcony edge frame structure.',
     image: '/images/project-penthouse.jpg',
     stat: '100% Rigid Anchoring'
   },
@@ -180,7 +169,8 @@ export const PROBLEM_SOLVERS = [
     icon: Eye,
     title: 'Pigeons Safety',
     tagline: '100% Droppings Protection',
-    desc: '100% bird droppings and dirt control without blocking coastal breeze or sunlight. No dark netting, no dirty cages, zero foul smell.',
+    desc: '100% bird droppings and dirt control without blocking coastal breeze or sunlight.',
+    teluguDesc: 'Balcony and local windows padavvakunda, dirty maintenance problems lekunda birds control protection mesh screen.',
     image: '/images/rajahmundry-hero.jpg',
     stat: 'Zero Birds Entry'
   },
@@ -188,7 +178,8 @@ export const PROBLEM_SOLVERS = [
     icon: Flame,
     title: '1-Minute Emergency Fire Escape',
     tagline: 'Life-Saving Egress Speed',
-    desc: 'Unlike welded iron cages that trap families during high-rise emergencies, SS-316 wires can be cut in under 60 seconds with standard emergency wire cutters.',
+    desc: 'Unlike welded iron cages, SS-316 wires can be cut in under 60 seconds with standard emergency wire cutters.',
+    teluguDesc: 'Box type traditional iron mesh fixed ga untayi, fire accident time lo escape avvalem. Mana high-tensile wire setup lo standard cutter tho 1-minute lo easy wires cut chesi safe escape avvachu!',
     image: '/images/wire-engineering.jpg',
     stat: '60 Sec Cut Escape'
   },
@@ -196,7 +187,8 @@ export const PROBLEM_SOLVERS = [
     icon: Sparkles,
     title: 'Modern Luxury Look & Free Air',
     tagline: 'Eliminates Dark Iron Bars',
-    desc: 'Replaces ugly black iron bars with invisible stainless-steel elegance. Maximizes daylight and unblocked natural ventilation for luxury apartments.',
+    desc: 'Replaces ugly black iron bars with invisible stainless-steel elegance.',
+    teluguDesc: 'Traditional heavy iron bars look pathadi aipoindi. Mana grills tho full lighting natural air flow stop avvadu. Balcony full open ventilation flat spaces premium architecture aesthetic build chesthundi.',
     image: '/images/visakhapatnam-hero.jpg',
     stat: '99% Transparency'
   }
@@ -231,7 +223,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
     if (!slug) return 0;
     const clean = slug.toLowerCase();
     const idx = CITIES_SLIDES.findIndex(
-      s => s.locationPath.includes(clean) || s.slug === clean || s.id === clean || clean.includes(s.id)
+      s => s.locationPath.replace('/', '') === clean || s.slug === clean || s.id === clean || clean.includes(s.id)
     );
     return idx >= 0 ? idx : 0;
   };
@@ -239,7 +231,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
   const initialIndex = getIndexFromSlug(initialCitySlug);
   const activeSlide = CITIES_SLIDES[initialIndex];
 
-  // Mobile / Desktop Side Drawer Menu
+  // Side Drawer Menu State
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Calculator State
@@ -253,7 +245,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
   const [customerPhone, setCustomerPhone] = useState('');
   const [selectedHub, setSelectedHub] = useState(activeSlide.name);
 
-  // Pricing formula
+  // Pricing calculations
   const calculatedArea = width * height;
   const ratePerSqFt = cableThickness === '2.0' ? 140 : cableThickness === '2.5' ? 165 : 190;
   const estimatedMin = calculatedArea * ratePerSqFt;
@@ -269,9 +261,9 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
       `Hello D-View Invisible Safety Concierge!\n` +
       `I want to book a Free Site Visit & Measurement.\n\n` +
       `📍 City Hub: ${selectedHub}\n` +
-      `📐 Area: ${calculatedArea} sq.ft (${width} ft x ${height} ft)\n` +
+      `📐 Dimensions: ${width} ft (W) x ${height} ft (H) = ${calculatedArea} sq.ft\n` +
       `🛡️ Wire Grade: SS-316 Marine Grade (${cableThickness} mm)\n` +
-      `💰 Indicative Estimate: ₹${estimatedMin.toLocaleString()} - ₹${estimatedMax.toLocaleString()}\n` +
+      `💰 Indicative Range: ₹${estimatedMin.toLocaleString()} - ₹${estimatedMax.toLocaleString()}\n` +
       `👤 Name: ${customerName || 'Resident'}\n` +
       `📞 Phone: ${customerPhone || 'Via WhatsApp'}`
     );
@@ -286,28 +278,28 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
     <div className="min-h-screen bg-[#000000] text-[#f1f5f9] font-sans antialiased selection:bg-emerald-500 selection:text-black">
       
       {/* ========================================================= */}
-      {/* 2. MINIMALIST TOP BAR (INVISPROTECT CLONE - ZERO BUTTONS) */}
+      {/* 1. NAVIGATION BAR (INVISPROTECT EDITORIAL MINIMALISM)      */}
       {/* ========================================================= */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/90 via-black/50 to-transparent py-5 px-6 sm:px-12 flex items-center justify-between pointer-events-auto transition-all">
         
-        {/* Left: Minimal Menu Trigger + Brand */}
+        {/* Left: Thin menu mark `= MENU` and brand title `D-VIEW INVISIBLE SAFETY` */}
         <div className="flex items-center gap-6">
           <button
             type="button"
             onClick={() => setIsMenuOpen(true)}
             className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-300 hover:text-emerald-400 transition cursor-pointer font-medium"
           >
-            <span className="text-base leading-none">≡</span> MENU
+            <span className="text-base leading-none">=</span> MENU
           </button>
 
           <a href="/" className="flex items-center gap-2 group">
             <span className="text-sm sm:text-base font-light tracking-[0.25em] text-white uppercase">
-              INVISPROTECT <span className="text-slate-500 font-extralight">/</span> <span className="font-semibold text-emerald-400">D-VIEW</span>
+              D-VIEW <span className="font-semibold text-emerald-400">INVISIBLE SAFETY</span>
             </span>
           </a>
         </div>
 
-        {/* Right: Minimal Contact Link & Direct Call (NO BUTTONS) */}
+        {/* Right: Direct concierge telephone `+91 94943 28999` and `CONTACT US` */}
         <div className="flex items-center gap-6 sm:gap-8 text-xs uppercase tracking-[0.2em] text-slate-300 font-medium">
           <button
             type="button"
@@ -394,7 +386,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
                   onClick={() => { setIsMenuOpen(false); scrollToId('estimate-calculator'); }}
                   className="block hover:text-emerald-400 transition"
                 >
-                  Cost Estimator
+                  Balcony Cost Estimator
                 </a>
                 <a 
                   href="#faq-section"
@@ -418,7 +410,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
       )}
 
       {/* ==================================================================== */}
-      {/* IF ON HOMEPAGE: 6 FULL-SCREEN 100vh SNAP-SCROLL SLIDES (TAP-TO-NAV)   */}
+      {/* 2. MAIN DASHBOARD: 6-LOCATION 100vh CINEMATIC SNAP-SCROLL SLIDES      */}
       {/* ==================================================================== */}
       {!isSubPageDirect ? (
         <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth">
@@ -426,14 +418,14 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
             <section
               key={slide.id}
               onClick={() => { window.location.href = slide.locationPath; }}
-              className="relative w-full h-screen snap-start snap-always overflow-hidden flex items-end justify-center cursor-pointer select-none pb-12 sm:pb-16 px-6"
+              className="relative w-full h-screen snap-start snap-always overflow-hidden flex items-end justify-start cursor-pointer select-none"
             >
               {/* Full Bleed Interior Luxury Balcony Photography */}
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-[1.02]"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-[1.015]"
                 style={{ backgroundImage: `url(${slide.heroImage})` }}
               >
-                {/* Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation (2-inch spacing) */}
+                {/* Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation (2-inch precision spacing) */}
                 <div 
                   className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.15)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
                   aria-hidden="true"
@@ -445,44 +437,33 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
                 <div className="absolute inset-0 bg-radial-vignette from-transparent via-black/25 to-black/70 pointer-events-none" />
               </div>
 
-              {/* Invisprotect Minimal Text Overlay (Centered in bottom third, elegant subtle tracking) */}
-              <div className="relative z-20 max-w-3xl text-center flex flex-col items-center">
+              {/* Minimal Text (Bottom-Left, subtle uppercase tracking - ZERO BUTTON CLUTTER) */}
+              <div className="relative z-20 max-w-2xl text-left flex flex-col items-start px-6 sm:px-16 pb-12 sm:pb-16">
                 
                 {/* Kicker */}
                 <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-slate-300 font-semibold mb-2 block">
                   {slide.categoryTag}
                 </span>
 
-                {/* Main Title */}
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-white tracking-[0.1em] uppercase leading-tight mb-2 drop-shadow-xl">
+                {/* Title */}
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-white tracking-[0.08em] uppercase leading-tight mb-2 drop-shadow-xl">
                   {slide.mainTitle}
                 </h2>
 
-                {/* Subline / Subtext */}
-                <p className="text-xs sm:text-sm text-slate-300/90 font-light tracking-wide max-w-xl mb-5">
-                  {slide.subtext}
+                {/* Subline */}
+                <p className="text-xs sm:text-sm text-slate-300/90 font-light tracking-wide max-w-xl mb-3">
+                  {slide.subline}
                 </p>
 
-                {/* Single Elegant Ghost Button: [ DISCOVER ] */}
-                <div className="inline-block">
-                  <a
-                    href={slide.locationPath}
-                    onClick={(e) => { e.stopPropagation(); }}
-                    className="inline-block border border-white/50 hover:border-emerald-400 text-white hover:text-emerald-300 px-8 py-2.5 rounded-full text-xs font-medium uppercase tracking-[0.25em] bg-black/40 backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,0,0,0.6)] cursor-pointer"
-                  >
-                    {slide.buttonText}
-                  </a>
-                </div>
-
-                {/* Micro-note */}
-                <span className="text-[10px] uppercase tracking-[0.25em] text-slate-400 mt-3 block font-light">
-                  {slide.microNote}
+                {/* Micro-cue */}
+                <span className="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-medium block">
+                  {slide.microCue}
                 </span>
 
               </div>
 
               {/* Slide Counter on Side */}
-              <div className="absolute bottom-8 right-8 z-20 hidden md:block text-[11px] uppercase tracking-[0.25em] text-slate-400 font-mono">
+              <div className="absolute bottom-12 right-12 z-20 hidden md:block text-[11px] uppercase tracking-[0.25em] text-slate-400 font-mono">
                 0{idx + 1} / 06
               </div>
 
@@ -491,12 +472,12 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
         </main>
       ) : (
         /* ==================================================================== */
-        /* IF ON SUBPAGE: DEDICATED LOCATION LANDING PAGE (SECTIONS A, B, C, D)  */
+        /* 3. DEDICATED LOCATION SUB-PAGES (e.g. /vizag, /rajahmundry)          */
         /* ==================================================================== */
         <main id="location-subpage" className="pt-20">
           
           {/* ----------------------------------------------------------------- */}
-          {/* SECTION A: FIRST IMPRESSION: MEGA VISUAL CONNECTION & CORRIDORS  */}
+          {/* A. LOCAL EMOTIONAL CONNECTION & ACTIVE CORRIDORS                  */}
           {/* ----------------------------------------------------------------- */}
           <section className="relative min-h-[90vh] flex items-center justify-center px-6 sm:px-12 py-16 overflow-hidden">
             {/* Full-bleed interior balcony view */}
@@ -535,7 +516,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
                 {activeSlide.landmarkDesc} D-VIEW replaces traditional obstructive black iron bars with high-tensile 316-grade stainless steel cables, delivering 100% certified fall protection while preserving total architectural daylight.
               </p>
 
-              {/* Active Local Corridors (Clean badges) */}
+              {/* Active Local Corridors (Tag Badges) */}
               <div className="w-full pt-4">
                 <span className="text-xs uppercase tracking-[0.25em] text-slate-400 font-bold block mb-4">
                   Active High-Rise Corridors:
@@ -552,7 +533,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
                 </div>
               </div>
 
-              {/* Action */}
+              {/* Action Button */}
               <div className="mt-10">
                 <button 
                   type="button"
@@ -567,7 +548,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
           </section>
 
           {/* ----------------------------------------------------------------- */}
-          {/* SECTION B: 6-PILLAR PROBLEM-SOLVER GRID (IMAGE-FIRST, REAL PHOTOS)*/}
+          {/* B. THE 6-PILLAR PROBLEM-SOLVER GRID (REAL BALCONY PHOTOS)         */}
           {/* ----------------------------------------------------------------- */}
           <section id="problem-solver" className="py-24 px-6 sm:px-12 border-t border-white/10 bg-[#000000]">
             <div className="max-w-7xl mx-auto">
@@ -577,7 +558,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
                   REAL ARCHITECTURAL SOLUTIONS
                 </span>
                 <h2 className="text-3xl sm:text-5xl font-light uppercase text-white mt-2 tracking-tight">
-                  The Complete 6-Pillar Problem-Solver Grid
+                  The 6-Pillar Problem-Solver Grid
                 </h2>
                 <p className="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
                   Real balcony photography demonstrating high-tensile SS-316 invisible wire engineering.
@@ -622,8 +603,11 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
                           <h3 className="text-xl font-bold text-white mb-2">
                             {card.title}
                           </h3>
-                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-2">
                             {card.desc}
+                          </p>
+                          <p className="text-xs text-emerald-300/90 italic leading-relaxed">
+                            "{card.teluguDesc}"
                           </p>
                         </div>
 
@@ -653,7 +637,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
           </section>
 
           {/* ----------------------------------------------------------------- */}
-          {/* SECTION C: SPECIFIC LOCAL WEATHER GUIDE (SS-316 TECHNICAL TRUST) */}
+          {/* C. LOCAL WEATHER SHIELD & SS-316 TECHNICAL TRUST                  */}
           {/* ----------------------------------------------------------------- */}
           <section className="py-20 px-6 sm:px-12 border-t border-white/10 bg-gradient-to-b from-[#000000] to-[#090d0b]">
             <div className="max-w-7xl mx-auto">
@@ -695,21 +679,21 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
                     <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
                       <span className="text-xl sm:text-2xl font-black text-emerald-400 block">10 YEARS</span>
                       <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
-                        Replacement Warranty
+                        Anti-Rust Replacement Warranty
                       </span>
                     </div>
 
                     <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
                       <span className="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
                       <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
-                        Tension Inspection
+                        Periodic Tension Inspection
                       </span>
                     </div>
 
                     <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
                       <span className="text-xl sm:text-2xl font-black text-emerald-400 block">FREE GIFT</span>
                       <span className="text-[10px] uppercase tracking-wider text-slate-300 font-semibold block mt-0.5">
-                        Shine Spray & Cloth Kit
+                        Microfiber & SS Shine Kit
                       </span>
                     </div>
                   </div>
@@ -744,7 +728,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
           </section>
 
           {/* ----------------------------------------------------------------- */}
-          {/* SECTION D: BALCONY ESTIMATE CALCULATOR & DYNAMIC WHATSAPP QR      */}
+          {/* D. BALCONY ESTIMATE CALCULATOR & DYNAMIC WHATSAPP QR BOOKING      */}
           {/* ----------------------------------------------------------------- */}
           <section id="estimate-calculator" className="py-24 px-6 sm:px-12 border-t border-white/10 bg-[#000000]">
             <div className="max-w-5xl mx-auto">
@@ -909,7 +893,7 @@ export default function DViewWebsite({ initialCitySlug, isSubPageDirect = false 
           </section>
 
           {/* =============================================================== */}
-          {/* 4. LUXURY EDITORIAL FOOTER                                      */}
+          {/* 4. MINIMAL CONCIERGE FOOTER                                     */}
           {/* =============================================================== */}
           <footer className="border-t border-white/10 bg-[#000000] pt-16 pb-12 px-6 sm:px-12 text-slate-400 text-xs">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
