@@ -14,55 +14,49 @@ interface Props {
 const {
   title,
   description,
-  canonicalUrl = 'https://dviewsolutions.in',
+  canonicalUrl = 'https://dviewsolutions.com',
   cityName = 'Andhra Pradesh',
-  ogImage = '/images/rajahmundry-hero.jpg',
-  keywords = ['invisible grills andhra pradesh', 'balcony safety solutions', 'ss 316 invisible grills'],
+  ogImage = '/assets/locations/visakhapatnam.png',
+  keywords = ['invisible grills andhra pradesh', 'balcony safety solutions', 'ss 316 invisible grills', 'coastal balcony safety'],
   hideFloatingButtons = false
 } = Astro.props;
 
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "name": `D-VIEW Solutions - ${cityName}`,
-  "image": `https://dviewsolutions.in${ogImage}`,
-  "url": canonicalUrl,
+  "name": "D-View Invisible Safety Grills",
+  "image": "https://dviewsolutions.com/assets/locations/rajahmundry.png",
   "telephone": "+919494328999",
+  "email": "contact@dviewsolutions.com",
+  "url": "https://dviewsolutions.com",
   "priceRange": "₹₹",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": cityName,
-    "addressRegion": "Andhra Pradesh",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "17.0005",
-    "longitude": "81.8040"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "08:00",
-    "closes": "20:00"
-  },
   "areaServed": [
-    "Visakhapatnam",
-    "Kakinada",
-    "Rajahmundry",
-    "Vijayawada",
-    "Guntur",
-    "Nellore"
+    {
+      "@type": "City",
+      "name": "Visakhapatnam"
+    },
+    {
+      "@type": "City",
+      "name": "Rajamahendravaram"
+    },
+    {
+      "@type": "City",
+      "name": "Vijayawada"
+    },
+    {
+      "@type": "City",
+      "name": "Guntur"
+    },
+    {
+      "@type": "City",
+      "name": "Kakinada"
+    },
+    {
+      "@type": "City",
+      "name": "Nellore"
+    }
   ],
-  "description": description
+  "description": "Architectural high-tensile SS-316 invisible safety grills for luxury apartments, balcony child fall safety, pet security, and pigeon control with 10-year warranty."
 };
 ---
 

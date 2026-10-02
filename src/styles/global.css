@@ -83,3 +83,63 @@
   border-color: rgba(124, 255, 58, 0.6);
   box-shadow: 0 0 20px rgba(124, 255, 58, 0.18);
 }
+
+/* ========================================================================= */
+/* MOBILE PORTRAIT ADAPTIVE FRAMING (PRESERVE LANDMARKS ON PHONES < 768px)    */
+/* ========================================================================= */
+@media (max-width: 767px) {
+  .bg-adaptive-landmark {
+    background-position: var(--bg-pos-mob, center center) !important;
+  }
+
+  /* Specific City & Corridor Mobile Landmark Focal Points */
+  .landmark-vizag {
+    background-position: 35% center !important;
+  }
+  .landmark-rajahmundry {
+    background-position: center bottom 25% !important;
+  }
+  .landmark-rushikonda {
+    background-position: 40% center !important;
+  }
+  .landmark-madhurawada {
+    background-position: 60% center !important;
+  }
+  .landmark-yendada {
+    background-position: 35% center !important;
+  }
+  .landmark-morampudi {
+    background-position: 45% center !important;
+  }
+  .landmark-vijayawada {
+    background-position: 45% center !important;
+  }
+  .landmark-happynest {
+    background-position: 55% center !important;
+  }
+  .landmark-guntur {
+    background-position: 50% center !important;
+  }
+  .landmark-kakinada {
+    background-position: 35% center !important;
+  }
+  .landmark-nellore {
+    background-position: 50% center !important;
+  }
+
+  /* Image card object-position on mobile */
+  img.landmark-img-vizag { object-position: 35% center !important; }
+  img.landmark-img-rajahmundry { object-position: center bottom 25% !important; }
+  img.landmark-img-rushikonda { object-position: 40% center !important; }
+  img.landmark-img-madhurawada { object-position: 60% center !important; }
+  img.landmark-img-yendada { object-position: 35% center !important; }
+  img.landmark-img-morampudi { object-position: 45% center !important; }
+  img.landmark-img-benzcircle { object-position: 45% center !important; }
+  img.landmark-img-happynest { object-position: 55% center !important; }
+}
+
+@media (min-width: 768px) {
+  .bg-adaptive-landmark {
+    background-position: center center !important;
+  }
+}

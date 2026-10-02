@@ -32,12 +32,47 @@ interface Props {
 }
 
 const { location, slug } = Astro.props;
+
+const CITY_SEO: Record<string, { title: string; description: string; canonical: string }> = {
+  visakhapatnam: {
+    title: 'SS-316 Invisible Grills in Visakhapatnam | Balcony Safety for Madhurawada, Rushikonda, Yendada | D-View',
+    description: 'Certified SS-316 Marine Grade invisible safety grills in Vizag. 100% unblocked RK Beach view, 10-year rust warranty, child & pet fall protection for high-rise balconies. Instant estimate & site survey.',
+    canonical: 'https://dviewsolutions.com/locations/vizag'
+  },
+  rajahmundry: {
+    title: 'SS-316 Invisible Grills in Rajahmundry | Balcony Safety for Morampudi, Bommuru | D-View',
+    description: 'Certified SS-316 Marine Grade invisible safety grills in Rajamahendravaram. 100% unblocked Godavari river view, 10-year rust warranty, pigeon & child protection for riverfront apartments.',
+    canonical: 'https://dviewsolutions.com/locations/rajahmundry'
+  },
+  'vijayawada-amaravati': {
+    title: 'SS-316 Invisible Grills in Vijayawada & Amaravati | Balcony Safety for Benz Circle, HappyNest | D-View',
+    description: 'Certified SS-316 Marine Grade invisible safety grills in Vijayawada & Amaravati. 100% unblocked Krishna river & skyline views, high-rise safety for towers & HappyNest.',
+    canonical: 'https://dviewsolutions.com/locations/vijayawada'
+  },
+  guntur: {
+    title: 'SS-316 Invisible Grills in Guntur | Balcony Safety for Brodipet, Arundelpet | D-View',
+    description: 'Engineered SS-316 invisible safety grills in Guntur. Dust-resistant, daylight preserving, 100% toddler fall safety for Brodipet & Amaravati road apartments.',
+    canonical: 'https://dviewsolutions.com/locations/guntur'
+  },
+  kakinada: {
+    title: 'SS-316 Marine Grade Invisible Grills in Kakinada | Balcony Safety for Vakalapudi, Sarpavaram | D-View',
+    description: 'Certified SS-316 Marine Grade invisible grills in Kakinada. Permanent coastal rust immunity, lighthouse & port view preservation with 10-year anti-rust warranty.',
+    canonical: 'https://dviewsolutions.com/locations/kakinada'
+  },
+  nellore: {
+    title: 'SS-316 Invisible Grills in Nellore | Balcony Safety for Magunta Layout, Balaji Nagar | D-View',
+    description: 'Architectural SS-316 invisible safety grills in Nellore. Monsoon-proof anchoring, Penna riverfront sunset preservation, high-floor child & elder protection.',
+    canonical: 'https://dviewsolutions.com/locations/nellore'
+  }
+};
+
+const cityMeta = CITY_SEO[location.slug] || CITY_SEO['visakhapatnam'];
 ---
 
 <Layout
-  title={`${location.name} SS-316 Invisible Safety Grills | D-VIEW Architectural Safety`}
-  description={location.seoDescription}
-  canonicalUrl={`https://dviewsolutions.in/locations/${slug}`}
+  title={cityMeta.title}
+  description={cityMeta.description}
+  canonicalUrl={`https://dviewsolutions.com/locations/${slug}`}
   cityName={location.name}
   ogImage={location.heroImage}
   keywords={location.keywords}

@@ -757,6 +757,42 @@ export const FAQS = [
   }
 ];
 
+// --- MOBILE FOCAL POINT & LANDMARK FRAMING HELPERS (< 768px) ---
+export const getMobileFocalPosition = (nameOrKey?: string): string => {
+  if (!nameOrKey) return 'center center';
+  const clean = nameOrKey.toLowerCase();
+  if (clean.includes('rushikonda')) return '40% center';
+  if (clean.includes('madhurawada')) return '60% center';
+  if (clean.includes('yendada')) return '35% center';
+  if (clean.includes('morampudi')) return '45% center';
+  if (clean.includes('bommuru')) return '40% center';
+  if (clean.includes('rajahmundry') || clean.includes('arch bridge')) return 'center bottom 25%';
+  if (clean.includes('vizag') || clean.includes('visakhapatnam')) return '35% center';
+  if (clean.includes('benz') || clean.includes('vijayawada')) return '45% center';
+  if (clean.includes('happynest') || clean.includes('amaravati')) return '55% center';
+  if (clean.includes('kakinada') || clean.includes('vakalapudi')) return '35% center';
+  if (clean.includes('guntur') || clean.includes('brodipet')) return '50% center';
+  if (clean.includes('nellore')) return '50% center';
+  return 'center center';
+};
+
+export const getMobileLandmarkClass = (nameOrKey?: string): string => {
+  if (!nameOrKey) return '';
+  const clean = nameOrKey.toLowerCase();
+  if (clean.includes('rushikonda')) return 'landmark-rushikonda';
+  if (clean.includes('madhurawada')) return 'landmark-madhurawada';
+  if (clean.includes('yendada')) return 'landmark-yendada';
+  if (clean.includes('morampudi')) return 'landmark-morampudi';
+  if (clean.includes('rajahmundry') || clean.includes('arch bridge')) return 'landmark-rajahmundry';
+  if (clean.includes('vizag') || clean.includes('visakhapatnam')) return 'landmark-vizag';
+  if (clean.includes('benz') || clean.includes('vijayawada')) return 'landmark-vijayawada';
+  if (clean.includes('happynest') || clean.includes('amaravati')) return 'landmark-happynest';
+  if (clean.includes('guntur')) return 'landmark-guntur';
+  if (clean.includes('kakinada')) return 'landmark-kakinada';
+  if (clean.includes('nellore')) return 'landmark-nellore';
+  return '';
+};
+
 interface DViewWebsiteProps {
   initialCitySlug?: string;
   initialCorridor?: string;
@@ -1051,49 +1087,52 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               onClick={() => { window.location.href = slide.locationPath; }}
               className="relative w-full h-screen snap-start snap-always overflow-hidden flex items-end justify-start cursor-pointer select-none"
             >
-              {/* Full Bleed Bright Interior Balcony Photography - NO DULL BLACK OVERLAYS */}
+              {/* Full Bleed Bright Interior Balcony Photography with Mobile Portrait Landmark Framing */}
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-[1.015]"
-                style={{ backgroundImage: `url(${slide.heroImage})` }}
+                className={`bg-adaptive-landmark absolute inset-0 bg-cover transition-transform duration-700 hover:scale-[1.015] ${getMobileLandmarkClass(slide.id)}`}
+                style={{ 
+                  backgroundImage: `url(${slide.heroImage})`,
+                  ['--bg-pos-mob' as any]: getMobileFocalPosition(slide.id)
+                }}
               >
-                {/* Crisp Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation */}
+                {/* Crisp Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation - Portrait High Density on Mobile */}
                 <div 
-                  className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
+                  className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
                   aria-hidden="true"
                 />
 
                 {/* Minimal Top & Bottom Clean Fade for Text Contrast Only (Max 20-30%) */}
                 <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0a0f0d]/90 via-[#0a0f0d]/30 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-44 sm:h-48 bg-gradient-to-t from-[#0a0f0d]/95 via-[#0a0f0d]/30 to-transparent pointer-events-none" />
               </div>
 
-              {/* Minimal Text at Bottom-Left: Brushed Silver & Deep Emerald Green ONLY */}
-              <div className="relative z-20 max-w-2xl text-left flex flex-col items-start px-6 sm:px-16 pb-12 sm:pb-16">
+              {/* Minimal Text at Bottom-Left: Pushed to bottom 25%, NEVER blocks the landmark on mobile */}
+              <div className="relative z-20 max-w-2xl text-left flex flex-col items-start px-5 sm:px-16 pb-8 sm:pb-16">
                 
-                {/* Category in Brushed Metallic Silver */}
-                <span className="text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#cbd5e1] font-semibold mb-2 block">
+                {/* Category in Brushed Metallic Silver / Deep Green */}
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold mb-1 block">
                   {slide.categoryTag}
                 </span>
 
                 {/* Title in Deep Emerald Green with Soft Glow */}
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-emerald-400 tracking-[0.08em] uppercase leading-tight mb-2 drop-shadow-[0_2px_15px_rgba(16,185,129,0.3)]">
+                <h2 className="text-xl sm:text-4xl md:text-5xl font-light text-emerald-400 tracking-[0.06em] uppercase leading-tight mb-1.5 drop-shadow-[0_2px_15px_rgba(16,185,129,0.3)]">
                   {slide.mainTitle}
                 </h2>
 
                 {/* Subline in Brushed Silver */}
-                <p className="text-xs sm:text-sm text-slate-300/90 font-light tracking-wide max-w-xl mb-3">
+                <p className="text-xs sm:text-sm text-slate-300/90 font-light tracking-wide max-w-xl mb-2 line-clamp-2 sm:line-clamp-none">
                   {slide.subline}
                 </p>
 
                 {/* Micro-cue */}
-                <span className="text-[10px] uppercase tracking-[0.25em] text-emerald-400/90 font-medium block">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-emerald-400/90 font-medium block">
                   {slide.microCue}
                 </span>
 
               </div>
 
               {/* Slide Counter on Side */}
-              <div className="absolute bottom-12 right-12 z-20 hidden md:block text-[11px] uppercase tracking-[0.25em] text-slate-300 font-mono">
+              <div className="absolute bottom-8 right-5 sm:bottom-12 sm:right-12 z-20 text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-slate-300 font-mono">
                 0{idx + 1} / 06
               </div>
 
@@ -1107,84 +1146,87 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* CRITICAL: ONLY LOCAL PROMINENT CORRIDORS - ZERO 6-PILLAR GRID HERE!  */}
       {/* ==================================================================== */}
       {tier === 'tier2' && (
-        <main id="location-tier2" className="min-h-screen pb-20">
+        <main id="location-tier2" className="min-h-screen pb-28 sm:pb-20">
           
-          {/* Top 45vh Bright Hero Background Section */}
-          <section className="relative h-[45vh] min-h-[340px] w-full overflow-hidden flex items-end justify-start">
-            {/* Bright Signature City Interior Balcony Background - NO DULL MASKS */}
+          {/* Top 35vh (Mobile) / 45vh (Desktop) Bright Hero Background Section */}
+          <section className="relative h-[35vh] sm:h-[45vh] min-h-[260px] w-full overflow-hidden flex items-end justify-start">
+            {/* Bright Signature City Interior Balcony Background - Mobile Landmark Focal Point */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
-              style={{ backgroundImage: `url(${activeSlide.heroImage})` }}
+              className={`bg-adaptive-landmark absolute inset-0 bg-cover transition-transform duration-700 ${getMobileLandmarkClass(activeSlide.id)}`}
+              style={{ 
+                backgroundImage: `url(${activeSlide.heroImage})`,
+                ['--bg-pos-mob' as any]: getMobileFocalPosition(activeSlide.id)
+              }}
             >
               {/* Vertical Wire Line Simulation Overlay */}
               <div 
-                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
+                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
                 aria-hidden="true"
               />
               {/* Minimal Clean Fade Only for Text Contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-black/15 to-black/35 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-black/10 to-black/35 pointer-events-none" />
             </div>
 
-            {/* Concise Header in Bottom-Left: 1 Emotion Tag in Emerald Green, 1 Title in Silver */}
-            <div className="relative z-20 max-w-5xl px-6 sm:px-12 pb-8">
+            {/* Concise Header in Bottom-Left */}
+            <div className="relative z-20 max-w-5xl px-5 sm:px-12 pb-6 sm:pb-8">
               {/* Breadcrumb Back */}
               <a 
                 href="/" 
-                className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition mb-3 group"
+                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition mb-2 group font-medium"
               >
                 <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
                 <span>City Showcase (Tier 1)</span>
               </a>
 
               {/* 1 concise line emotion tag in Emerald Green */}
-              <p className="text-emerald-400 font-medium text-sm sm:text-base italic drop-shadow-[0_2px_10px_rgba(16,185,129,0.3)] mb-1">
+              <p className="text-emerald-400 font-medium text-xs sm:text-base italic drop-shadow-[0_2px_10px_rgba(16,185,129,0.3)] mb-1 line-clamp-1">
                 "{activeSlide.emotionHook}"
               </p>
 
               {/* 1 title in Brushed Silver */}
-              <h1 className="text-2xl sm:text-4xl font-light uppercase text-[#cbd5e1] tracking-tight drop-shadow-md">
+              <h1 className="text-xl sm:text-4xl font-light uppercase text-[#cbd5e1] tracking-tight drop-shadow-md">
                 {activeSlide.name} • Prominent Residential & High-Rise Corridors
               </h1>
             </div>
           </section>
 
-          {/* Sub-Locations Grid Section */}
-          <div className="max-w-7xl mx-auto px-6 sm:px-12 pt-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Sub-Locations Grid Section - 1 Column Stack on Mobile */}
+          <div className="max-w-7xl mx-auto px-5 sm:px-12 pt-8 sm:pt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {activeSlide.subLocations.map((corridor, idx) => (
                 <a
                   key={idx}
                   href={`/safety-pillars/${activeSlide.id}?corridor=${encodeURIComponent(corridor.name)}`}
                   className="group rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/60 bg-[#111815] transition-all duration-300 flex flex-col hover:shadow-[0_0_35px_rgba(16,185,129,0.25)] cursor-pointer"
                 >
-                  {/* High-Definition Sunlit Balcony Visual - NO DULL BLACK MASKS */}
+                  {/* High-Definition Sunlit Balcony Visual */}
                   <div className="relative h-64 sm:h-72 w-full overflow-hidden">
                     <img 
                       src={corridor.image} 
                       alt={`${corridor.name} Balcony SS-316 Invisible Grills`} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      style={{ objectPosition: getMobileFocalPosition(corridor.name) }}
+                      className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${getMobileLandmarkClass(corridor.name)}`}
                     />
                     {/* Clear Vertical Wire Simulation Overlay */}
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
-                    {/* Minimal bottom fade only for typography legibility */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#111815] via-transparent to-transparent pointer-events-none" />
                     
-                    {/* Elevation Badge in Deep Green & Brushed Silver */}
-                    <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3 py-1.5 rounded-xl border border-emerald-500/40 text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                    {/* Elevation Badge */}
+                    <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 bg-black/75 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-emerald-500/40 text-[9px] sm:text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
                       <MapPin className="w-3 h-3 text-emerald-400" />
                       <span>{corridor.elevation}</span>
                     </div>
 
                     {/* Tag in Deep Green */}
-                    <div className="absolute top-4 right-4 bg-emerald-500 text-black text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg">
+                    <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 bg-emerald-500 text-black text-[9px] font-black uppercase tracking-wider px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-lg">
                       {corridor.tag}
                     </div>
                   </div>
 
                   {/* Card Content in Brushed Silver & Deep Green */}
-                  <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-400 transition mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-400 transition mb-1.5 sm:mb-2">
                         {corridor.name}
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
@@ -1192,8 +1234,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       </p>
                     </div>
 
-                    <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-                      <span className="text-emerald-400 font-semibold group-hover:translate-x-1 transition flex items-center gap-1">
+                    <div className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                      <span className="text-emerald-400 font-semibold group-hover:translate-x-1 transition flex items-center gap-1 text-[11px] sm:text-xs">
                         View 6-Pillar Solutions & Pricing →
                       </span>
                       <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1]">
@@ -1221,6 +1263,26 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             </div>
           </footer>
 
+          {/* Sticky Mobile Bottom Contact Bar (< 768px) */}
+          <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#090d0b]/95 backdrop-blur-xl border-t border-emerald-500/25 px-4 py-2.5 flex items-center justify-between gap-3 sm:hidden shadow-[0_-5px_25px_rgba(0,0,0,0.8)]">
+            <a
+              href="tel:+919494328999"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs font-semibold uppercase tracking-wider hover:border-emerald-400 active:scale-95 transition"
+            >
+              <Phone className="w-3.5 h-3.5 text-emerald-400 stroke-[2.5]" />
+              <span>Quick Call</span>
+            </a>
+            <a
+              href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-black uppercase tracking-wider shadow-[0_0_15px_rgba(16,185,129,0.4)] active:scale-95 transition"
+            >
+              <span>WhatsApp Direct</span>
+              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+            </a>
+          </div>
+
         </main>
       )}
 
@@ -1229,18 +1291,21 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* OPENS ONLY AFTER CLICKING A TIER 2 SUB-LOCATION CARD!                 */}
       {/* ==================================================================== */}
       {tier === 'tier3' && (
-        <main id="location-tier3" className="min-h-screen pb-20">
+        <main id="location-tier3" className="min-h-screen pb-28 sm:pb-20">
           
-          {/* Dynamic Top Hero Section (Height: 40vh to 45vh) */}
-          <section className="relative h-[42vh] min-h-[340px] w-full overflow-hidden flex items-end justify-start">
-            {/* Bright Corridor-Specific Interior Balcony Background - NO DULL MASKS */}
+          {/* Dynamic Top Hero Section (Height: 32vh on mobile, 42vh on desktop) */}
+          <section className="relative h-[32vh] sm:h-[42vh] min-h-[240px] w-full overflow-hidden flex items-end justify-start">
+            {/* Bright Corridor-Specific Interior Balcony Background with Mobile Landmark Framing */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
-              style={{ backgroundImage: `url(${currentHeroImage})` }}
+              className={`bg-adaptive-landmark absolute inset-0 bg-cover transition-transform duration-700 ${getMobileLandmarkClass(selectedCorridor)}`}
+              style={{ 
+                backgroundImage: `url(${currentHeroImage})`,
+                ['--bg-pos-mob' as any]: getMobileFocalPosition(selectedCorridor)
+              }}
             >
-              {/* Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation */}
+              {/* Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation - Portrait High Density on Mobile */}
               <div 
-                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
+                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
                 aria-hidden="true"
               />
               {/* Clean, subtle gradient at bottom blending into the 6-pillar grid below */}
@@ -1248,29 +1313,29 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             </div>
 
             {/* Header Micro-Copy in Bottom-Left */}
-            <div className="relative z-20 max-w-5xl px-6 sm:px-12 pb-8">
+            <div className="relative z-20 max-w-5xl px-5 sm:px-12 pb-6 sm:pb-8">
               
               {/* Top Back Link & Focused Corridor Badge */}
-              <div className="flex flex-wrap items-center gap-3 mb-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                 <a 
                   href={`/locations/${activeSlide.id}`} 
-                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition group font-medium"
+                  className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition group font-medium"
                 >
                   <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
                   <span>Back to {activeSlide.name} Corridors (Tier 2)</span>
                 </a>
 
                 {/* Corridor Pill Badge with Deep Emerald Green #10b981 border and glow */}
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#10b981] text-[11px] font-semibold text-[#10b981] shadow-[0_0_15px_rgba(16,185,129,0.35)]">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#10b981] text-[10px] sm:text-[11px] font-semibold text-[#10b981] shadow-[0_0_15px_rgba(16,185,129,0.35)]">
                   <span>📍 Focused Corridor: {currentCorridorDisplayName}</span>
                 </div>
               </div>
 
               {/* Heading (Silver & Emerald) */}
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase text-[#10b981] tracking-tight drop-shadow-[0_2px_15px_rgba(16,185,129,0.3)]">
+              <h1 className="text-xl sm:text-4xl md:text-5xl font-light uppercase text-[#10b981] tracking-tight drop-shadow-[0_2px_15px_rgba(16,185,129,0.3)]">
                 THE 6-PILLAR PROBLEM-SOLVER SOLUTIONS
               </h1>
-              <p className="text-xs sm:text-sm md:text-base text-[#cbd5e1] font-light tracking-wide mt-2 drop-shadow-md">
+              <p className="text-xs sm:text-sm md:text-base text-[#cbd5e1] font-light tracking-wide mt-1 sm:mt-2 drop-shadow-md line-clamp-2 sm:line-clamp-none">
                 Tailored architectural invisible grill engineering for {currentCorridorDisplayName} residences.
               </p>
 
@@ -1280,23 +1345,23 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {/* ----------------------------------------------------------------- */}
           {/* SECTION A: THE 6-PILLAR PROBLEM-SOLVER GRID                       */}
           {/* ----------------------------------------------------------------- */}
-          <section id="pillars-section" className="py-12 px-6 sm:px-12">
+          <section id="pillars-section" className="py-10 sm:py-12 px-5 sm:px-12">
             <div className="max-w-7xl mx-auto">
               
-              <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-2">
                   <span>REAL PROOF SOLUTIONS • SS-316 ARCHITECTURAL CERTIFIED</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-light uppercase text-slate-100 tracking-tight">
                   High-Definition Balcony Protection
                 </h2>
-                <p className="text-[#cbd5e1] text-xs sm:text-sm mt-2 leading-relaxed font-light">
+                <p className="text-[#cbd5e1] text-xs sm:text-sm mt-1.5 sm:mt-2 leading-relaxed font-light">
                   Engineered specifically for {currentCorridorDisplayName} high-rises and residential balconies.
                 </p>
               </div>
 
-              {/* 6 Grid Cards with Crisp Sunlight Imagery & Emerald Badges */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* 6 Grid Cards with Crisp Sunlight Imagery & Emerald Badges - 1 Column Stack on Mobile */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {PROBLEM_SOLVERS.map((card, idx) => {
                   const Icon = card.icon;
                   return (
