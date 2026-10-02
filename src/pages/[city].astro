@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DViewWebsite from '../components/DViewWebsite.tsx';
+import { ALL_LOCATIONS, type LocationData } from '../data/locations';
+
+export async function getStaticPaths() {
+  const cityAliases: Record<string, string> = {
+    'vizag': 'visakhapatnam',
+    'visakhapatnam': 'visakhapatnam',
+    'rajahmundry': 'rajahmundry',
+    'rajamahendravaram': 'rajahmundry',
+    'vijayawada': 'vijayawada-amaravati',
+    'amaravati': 'vijayawada-amaravati',
+    'guntur': 'guntur',
+    'kakinada': 'kakinada',
+    'nellore': 'nellore'
+  };
+
+  return Object.entries(cityAliases).map(([citySlug, targetSlug]) => {
+    const locData = ALL_LOCATIONS.find(l => l.slug === targetSlug) || ALL_LOCATIONS[0];
+    return {
+      params: { city: citySlug },
+      props: { location: locData, slug: citySlug }
+    };
+  });
+}
+
+interface Props {
+  location: LocationData;
+  slug: string;
+}
+
+const { location, slug } = Astro.props;
+---
+
+<Layout
+  title={`${location.name} SS-316 Invisible Safety Grills | D-VIEW Luxury Architectural Safety`}
+  description={`Engineered SS-316 invisible safety grills for luxury high-rise balconies in ${location.name}. Uncompromised views, 100% fall protection, child & pet safety with 10-year warranty.`}
+  canonicalUrl={`https://dviewsolutions.in/${slug}`}
+  cityName={location.name}
+  ogImage={location.heroImage}
+  keywords={location.keywords}
+>
+  <DViewWebsite client:load initialCitySlug={slug} isSubPageDirect={true} />
+</Layout>
