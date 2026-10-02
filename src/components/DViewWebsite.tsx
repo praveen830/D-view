@@ -3,7 +3,7 @@ import {
   ShieldCheck, Phone, CheckCircle2, X, 
   Flame, Baby, Cat, HeartHandshake, Eye, Sparkles, 
   Droplets, ArrowUpRight, HelpCircle, MapPin, ArrowLeft,
-  Wrench, Lock, Gift, Mail, MessageSquare
+  Wrench, Lock, Gift, Mail, MessageSquare, Building2
 } from 'lucide-react';
 
 // --- SUB-LOCATION CORRIDOR INTERFACE ---
@@ -675,6 +675,165 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
   }
 };
 
+// --- REAL SOCIETY INSTALLATIONS & SOCIAL PROOF DATA ---
+export interface SocietyInstallation {
+  id: string;
+  cityId: string;
+  cityName: string;
+  societyName: string;
+  corridor: string;
+  floor: string;
+  specs: string;
+  highlight: string;
+  image: string;
+  unitsProtected: string;
+  customerNote: string;
+}
+
+export const SOCIETY_INSTALLATIONS: SocietyInstallation[] = [
+  // Visakhapatnam Hub
+  {
+    id: 'mvv-grand',
+    cityId: 'vizag',
+    cityName: 'Visakhapatnam',
+    societyName: 'MVV GV The Grand',
+    corridor: 'Madhurawada',
+    floor: '25th-Floor Penthouse',
+    specs: '2.5mm Marine SS-316',
+    highlight: '100% Unblocked Hilltop & Valley View',
+    image: '/assets/locations/sub/vizag-madhurawada.png',
+    unitsProtected: '34 Balconies Secured',
+    customerNote: 'Valley breeze passes freely with zero vertigo risk for kids up to 25 floors.'
+  },
+  {
+    id: 'sanskriti-bayfront',
+    cityId: 'vizag',
+    cityName: 'Visakhapatnam',
+    societyName: 'Sanskriti Bayfront',
+    corridor: 'Rushikonda',
+    floor: 'Sea-Facing Tower (14th Floor)',
+    specs: '2.5mm Molybdenum SS-316',
+    highlight: 'Zero-Decay Marine Coating | Pet & Child Lockdown',
+    image: '/assets/locations/sub/vizag-rushikonda.png',
+    unitsProtected: '22 Balconies Secured',
+    customerNote: 'Zero rust from coastal salt air. Pristine view of turquoise waves.'
+  },
+  {
+    id: 'oceanus-towers',
+    cityId: 'vizag',
+    cityName: 'Visakhapatnam',
+    societyName: 'Oceanus Towers',
+    corridor: 'Yendada',
+    floor: '18th-Floor Coastal Flat',
+    specs: '2.5mm Marine SS-316',
+    highlight: 'Pigeon Exclusion Grid & Coastal Bay Protection',
+    image: '/assets/locations/sub/vizag-yendada.png',
+    unitsProtected: '28 Balconies Secured',
+    customerNote: '100% bird droppings prevention without blocking the morning ocean sunrise.'
+  },
+
+  // Rajamahendravaram Hub
+  {
+    id: 'godavari-riverfront',
+    cityId: 'rajahmundry',
+    cityName: 'Rajamahendravaram',
+    societyName: 'Godavari Riverfront Enclave',
+    corridor: 'Morampudi',
+    floor: '12th-Floor Riverfront Balcony',
+    specs: '2.5mm Marine SS-316',
+    highlight: 'River-Breeze Balcony | 10-Year Anti-Rust Certified',
+    image: '/assets/locations/sub/rajahmundry-morampudi.png',
+    unitsProtected: '19 Balconies Secured',
+    customerNote: 'Continuous river humidity tested. Zero corrosion with 99% clear river sightline.'
+  },
+  {
+    id: 'sri-krishna-gated',
+    cityId: 'rajahmundry',
+    cityName: 'Rajamahendravaram',
+    societyName: 'Sri Krishna Gated Society',
+    corridor: 'Bommuru',
+    floor: 'Duplex Terrace & Balcony',
+    specs: '2.5mm Virgin SS-316',
+    highlight: 'Toddler Fall-Safe Lockdown | 2-Inch Safe Spacing',
+    image: '/assets/locations/sub/rajahmundry-bommuru.png',
+    unitsProtected: '15 Balconies Secured',
+    customerNote: 'Eliminated pigeon roosting and gives parents complete peace of mind.'
+  },
+
+  // Vijayawada & Amaravati Hub
+  {
+    id: 'happynest-amaravati',
+    cityId: 'vijayawada',
+    cityName: 'Vijayawada & Amaravati',
+    societyName: 'APCRDA HappyNest',
+    corridor: 'Amaravati (G+18)',
+    floor: '16th-Floor High-Rise Unit',
+    specs: '3.0mm Heavy-Duty SS-316',
+    highlight: 'High-Rise Safety Mesh | 1-Min Fire Cutter Egress Compliant',
+    image: '/assets/corridors/vijayawada-happynest.jpg',
+    unitsProtected: '48 Balconies Secured',
+    customerNote: 'Complies with fire safety norms with clean 60-second emergency cutter escape.'
+  },
+  {
+    id: 'tadepalli-riverside',
+    cityId: 'vijayawada',
+    cityName: 'Vijayawada & Amaravati',
+    societyName: 'Tadepalli Riverside Residences',
+    corridor: 'Tadepalli',
+    floor: '10th-Floor Riverbank Flat',
+    specs: '2.5mm Marine SS-316',
+    highlight: 'Krishna River Mist Protection | SS-316 Metallurgy',
+    image: '/assets/corridors/vijayawada-tadepalli.jpg',
+    unitsProtected: '26 Balconies Secured',
+    customerNote: 'Uninterrupted view of Prakasam Barrage waters and Krishna greenery.'
+  },
+
+  // Guntur Hub
+  {
+    id: 'brodipet-heights',
+    cityId: 'guntur',
+    cityName: 'Guntur',
+    societyName: 'Brodipet Heights',
+    corridor: 'Brodipet',
+    floor: '14th-Floor Luxury Flat',
+    specs: '2.5mm High-Tensile SS-316',
+    highlight: 'High-Wind Resistance & Child Proofing',
+    image: '/assets/corridors/guntur-brodipet.jpg',
+    unitsProtected: '18 Balconies Secured',
+    customerNote: 'Withstands strong gusts from Kondaveedu hills with zero wire vibration.'
+  },
+
+  // Kakinada Hub
+  {
+    id: 'vakalapudi-port-view',
+    cityId: 'kakinada',
+    cityName: 'Kakinada',
+    societyName: 'Vakalapudi Port View Towers',
+    corridor: 'Vakalapudi Port Corridor',
+    floor: '11th-Floor Port Harbor Flat',
+    specs: '2.5mm Marine Grade SS-316',
+    highlight: 'Salt-Spray Corrosion Immunity | Flat Coastal Panoramas',
+    image: '/assets/corridors/kakinada-vakalapudi.jpg',
+    unitsProtected: '21 Balconies Secured',
+    customerNote: 'Full view of lighthouse and Bay of Bengal shipping vessels with zero rust.'
+  },
+
+  // Nellore Hub
+  {
+    id: 'magunta-luxury',
+    cityId: 'nellore',
+    cityName: 'Nellore',
+    societyName: 'Magunta Layout Luxury Flats',
+    corridor: 'Magunta Layout',
+    floor: '8th-Floor Riverfront View',
+    specs: '2.5mm Marine SS-316',
+    highlight: '400 KG Tensile Strength Fall Protection',
+    image: '/assets/corridors/nellore-magunta.jpg',
+    unitsProtected: '17 Balconies Secured',
+    customerNote: 'Penna river breeze stays unblocked while toddlers play safely.'
+  }
+];
+
 // --- 6-CARD PROBLEM SOLVER GALLERY (IMAGE-FIRST, REAL BALCONY SOLUTIONS) ---
 export const PROBLEM_SOLVERS = [
   {
@@ -969,9 +1128,163 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     );
   };
 
+  // Society Proof Filter State
+  const [societyFilter, setSocietyFilter] = useState<string>(activeSlide.id);
+
+  useEffect(() => {
+    setSocietyFilter(activeSlide.id);
+  }, [activeSlide.id]);
+
+  const filteredSocieties = societyFilter === 'all'
+    ? SOCIETY_INSTALLATIONS
+    : SOCIETY_INSTALLATIONS.filter(s => s.cityId === societyFilter);
+
   // =========================================================================
-  // REUSABLE GLOBAL SECTIONS: A (WARRANTY), B (CALCULATOR), C (FOOTER)
+  // REUSABLE GLOBAL SECTIONS: PROOF, A (WARRANTY), B (CALCULATOR), C (FOOTER)
   // =========================================================================
+
+  const renderSocietyProofSection = (isSnap = false) => (
+    <section id="society-proof-section" className={`${isSnap ? 'snap-start' : ''} relative py-16 sm:py-20 px-5 sm:px-12 bg-[#090d0b] border-t border-white/10`}>
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-3">
+            <Building2 className="w-3.5 h-3.5 text-emerald-400" />
+            <span>REAL HIGH-RISE PROOF • 850+ VERIFIED APARTMENTS</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-light uppercase text-slate-100 tracking-tight">
+            RECENTLY COMPLETED INSTALLATIONS ACROSS ANDHRA SOCIETIES
+          </h2>
+          <p className="text-[#cbd5e1] text-xs sm:text-sm mt-3 leading-relaxed font-light">
+            Over 850+ luxury high-rise balconies secured with certified SS-316 marine-grade invisible safety cables.
+          </p>
+        </div>
+
+        {/* City Filter Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+          {[
+            { id: 'all', label: 'All AP Hubs (850+)' },
+            { id: 'vizag', label: 'Visakhapatnam' },
+            { id: 'rajahmundry', label: 'Rajamahendravaram' },
+            { id: 'vijayawada', label: 'Vijayawada & Amaravati' },
+            { id: 'guntur', label: 'Guntur' },
+            { id: 'kakinada', label: 'Kakinada' },
+            { id: 'nellore', label: 'Nellore' },
+          ].map(tab => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setSocietyFilter(tab.id)}
+              className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition cursor-pointer ${
+                societyFilter === tab.id
+                  ? 'bg-emerald-500 text-black shadow-[0_0_18px_rgba(16,185,129,0.4)]'
+                  : 'bg-[#101714] text-slate-300 border border-white/10 hover:border-emerald-500/40 hover:text-white'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Society Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {filteredSocieties.map((society) => (
+            <div
+              key={society.id}
+              className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_35px_rgba(16,185,129,0.22)]"
+            >
+              <div>
+                {/* 100% Clean Architectural Balcony Photo - ZERO floating badges over image */}
+                <div className="relative h-60 sm:h-64 w-full overflow-hidden">
+                  <img
+                    src={society.image}
+                    alt={`${society.societyName} SS-316 Balcony Invisible Grills`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                  />
+                  {/* Subtle vertical wire simulation overlay */}
+                  <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
+                  {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
+                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
+                </div>
+
+                {/* Content Container Below Image */}
+                <div className="p-6">
+                  {/* Top Status & Units Row */}
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Verified Installation</span>
+                    </span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-200 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10">
+                      {society.unitsProtected}
+                    </span>
+                  </div>
+
+                  {/* Society Name */}
+                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition mb-1">
+                    {society.societyName}
+                  </h3>
+
+                  {/* Location Subline */}
+                  <div className="flex items-center gap-1.5 text-xs text-[#cbd5e1] mb-3">
+                    <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>{society.corridor}, {society.cityName}</span>
+                  </div>
+
+                  {/* Specs & Floor Pill Container */}
+                  <div className="p-3 rounded-xl bg-[#090d0b] border border-white/10 mb-3 space-y-1">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-slate-400 font-medium">Elevation:</span>
+                      <span className="text-slate-200 font-semibold">{society.floor}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-slate-400 font-medium">Metallurgy:</span>
+                      <span className="text-emerald-400 font-bold">{society.specs}</span>
+                    </div>
+                  </div>
+
+                  {/* Highlight Feature */}
+                  <div className="text-xs font-semibold text-emerald-300/90 mb-2 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    <span>{society.highlight}</span>
+                  </div>
+
+                  {/* Resident / Society Feedback Note */}
+                  <p className="text-xs text-slate-300 italic font-light leading-relaxed">
+                    "{society.customerNote}"
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Action Footer */}
+              <div className="p-6 pt-0">
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-medium">
+                    10-Year Anti-Rust Guaranteed
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleOpenBooking(society.cityName, society.societyName)}
+                    className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>Request Similar Setup</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
 
   const renderWarrantySection = (isSnap = false) => (
     <section id="warranty-section" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-[#090d0b] border-t border-white/10`}>
@@ -1384,25 +1697,47 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     </footer>
   );
 
-  const renderStickyMobileBar = () => (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0a0f0d]/95 backdrop-blur-md border-t border-emerald-500/30 p-3 flex items-center justify-between gap-3 shadow-2xl">
+  const quickConnectWAMessage = encodeURIComponent(
+    "Hello D-View, I am interested in SS-316 invisible safety grills for my balcony. Please share details and free site measurement availability."
+  );
+
+  const renderFloatingQuickConnect = () => (
+    <aside aria-label="Quick Connect Floating Actions">
+      {/* 1. Floating WhatsApp Button (Bottom-Right on ALL devices) */}
       <a
-        href="tel:+919494328999"
-        className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs font-semibold uppercase tracking-wider hover:border-emerald-400 active:scale-95 transition"
-      >
-        <Phone className="w-3.5 h-3.5 text-emerald-400 stroke-[2.5]" />
-        <span>Quick Call</span>
-      </a>
-      <a
-        href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
+        href={`https://wa.me/919494328999?text=${quickConnectWAMessage}`}
         target="_blank"
         rel="noreferrer"
-        className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-black uppercase tracking-wider shadow-[0_0_15px_rgba(16,185,129,0.4)] active:scale-95 transition"
+        aria-label="Chat with D-View on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#10b981] hover:bg-[#059669] text-black shadow-[0_0_30px_rgba(16,185,129,0.55)] transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer"
       >
-        <span>WhatsApp Direct</span>
-        <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+        {/* Subtle Breathing Pulse Glow Animation */}
+        <span className="absolute inset-0 rounded-full bg-emerald-400 opacity-60 animate-ping -z-10 pointer-events-none" />
+        
+        {/* WhatsApp SVG Icon */}
+        <svg 
+          className="w-7 h-7 sm:w-8 sm:h-8 fill-current text-[#090d0b]" 
+          viewBox="0 0 24 24"
+        >
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.222-.553-1.821-.755-3.003-2.617-3.093-2.738-.09-.12-1.002-1.334-1.002-2.545 0-1.21.636-1.807.863-2.052.226-.245.496-.307.662-.307.166 0 .331.002.477.009.153.008.358-.058.558.423.209.502.712 1.737.774 1.862.062.126.104.272.02.438-.083.167-.125.271-.249.417-.124.145-.262.325-.374.436-.125.124-.256.26-.11.511.146.252.648 1.07 1.39 1.732.955.851 1.76 1.114 2.012 1.239.252.126.4.105.548-.063.147-.168.627-.732.793-.984.167-.251.332-.209.559-.125.227.084 1.442.68 1.689.805.247.126.413.188.474.293.061.104.061.606-.083 1.011z"/>
+        </svg>
+
+        {/* Desktop Hover Tooltip */}
+        <span className="hidden md:group-hover:block absolute right-full mr-3 px-3.5 py-2 rounded-xl bg-[#101714] border border-emerald-500/40 text-emerald-400 text-xs font-semibold whitespace-nowrap shadow-xl">
+          WhatsApp Concierge (+91 94943 28999)
+        </span>
       </a>
-    </div>
+
+      {/* 2. Floating Quick Call Button (Bottom-Left on Mobile) */}
+      <a
+        href="tel:+919494328999"
+        aria-label="Direct Phone Call"
+        className="md:hidden fixed bottom-6 left-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#101714]/95 backdrop-blur-md border border-emerald-500/40 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] active:scale-95 transition-all text-xs font-semibold uppercase tracking-wider group cursor-pointer"
+      >
+        <Phone className="w-4 h-4 text-emerald-400 shrink-0 stroke-[2.5]" />
+        <span className="text-white font-bold tracking-normal">Call +91 94943 28999</span>
+      </a>
+    </aside>
   );
 
   return (
@@ -1579,9 +1914,9 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   aria-hidden="true"
                 />
 
-                {/* Minimal Top & Bottom Clean Fade for Text Contrast Only (Max 20-30%) */}
-                <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 h-44 sm:h-48 bg-gradient-to-t from-[#0a0f0d]/95 via-[#0a0f0d]/30 to-transparent pointer-events-none" />
+                {/* Natural Daytime Architectural Clarity: Minimal non-dimming contrast gradients */}
+                <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#090d0b]/80 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Minimal Text at Bottom-Left: Pushed to bottom 25%, NEVER blocks the landmark on mobile */}
@@ -1616,7 +1951,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 </span>
                 {idx === 5 && (
                   <span className="hidden sm:inline-block text-[9px] uppercase tracking-widest text-emerald-400 font-mono mt-1 animate-pulse">
-                    Scroll down for Warranty & Calculator ↓
+                    Scroll down for Proof, Warranty & Calculator ↓
                   </span>
                 )}
               </div>
@@ -1625,12 +1960,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           ))}
 
           {/* ==================================================================== */}
-          {/* GLOBAL SECTIONS: A (WARRANTY), B (CALCULATOR), C (FOOTER)            */}
+          {/* GLOBAL SECTIONS: PROOF, A (WARRANTY), B (CALCULATOR), C (FOOTER)     */}
           {/* ==================================================================== */}
+          {renderSocietyProofSection(true)}
           {renderWarrantySection(true)}
           {renderCalculatorSection(true)}
           {renderLuxuryFooter(true)}
-          {renderStickyMobileBar()}
+          {renderFloatingQuickConnect()}
 
         </main>
       )}
@@ -1657,8 +1993,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
                 aria-hidden="true"
               />
-              {/* Minimal Clean Fade Only for Text Contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-black/10 to-black/35 pointer-events-none" />
+              {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090d0b] to-transparent pointer-events-none" />
             </div>
 
             {/* Concise Header in Bottom-Left */}
@@ -1691,7 +2027,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <a
                   key={idx}
                   href={`/safety-pillars/${activeSlide.id}?corridor=${encodeURIComponent(corridor.name)}`}
-                  className="group rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/60 bg-[#111815] transition-all duration-300 flex flex-col hover:shadow-[0_0_35px_rgba(16,185,129,0.25)] cursor-pointer"
+                  className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_35px_rgba(16,185,129,0.25)] cursor-pointer"
                 >
                   {/* High-Definition Sunlit Balcony Visual - 100% CLEAN & UNOBSTRUCTED */}
                   <div className="relative h-64 sm:h-72 w-full overflow-hidden">
@@ -1709,7 +2045,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     />
                     {/* Clear Vertical Wire Simulation Overlay */}
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#111815] via-transparent to-transparent pointer-events-none" />
+                    {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
+                    <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                   </div>
 
                   {/* Card Content in Brushed Silver & Deep Green */}
@@ -1751,12 +2088,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </div>
 
           {/* ==================================================================== */}
-          {/* GLOBAL SECTIONS: A (WARRANTY), B (CALCULATOR), C (FOOTER)            */}
+          {/* GLOBAL SECTIONS: PROOF, A (WARRANTY), B (CALCULATOR), C (FOOTER)     */}
           {/* ==================================================================== */}
+          {renderSocietyProofSection(false)}
           {renderWarrantySection(false)}
           {renderCalculatorSection(false)}
           {renderLuxuryFooter(false)}
-          {renderStickyMobileBar()}
+          {renderFloatingQuickConnect()}
 
         </main>
       )}
@@ -1783,8 +2121,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
                 aria-hidden="true"
               />
-              {/* Clean, subtle gradient at bottom blending into the 6-pillar grid below */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-black/10 to-black/35 pointer-events-none" />
+              {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090d0b] to-transparent pointer-events-none" />
             </div>
 
             {/* Header Micro-Copy in Bottom-Left */}
@@ -1842,7 +2180,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   return (
                     <div 
                       key={idx}
-                      className="group rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/50 bg-[#111815] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+                      className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
                     >
                       {/* High-Definition Sunlit Balcony Photography - 100% CLEAN & UNOBSTRUCTED */}
                       <div className="relative h-64 w-full overflow-hidden">
@@ -1859,7 +2197,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                         />
                         {/* Wire simulation on card image */}
                         <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#111815] via-transparent to-transparent pointer-events-none" />
+                        {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
+                        <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                       </div>
 
                       {/* Content in Deep Emerald Green & Brushed Silver */}
@@ -1907,7 +2246,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               </div>
 
               {/* Closing Tagline in Telugu */}
-              <div className="mt-14 text-center p-6 rounded-2xl bg-[#111815] border border-emerald-500/40 max-w-4xl mx-auto shadow-xl">
+              <div className="mt-14 text-center p-6 rounded-2xl bg-[#101714] border border-emerald-500/30 max-w-4xl mx-auto shadow-xl">
                 <p className="text-emerald-400 font-semibold text-sm sm:text-base italic">
                   "Okke Okka Balcony Installation... Enno High-Alert Safety Problems Nundi Mee Intiki Life-Time Premium Protection!"
                 </p>
@@ -1917,9 +2256,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </section>
 
           {/* ----------------------------------------------------------------- */}
+          {/* REAL SOCIETY INSTALLATIONS & SOCIAL PROOF ENGINE                   */}
+          {/* ----------------------------------------------------------------- */}
+          {renderSocietyProofSection(false)}
+
+          {/* ----------------------------------------------------------------- */}
           {/* SECTION B: LOCAL WEATHER GUIDE & SS-316 TECHNICAL TRUST         */}
           {/* ----------------------------------------------------------------- */}
-          <section id="weather-trust" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#0c120f]">
+          <section id="weather-trust" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]">
             <div className="max-w-7xl mx-auto">
               
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -1937,7 +2281,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   </p>
 
                   <div className="space-y-4 pt-2">
-                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#111815] border border-white/10">
+                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-white/10">
                       <Droplets className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
                       <div>
                         <h4 className="text-sm font-bold text-white uppercase">The Environmental Challenge</h4>
@@ -1945,7 +2289,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#111815] border border-emerald-500/40">
+                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-emerald-500/40">
                       <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
                       <div>
                         <h4 className="text-sm font-bold text-emerald-400 uppercase">The Material: Molybdenum-Infused SS-316</h4>
@@ -1963,7 +2307,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-[#111815] border border-white/10 text-center">
+                    <div className="p-4 rounded-2xl bg-[#101714] border border-white/10 text-center">
                       <span className="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
                       <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
                         Periodic Tension Inspection
@@ -1988,7 +2332,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       alt="D-VIEW SS-316 Care Kit and Shine Spray" 
                       className="w-full h-80 object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                     
                     <div className="absolute bottom-6 left-6 right-6">
                       <div className="inline-flex items-center gap-2 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
@@ -2018,7 +2362,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {/* ----------------------------------------------------------------- */}
           {/* TECHNICAL FAQS SECTION                                            */}
           {/* ----------------------------------------------------------------- */}
-          <section id="faq-section" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#0c120f]">
+          <section id="faq-section" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
@@ -2031,7 +2375,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
               <div className="space-y-4">
                 {FAQS.map((faq, i) => (
-                  <div key={i} className="p-6 rounded-2xl bg-[#111815] border border-white/10">
+                  <div key={i} className="p-6 rounded-2xl bg-[#101714] border border-white/10">
                     <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
                       <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                       {faq.q}
@@ -2048,8 +2392,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {/* GLOBAL LUXURY CONCIERGE FOOTER */}
           {renderLuxuryFooter(false)}
 
-          {/* Sticky Mobile Call & WhatsApp Floating Bar */}
-          {renderStickyMobileBar()}
+          {/* Persistent Floating WhatsApp & Call Buttons */}
+          {renderFloatingQuickConnect()}
 
         </main>
       )}
