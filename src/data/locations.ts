@@ -122,7 +122,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316 Marine Grade',
         areaSqFt: 110,
         highlight: 'Preserved 180° Godavari river view while safeguarding twin 3-year-olds.',
-        image: '/images/project-penthouse.jpg'
+        image: '/assets/corridors/rajahmundry-morampudi.jpg'
       },
       {
         id: 'rjy-02',
@@ -132,7 +132,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '3.0mm SS-316 High-Tensile',
         areaSqFt: 185,
         highlight: 'Replaced rusted iron cage with sleek invisible cables; eliminated pigeon menace.',
-        image: '/images/rajahmundry-hero.jpg'
+        image: '/assets/corridors/rajahmundry-bommuru.jpg'
       },
       {
         id: 'rjy-03',
@@ -142,7 +142,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.0mm SS-316 Standard',
         areaSqFt: 72,
         highlight: 'Zero facade disruption; compliant with apartment association aesthetic guidelines.',
-        image: '/images/child-safety-balcony.jpg'
+        image: '/assets/corridors/rajahmundry-vemagiri.jpg'
       }
     ],
     
@@ -226,7 +226,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '3.0mm SS-316 Marine Grade',
         areaSqFt: 145,
         highlight: 'Full Bay of Bengal panorama preserved; zero rust after monsoon sea-spray.',
-        image: '/images/visakhapatnam-hero.jpg'
+        image: '/assets/corridors/vizag-yendada.jpg'
       },
       {
         id: 'vzg-02',
@@ -236,7 +236,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316 Coastal Grade',
         areaSqFt: 96,
         highlight: 'Child safety certified for toddler play area with 2-inch wire intervals.',
-        image: '/images/child-safety-balcony.jpg'
+        image: '/assets/corridors/vizag-madhurawada.jpg'
       },
       {
         id: 'vzg-03',
@@ -246,7 +246,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '3.0mm SS-316 Marine Grade',
         areaSqFt: 170,
         highlight: 'Architectural black track finish perfectly matched with custom facade styling.',
-        image: '/images/project-penthouse.jpg'
+        image: '/assets/corridors/vizag-rushikonda.jpg'
       }
     ],
     
@@ -326,7 +326,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316 Marine Grade',
         areaSqFt: 135,
         highlight: 'Maintained panoramic sunrise vistas of the capital zone with zero risk for toddlers.',
-        image: '/images/vijayawada-hero.jpg'
+        image: '/assets/corridors/vijayawada-happynest.jpg'
       },
       {
         id: 'vja-02',
@@ -336,7 +336,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '3.0mm SS-316 High-Tensile',
         areaSqFt: 190,
         highlight: 'Prakasam Barrage view preserved 100%; passed structural safety inspection.',
-        image: '/images/project-penthouse.jpg'
+        image: '/assets/corridors/vijayawada-benzcircle.jpg'
       },
       {
         id: 'vja-03',
@@ -346,7 +346,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316 Thermal Grade',
         areaSqFt: 88,
         highlight: 'Eliminated pigeon nesting while ensuring uninterrupted ventilation.',
-        image: '/images/child-safety-balcony.jpg'
+        image: '/assets/corridors/vijayawada-tadepalli.jpg'
       }
     ],
     
@@ -424,7 +424,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '3.0mm SS-316 Marine Grade',
         areaSqFt: 105,
         highlight: 'Coastal sea breeze flows freely while ensuring absolute fall prevention.',
-        image: '/images/kakinada-hero.jpg'
+        image: '/assets/corridors/kakinada-vakalapudi.jpg'
       },
       {
         id: 'kkd-02',
@@ -434,7 +434,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316',
         areaSqFt: 120,
         highlight: 'Eliminated stubborn pigeon infestation without darkening the living hall.',
-        image: '/images/child-safety-balcony.jpg'
+        image: '/assets/corridors/kakinada-sarpavaram.jpg'
       }
     ],
     
@@ -508,7 +508,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316 High-Tensile',
         areaSqFt: 115,
         highlight: 'Replaced traditional box grill with frameless invisible wire system; enhanced property appeal.',
-        image: '/images/guntur-hero.jpg'
+        image: '/assets/corridors/guntur-amaravatiroad.jpg'
       },
       {
         id: 'gtr-02',
@@ -518,7 +518,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.0mm SS-316',
         areaSqFt: 78,
         highlight: '100% pigeon-free balcony with zero restriction on natural daylight.',
-        image: '/images/child-safety-balcony.jpg'
+        image: '/assets/corridors/guntur-brodipet.jpg'
       }
     ],
     
@@ -592,7 +592,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316 Marine Grade',
         areaSqFt: 100,
         highlight: 'Maintained uninterrupted sunset views over Penna river while safeguarding toddler.',
-        image: '/images/nellore-hero.jpg'
+        image: '/assets/corridors/nellore-maguntalayout.jpg'
       },
       {
         id: 'nlr-02',
@@ -602,7 +602,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
         wireSpec: '2.5mm SS-316',
         areaSqFt: 84,
         highlight: 'Solved severe pigeon roosting issue; restored clean balcony lifestyle.',
-        image: '/images/child-safety-balcony.jpg'
+        image: '/assets/corridors/nellore-balajinagar.jpg'
       }
     ],
     
