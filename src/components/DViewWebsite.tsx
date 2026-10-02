@@ -105,14 +105,14 @@ export const CITIES_SLIDES: LocationSlide[] = [
     slug: 'rajahmundry',
     name: 'Rajamahendravaram',
     cityShort: 'RAJAHMUNDRY',
-    categoryTag: 'RIVERFRONT HERITAGE LIVING',
-    mainTitle: 'SAFEGUARDING GODAVARI PRIDE — RAJAHMUNDRY',
-    subline: '100% bird and fall protection while preserving fresh river breeze.',
-    microCue: 'Tap anywhere to view Rajahmundry projects & pricing',
+    categoryTag: 'RIVERFRONT HERITAGE LIVING | BRIGHT & SUNLIT ELEVATIONS',
+    mainTitle: 'SAFEGUARDING GODAVARI PRIDE — RAJAMAHENDRY',
+    subline: 'SS-316 Invisible Grills with Unobstructed Godavari Arch Bridge Views.',
+    microCue: 'Tap anywhere to view Rajamahendravaram projects & pricing',
     badge: 'Godavari Riverfront Corridor',
     emotionHook: 'Pigeon problem lekunda, challani Godavari gaali & arch bridge view asalu aagakunda intiki 100% safety!',
     landmarkDesc: 'Modern apartment balcony with floor tiles, railing, and vertical invisible safety wires framing the Godavari Arch Bridge and river cruise boats.',
-    heroImage: '/assets/locations/rajahmundry.png',
+    heroImage: '/assets/locations/rajahmundry-godavari-bridge.jpg',
     activeBelts: ['Morampudi', 'Bommuru', 'Diwancheruvu', 'Lalacheruvu', 'Vemagiri', 'Gadaala Residential Belts'],
     weatherChallenge: 'Daily river vapor mist and heavy pigeon nesting colonies on open balcony ledges.',
     weatherSolution: 'Precision 2-inch SS-316 tensioned cables preventing bird entry while allowing 99% free river cross-ventilation.',
@@ -129,7 +129,7 @@ export const CITIES_SLIDES: LocationSlide[] = [
         elevation: 'Historic River Panorama',
         tag: 'ICONIC HERITAGE VIEW | 100% PIGEON SHIELD',
         desc: 'Balcony view directly framing the yellow Godavari Arch Bridge and boats drifting on the water through transparent SS-316 wires.',
-        image: '/assets/locations/rajahmundry.png'
+        image: '/assets/locations/rajahmundry-godavari-bridge.jpg'
       },
       {
         name: 'Bommuru Gated Communities',
@@ -480,13 +480,13 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
     cityId: "rajahmundry"
   },
   "Godavari Arch Bridge": {
-    image: "/assets/locations/rajahmundry.png",
+    image: "/assets/locations/rajahmundry-godavari-bridge.jpg",
     title: "Godavari Arch Bridge Riverfront",
     spec: "Iconic Heritage View | 100% Pigeon Shield",
     cityId: "rajahmundry"
   },
   "Godavari Arch Bridge Riverfront": {
-    image: "/assets/locations/rajahmundry.png",
+    image: "/assets/locations/rajahmundry-godavari-bridge.jpg",
     title: "Godavari Arch Bridge Riverfront",
     spec: "Iconic Heritage View | 100% Pigeon Shield",
     cityId: "rajahmundry"

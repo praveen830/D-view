@@ -27,11 +27,11 @@ export const citiesData: CityConfig[] = [
   {
     id: "rajahmundry",
     name: "Rajamahendravaram",
-    tagline: "Safeguarding The River View: Godavari Arch Bridge",
-    subline: "Preserve the fresh river breeze and historic bridge panorama with 100% pigeon protection.",
+    tagline: "RIVERFRONT HERITAGE LIVING | BRIGHT & SUNLIT ELEVATIONS",
+    subline: "SS-316 Invisible Grills with Unobstructed Godavari Arch Bridge Views.",
     landmark: "Godavari Arch Bridge & River Breeze",
-    heroImage: "/assets/locations/rajahmundry.png",
-    localHeroImage: "/assets/locations/rajahmundry.png",
+    heroImage: "/assets/locations/rajahmundry-godavari-bridge.jpg",
+    localHeroImage: "/assets/locations/rajahmundry-godavari-bridge.jpg",
     keyAreas: ["Morampudi", "Bommuru", "Diwancheruvu", "Lalacheruvu", "Vemagiri", "Gadaala Projects"],
     weatherAngle: "River humidity attracts high pigeon infestation. Our invisible mesh blocks pigeons 100% while allowing free cross-ventilation.",
     district: "East Godavari"
