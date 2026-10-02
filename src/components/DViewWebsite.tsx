@@ -57,44 +57,44 @@ export const CITIES_SLIDES: LocationSlide[] = [
       {
         name: 'Madhurawada (27-Floor High-Rises)',
         elevation: '25th-Floor Penthouse Balcony View',
-        tag: 'G+27 Towers Lockdown',
-        desc: 'Bright 25th-floor penthouse view through vertical invisible grills overlooking valley towers (like MVV The Grand) with 100% child safety.',
-        image: '/assets/locations/visakhapatnam.png'
+        tag: '25TH-FLOOR PENTHOUSE | 27 TOWERS LOCKDOWN',
+        desc: '25th-floor penthouse balcony looking through vertical SS-316 wires at high-rise valley towers (like MVV The Grand) surrounded by green coastal hills.',
+        image: '/assets/locations/sub/vizag-madhurawada.png'
       },
       {
         name: 'Yendada Sea-Facing Corridor',
         elevation: 'High-Altitude Bay Panoramas',
-        tag: 'Marine-Grade SS-316',
-        desc: 'Bright ocean horizon view framed by vertical safety wires with permanent salt-air rust immunity and strict 2-inch safe cable spacing.',
-        image: '/assets/locations/visakhapatnam.png'
+        tag: 'HIGH-ALTITUDE BAY PANORAMA | MARINE-GRADE SS-316',
+        desc: 'Wide balcony perspective facing the deep coastal ocean shoreline through crisp, transparent safety cables.',
+        image: '/assets/locations/sub/vizag-yendada.png'
       },
       {
         name: 'Rushikonda Luxury Hillside',
         elevation: 'Coastal Villa Balconies',
-        tag: 'Unblocked Blue Waves',
-        desc: 'Coastal villa elevation with unblocked blue sea waves breaking on the rocky beach framed through floor-to-ceiling invisible grill wires.',
-        image: '/assets/locations/visakhapatnam.png'
+        tag: 'COASTAL VILLA BALCONIES | UNBLOCKED BLUE WAVES',
+        desc: 'Luxury coastal hillside villa balcony overlooking turquoise blue ocean waves crashing near rocky shores, perfectly framed by vertical safety wires.',
+        image: '/assets/locations/sub/vizag-rushikonda.png'
       },
       {
-        name: 'PM Palem & Cricket Stadium Road',
+        name: 'PM Palem (Cricket Stadium Road)',
         elevation: 'Gated Community High-Rises',
-        tag: 'Zero-Climb Toddler Safe',
-        desc: 'High-elevation gated community balconies protected with tightly tensioned vertical cables for toddlers and young children.',
-        image: '/assets/locations/visakhapatnam.png'
+        tag: 'GATED COMMUNITY HIGH-RISE | ZERO-CLIMB TODDLER SAFE',
+        desc: 'Modern gated community high-rise elevation looking towards mountain ridges through 2-inch safe spaced cables.',
+        image: '/assets/locations/sub/vizag-pmpalem.png'
       },
       {
-        name: 'Anandapuram Growth Belt',
+        name: 'Anandapuram Growth Corridor',
         elevation: 'Valley Elevation Penthouses',
-        tag: 'Natural Cross-Airflow',
-        desc: 'Lush greenery and cool valley breezes enter your living rooms while providing certified high-tensile fall security.',
-        image: '/assets/locations/visakhapatnam.png'
+        tag: 'VALLEY ELEVATION PENTHOUSE | NATURAL CROSS-AIRFLOW',
+        desc: 'High-rise apartment balcony overlooking lush green open landscapes and modern expressway developments.',
+        image: '/assets/locations/sub/vizag-anandapuram.png'
       },
       {
-        name: 'Pendurthi & Gajuwaka Belt',
+        name: 'Gajuwaka & Pendurthi Belt',
         elevation: 'Industrial & Urban Towers',
-        tag: 'Anti-Static Dust Resistant',
-        desc: 'Smooth nylon-12 coated SS-316 cables shed dust particles effortlessly and maintain long-term brilliant shine.',
-        image: '/assets/locations/visakhapatnam.png'
+        tag: 'INDUSTRIAL & URBAN TOWERS | ANTI-STATIC DUST RESISTANT',
+        desc: 'Urban high-rise apartment balcony framed with anti-dust coated SS-316 wires.',
+        image: '/assets/locations/sub/vizag-gajuwaka.png'
       }
     ]
   },
@@ -119,37 +119,37 @@ export const CITIES_SLIDES: LocationSlide[] = [
       {
         name: 'Morampudi Residential Towers',
         elevation: 'River-View Balcony Corridors',
-        tag: 'Fresh River Breeze',
-        desc: 'Uninterrupted fresh Godavari river air and balcony safety framing green Godavari colonies with zero view obstruction.',
+        tag: 'RIVER-VIEW BALCONY | FRESH RIVER BREEZE',
+        desc: 'High-rise apartment balcony looking out at open green residential layouts and fresh Godavari breeze through vertical wires.',
+        image: '/assets/locations/sub/rajahmundry-morampudi.png'
+      },
+      {
+        name: 'Godavari Arch Bridge Riverfront',
+        elevation: 'Historic River Panorama',
+        tag: 'ICONIC HERITAGE VIEW | 100% PIGEON SHIELD',
+        desc: 'Balcony view directly framing the yellow Godavari Arch Bridge and boats drifting on the water through transparent SS-316 wires.',
         image: '/assets/locations/rajahmundry.png'
       },
       {
         name: 'Bommuru Gated Communities',
         elevation: 'Mid & High-Rise Apartments',
-        tag: '100% Bird-Proof',
-        desc: 'Zero pigeon messes and nesting on balcony ledges, keeping outdoor furniture spotless, hygienic, and breezy.',
-        image: '/assets/locations/rajahmundry.png'
+        tag: 'ZERO BIRD DROPPINGS | 2-INCH SAFE SPACING',
+        desc: 'Luxury society balcony view with pigeon-proof vertical safety wire screens.',
+        image: '/assets/locations/sub/rajahmundry-bommuru.png'
       },
       {
-        name: 'Diwancheruvu & Lalacheruvu High-Rises',
+        name: 'Diwancheruvu & Lalacheruvu Hub',
         elevation: 'Highway High-Rise Towers',
-        tag: 'Wind & Dust Shield',
-        desc: 'Structural anchoring into concrete withstands high Godavari gusts without whistling or vibrating.',
-        image: '/assets/locations/rajahmundry.png'
+        tag: 'ELEVATED HIGHWAY TOWERS | WIND & DUST SHIELD',
+        desc: 'Elevated highway residential towers with clean sunlight penetration.',
+        image: '/assets/locations/sub/rajahmundry-diwancheruvu.png'
       },
       {
         name: 'Vemagiri Riverfront Belts',
         elevation: 'Godavari Bank Balconies',
-        tag: '99% View Transparency',
-        desc: 'Expansive riverfront view framing Godavari waters without dark prison-like iron bar cages.',
-        image: '/assets/locations/rajahmundry.png'
-      },
-      {
-        name: 'Gadaala Residential Hubs',
-        elevation: 'Modern Family Gated Flats',
-        tag: 'Toddler & Elder Security',
-        desc: 'Firm SS-316 tensioned cables eliminate vertigo anxiety and protect children during evening balcony family time.',
-        image: '/assets/locations/rajahmundry.png'
+        tag: 'RIVERBANK APARTMENT TERRACE | ZERO FALL HAZARD',
+        desc: 'Riverbank apartment terrace overlooking water streams through stainless-steel invisible grills.',
+        image: '/assets/locations/sub/rajahmundry-vemagiri.png'
       }
     ]
   },
@@ -742,49 +742,49 @@ export default function DViewWebsite({ initialCitySlug, tier = 'tier1' }: DViewW
       {/* CRITICAL: ONLY LOCAL PROMINENT CORRIDORS - ZERO 6-PILLAR GRID HERE!  */}
       {/* ==================================================================== */}
       {tier === 'tier2' && (
-        <main id="location-tier2" className="pt-24 min-h-screen pb-20">
+        <main id="location-tier2" className="min-h-screen pb-20">
           
-          {/* Header Section: Crisp, Sunlit Visual with Zero Hero Buttons */}
-          <div className="max-w-7xl mx-auto px-6 sm:px-12 pt-6 pb-12">
-            
-            {/* Breadcrumb Back to Tier 1 */}
-            <a 
-              href="/" 
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition mb-6 group"
+          {/* Top 45vh Bright Hero Background Section */}
+          <section className="relative h-[45vh] min-h-[340px] w-full overflow-hidden flex items-end justify-start">
+            {/* Bright Signature City Interior Balcony Background - NO DULL MASKS */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
+              style={{ backgroundImage: `url(${activeSlide.heroImage})` }}
             >
-              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
-              <span>Back to City Showcase (Tier 1)</span>
-            </a>
-
-            <div className="text-center max-w-4xl mx-auto">
-              {/* Category Badge in Brushed Silver */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-4">
-                <span>TIER 2 • LOCAL RESIDENTIAL CORRIDORS</span>
-              </div>
-
-              {/* Section Title in Brushed Silver */}
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase text-slate-100 tracking-tight mb-4">
-                Prominent Residential & High-Rise Corridors
-              </h1>
-
-              {/* Local Emotion Tagline in Deep Emerald Green */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#111815] border border-emerald-500/40 backdrop-blur-md max-w-3xl mx-auto mb-6 shadow-[0_0_25px_rgba(16,185,129,0.15)]">
-                <p className="text-emerald-400 font-medium text-sm sm:text-base italic leading-relaxed">
-                  "{activeSlide.emotionHook}"
-                </p>
-              </div>
-
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
-                {activeSlide.landmarkDesc} Explore prominent gated communities and skyscraper corridors in {activeSlide.name}. Click any corridor card below to inspect certified 6-pillar proof solutions and instant balcony pricing.
-              </p>
-
-              {/* ZERO HERO BUTTONS (Both buttons permanently removed per specification) */}
+              {/* Vertical Wire Line Simulation Overlay */}
+              <div 
+                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
+                aria-hidden="true"
+              />
+              {/* Minimal Clean Fade Only for Text Contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-black/15 to-black/35 pointer-events-none" />
             </div>
 
-          </div>
+            {/* Concise Header in Bottom-Left: 1 Emotion Tag in Emerald Green, 1 Title in Silver */}
+            <div className="relative z-20 max-w-5xl px-6 sm:px-12 pb-8">
+              {/* Breadcrumb Back */}
+              <a 
+                href="/" 
+                className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition mb-3 group"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
+                <span>City Showcase (Tier 1)</span>
+              </a>
 
-          {/* Big, Bright, Realistic Balcony Photo Cards Grid */}
-          <div className="max-w-7xl mx-auto px-6 sm:px-12">
+              {/* 1 concise line emotion tag in Emerald Green */}
+              <p className="text-emerald-400 font-medium text-sm sm:text-base italic drop-shadow-[0_2px_10px_rgba(16,185,129,0.3)] mb-1">
+                "{activeSlide.emotionHook}"
+              </p>
+
+              {/* 1 title in Brushed Silver */}
+              <h1 className="text-2xl sm:text-4xl font-light uppercase text-[#cbd5e1] tracking-tight drop-shadow-md">
+                {activeSlide.name} • Prominent Residential & High-Rise Corridors
+              </h1>
+            </div>
+          </section>
+
+          {/* Sub-Locations Grid Section */}
+          <div className="max-w-7xl mx-auto px-6 sm:px-12 pt-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {activeSlide.subLocations.map((corridor, idx) => (
                 <a
