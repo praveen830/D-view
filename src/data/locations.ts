@@ -178,10 +178,10 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     altName: 'Vizag',
     district: 'Visakhapatnam',
     badge: 'VISAKHAPATNAM • COASTAL BALCONY SAFETY',
-    heroHeadline: 'PREMIUM INVISIBLE GRILLS IN VISAKHAPATNAM',
-    heroSubhead: 'Uninterrupted coastline vistas, mountain sea breezes, and uncompromising coastal safety engineering for high-rise living.',
+    heroHeadline: 'UNBLOCKED VIZAG VIEWS, 101% BREATHTAKING & SECURE',
+    heroSubhead: 'RK Beach to Kailasagiri - Experience uninterrupted coastal panoramic views with zero safety compromise.',
     heroImage: '/images/visakhapatnam-hero.jpg',
-    heroImageAlt: 'Penthouse balcony in Visakhapatnam overlooking RK Beach with SS-316 invisible safety grills',
+    heroImageAlt: 'Penthouse balcony in Visakhapatnam overlooking RK Beach and Kailasagiri with SS-316 invisible safety grills',
     
     landmarkHeadline: 'SAFETY WITHOUT LOSING THE COASTAL VIEW',
     landmarkSubhead: 'Take in the vast Bay of Bengal and Kailasagiri horizons with zero visual obstruction, while protecting high-rise living from intense ocean crosswinds.',

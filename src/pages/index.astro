@@ -42,6 +42,63 @@ const globalFaqs = [
     answer: 'We provide a 5 to 10-year warranty covering material integrity and structural rust prevention for all genuine SS-316 installations.'
   }
 ];
+
+const locationHighlights = [
+  {
+    name: 'Visakhapatnam',
+    slug: 'vizag',
+    headline: 'Unblocked Vizag Views, 101% Breathtaking & Secure',
+    sub: 'RK Beach & Kailasagiri Horizon view with certified SS-316 coastal salt shield.',
+    image: '/images/visakhapatnam-hero.jpg',
+    badge: 'COASTAL LUXURY',
+    ctaText: 'Explore Vizag Page'
+  },
+  {
+    name: 'Rajamahendravaram',
+    slug: 'rajahmundry',
+    headline: 'Safeguarding The River View',
+    sub: 'Historic Godavari Arch Bridge & river breeze preservation with pigeon protection.',
+    image: '/images/rajahmundry-hero.jpg',
+    badge: 'GODAVARI BREEZE',
+    ctaText: 'Explore Rajahmundry Page'
+  },
+  {
+    name: 'Vijayawada & Amaravati',
+    slug: 'vijayawada-amaravati',
+    headline: 'Modern Living in Amaravati & Krishna River Horizons',
+    sub: 'High-rise tower safety for HappyNest clusters and Prakasam Barrage views.',
+    image: '/images/vijayawada-hero.jpg',
+    badge: 'CAPITAL REGION',
+    ctaText: 'Explore Vijayawada Page'
+  },
+  {
+    name: 'Guntur',
+    slug: 'guntur',
+    headline: 'Guardian of Guntur: Kondaveedu Fort & High-Rise Living',
+    sub: 'Modern gated community safety replacing heavy box iron bars on Amaravati Road.',
+    image: '/images/guntur-hero.jpg',
+    badge: 'MODERN RESIDENTIAL',
+    ctaText: 'Explore Guntur Page'
+  },
+  {
+    name: 'Kakinada',
+    slug: 'kakinada',
+    headline: "Kakinada's Coastal Charm & Marine Grade SS-316 Safety",
+    sub: 'Port corridor and Vakalapudi lighthouse vistas with anti-saline wire protection.',
+    image: '/images/kakinada-hero.jpg',
+    badge: 'PORT CORRIDOR',
+    ctaText: 'Explore Kakinada Page'
+  },
+  {
+    name: 'Nellore',
+    slug: 'nellore',
+    headline: 'Tranquility & Trust: Nellore Barrage & Penna River View',
+    sub: 'River-facing balcony ventilation and child/elder safety across Magunta Layout.',
+    image: '/images/nellore-hero.jpg',
+    badge: 'PENNA WATERFRONT',
+    ctaText: 'Explore Nellore Page'
+  }
+];
 ---
 
 <Layout
@@ -309,7 +366,7 @@ const globalFaqs = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {ALL_LOCATIONS.map((loc) => (
+        {locationHighlights.map((loc) => (
           <a
             href={`/locations/${loc.slug}`}
             class="group bg-[#121816] rounded-3xl border border-[#24322B] overflow-hidden hover:border-[#7CFF3A] transition-all duration-300 flex flex-col justify-between shadow-xl hover:-translate-y-1.5"
@@ -317,36 +374,37 @@ const globalFaqs = [
             <div>
               <div class="relative h-56 overflow-hidden">
                 <img
-                  src={loc.heroImage}
-                  alt={loc.heroHeadline}
+                  src={loc.image}
+                  alt={loc.headline}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                   loading="lazy"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#121816] via-transparent to-transparent"></div>
                 <div class="absolute top-4 left-4 bg-[#0B0D0C]/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#24322B] text-xs font-bold text-[#7CFF3A]">
-                  {loc.badge.split(' • ')[1]}
+                  {loc.badge}
                 </div>
               </div>
 
               <div class="p-6">
                 <div class="flex items-center justify-between mb-2">
-                  <h3 class="text-2xl font-black text-white group-hover:text-[#7CFF3A] transition-colors">
+                  <h3 class="text-xl font-black text-white group-hover:text-[#7CFF3A] transition-colors">
                     {loc.name}
                   </h3>
-                  <span class="text-xs text-[#94A3B8] font-medium">{loc.district}</span>
+                  <span class="text-xs text-[#7CFF3A] font-bold">SS-316</span>
                 </div>
-                <p class="text-xs text-[#C7CDD1] leading-relaxed line-clamp-2 mb-4">
-                  {loc.heroSubhead}
+                <span class="block text-xs font-extrabold text-[#E2E8F0] mb-2 leading-snug">
+                  {loc.headline}
+                </span>
+                <p class="text-xs text-[#94A3B8] leading-relaxed line-clamp-2">
+                  {loc.sub}
                 </p>
-                <div class="text-[11px] text-[#7CFF3A] font-medium">
-                  {loc.areas.slice(0, 3).map(a => a.name).join(' • ')} + more
-                </div>
               </div>
             </div>
 
             <div class="p-6 pt-0">
-              <div class="w-full py-2.5 rounded-xl bg-[#1A2420] text-xs font-extrabold text-white group-hover:bg-[#7CFF3A] group-hover:text-[#0B0D0C] transition-colors text-center">
-                Explore {loc.name} Guide →
+              <div class="w-full py-2.5 rounded-xl bg-[#1A2420] text-xs font-extrabold text-white group-hover:bg-[#7CFF3A] group-hover:text-[#0B0D0C] transition-colors text-center flex items-center justify-center gap-1.5">
+                <span>{loc.ctaText}</span>
+                <span>→</span>
               </div>
             </div>
           </a>

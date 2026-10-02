@@ -22,10 +22,19 @@ import Footer from '../../components/Footer.astro';
 import { ALL_LOCATIONS, getLocationBySlug, type LocationData } from '../../data/locations';
 
 export async function getStaticPaths() {
-  return ALL_LOCATIONS.map((loc) => ({
+  const paths = ALL_LOCATIONS.map((loc) => ({
     params: { location: loc.slug },
     props: { location: loc }
   }));
+  // Alias /locations/vizag directly to Visakhapatnam
+  const vizagData = ALL_LOCATIONS.find(l => l.slug === 'visakhapatnam');
+  if (vizagData) {
+    paths.push({
+      params: { location: 'vizag' },
+      props: { location: vizagData }
+    });
+  }
+  return paths;
 }
 
 interface Props {
