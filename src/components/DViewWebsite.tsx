@@ -5,6 +5,7 @@ import {
   Droplets, ArrowUpRight, HelpCircle, MapPin, ArrowLeft,
   Wrench, Lock, Gift, Mail, MessageSquare, Building2
 } from 'lucide-react';
+import { getSafetyGrillData } from '../data/corridors';
 
 // --- SUB-LOCATION CORRIDOR INTERFACE ---
 export interface SubLocationCorridor {
@@ -222,14 +223,14 @@ export const CITIES_SLIDES: LocationSlide[] = [
     slug: 'guntur',
     name: 'Guntur',
     cityShort: 'GUNTUR',
-    categoryTag: 'HIGH-RISE STRUCTURAL LIVING',
-    mainTitle: 'GUARDIAN OF GUNTUR',
-    subline: 'Say goodbye to dark cage iron grills. Uncompromised daylight and fall safety.',
+    categoryTag: 'ELEVATED INLAND RESIDENTIAL LIVING',
+    mainTitle: 'METICULOUS FALL CONTAINMENT — GUNTUR',
+    subline: 'SS-316 Invisible Safety Grills for Multi-Storey Balconies & Terraces.',
     microCue: 'Tap anywhere to view Guntur corridors & pricing',
     badge: 'Kondaveedu Horizons Belt',
     emotionHook: 'Kondaveedu hill breeze intloki vasthundi, pillalu unna elevations bayam lekunda safe setup!',
-    landmarkDesc: 'Balcony terrace framing Kondaveedu Fort ridge and city skyline through high-tensile invisible wires.',
-    heroImage: '/assets/locations/guntur.png',
+    landmarkDesc: 'Luxury apartment balcony framing Kondaveedu ridge skyline and Guntur urban expanse through floor-to-ceiling SS-316 invisible wire cables.',
+    heroImage: '/assets/locations/guntur-townscape.jpg',
     activeBelts: ['Brodipet', 'Arundelpet', 'Amaravati Road', 'Namburu', 'Kaza & Tadepalli Belt (900+ listings)'],
     weatherChallenge: 'Heavy dry winds carrying abrasive dust particulates that erode and dull conventional iron bars.',
     weatherSolution: 'Anti-static smooth nylon-12 coated SS-316 cables shed dust effortlessly and maintain lifelong shine.',
@@ -765,10 +766,10 @@ export const SOCIETY_INSTALLATIONS: SocietyInstallation[] = [
     id: 'happynest-amaravati',
     cityId: 'vijayawada',
     cityName: 'Vijayawada & Amaravati',
-    societyName: 'APCRDA HappyNest',
+    societyName: 'Amaravati HappyNest (Tower 3)',
     corridor: 'Amaravati (G+18)',
     floor: '16th-Floor High-Rise Unit',
-    specs: '3.0mm Heavy-Duty SS-316',
+    specs: 'SS-316 2.5mm Marine Grade',
     highlight: 'High-Rise Safety Mesh | 1-Min Fire Cutter Egress Compliant',
     image: '/assets/corridors/vijayawada-happynest.jpg',
     unitsProtected: '48 Balconies Secured',
@@ -786,6 +787,19 @@ export const SOCIETY_INSTALLATIONS: SocietyInstallation[] = [
     image: '/assets/corridors/vijayawada-tadepalli.jpg',
     unitsProtected: '26 Balconies Secured',
     customerNote: 'Uninterrupted view of Prakasam Barrage waters and Krishna greenery.'
+  },
+  {
+    id: 'benz-circle-skyscraper',
+    cityId: 'vijayawada',
+    cityName: 'Vijayawada & Amaravati',
+    societyName: 'Benz Circle Skyscraper Residences',
+    corridor: 'Benz Circle',
+    floor: '15th-Floor Skyscraper Elevation',
+    specs: '3.0mm Heavy-Duty SS-316',
+    highlight: 'High Wind-Load Resistance | Capital Skyline Sightline',
+    image: '/assets/corridors/vijayawada-benzcircle.jpg',
+    unitsProtected: '32 Balconies Secured',
+    customerNote: 'High wind-load resistance with clear sightline to illuminated city avenues.'
   },
 
   // Guntur Hub
@@ -1149,14 +1163,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-3">
-            <Building2 className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-3 shadow-sm">
+            <Building2 className="w-3.5 h-3.5 text-[#7CFF3A]" />
             <span>REAL HIGH-RISE PROOF • 850+ VERIFIED APARTMENTS</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-light uppercase text-slate-100 tracking-tight">
-            RECENTLY COMPLETED INSTALLATIONS ACROSS ANDHRA SOCIETIES
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-white tracking-tight">
+            RECENTLY COMPLETED INSTALLATIONS ACROSS <span className="text-[#7CFF3A]">ANDHRA SOCIETIES</span>
           </h2>
-          <p className="text-[#cbd5e1] text-xs sm:text-sm mt-3 leading-relaxed font-light">
+          <p className="text-[#C7CDD1] text-xs sm:text-sm mt-3 leading-relaxed font-normal">
             Over 850+ luxury high-rise balconies secured with certified SS-316 marine-grade invisible safety cables.
           </p>
         </div>
@@ -1178,8 +1192,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               onClick={() => setSocietyFilter(tab.id)}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition cursor-pointer ${
                 societyFilter === tab.id
-                  ? 'bg-emerald-500 text-black shadow-[0_0_18px_rgba(16,185,129,0.4)]'
-                  : 'bg-[#101714] text-slate-300 border border-white/10 hover:border-emerald-500/40 hover:text-white'
+                  ? 'bg-[#7CFF3A] text-black shadow-[0_0_18px_rgba(124,255,58,0.4)]'
+                  : 'bg-[#101714] text-[#C7CDD1] border border-[#24322B] hover:border-[#7CFF3A]/40 hover:text-white'
               }`}
             >
               {tab.label}
@@ -1290,13 +1304,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     <section id="warranty-section" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-[#090d0b] border-t border-white/10`}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold block mb-2">
-            UNCONDITIONAL PEACE OF MIND • STRUCTURAL INTEGRITY
-          </span>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase text-slate-100 tracking-tight">
-            OFFICIAL 10-YEAR STRUCTURAL WARRANTY & UNCONDITIONAL GUARANTEE
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-3 shadow-sm">
+            <span>UNCONDITIONAL PEACE OF MIND • STRUCTURAL INTEGRITY</span>
+          </div>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-white tracking-tight">
+            OFFICIAL 10-YEAR STRUCTURAL WARRANTY & <span className="text-[#7CFF3A]">UNCONDITIONAL GUARANTEE</span>
           </h2>
-          <p className="text-[#cbd5e1] text-xs sm:text-sm mt-3 font-light leading-relaxed">
+          <p className="text-[#C7CDD1] text-xs sm:text-sm mt-3 font-normal leading-relaxed">
             Certified Virgin Marine-Grade SS-316 metallurgy engineered for coastal & riverfront longevity.
           </p>
         </div>
@@ -1308,28 +1322,28 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             return (
               <div 
                 key={bIdx}
-                className="rounded-3xl p-6 sm:p-8 bg-[#101714] border border-emerald-500/25 hover:border-emerald-500/60 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_30px_rgba(16,185,129,0.18)] group"
+                className="rounded-3xl p-6 sm:p-8 bg-[#101714] border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_30px_rgba(124,255,58,0.18)] group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-black/60 border border-emerald-500/40 flex items-center justify-center text-emerald-400 mb-5 group-hover:scale-110 transition-transform shadow-lg">
+                  <div className="w-12 h-12 rounded-2xl bg-black/60 border border-[#7CFF3A]/40 flex items-center justify-center text-[#7CFF3A] mb-5 group-hover:scale-110 transition-transform shadow-lg">
                     <Icon className="w-6 h-6 stroke-[2]" />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#7CFF3A] block mb-1">
                     {badge.highlight}
                   </span>
                   <h3 className="text-lg font-bold text-white mb-2.5">
                     {badge.title}
                   </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed font-light">
+                  <p className="text-xs text-[#C7CDD1] leading-relaxed font-normal">
                     {badge.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-emerald-400 font-medium">
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-[#7CFF3A] font-medium">
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5" /> 100% Certified
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#7CFF3A]" /> 100% Certified
                   </span>
-                  <span className="text-slate-400 text-[10px] uppercase tracking-wider">
+                  <span className="text-[#C7CDD1] text-[10px] uppercase tracking-wider">
                     D-View Guarantee
                   </span>
                 </div>
@@ -1339,23 +1353,23 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         </div>
 
         {/* Complimentary Maintenance Care Kit (Free Gift) Banner */}
-        <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-r from-[#101714] via-[#121f19] to-[#101714] border border-emerald-500/30 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-r from-[#101714] via-[#121f19] to-[#101714] border border-[#7CFF3A]/30 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
-              <Gift className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/40 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest">
+              <Gift className="w-3.5 h-3.5 text-[#7CFF3A]" />
               <span>Complimentary Care Kit on Site Installation</span>
             </div>
             <h4 className="text-xl sm:text-2xl font-bold text-white">
               Free SS-316 Maintenance & Surface Shine Care Kit
             </h4>
-            <p className="text-xs sm:text-sm text-slate-300 font-light max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#C7CDD1] font-normal max-w-2xl leading-relaxed">
               Every confirmed site installation receives a complimentary High-Grade Microfiber Cleaning Cloth + Specialized SS Surface Shine Spray Kit for lifetime wire clarity.
             </p>
           </div>
           <button
             type="button"
             onClick={() => handleOpenBooking(selectedHub)}
-            className="px-6 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-black uppercase tracking-wider shadow-[0_0_20px_rgba(16,185,129,0.35)] shrink-0 transition cursor-pointer"
+            className="px-6 py-3.5 rounded-2xl bg-[#7CFF3A] hover:bg-[#8eff50] text-black text-xs font-black uppercase tracking-wider shadow-[0_0_20px_rgba(124,255,58,0.4)] shrink-0 transition cursor-pointer"
           >
             Claim With Free Survey →
           </button>
@@ -1368,13 +1382,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     <section id="estimate-calculator" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-[#0c120f] border-t border-white/10`}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold block mb-2">
-            TRANSPARENT PRICING & ESTIMATOR
-          </span>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-light uppercase text-slate-100 tracking-tight">
-            INSTANT BALCONY SAFETY ESTIMATE CALCULATOR
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-3 shadow-sm">
+            <span>TRANSPARENT PRICING & ESTIMATOR</span>
+          </div>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-white tracking-tight">
+            INSTANT BALCONY SAFETY <span className="text-[#7CFF3A]">ESTIMATE CALCULATOR</span>
           </h2>
-          <p className="text-[#cbd5e1] text-xs sm:text-sm mt-3 font-light leading-relaxed">
+          <p className="text-[#C7CDD1] text-xs sm:text-sm mt-3 font-normal leading-relaxed">
             Transparent, real-time pricing tailored to your balcony dimensions.
           </p>
         </div>
@@ -1485,13 +1499,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 {calculatedArea} <span className="text-sm font-normal text-slate-400">sq.ft</span>
               </div>
 
-              <span className="text-[11px] uppercase tracking-wider text-[#cbd5e1] font-semibold">
+              <span className="text-[11px] uppercase tracking-wider text-[#C7CDD1] font-semibold">
                 Estimated Total
               </span>
-              <div className="text-3xl sm:text-4xl font-black text-emerald-400 mt-1 mb-2 drop-shadow-[0_0_15px_rgba(16,185,129,0.35)]">
+              <div className="text-3xl sm:text-4xl font-black text-[#7CFF3A] mt-1 mb-2 drop-shadow-[0_0_15px_rgba(124,255,58,0.35)]">
                 ₹{estimatedMin.toLocaleString()} - ₹{estimatedMax.toLocaleString()}
               </div>
-              <p className="text-[11px] text-slate-300 leading-normal font-light">
+              <p className="text-[11px] text-[#C7CDD1] leading-normal font-normal">
                 Includes SS-316 cables, tracks, tensioners & installation.
               </p>
             </div>
@@ -1499,7 +1513,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             {/* Direct Inputs */}
             <div className="mt-6 pt-5 border-t border-white/10 space-y-3">
               <div>
-                <label className="text-[10px] uppercase font-bold text-[#cbd5e1] block mb-1">
+                <label className="text-[10px] uppercase font-bold text-[#C7CDD1] block mb-1">
                   Customer Name
                 </label>
                 <input 
@@ -1507,12 +1521,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="e.g. Ramesh Varma"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full bg-[#101714] border border-emerald-500/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-emerald-400"
+                  className="w-full bg-[#101714] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#7CFF3A]"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] uppercase font-bold text-[#cbd5e1] block mb-1">
+                <label className="text-[10px] uppercase font-bold text-[#C7CDD1] block mb-1">
                   Phone Number
                 </label>
                 <input 
@@ -1520,7 +1534,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="+91 94943 28999"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full bg-[#101714] border border-emerald-500/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-emerald-400"
+                  className="w-full bg-[#101714] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#7CFF3A]"
                 />
               </div>
             </div>
@@ -1538,7 +1552,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   height="112"
                 />
               </div>
-              <span className="block text-[10px] text-slate-300 mt-2 font-medium">
+              <span className="block text-[10px] text-[#C7CDD1] mt-2 font-medium">
                 Scan QR code or click below for instant WhatsApp booking
               </span>
             </div>
@@ -1547,7 +1561,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <button
                 type="button"
                 onClick={() => handleOpenBooking(selectedHub)}
-                className="w-full bg-emerald-500 hover:bg-emerald-400 text-black py-3.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-[0_0_20px_rgba(16,185,129,0.35)] transition cursor-pointer"
+                className="w-full bg-[#7CFF3A] hover:bg-[#8eff50] text-black py-3.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-[0_0_20px_rgba(124,255,58,0.4)] transition cursor-pointer"
               >
                 Book Free Laser Measurement With This Quote →
               </button>
@@ -1914,43 +1928,59 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   aria-hidden="true"
                 />
 
-                {/* Natural Daytime Architectural Clarity: Minimal non-dimming contrast gradients */}
-                <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#090d0b]/80 via-transparent to-transparent pointer-events-none" />
+                {/* Natural Daytime Architectural Clarity: Smooth Brand Black (#0B0D0C) Bottom Gradient for Legibility */}
+                <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/30 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-72 sm:h-96 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/85 via-45% to-transparent pointer-events-none" />
               </div>
 
-              {/* Minimal Text at Bottom-Left: Pushed to bottom 25%, NEVER blocks the landmark on mobile */}
-              <div className="relative z-20 max-w-2xl text-left flex flex-col items-start px-5 sm:px-16 pb-8 sm:pb-16">
+              {/* Minimal Text at Bottom-Left: Sleek, compact architectural framing that preserves 90%+ unobstructed landmark view */}
+              <div className="relative z-20 max-w-xl text-left flex flex-col items-start px-5 sm:px-16 pb-6 sm:pb-12">
                 
-                {/* Category in Brushed Metallic Silver / Deep Green */}
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#10b981] font-semibold mb-1 block">
-                  {slide.categoryTag}
-                </span>
+                {/* Category Pill - Compact & Elegant */}
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#151C19]/90 backdrop-blur-md border border-[#7CFF3A]/30 text-[9px] sm:text-[10px] font-semibold text-[#7CFF3A] uppercase tracking-wider mb-2 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A]"></span>
+                  <span>{slide.categoryTag}</span>
+                </div>
 
-                {/* Title in Deep Emerald Green with Soft Glow */}
-                <h2 className="text-xl sm:text-4xl md:text-5xl font-light text-emerald-400 tracking-[0.06em] uppercase leading-tight mb-1.5 drop-shadow-[0_2px_15px_rgba(16,185,129,0.3)]">
-                  {slide.mainTitle}
+                {/* Title in Refined Proportions with Glowing Brand Green (#7CFF3A) Accent */}
+                <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase leading-snug mb-1.5 drop-shadow-md">
+                  {slide.mainTitle.includes(' — ') ? (
+                    <>
+                      {slide.mainTitle.split(' — ')[0]} — <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">{slide.mainTitle.split(' — ')[1]}</span>
+                    </>
+                  ) : slide.mainTitle.includes('AMARAVATI') ? (
+                    <>
+                      {slide.mainTitle.replace('AMARAVATI', '')}<span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">AMARAVATI</span>
+                    </>
+                  ) : slide.mainTitle.includes("KAKINADA'S") ? (
+                    <>
+                      <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">KAKINADA'S</span>{slide.mainTitle.replace("KAKINADA'S", '')}
+                    </>
+                  ) : (
+                    slide.mainTitle
+                  )}
                 </h2>
 
-                {/* Subline in Brushed Silver */}
-                <p className="text-xs sm:text-sm text-slate-300/90 font-light tracking-wide max-w-xl mb-2 line-clamp-2 sm:line-clamp-none">
+                {/* Subline in Brushed Silver - Compact & Crisp */}
+                <p className="text-[11px] sm:text-xs text-[#C7CDD1] font-normal tracking-wide max-w-lg mb-2 line-clamp-2 drop-shadow">
                   {slide.subline}
                 </p>
 
-                {/* Micro-cue */}
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-emerald-400/90 font-medium block">
-                  {slide.microCue}
-                </span>
+                {/* Micro-cue in Brand Green */}
+                <div className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] text-[#7CFF3A] font-semibold hover:text-white transition-colors">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A] animate-ping"></span>
+                  <span>{slide.microCue}</span>
+                </div>
 
               </div>
 
               {/* Slide Counter on Side & Scroll Down Cue */}
-              <div className="absolute bottom-8 right-5 sm:bottom-12 sm:right-12 z-20 flex flex-col items-end text-right">
-                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-slate-300 font-mono">
-                  0{idx + 1} / 06
+              <div className="absolute bottom-6 right-5 sm:bottom-12 sm:right-12 z-20 flex flex-col items-end text-right">
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#C7CDD1] font-mono">
+                  <span className="text-[#7CFF3A] font-bold">0{idx + 1}</span> / 06
                 </span>
                 {idx === 5 && (
-                  <span className="hidden sm:inline-block text-[9px] uppercase tracking-widest text-emerald-400 font-mono mt-1 animate-pulse">
+                  <span className="hidden sm:inline-block text-[9px] uppercase tracking-widest text-[#7CFF3A] font-mono mt-1 font-semibold animate-pulse">
                     Scroll down for Proof, Warranty & Calculator ↓
                   </span>
                 )}
@@ -1994,7 +2024,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 aria-hidden="true"
               />
               {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090d0b] to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/80 to-transparent pointer-events-none" />
             </div>
 
             {/* Concise Header in Bottom-Left */}
@@ -2002,20 +2032,21 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               {/* Breadcrumb Back */}
               <a 
                 href="/" 
-                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition mb-2 group font-medium"
+                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C7CDD1] hover:text-[#7CFF3A] transition mb-2 group font-medium"
               >
                 <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
                 <span>City Showcase (Tier 1)</span>
               </a>
 
-              {/* 1 concise line emotion tag in Emerald Green */}
-              <p className="text-emerald-400 font-medium text-xs sm:text-base italic drop-shadow-[0_2px_10px_rgba(16,185,129,0.3)] mb-1 line-clamp-1">
-                "{activeSlide.emotionHook}"
-              </p>
+              {/* 1 concise line emotion tag in Signature Brand Green Pill */}
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#151C19]/90 backdrop-blur-md border border-[#7CFF3A]/30 text-[9px] sm:text-[10px] font-semibold text-[#7CFF3A] uppercase tracking-wider mb-2 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A]"></span>
+                <span>"{activeSlide.emotionHook}"</span>
+              </div>
 
-              {/* 1 title in Brushed Silver */}
-              <h1 className="text-xl sm:text-4xl font-light uppercase text-[#cbd5e1] tracking-tight drop-shadow-md">
-                {activeSlide.name} • Prominent Residential & High-Rise Corridors
+              {/* 1 title in Pure White with City Accent in Brand Green */}
+              <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold uppercase text-white tracking-tight drop-shadow-md">
+                <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">{activeSlide.name}</span> • Prominent Residential & High-Rise Corridors
               </h1>
             </div>
           </section>
@@ -2054,29 +2085,29 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     <div>
                       {/* Specifications Row Below Image */}
                       <div className="flex flex-wrap items-center gap-2 mb-2.5">
-                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
-                          <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#7CFF3A] uppercase tracking-wider">
+                          <MapPin className="w-3.5 h-3.5 text-[#7CFF3A] shrink-0" />
                           {corridor.elevation}
                         </span>
                         <span className="text-white/20 text-xs">•</span>
-                        <span className="text-[10px] uppercase font-semibold tracking-wider text-[#cbd5e1] px-2 py-0.5 rounded-md bg-white/5 border border-white/10">
+                        <span className="text-[10px] uppercase font-semibold tracking-wider text-[#C7CDD1] px-2 py-0.5 rounded-md bg-[#151C19] border border-[#24322B]">
                           {corridor.tag}
                         </span>
                       </div>
 
-                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-400 transition mb-1.5 sm:mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#7CFF3A] transition mb-1.5 sm:mb-2">
                         {corridor.name}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                      <p className="text-xs sm:text-sm text-[#C7CDD1] leading-relaxed font-normal">
                         {corridor.desc}
                       </p>
                     </div>
 
                     <div className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-                      <span className="text-emerald-400 font-semibold group-hover:translate-x-1 transition flex items-center gap-1 text-[11px] sm:text-xs">
+                      <span className="text-[#7CFF3A] font-bold group-hover:translate-x-1 transition flex items-center gap-1 text-[11px] sm:text-xs">
                         View 6-Pillar Solutions & Pricing →
                       </span>
-                      <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1]">
+                      <span className="text-[10px] uppercase tracking-wider text-[#C7CDD1]">
                         SS-316 Certified
                       </span>
                     </div>
@@ -2122,7 +2153,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 aria-hidden="true"
               />
               {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090d0b] to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/80 to-transparent pointer-events-none" />
             </div>
 
             {/* Header Micro-Copy in Bottom-Left */}
@@ -2132,23 +2163,23 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                 <a 
                   href={`/locations/${activeSlide.id}`} 
-                  className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#cbd5e1] hover:text-emerald-400 transition group font-medium"
+                  className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C7CDD1] hover:text-[#7CFF3A] transition group font-medium"
                 >
                   <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
                   <span>Back to {activeSlide.name} Corridors (Tier 2)</span>
                 </a>
 
-                {/* Corridor Pill Badge with Deep Emerald Green #10b981 border and glow */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#10b981] text-[10px] sm:text-[11px] font-semibold text-[#10b981] shadow-[0_0_15px_rgba(16,185,129,0.35)]">
+                {/* Corridor Pill Badge with Signature Brand Green #7CFF3A border and glow */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#151C19]/90 backdrop-blur-md border border-[#7CFF3A]/30 text-[10px] sm:text-[11px] font-semibold text-[#7CFF3A] shadow-[0_0_15px_rgba(124,255,58,0.25)]">
                   <span>📍 Focused Corridor: {currentCorridorDisplayName}</span>
                 </div>
               </div>
 
-              {/* Heading (Silver & Emerald) */}
-              <h1 className="text-xl sm:text-4xl md:text-5xl font-light uppercase text-[#10b981] tracking-tight drop-shadow-[0_2px_15px_rgba(16,185,129,0.3)]">
-                THE 6-PILLAR PROBLEM-SOLVER SOLUTIONS
+              {/* Heading (White & Brand Green) */}
+              <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold uppercase text-white tracking-tight drop-shadow-md">
+                THE 6-PILLAR PROBLEM-SOLVER <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">SOLUTIONS</span>
               </h1>
-              <p className="text-xs sm:text-sm md:text-base text-[#cbd5e1] font-light tracking-wide mt-1 sm:mt-2 drop-shadow-md line-clamp-2 sm:line-clamp-none">
+              <p className="text-xs sm:text-sm text-[#C7CDD1] font-normal tracking-wide mt-1 sm:mt-2 drop-shadow-md line-clamp-2 sm:line-clamp-none">
                 Tailored architectural invisible grill engineering for {currentCorridorDisplayName} residences.
               </p>
 
@@ -2162,88 +2193,176 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             <div className="max-w-7xl mx-auto">
               
               <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-2 shadow-sm">
                   <span>REAL PROOF SOLUTIONS • SS-316 ARCHITECTURAL CERTIFIED</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-light uppercase text-slate-100 tracking-tight">
-                  High-Definition Balcony Protection
+                <h2 className="text-xl sm:text-3xl font-extrabold uppercase text-white tracking-tight">
+                  High-Definition <span className="text-[#7CFF3A]">Balcony Protection</span>
                 </h2>
-                <p className="text-[#cbd5e1] text-xs sm:text-sm mt-1.5 sm:mt-2 leading-relaxed font-light">
+                <p className="text-[#C7CDD1] text-xs sm:text-sm mt-1.5 sm:mt-2 leading-relaxed font-normal">
                   Engineered specifically for {currentCorridorDisplayName} high-rises and residential balconies.
                 </p>
               </div>
 
               {/* 6 Grid Cards with Crisp Sunlight Imagery & Emerald Badges - 1 Column Stack on Mobile */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {PROBLEM_SOLVERS.map((card, idx) => {
-                  const Icon = card.icon;
-                  return (
-                    <div 
-                      key={idx}
-                      className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
-                    >
-                      {/* High-Definition Sunlit Balcony Photography - 100% CLEAN & UNOBSTRUCTED */}
-                      <div className="relative h-64 w-full overflow-hidden">
-                        <img 
-                          src={card.image} 
-                          alt={card.title} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          loading={idx === 0 ? "eager" : "lazy"}
-                          fetchPriority={idx === 0 ? "high" : "auto"}
-                          decoding="async"
-                          width="640"
-                          height="360"
-                          sizes="(max-width: 768px) 100vw, 1920px"
-                        />
-                        {/* Wire simulation on card image */}
-                        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
-                        {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
-                        <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
-                      </div>
-
-                      {/* Content in Deep Emerald Green & Brushed Silver */}
-                      <div className="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                          {/* Specification Row Below Image */}
-                          <div className="flex items-center justify-between gap-2 mb-3">
-                            <div className="flex items-center gap-2">
-                              <div className="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
-                                <Icon className="w-4 h-4 text-emerald-400" />
-                              </div>
-                              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-400">
-                                {card.badge}
-                              </span>
-                            </div>
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-200 px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
-                              {card.stat}
-                            </span>
+              {(() => {
+                const cityGrillData = getSafetyGrillData(activeSlide.id);
+                const cityPillarsMap: Record<string, { problem: string; solution: string; title: string }> = {};
+                if (cityGrillData?.pillars) {
+                  cityGrillData.pillars.forEach(p => { cityPillarsMap[p.id] = p; });
+                }
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    {PROBLEM_SOLVERS.map((card, idx) => {
+                      const Icon = card.icon;
+                      // Map generic pillar id to PROBLEM_SOLVERS index order
+                      const pillarIds = ['children-safety', 'pets-safety', 'old-age-safety', 'pigeons-safety', 'fire-escape', 'modern-luxury'];
+                      const cityPillar = cityPillarsMap[pillarIds[idx]];
+                      return (
+                        <div 
+                          key={idx}
+                          className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+                        >
+                          {/* High-Definition Sunlit Balcony Photography - 100% CLEAN & UNOBSTRUCTED */}
+                          <div className="relative h-64 w-full overflow-hidden">
+                            <img 
+                              src={card.image} 
+                              alt={cityPillar?.title || card.title} 
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              loading={idx === 0 ? "eager" : "lazy"}
+                              fetchPriority={idx === 0 ? "high" : "auto"}
+                              decoding="async"
+                              width="640"
+                              height="360"
+                              sizes="(max-width: 768px) 100vw, 1920px"
+                            />
+                            {/* Wire simulation on card image */}
+                            <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
+                            {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
+                            <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                           </div>
 
-                          <h3 className="text-xl font-bold text-white mb-2">
-                            {card.title}
-                          </h3>
-                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-2 font-light">
-                            {card.desc}
-                          </p>
-                          <p className="text-xs text-emerald-400/90 italic leading-relaxed">
-                            "{card.teluguDesc}"
-                          </p>
-                        </div>
+                          {/* Content in Deep Emerald Green & Brushed Silver */}
+                          <div className="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                              {/* Specification Row Below Image */}
+                              <div className="flex items-center justify-between gap-2 mb-3">
+                                <div className="flex items-center gap-2">
+                                  <div className="p-1.5 rounded-lg bg-[#151C19] border border-[#7CFF3A]/30 text-[#7CFF3A]">
+                                    <Icon className="w-4 h-4 text-[#7CFF3A]" />
+                                  </div>
+                                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7CFF3A]">
+                                    {card.badge}
+                                  </span>
+                                </div>
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-[#C7CDD1] px-2.5 py-1 rounded-md bg-[#151C19] border border-[#24322B]">
+                                  {card.stat}
+                                </span>
+                              </div>
 
-                        <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-                          <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-                            <CheckCircle2 className="w-3.5 h-3.5" /> Certified SS-316
-                          </span>
-                          <span className="uppercase text-[10px] tracking-wider text-[#cbd5e1]">
-                            100% Reliable
-                          </span>
-                        </div>
-                      </div>
+                              {/* City-specific pillar title (from corridors.ts) or fallback */}
+                              <h3 className="text-xl font-bold text-white mb-2">
+                                {cityPillar?.title || card.title}
+                              </h3>
 
+                              {/* City-specific problem/solution injection from corridors.ts */}
+                              {cityPillar ? (
+                                <>
+                                  <div className="mb-3 p-3 rounded-xl bg-[#0B0D0C] border border-[#24322B] space-y-2">
+                                    <div>
+                                      <span className="text-[10px] font-bold uppercase tracking-widest text-rose-400 block mb-0.5">⚠ Local Problem</span>
+                                      <p className="text-xs text-[#C7CDD1] leading-relaxed font-normal">{cityPillar.problem}</p>
+                                    </div>
+                                    <div className="border-t border-[#24322B] pt-2">
+                                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#7CFF3A] block mb-0.5">✓ D-View Solution</span>
+                                      <p className="text-xs text-white leading-relaxed font-normal">{cityPillar.solution}</p>
+                                    </div>
+                                  </div>
+                                </>
+                              ) : (
+                                <>
+                                  <p className="text-xs sm:text-sm text-[#C7CDD1] leading-relaxed mb-2 font-normal">
+                                    {card.desc}
+                                  </p>
+                                  <p className="text-xs text-[#7CFF3A] italic leading-relaxed">
+                                    "{card.teluguDesc}"
+                                  </p>
+                                </>
+                              )}
+                            </div>
+
+                            <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-[#C7CDD1]">
+                              <span className="flex items-center gap-1.5 text-[#7CFF3A] font-bold">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-[#7CFF3A]" /> Certified SS-316
+                              </span>
+                              <span className="uppercase text-[10px] tracking-wider text-[#C7CDD1]">
+                                100% Reliable
+                              </span>
+                            </div>
+                          </div>
+
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
+
+              {/* ============================================================= */}
+              {/* CITY-SPECIFIC COMPLETED PROJECTS STRIP (from corridors.ts)     */}
+              {/* ============================================================= */}
+              {(() => {
+                const cityGrillData = getSafetyGrillData(activeSlide.id);
+                if (!cityGrillData?.completedProjects?.length) return null;
+                return (
+                  <div className="mt-12">
+                    <div className="text-center mb-6">
+                      <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        VERIFIED {cityGrillData.cityName.toUpperCase()} INSTALLATIONS
+                      </span>
                     </div>
-                  );
-                })}
-              </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {cityGrillData.completedProjects.map((proj, pi) => (
+                        <div
+                          key={pi}
+                          className="p-5 rounded-2xl bg-[#101714] border border-emerald-500/25 hover:border-emerald-500/50 transition-all group"
+                        >
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
+                              <CheckCircle2 className="w-3 h-3" />
+                              {proj.status}
+                            </span>
+                            {proj.unitsSecured && (
+                              <span className="text-[10px] font-semibold text-slate-300 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full">
+                                {proj.unitsSecured}
+                              </span>
+                            )}
+                          </div>
+                          <h4 className="text-base font-bold text-white group-hover:text-emerald-300 transition mb-1 leading-snug">
+                            {proj.societyName}
+                          </h4>
+                          <div className="flex items-center gap-1.5 text-[10px] text-emerald-400 font-semibold mb-2">
+                            <span>🛡</span>
+                            <span>{proj.installationType}</span>
+                          </div>
+                          {proj.floor && (
+                            <div className="text-[10px] text-slate-400 mb-2">
+                              <MapPin className="w-3 h-3 inline mr-1 text-emerald-500" />
+                              {proj.floor}
+                            </div>
+                          )}
+                          {proj.note && (
+                            <p className="text-[11px] text-slate-300 italic leading-relaxed border-t border-white/5 pt-2 mt-2">
+                              "{proj.note}"
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* Closing Tagline in Telugu */}
               <div className="mt-14 text-center p-6 rounded-2xl bg-[#101714] border border-emerald-500/30 max-w-4xl mx-auto shadow-xl">

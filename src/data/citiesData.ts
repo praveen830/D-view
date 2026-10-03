@@ -51,13 +51,13 @@ export const citiesData: CityConfig[] = [
   {
     id: "guntur",
     name: "Guntur",
-    tagline: "Guardian of Guntur: Kondaveedu Fort & High-Rise Horizons",
-    subline: "Say goodbye to dark cage iron grills. Enjoy open sky views with high-tensile safety.",
-    landmark: "Kondaveedu Fort & Guntur Skyline",
-    heroImage: "/assets/locations/guntur.png",
-    localHeroImage: "/assets/locations/guntur.png",
+    tagline: "ELEVATED INLAND RESIDENTIAL LIVING | Meticulous Fall Containment",
+    subline: "SS-316 Invisible Safety Grills for Multi-Storey Balconies & Terraces across Guntur's premium high-rise corridors.",
+    landmark: "Kondaveedu Fort Ridge & Guntur Urban Skyline",
+    heroImage: "/assets/locations/guntur-townscape.jpg",
+    localHeroImage: "/assets/locations/guntur-townscape.jpg",
     keyAreas: ["Brodipet", "Arundelpet", "Amaravati Road", "Namburu", "Kaza & Tadepalli Growth Corridor"],
-    weatherAngle: "Dust and strong winds need low-maintenance, easy-to-clean SS-316 high-tension steel structures.",
+    weatherAngle: "Dust and strong inland winds need low-maintenance, easy-to-clean SS-316 high-tension steel structures.",
     district: "Guntur"
   },
   {
