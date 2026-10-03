@@ -49,25 +49,10 @@
   background: #384C42;
 }
 
-/* Invisible Grill Wire Texture Utility */
-.wire-grid-overlay {
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(199, 205, 209, 0.08) 0px,
-    rgba(199, 205, 209, 0.08) 1px,
-    transparent 1px,
-    transparent 24px
-  );
-}
-
+/* Invisible Grill Wire Texture Utility disabled to keep images clean and natural */
+.wire-grid-overlay,
 .wire-grid-fine {
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(124, 255, 58, 0.12) 0px,
-    rgba(124, 255, 58, 0.12) 1px,
-    transparent 1px,
-    transparent 16px
-  );
+  display: none !important;
 }
 
 /* Subtle glow effects */

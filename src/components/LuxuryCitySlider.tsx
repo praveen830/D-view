@@ -93,8 +93,7 @@ export default function LuxuryCitySlider() {
             {/* Invisprotect-inspired architectural gradient masks */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0B0D0C]/95 via-[#0B0D0C]/65 to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D0C] via-transparent to-[#0B0D0C]/50"></div>
-            {/* Subtle Stainless Steel Invisible Wire Overlay */}
-            <div className="absolute inset-0 wire-grid-overlay opacity-30 pointer-events-none"></div>
+
           </div>
         );
       })}

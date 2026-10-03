@@ -1220,8 +1220,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     width="640"
                     height="360"
                   />
-                  {/* Subtle vertical wire simulation overlay */}
-                  <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
                   {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
                   <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                 </div>
@@ -1922,11 +1920,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   />
                 )}
 
-                {/* Crisp Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation - Portrait High Density on Mobile */}
-                <div 
-                  className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
-                  aria-hidden="true"
-                />
 
                 {/* Natural Daytime Architectural Clarity: Smooth Brand Black (#0B0D0C) Bottom Gradient for Legibility */}
                 <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/30 to-transparent pointer-events-none" />
@@ -2018,11 +2011,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 ['--bg-pos-mob' as any]: getMobileFocalPosition(activeSlide.id)
               }}
             >
-              {/* Vertical Wire Line Simulation Overlay */}
-              <div 
-                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
-                aria-hidden="true"
-              />
               {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
               <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/80 to-transparent pointer-events-none" />
             </div>
@@ -2074,8 +2062,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       height="360"
                       sizes="(max-width: 768px) 100vw, 1920px"
                     />
-                    {/* Clear Vertical Wire Simulation Overlay */}
-                    <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
                     {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
                     <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                   </div>
@@ -2147,11 +2133,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 ['--bg-pos-mob' as any]: getMobileFocalPosition(selectedCorridor)
               }}
             >
-              {/* Floor-to-Ceiling Vertical SS-316 Invisible Wire Lines Simulation - Portrait High Density on Mobile */}
-              <div 
-                className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.2)_21px,rgba(255,255,255,0.03)_22px)] sm:bg-[repeating-linear-gradient(90deg,transparent,transparent_26px,rgba(255,255,255,0.18)_27px,rgba(255,255,255,0.03)_28px)] pointer-events-none" 
-                aria-hidden="true"
-              />
               {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
               <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/80 to-transparent pointer-events-none" />
             </div>
@@ -2236,8 +2217,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                               height="360"
                               sizes="(max-width: 768px) 100vw, 1920px"
                             />
-                            {/* Wire simulation on card image */}
-                            <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_20px,rgba(255,255,255,0.18)_21px,rgba(255,255,255,0.02)_22px)] pointer-events-none" />
                             {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
                             <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                           </div>
