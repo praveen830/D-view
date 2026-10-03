@@ -203,9 +203,9 @@ export const CITIES_SLIDES: LocationSlide[] = [
       },
       {
         name: 'Kanuru & Poranki Belt',
-        elevation: 'Expanding Luxury Suburbs',
-        tag: '100% Cross Ventilation',
-        desc: 'Natural daylight and cross-ventilation flow freely, cutting AC power loads while assuring child safety.',
+        elevation: 'Bandar Road Luxury Balconies',
+        tag: 'Twilight Krishna Panorama',
+        desc: 'Balcony safety grills framing illuminated Prakasam Barrage and riverfront lights without blocking night breezes.',
         image: '/assets/corridors/vijayawada-kanuru.jpg'
       },
       {
@@ -258,9 +258,9 @@ export const CITIES_SLIDES: LocationSlide[] = [
       },
       {
         name: 'Namburu IT & University Belt',
-        elevation: 'Fast-Growing Skyscraper Colonies',
-        tag: 'Anti-Static Nylon',
-        desc: 'Special clear nylon outer layer sheds dust with every rain shower, keeping maintenance zero.',
+        elevation: 'University Belt Apartment Windows & Study Rooms',
+        tag: 'Panoramic Window Safety',
+        desc: 'Panoramic room window fitted with tensioned invisible safety grills, overlooking university greens with 100% natural breeze.',
         image: '/assets/corridors/guntur-namburu.jpg'
       },
       {
@@ -306,9 +306,9 @@ export const CITIES_SLIDES: LocationSlide[] = [
       },
       {
         name: 'Madhavapatnam Residential Hub',
-        elevation: 'Family Apartment Balconies',
-        tag: 'Bird Dropping Barrier',
-        desc: 'Prevents pigeons from perching on balcony rails and contaminating air-conditioning compressors.',
+        elevation: 'Family Apartment Windows & Balconies',
+        tag: 'Bird & Fall Safe',
+        desc: 'Invisible grills fitted securely across open room windows and balconies, preventing bird entry while preserving natural airflow.',
         image: '/assets/corridors/kakinada-madhavapatnam.jpg'
       },
       {
@@ -368,9 +368,9 @@ export const CITIES_SLIDES: LocationSlide[] = [
       },
       {
         name: 'Vedayapalem Riverfront Belt',
-        elevation: 'Waterfront Damp-Shield Balconies',
-        tag: 'Monsoon Proof SS-316',
-        desc: 'Immune to moisture staining, rust tears, or weathering during humid coastal monsoons.',
+        elevation: 'Penna Riverfront Windows & Flats',
+        tag: 'Panoramic Window Safety',
+        desc: 'Seamless invisible grill installation across wide bedroom window, framing peaceful Penna river views while keeping children 100% safe.',
         image: '/assets/corridors/nellore-vedayapalem.jpg'
       },
       {
@@ -601,7 +601,7 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
   "Namburu": {
     image: "/assets/corridors/guntur-namburu.jpg",
     title: "Namburu IT & University Belt",
-    spec: "Skyscraper Colonies | Anti-Static Nylon",
+    spec: "University Apartment Window Safety | 100% Breeze",
     cityId: "guntur"
   },
   "Kaza": {
@@ -627,7 +627,7 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
   "Madhavapatnam": {
     image: "/assets/corridors/kakinada-madhavapatnam.jpg",
     title: "Madhavapatnam Residential Hub",
-    spec: "Family Balconies | Bird Dropping Barrier",
+    spec: "Family Window & Balcony Safety | Bird Barrier",
     cityId: "kakinada"
   },
   "Ramanayyapeta": {
@@ -665,7 +665,7 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
   "Vedayapalem": {
     image: "/assets/corridors/nellore-vedayapalem.jpg",
     title: "Vedayapalem Riverfront Belt",
-    spec: "Waterfront Balconies | Monsoon Proof SS-316",
+    spec: "Penna Riverfront Window Safety | Child Safe",
     cityId: "nellore"
   },
   "Podalakur Road": {
@@ -1206,7 +1206,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {filteredSocieties.map((society) => (
             <div
               key={society.id}
-              className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_35px_rgba(16,185,129,0.22)]"
+              className="group rounded-3xl overflow-hidden border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 bg-[#101714] transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_35px_rgba(124,255,58,0.22)]"
             >
               <div>
                 {/* 100% Clean Architectural Balcony Photo - ZERO floating badges over image */}
@@ -1228,8 +1228,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <div className="p-6">
                   {/* Top Status & Units Row */}
                   <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7CFF3A]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#7CFF3A]" />
                       <span>Verified Installation</span>
                     </span>
                     <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-200 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10">
@@ -1238,13 +1238,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   </div>
 
                   {/* Society Name */}
-                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition mb-1">
+                  <h3 className="text-xl font-bold text-white group-hover:text-[#7CFF3A] transition mb-1">
                     {society.societyName}
                   </h3>
 
                   {/* Location Subline */}
                   <div className="flex items-center gap-1.5 text-xs text-[#cbd5e1] mb-3">
-                    <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-[#7CFF3A] shrink-0" />
                     <span>{society.corridor}, {society.cityName}</span>
                   </div>
 
@@ -1256,13 +1256,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     </div>
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-slate-400 font-medium">Metallurgy:</span>
-                      <span className="text-emerald-400 font-bold">{society.specs}</span>
+                      <span className="text-[#7CFF3A] font-bold">{society.specs}</span>
                     </div>
                   </div>
 
                   {/* Highlight Feature */}
-                  <div className="text-xs font-semibold text-emerald-300/90 mb-2 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                  <div className="text-xs font-semibold text-[#7CFF3A] mb-2 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A] shrink-0" />
                     <span>{society.highlight}</span>
                   </div>
 
@@ -1282,7 +1282,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   <button
                     type="button"
                     onClick={() => handleOpenBooking(society.cityName, society.societyName)}
-                    className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1 cursor-pointer"
+                    className="text-xs font-bold text-[#7CFF3A] hover:text-[#95ff5e] transition flex items-center gap-1 cursor-pointer"
                   >
                     <span>Request Similar Setup</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -1391,7 +1391,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </p>
         </div>
 
-        <div className="bg-[#101714] border border-emerald-500/30 rounded-3xl p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="bg-[#101714] border border-[#7CFF3A]/30 rounded-3xl p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Sliders Column */}
           <div className="lg:col-span-7 space-y-7">
@@ -1404,7 +1404,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <select
                 value={selectedHub}
                 onChange={(e) => setSelectedHub(e.target.value)}
-                className="w-full bg-[#090d0b] border border-emerald-500/30 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-emerald-400 font-medium"
+                className="w-full bg-[#090d0b] border border-[#7CFF3A]/30 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-[#7CFF3A] font-medium"
               >
                 <option value="Visakhapatnam">Visakhapatnam (VIZAG)</option>
                 <option value="Rajamahendravaram">Rajamahendravaram (RAJAHMUNDRY)</option>
@@ -1419,7 +1419,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             <div>
               <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
                 <span>Balcony Width (Feet)</span>
-                <span className="text-emerald-400 text-base font-black">{width} Feet</span>
+                <span className="text-[#7CFF3A] text-base font-black">{width} Feet</span>
               </div>
               <input 
                 type="range" 
@@ -1427,7 +1427,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 max="35" 
                 value={width} 
                 onChange={(e) => setWidth(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
               />
               <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                 <span>4 ft</span>
@@ -1440,7 +1440,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             <div>
               <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
                 <span>Balcony Height (Feet)</span>
-                <span className="text-emerald-400 text-base font-black">{height} Feet</span>
+                <span className="text-[#7CFF3A] text-base font-black">{height} Feet</span>
               </div>
               <input 
                 type="range" 
@@ -1448,7 +1448,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 max="14" 
                 value={height} 
                 onChange={(e) => setHeight(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
               />
               <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                 <span>3 ft</span>
@@ -1474,12 +1474,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     onClick={() => setCableThickness(spec.val)}
                     className={`p-3.5 rounded-2xl border text-left transition cursor-pointer ${
                       cableThickness === spec.val
-                        ? 'bg-emerald-500/20 border-emerald-400 text-white shadow-[0_0_15px_rgba(16,185,129,0.25)]'
+                        ? 'bg-[#7CFF3A]/20 border-[#7CFF3A] text-white shadow-[0_0_15px_rgba(124,255,58,0.25)]'
                         : 'bg-[#090d0b] border-white/10 text-slate-400 hover:text-white'
                     }`}
                   >
                     <span className="text-xs font-bold block">{spec.label}</span>
-                    <span className="text-[10px] text-emerald-400 block mt-1">{spec.desc}</span>
+                    <span className="text-[10px] text-[#7CFF3A] block mt-1">{spec.desc}</span>
                   </button>
                 ))}
               </div>
@@ -1488,7 +1488,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </div>
 
           {/* Instant Live Pricing Card & Direct WhatsApp Booking */}
-          <div className="lg:col-span-5 bg-[#090d0b] border border-emerald-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
+          <div className="lg:col-span-5 bg-[#090d0b] border border-[#7CFF3A]/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
             <div className="text-center">
               <span className="text-[11px] uppercase tracking-wider text-[#cbd5e1] font-semibold">
                 Total Area
@@ -1515,7 +1515,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   Customer Name
                 </label>
                 <input 
-                  type="text"
+                  type="text" 
                   placeholder="e.g. Ramesh Varma"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
@@ -1528,7 +1528,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   Phone Number
                 </label>
                 <input 
-                  type="tel"
+                  type="tel" 
                   placeholder="+91 94943 28999"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
@@ -1567,7 +1567,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full bg-white/5 hover:bg-white/10 border border-emerald-500/40 text-emerald-400 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider block text-center transition"
+                className="w-full bg-white/5 hover:bg-white/10 border border-[#7CFF3A]/40 text-[#7CFF3A] py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider block text-center transition"
               >
                 Direct WhatsApp Chat (+91 94943 28999)
               </a>
@@ -1575,7 +1575,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </div>
 
         </div>
-
       </div>
     </section>
   );
@@ -1587,28 +1586,28 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         {/* Column 1: Brand & Direct Personal Concierge */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-emerald-400" />
+            <ShieldCheck className="w-5 h-5 text-[#7CFF3A]" />
             <span className="text-white font-bold tracking-widest text-sm uppercase">D-VIEW INVISIBLE SAFETY GRILLS</span>
           </div>
           <p className="text-[11px] leading-relaxed text-slate-300 font-light">
             India's premier architectural invisible safety grill specialist. 100% safety, zero view obstruction.
           </p>
           <div className="space-y-2 text-slate-200 text-xs pt-1">
-            <a href="tel:+919494328999" className="flex items-center gap-2 hover:text-emerald-400 transition">
-              <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+            <a href="tel:+919494328999" className="flex items-center gap-2 hover:text-[#7CFF3A] transition">
+              <Phone className="w-4 h-4 text-[#7CFF3A] shrink-0" />
               <span>📞 Direct Call: +91 94943 28999</span>
             </a>
             <a 
               href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
               target="_blank"
               rel="noreferrer" 
-              className="flex items-center gap-2 hover:text-emerald-400 transition"
+              className="flex items-center gap-2 hover:text-[#7CFF3A] transition"
             >
-              <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
+              <MessageSquare className="w-4 h-4 text-[#7CFF3A] shrink-0" />
               <span>💬 WhatsApp Concierge: +91 94943 28999</span>
             </a>
-            <a href="mailto:invisiblesafety4@gmail.com" className="flex items-center gap-2 hover:text-emerald-400 transition">
-              <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+            <a href="mailto:invisiblesafety4@gmail.com" className="flex items-center gap-2 hover:text-[#7CFF3A] transition">
+              <Mail className="w-4 h-4 text-[#7CFF3A] shrink-0" />
               <span>✉️ Official Email: invisiblesafety4@gmail.com</span>
             </a>
             <div className="pt-2 text-[11px] text-slate-400 leading-relaxed border-t border-white/5">
@@ -1620,21 +1619,21 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
         {/* Column 2: Safety Collections */}
         <div>
-          <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3.5">
+          <h4 className="text-[#7CFF3A] font-bold uppercase tracking-wider text-xs mb-3.5">
             Safety Collections
           </h4>
           <ul className="space-y-2 text-[11px] text-slate-300">
-            <li><a href="/safety-pillars/vizag" className="hover:text-emerald-400 transition block">SS-316 Balcony Invisible Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-emerald-400 transition block">Window Architectural Safety Cables</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-emerald-400 transition block">Penthouse & High-Rise Elevation Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-emerald-400 transition block">Duplex Staircase & Terrace Railing Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-emerald-400 transition block">Anti-Pigeon & Bird Exclusion Systems</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">SS-316 Balcony Invisible Grills</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Window Architectural Safety Cables</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Penthouse & High-Rise Elevation Grills</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Duplex Staircase & Terrace Railing Grills</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Anti-Pigeon & Bird Exclusion Systems</a></li>
           </ul>
         </div>
 
         {/* Column 3: Quality Standards & Customer Assurance */}
         <div>
-          <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3.5">
+          <h4 className="text-[#7CFF3A] font-bold uppercase tracking-wider text-xs mb-3.5">
             Quality Standards & Customer Assurance
           </h4>
           <ul className="space-y-2 text-[11px] text-slate-300">
@@ -1642,48 +1641,48 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             <li><span className="text-slate-300 block">10-Year Anti-Rust Written Warranty Certificate</span></li>
             <li><span className="text-slate-300 block">Zero-Sag Lifetime Tensioning Commitment</span></li>
             <li><span className="text-slate-300 block">Complimentary SS Shine Spray & Microfiber Kit</span></li>
-            <li><span className="text-emerald-400 font-medium block">Free Doorstep Precision Laser Site Measurement</span></li>
+            <li><span className="text-[#7CFF3A] font-medium block">Free Doorstep Precision Laser Site Measurement</span></li>
           </ul>
         </div>
 
         {/* Column 4: 6 Regional Hubs & Coverage Corridors */}
         <div>
-          <h4 className="text-emerald-400 font-bold uppercase tracking-wider text-xs mb-3.5">
+          <h4 className="text-[#7CFF3A] font-bold uppercase tracking-wider text-xs mb-3.5">
             6 Regional Hubs & Coverage Corridors
           </h4>
           <ul className="space-y-2.5 text-[11px]">
             <li>
-              <a href="/locations/vizag" className="hover:text-emerald-400 transition block">
+              <a href="/locations/vizag" className="hover:text-[#7CFF3A] transition block">
                 <span className="text-white font-medium">Visakhapatnam Hub</span>
                 <span className="text-[10px] text-slate-400 block">Madhurawada (27-Floor Towers), Yendada, Rushikonda, PM Palem, Anandapuram, Gajuwaka.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/rajahmundry" className="hover:text-emerald-400 transition block">
+              <a href="/locations/rajahmundry" className="hover:text-[#7CFF3A] transition block">
                 <span className="text-white font-medium">Rajamahendravaram Hub</span>
                 <span className="text-[10px] text-slate-400 block">Morampudi, Bommuru, Diwancheruvu, Lalacheruvu, Vemagiri, Gadaala Belts.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/vijayawada" className="hover:text-emerald-400 transition block">
+              <a href="/locations/vijayawada" className="hover:text-[#7CFF3A] transition block">
                 <span className="text-white font-medium">Vijayawada & Amaravati Hub</span>
                 <span className="text-[10px] text-slate-400 block">Benz Circle, Moghalrajpuram, HappyNest G+18, Tadepalli Riverside.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/guntur" className="hover:text-emerald-400 transition block">
+              <a href="/locations/guntur" className="hover:text-[#7CFF3A] transition block">
                 <span className="text-white font-medium">Guntur Hub</span>
                 <span className="text-[10px] text-slate-400 block">Brodipet, Arundelpet, Amaravati Road, Namburu, Kaza Belt.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/kakinada" className="hover:text-emerald-400 transition block">
+              <a href="/locations/kakinada" className="hover:text-[#7CFF3A] transition block">
                 <span className="text-white font-medium">Kakinada Hub</span>
                 <span className="text-[10px] text-slate-400 block">Sarpavaram, Vakalapudi Lighthouse Belt, Ramanayyapeta.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/nellore" className="hover:text-emerald-400 transition block">
+              <a href="/locations/nellore" className="hover:text-[#7CFF3A] transition block">
                 <span className="text-white font-medium">Nellore Hub</span>
                 <span className="text-[10px] text-slate-400 block">Magunta Layout, Penna Riverfront, Balaji Nagar.</span>
               </a>
@@ -1697,7 +1696,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
         <p>© 2026 D-View Invisible Safety Grills. All Rights Reserved. Protecting Families Across Andhra Pradesh.</p>
         <div className="flex flex-wrap gap-3 text-[10px] uppercase tracking-wider">
-          <span className="text-emerald-400 font-semibold">100% Invisible Grills</span>
+          <span className="text-[#7CFF3A] font-semibold">100% Invisible Grills</span>
           <span>•</span>
           <span>Zero Safety Nets</span>
           <span>•</span>
@@ -1721,21 +1720,21 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with D-View on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#10b981] hover:bg-[#059669] text-black shadow-[0_0_30px_rgba(16,185,129,0.55)] transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#7CFF3A] hover:bg-[#8eff50] text-black shadow-[0_0_30px_rgba(124,255,58,0.55)] transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer"
       >
         {/* Subtle Breathing Pulse Glow Animation */}
-        <span className="absolute inset-0 rounded-full bg-emerald-400 opacity-60 animate-ping -z-10 pointer-events-none" />
+        <span className="absolute inset-0 rounded-full bg-[#7CFF3A] opacity-60 animate-ping -z-10 pointer-events-none" />
         
         {/* WhatsApp SVG Icon */}
         <svg 
-          className="w-7 h-7 sm:w-8 sm:h-8 fill-current text-[#090d0b]" 
+          className="w-7 h-7 sm:w-8 sm:h-8 fill-current text-black" 
           viewBox="0 0 24 24"
         >
           <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.222-.553-1.821-.755-3.003-2.617-3.093-2.738-.09-.12-1.002-1.334-1.002-2.545 0-1.21.636-1.807.863-2.052.226-.245.496-.307.662-.307.166 0 .331.002.477.009.153.008.358-.058.558.423.209.502.712 1.737.774 1.862.062.126.104.272.02.438-.083.167-.125.271-.249.417-.124.145-.262.325-.374.436-.125.124-.256.26-.11.511.146.252.648 1.07 1.39 1.732.955.851 1.76 1.114 2.012 1.239.252.126.4.105.548-.063.147-.168.627-.732.793-.984.167-.251.332-.209.559-.125.227.084 1.442.68 1.689.805.247.126.413.188.474.293.061.104.061.606-.083 1.011z"/>
         </svg>
 
         {/* Desktop Hover Tooltip */}
-        <span className="hidden md:group-hover:block absolute right-full mr-3 px-3.5 py-2 rounded-xl bg-[#101714] border border-emerald-500/40 text-emerald-400 text-xs font-semibold whitespace-nowrap shadow-xl">
+        <span className="hidden md:group-hover:block absolute right-full mr-3 px-3.5 py-2 rounded-xl bg-[#101714] border border-[#7CFF3A]/40 text-[#7CFF3A] text-xs font-semibold whitespace-nowrap shadow-xl">
           WhatsApp Concierge (+91 94943 28999)
         </span>
       </a>
@@ -1744,16 +1743,16 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       <a
         href="tel:+919494328999"
         aria-label="Direct Phone Call"
-        className="md:hidden fixed bottom-6 left-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#101714]/95 backdrop-blur-md border border-emerald-500/40 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] active:scale-95 transition-all text-xs font-semibold uppercase tracking-wider group cursor-pointer"
+        className="md:hidden fixed bottom-6 left-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#101714]/95 backdrop-blur-md border border-[#7CFF3A]/40 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] active:scale-95 transition-all text-xs font-semibold uppercase tracking-wider group cursor-pointer"
       >
-        <Phone className="w-4 h-4 text-emerald-400 shrink-0 stroke-[2.5]" />
+        <Phone className="w-4 h-4 text-[#7CFF3A] shrink-0 stroke-[2.5]" />
         <span className="text-white font-bold tracking-normal">Call +91 94943 28999</span>
       </a>
     </aside>
   );
 
   return (
-    <div className="min-h-screen bg-[#0a0f0d] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-black">
+    <div className="min-h-screen bg-[#0a0f0d] text-slate-100 font-sans antialiased selection:bg-[#7CFF3A] selection:text-black">
       
       {/* ========================================================= */}
       {/* 1. TOP MINIMAL NAVIGATION HEADER                          */}
@@ -1765,14 +1764,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           <button
             type="button"
             onClick={() => setIsMenuOpen(true)}
-            className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-300 hover:text-emerald-400 transition cursor-pointer font-medium"
+            className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-300 hover:text-[#7CFF3A] transition cursor-pointer font-medium"
           >
             <span className="text-base leading-none">=</span> MENU
           </button>
 
           <a href="/" className="flex items-center gap-2 group">
             <span className="text-sm sm:text-base font-light tracking-[0.25em] text-white uppercase">
-              D-VIEW <span className="font-semibold text-emerald-400 drop-shadow-[0_0_12px_rgba(16,185,129,0.35)]">INVISIBLE SAFETY</span>
+              D-VIEW <span className="font-semibold text-[#7CFF3A] drop-shadow-[0_0_15px_rgba(124,255,58,0.45)]">INVISIBLE SAFETY</span>
             </span>
           </a>
         </div>
@@ -1782,16 +1781,16 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           <button
             type="button"
             onClick={() => handleOpenBooking()}
-            className="hidden sm:inline-block hover:text-emerald-400 transition cursor-pointer text-slate-300"
+            className="hidden sm:inline-block hover:text-[#7CFF3A] transition cursor-pointer text-slate-300"
           >
             CONTACT US
           </button>
           
           <a
             href="tel:+919494328999"
-            className="text-white hover:text-emerald-400 transition flex items-center gap-1.5"
+            className="text-white hover:text-[#7CFF3A] transition flex items-center gap-1.5"
           >
-            <Phone className="w-3.5 h-3.5 text-emerald-400 stroke-[2]" />
+            <Phone className="w-3.5 h-3.5 text-[#7CFF3A] stroke-[2]" />
             <span className="hidden sm:inline text-slate-200">+91 94943 28999</span>
           </a>
         </div>
@@ -1811,7 +1810,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-white/10">
-                <span className="text-xs uppercase tracking-[0.25em] text-emerald-400 font-bold">
+                <span className="text-xs uppercase tracking-[0.25em] text-[#7CFF3A] font-bold">
                   D-VIEW INVISIBLE SAFETY
                 </span>
                 <button 
@@ -1834,13 +1833,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       key={slide.id}
                       href={slide.locationPath}
                       onClick={() => setIsMenuOpen(false)}
-                      className="block p-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-emerald-500/20 transition group"
+                      className="block p-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-[#7CFF3A]/30 transition group"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-white group-hover:text-emerald-300">
+                        <span className="text-sm font-semibold text-white group-hover:text-[#7CFF3A]">
                           {slide.name}
                         </span>
-                        <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400" />
+                        <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-[#7CFF3A]" />
                       </div>
                       <span className="text-[11px] text-slate-400 block mt-0.5">
                         {slide.categoryTag}
@@ -1855,21 +1854,21 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <a 
                   href="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-emerald-400 transition"
+                  className="block hover:text-[#7CFF3A] transition"
                 >
                   Tier 1: City Showcase Slides
                 </a>
                 <a 
                   href={`/locations/${activeSlide.id}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-emerald-400 transition"
+                  className="block hover:text-[#7CFF3A] transition"
                 >
                   Tier 2: {activeSlide.name} Corridors
                 </a>
                 <a 
                   href={`/safety-pillars/${activeSlide.id}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-emerald-400 transition text-emerald-400"
+                  className="block hover:text-[#7CFF3A] transition text-[#7CFF3A]"
                 >
                   Tier 3: 6-Pillar Proofs & Pricing
                 </a>
@@ -2046,7 +2045,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <a
                   key={idx}
                   href={`/safety-pillars/${activeSlide.id}?corridor=${encodeURIComponent(corridor.name)}`}
-                  className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_35px_rgba(16,185,129,0.25)] cursor-pointer"
+                  className="group rounded-3xl overflow-hidden border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_35px_rgba(124,255,58,0.25)] cursor-pointer"
                 >
                   {/* High-Definition Sunlit Balcony Visual - 100% CLEAN & UNOBSTRUCTED */}
                   <div className="relative h-64 sm:h-72 w-full overflow-hidden">
@@ -2202,7 +2201,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       return (
                         <div 
                           key={idx}
-                          className="group rounded-3xl overflow-hidden border border-emerald-500/25 hover:border-emerald-500/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(16,185,129,0.2)]"
+                          className="group rounded-3xl overflow-hidden border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(124,255,58,0.2)]"
                         >
                           {/* High-Definition Sunlit Balcony Photography - 100% CLEAN & UNOBSTRUCTED */}
                           <div className="relative h-64 w-full overflow-hidden">
@@ -2296,7 +2295,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 return (
                   <div className="mt-12">
                     <div className="text-center mb-6">
-                      <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
+                      <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         VERIFIED {cityGrillData.cityName.toUpperCase()} INSTALLATIONS
                       </span>
@@ -2305,10 +2304,10 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       {cityGrillData.completedProjects.map((proj, pi) => (
                         <div
                           key={pi}
-                          className="p-5 rounded-2xl bg-[#101714] border border-emerald-500/25 hover:border-emerald-500/50 transition-all group"
+                          className="p-5 rounded-2xl bg-[#101714] border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/50 transition-all group"
                         >
                           <div className="flex items-center justify-between mb-3">
-                            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
+                            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-wider">
                               <CheckCircle2 className="w-3 h-3" />
                               {proj.status}
                             </span>
@@ -2318,16 +2317,16 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                               </span>
                             )}
                           </div>
-                          <h4 className="text-base font-bold text-white group-hover:text-emerald-300 transition mb-1 leading-snug">
+                          <h4 className="text-base font-bold text-white group-hover:text-[#7CFF3A] transition mb-1 leading-snug">
                             {proj.societyName}
                           </h4>
-                          <div className="flex items-center gap-1.5 text-[10px] text-emerald-400 font-semibold mb-2">
+                          <div className="flex items-center gap-1.5 text-[10px] text-[#7CFF3A] font-semibold mb-2">
                             <span>🛡</span>
                             <span>{proj.installationType}</span>
                           </div>
                           {proj.floor && (
                             <div className="text-[10px] text-slate-400 mb-2">
-                              <MapPin className="w-3 h-3 inline mr-1 text-emerald-500" />
+                              <MapPin className="w-3 h-3 inline mr-1 text-[#7CFF3A]" />
                               {proj.floor}
                             </div>
                           )}
@@ -2344,8 +2343,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               })()}
 
               {/* Closing Tagline in Telugu */}
-              <div className="mt-14 text-center p-6 rounded-2xl bg-[#101714] border border-emerald-500/30 max-w-4xl mx-auto shadow-xl">
-                <p className="text-emerald-400 font-semibold text-sm sm:text-base italic">
+              <div className="mt-14 text-center p-6 rounded-2xl bg-[#101714] border border-[#7CFF3A]/30 max-w-4xl mx-auto shadow-xl">
+                <p className="text-[#7CFF3A] font-semibold text-sm sm:text-base italic">
                   "Okke Okka Balcony Installation... Enno High-Alert Safety Problems Nundi Mee Intiki Life-Time Premium Protection!"
                 </p>
               </div>
@@ -2367,7 +2366,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 
                 <div className="lg:col-span-7 space-y-6">
-                  <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold block">
+                  <span className="text-xs uppercase tracking-[0.3em] text-[#7CFF3A] font-bold block">
                     SS-316 METALLURGY TRUST & GUARANTEES
                   </span>
                   <h2 className="text-3xl sm:text-4xl font-light uppercase text-slate-100 tracking-tight">
@@ -2380,17 +2379,17 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
                   <div className="space-y-4 pt-2">
                     <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-white/10">
-                      <Droplets className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
+                      <Droplets className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
                       <div>
                         <h4 className="text-sm font-bold text-white uppercase">The Environmental Challenge</h4>
                         <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherChallenge}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-emerald-500/40">
-                      <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0 mt-1" />
+                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-[#7CFF3A]/40">
+                      <ShieldCheck className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
                       <div>
-                        <h4 className="text-sm font-bold text-emerald-400 uppercase">The Material: Molybdenum-Infused SS-316</h4>
+                        <h4 className="text-sm font-bold text-[#7CFF3A] uppercase">The Material: Molybdenum-Infused SS-316</h4>
                         <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherSolution}</p>
                       </div>
                     </div>
@@ -2398,8 +2397,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
                   {/* Trust Guarantees */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                    <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
-                      <span className="text-xl sm:text-2xl font-black text-emerald-400 block">10 YEARS</span>
+                    <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
+                      <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">10 YEARS</span>
                       <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
                         Anti-Rust Replacement Warranty
                       </span>
@@ -2412,8 +2411,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       </span>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
-                      <span className="text-xl sm:text-2xl font-black text-emerald-400 block">FREE GIFT</span>
+                    <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
+                      <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">FREE GIFT</span>
                       <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
                         Microfiber & SS Shine Kit
                       </span>
@@ -2424,7 +2423,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
                 {/* Maintenance Gift Kit Photo */}
                 <div className="lg:col-span-5 relative">
-                  <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl">
+                  <div className="relative rounded-3xl overflow-hidden border border-[#7CFF3A]/30 shadow-2xl">
                     <img 
                       src="/images/maintenance-kit.jpg" 
                       alt="D-VIEW SS-316 Care Kit and Shine Spray" 
@@ -2433,7 +2432,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
                     
                     <div className="absolute bottom-6 left-6 right-6">
-                      <div className="inline-flex items-center gap-2 bg-emerald-500 text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                      <div className="inline-flex items-center gap-2 bg-[#7CFF3A] text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
                         Special Free Gift On Installation
                       </div>
                       <h4 className="text-lg font-bold text-white">SS-316 Maintenance Gift Kit</h4>
@@ -2463,7 +2462,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           <section id="faq-section" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <span className="text-xs uppercase tracking-[0.3em] text-emerald-400 font-bold">
+                <span className="text-xs uppercase tracking-[0.3em] text-[#7CFF3A] font-bold">
                   FREQUENTLY ASKED QUESTIONS
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-light uppercase text-slate-100 mt-2">
@@ -2475,7 +2474,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 {FAQS.map((faq, i) => (
                   <div key={i} className="p-6 rounded-2xl bg-[#101714] border border-white/10">
                     <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                      <HelpCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <HelpCircle className="w-4 h-4 text-[#7CFF3A] shrink-0" />
                       {faq.q}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-6 font-light">
@@ -2501,7 +2500,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* ========================================================= */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md">
-          <div className="relative w-full max-w-md bg-[#111815] border border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          <div className="relative w-full max-w-md bg-[#111815] border border-[#7CFF3A]/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
             
             <button 
               type="button"
@@ -2512,7 +2511,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             </button>
 
             <div className="text-left mb-5">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-bold block">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#7CFF3A] font-bold block">
                 Instant Concierge Booking
               </span>
               <h3 className="text-xl sm:text-2xl font-black uppercase text-white mt-1">
@@ -2531,7 +2530,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <select 
                   value={selectedHub}
                   onChange={(e) => setSelectedHub(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-emerald-500/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400 font-medium"
+                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A] font-medium"
                 >
                   <option value="Visakhapatnam">Visakhapatnam</option>
                   <option value="Rajamahendravaram">Rajamahendravaram</option>
@@ -2551,7 +2550,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="e.g. Madhurawada High-Rises"
                   value={selectedCorridor}
                   onChange={(e) => setSelectedCorridor(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-emerald-500/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400"
+                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A]"
                 />
               </div>
 
@@ -2564,7 +2563,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="e.g. Ramesh Varma"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-emerald-500/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400"
+                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A]"
                 />
               </div>
 
@@ -2577,7 +2576,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="+91 94943 28999"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-emerald-500/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400"
+                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A]"
                 />
               </div>
 
@@ -2599,7 +2598,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full bg-emerald-500 hover:bg-emerald-400 text-black py-3.5 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-[0_0_20px_rgba(16,185,129,0.35)] mt-3 transition"
+                className="w-full bg-[#7CFF3A] hover:bg-[#8eff50] text-black py-3.5 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-[0_0_20px_rgba(124,255,58,0.35)] mt-3 transition"
               >
                 Send Details via WhatsApp Directly →
               </a>

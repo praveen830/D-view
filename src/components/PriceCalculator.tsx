@@ -121,20 +121,20 @@ Please arrange a Free On-Site Digital Measurement visit.`;
     <section id="calculator" className="relative py-20 bg-[#0a0f0d] border-y border-[#24322B] overflow-hidden">
       {/* Background Wire Grids and Emerald Glows */}
       <div className="absolute inset-0 wire-grid-overlay opacity-25 pointer-events-none"></div>
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#22c55e]/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#22c55e]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#7CFF3A]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#7CFF3A]/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#131b17] border border-[#22c55e]/30 text-xs font-bold text-[#22c55e] uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#131b17] border border-[#7CFF3A]/30 text-xs font-bold text-[#7CFF3A] uppercase tracking-wider mb-4">
             <Calculator className="w-3.5 h-3.5" />
             <span>Interactive Cost Estimator</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
             ESTIMATE YOUR BALCONY <br className="hidden sm:inline" />
-            <span className="text-[#22c55e]">SAFETY INVESTMENT</span>
+            <span className="text-[#7CFF3A]">SAFETY INVESTMENT</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#cbd5e1]">
             Select your opening dimensions and cable grade for an instant, transparent price range.
@@ -164,12 +164,12 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       }}
                       className={`px-3 py-2 rounded-xl text-xs font-bold transition-all text-left flex items-center justify-between border ${
                         selectedCity === loc.slug
-                          ? 'bg-[#22c55e]/15 border-[#22c55e] text-[#22c55e]'
+                          ? 'bg-[#7CFF3A]/15 border-[#7CFF3A] text-[#7CFF3A]'
                           : 'bg-[#0a0f0d] border-[#24322B] text-[#cbd5e1] hover:border-[#384C42]'
                       }`}
                     >
                       <span>{loc.name}</span>
-                      {selectedCity === loc.slug && <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]"></span>}
+                      {selectedCity === loc.slug && <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A]"></span>}
                     </button>
                   ))}
                 </div>
@@ -186,7 +186,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                   <div className="bg-[#0a0f0d] rounded-xl p-4 border border-[#24322B]">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-xs font-semibold text-[#cbd5e1]">Width (Span)</span>
-                      <span className="text-sm font-black text-[#22c55e]">{width} ft</span>
+                      <span className="text-sm font-black text-[#7CFF3A]">{width} ft</span>
                     </div>
                     <input
                       type="range"
@@ -195,7 +195,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       step="1"
                       value={width}
                       onChange={(e) => setWidth(Number(e.target.value))}
-                      className="w-full h-1.5 bg-[#24322B] rounded-lg appearance-none cursor-pointer accent-[#22c55e]"
+                      className="w-full h-1.5 bg-[#24322B] rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
                     />
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-[11px] text-[#94a3b8]">Numeric:</span>
@@ -206,7 +206,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           max="60"
                           value={width}
                           onChange={(e) => setWidth(Math.max(1, Number(e.target.value)))}
-                          className="w-20 px-2 py-1 text-xs text-center bg-[#131b17] border border-[#24322B] rounded-lg text-white font-bold focus:outline-none focus:border-[#22c55e]"
+                          className="w-20 px-2 py-1 text-xs text-center bg-[#131b17] border border-[#24322B] rounded-lg text-white font-bold focus:outline-none focus:border-[#7CFF3A]"
                         />
                         <span className="text-xs text-[#94a3b8]">ft</span>
                       </div>
@@ -217,7 +217,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                   <div className="bg-[#0a0f0d] rounded-xl p-4 border border-[#24322B]">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-xs font-semibold text-[#cbd5e1]">Height (Floor to Ceiling)</span>
-                      <span className="text-sm font-black text-[#22c55e]">{height} ft</span>
+                      <span className="text-sm font-black text-[#7CFF3A]">{height} ft</span>
                     </div>
                     <input
                       type="range"
@@ -226,7 +226,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       step="0.5"
                       value={height}
                       onChange={(e) => setHeight(Number(e.target.value))}
-                      className="w-full h-1.5 bg-[#24322B] rounded-lg appearance-none cursor-pointer accent-[#22c55e]"
+                      className="w-full h-1.5 bg-[#24322B] rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
                     />
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-[11px] text-[#94a3b8]">Numeric:</span>
@@ -238,7 +238,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           step="0.5"
                           value={height}
                           onChange={(e) => setHeight(Math.max(1, Number(e.target.value)))}
-                          className="w-20 px-2 py-1 text-xs text-center bg-[#131b17] border border-[#24322B] rounded-lg text-white font-bold focus:outline-none focus:border-[#22c55e]"
+                          className="w-20 px-2 py-1 text-xs text-center bg-[#131b17] border border-[#24322B] rounded-lg text-white font-bold focus:outline-none focus:border-[#7CFF3A]"
                         />
                         <span className="text-xs text-[#94a3b8]">ft</span>
                       </div>
@@ -261,7 +261,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                   <label className="text-xs font-black uppercase tracking-wider text-[#94a3b8]">
                     3. SS-316 Marine Cable Thickness
                   </label>
-                  <span className="text-[11px] text-[#22c55e] font-bold">100% Genuine SS-316</span>
+                  <span className="text-[11px] text-[#7CFF3A] font-bold">100% Genuine SS-316</span>
                 </div>
                 <div className="space-y-2.5">
                   {THICKNESS_OPTIONS.map((opt) => (
@@ -270,14 +270,14 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       onClick={() => setThickness(opt.value)}
                       className={`p-3.5 rounded-xl border cursor-pointer transition-all ${
                         thickness === opt.value
-                          ? 'bg-[#1a2420] border-[#22c55e] shadow-[0_0_15px_rgba(34,197,94,0.15)]'
+                          ? 'bg-[#1a2420] border-[#7CFF3A] shadow-[0_0_15px_rgba(124,255,58,0.15)]'
                           : 'bg-[#0a0f0d] border-[#24322B] hover:border-[#384C42]'
                       }`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                            thickness === opt.value ? 'border-[#22c55e] bg-[#22c55e]' : 'border-[#64748B]'
+                            thickness === opt.value ? 'border-[#7CFF3A] bg-[#7CFF3A]' : 'border-[#64748B]'
                           }`}>
                             {thickness === opt.value && <div className="w-1.5 h-1.5 rounded-full bg-black"></div>}
                           </div>
@@ -287,7 +287,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-bold text-[#22c55e]">₹{opt.minRate} - ₹{opt.maxRate}</span>
+                          <span className="text-xs font-bold text-[#7CFF3A]">₹{opt.minRate} - ₹{opt.maxRate}</span>
                           <span className="block text-[10px] text-[#94a3b8]">per sq.ft</span>
                         </div>
                       </div>
@@ -301,13 +301,13 @@ Please arrange a Free On-Site Digital Measurement visit.`;
 
           {/* Results Summary Card */}
           <div className="lg:col-span-5 bg-gradient-to-br from-[#131b17] to-[#0a0f0d] rounded-2xl border border-[#24322B] p-6 sm:p-8 shadow-2xl relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#22c55e]/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#7CFF3A]/10 rounded-full blur-2xl pointer-events-none"></div>
 
             <div className="flex items-center justify-between pb-4 border-b border-[#24322B]">
               <span className="text-xs font-black tracking-wider uppercase text-[#94a3b8]">
                 Real-Time Calculated Output
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#22c55e]/10 text-[#22c55e] border border-[#22c55e]/30">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#7CFF3A]/10 text-[#7CFF3A] border border-[#7CFF3A]/30">
                 {activeCityObj.name} Hub
               </span>
             </div>
@@ -325,7 +325,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                 </div>
                 <div>
                   <span className="text-[#94a3b8] block text-[10px] uppercase font-bold">Cable Gauge</span>
-                  <span className="text-[#22c55e] font-bold">{selectedThicknessObj.label.split(' ')[0]}</span>
+                  <span className="text-[#7CFF3A] font-bold">{selectedThicknessObj.label.split(' ')[0]}</span>
                 </div>
               </div>
             </div>
@@ -348,7 +348,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
-                className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-extrabold text-sm text-black bg-[#22c55e] hover:bg-[#16a34a] transition-all shadow-[0_0_25px_rgba(34,197,94,0.3)] hover:shadow-[0_0_35px_rgba(34,197,94,0.5)]"
+                className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-extrabold text-sm text-black bg-[#7CFF3A] hover:bg-[#8eff50] transition-all shadow-[0_0_25px_rgba(124,255,58,0.3)] hover:shadow-[0_0_35px_rgba(124,255,58,0.5)]"
               >
                 <span>Book Free Site Visit With This Quote</span>
                 <ArrowRight className="w-4 h-4" />
@@ -358,9 +358,9 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                 href={createWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-xs text-[#cbd5e1] bg-[#0a0f0d] hover:bg-[#1A2420] border border-[#24322B] hover:border-[#22c55e]/50 transition-all"
+                className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-xs text-[#cbd5e1] bg-[#0a0f0d] hover:bg-[#1A2420] border border-[#24322B] hover:border-[#7CFF3A]/50 transition-all"
               >
-                <MessageSquare className="w-4 h-4 text-[#22c55e]" />
+                <MessageSquare className="w-4 h-4 text-[#7CFF3A]" />
                 <span>Discuss on WhatsApp with Saved Dimensions</span>
               </a>
             </div>
@@ -381,7 +381,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
       {/* Modal: Book Site Visit & Dynamic WhatsApp QR */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in">
-          <div className="relative w-full max-w-2xl bg-[#0a0f0d] border border-[#22c55e]/30 rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
             
             {/* Close Button */}
             <button
@@ -395,8 +395,8 @@ Please arrange a Free On-Site Digital Measurement visit.`;
             {!isSubmitted ? (
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="w-2 h-2 rounded-full bg-[#22c55e]"></span>
-                  <span className="text-xs font-black uppercase tracking-wider text-[#22c55e]">
+                  <span className="w-2 h-2 rounded-full bg-[#7CFF3A]"></span>
+                  <span className="text-xs font-black uppercase tracking-wider text-[#7CFF3A]">
                     Free On-Site Laser Measurement
                   </span>
                 </div>
@@ -421,7 +421,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="e.g. Ramesh Varma"
-                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#22c55e]"
+                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A]"
                         />
                       </div>
                     </div>
@@ -436,7 +436,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="e.g. 9494328999"
-                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#22c55e]"
+                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A]"
                         />
                       </div>
                     </div>
@@ -449,7 +449,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                         <select
                           value={modalCity}
                           onChange={(e) => setModalCity(e.target.value)}
-                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#22c55e]"
+                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A]"
                         >
                           <option value="visakhapatnam">Visakhapatnam</option>
                           <option value="rajahmundry">Rajamahendravaram</option>
@@ -463,7 +463,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-xl font-black text-sm text-black bg-[#22c55e] hover:bg-[#16a34a] transition-all shadow-[0_0_20px_rgba(34,197,94,0.35)]"
+                      className="w-full py-3.5 rounded-xl font-black text-sm text-black bg-[#7CFF3A] hover:bg-[#8eff50] transition-all shadow-[0_0_20px_rgba(124,255,58,0.35)]"
                     >
                       Confirm Free Site Visit Booking
                     </button>
@@ -499,19 +499,19 @@ Please arrange a Free On-Site Digital Measurement visit.`;
               </div>
             ) : (
               <div className="text-center py-8 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-[#22c55e]/20 border border-[#22c55e] flex items-center justify-center mx-auto text-[#22c55e]">
+                <div className="w-16 h-16 rounded-full bg-[#7CFF3A]/20 border border-[#7CFF3A] flex items-center justify-center mx-auto text-[#7CFF3A]">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-black text-white">Site Visit Confirmed!</h3>
                 <p className="text-sm text-[#cbd5e1] max-w-md mx-auto">
-                  Thank you <strong className="text-white">{name}</strong>. Our certified <strong className="text-[#22c55e]">{modalCityObj.name}</strong> installation team will contact you at <strong className="text-white">{phone}</strong> to confirm your complimentary laser measurement visit.
+                  Thank you <strong className="text-white">{name}</strong>. Our certified <strong className="text-[#7CFF3A]">{modalCityObj.name}</strong> installation team will contact you at <strong className="text-white">{phone}</strong> to confirm your complimentary laser measurement visit.
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <a
                     href={createWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#22c55e] text-black font-extrabold text-sm hover:bg-[#16a34a] transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#7CFF3A] text-black font-extrabold text-sm hover:bg-[#8eff50] transition-all"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Open in WhatsApp Now</span>
