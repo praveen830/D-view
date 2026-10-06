@@ -1925,31 +1925,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {tier === 'tier1' && (
         <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-[#080B09]">
           
-          {/* STICKY 6 CITIES QUICK NAVIGATION TABS (INSTANTLY SWITCH BETWEEN PLACES) */}
-          <div className="sticky top-0 z-40 w-full bg-black/95 backdrop-blur-md border-b border-[#7CFF3A]/30 py-2 px-2 sm:px-3 overflow-x-auto scrollbar-none shadow-xl">
-            <div className="flex items-center gap-1.5 sm:gap-2 min-w-max justify-start sm:justify-center max-w-7xl mx-auto">
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#7CFF3A] mr-1 hidden sm:inline-block">
-                Select City:
-              </span>
-              {CITIES_SLIDES.map((s) => (
-                <a
-                  key={s.id}
-                  href={`#slide-${s.id}`}
-                  className="px-3 py-1.5 rounded-full text-xs font-extrabold transition-all bg-[#121814] text-gray-300 hover:text-white hover:bg-[#1A241E] border border-white/10 hover:border-[#7CFF3A]/50 flex items-center gap-1.5 active:scale-95"
-                >
-                  <span>{s.id === 'vizag' ? '🌊' : s.id === 'rajahmundry' ? '🌉' : s.id === 'vijayawada' ? '🏛️' : s.id === 'guntur' ? '🛕' : s.id === 'kakinada' ? '⚓' : '🌅'}</span>
-                  <span>{s.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-
           {/* 6 CITIES SLIDES: 100% IMMERSIVE FULL SCREEN COVERAGE (NO WASTED EMPTY SPACE) */}
           {CITIES_SLIDES.map((slide, idx) => (
             <section
               key={slide.id}
               id={`slide-${slide.id}`}
-              className="relative w-full h-[calc(100dvh-100px)] min-h-[560px] snap-start snap-always flex flex-col justify-between overflow-hidden select-none border-b border-white/5 bg-black"
+              className="relative w-full h-[calc(100dvh-56px)] min-h-[580px] snap-start snap-always flex flex-col justify-between overflow-hidden select-none border-b border-white/5 bg-black"
             >
               {/* ============================================================ */}
               {/* MOBILE VIEW: TRUE 100% FULLSCREEN 9:16 IMMERSIVE EXPERIENCE  */}
@@ -1967,8 +1948,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   />
                 </picture>
 
-                {/* Subtle top & bottom dark vignette so badges & buttons are crystal clear */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/85 pointer-events-none" />
+                {/* Subtle top & bottom dark vignette */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 pointer-events-none" />
 
                 {/* Full screen tap-target navigates directly to the city corridor page */}
                 <a
@@ -1977,37 +1958,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   aria-label={`Explore ${slide.name} Invisible Grills`}
                 />
 
-                {/* Mobile Top HUD */}
+                {/* Mobile Top Minimal Badge */}
                 <div className="absolute top-3 inset-x-3.5 z-20 flex items-center justify-between pointer-events-none">
-                  <div className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-[#7CFF3A]/40 text-[10px] font-black text-[#7CFF3A] uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                  <div className="px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-[#7CFF3A]/30 text-[10px] font-black text-[#7CFF3A] uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
                     <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse" />
                     <span>{slide.name}</span>
                   </div>
-                  <div className="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono text-[#7CFF3A] font-bold shadow-lg">
+                  <div className="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono text-gray-200 font-bold shadow-lg">
                     0{idx + 1} / 06
-                  </div>
-                </div>
-
-                {/* Mobile Bottom HUD - Floating Glass Action Card */}
-                <div className="absolute bottom-3 inset-x-3.5 z-20 pointer-events-auto">
-                  <div className="p-3 rounded-2xl bg-black/85 backdrop-blur-xl border border-[#7CFF3A]/50 shadow-[0_4px_30px_rgba(0,0,0,0.8)] flex items-center justify-between gap-2.5">
-                    <div className="min-w-0 flex-1 pl-1">
-                      <div className="text-sm font-black text-white flex items-center gap-1.5 truncate">
-                        <span>{slide.name}</span>
-                        <span className="text-[10px] text-[#7CFF3A] font-bold px-1.5 py-0.5 bg-[#7CFF3A]/10 rounded border border-[#7CFF3A]/30">SS-316</span>
-                      </div>
-                      <div className="text-[11px] text-gray-300 truncate mt-0.5 font-medium">
-                        {slide.badge}
-                      </div>
-                    </div>
-
-                    <a
-                      href={slide.locationPath}
-                      className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#028A0F] to-[#04B214] hover:from-[#04B214] hover:to-[#7CFF3A] text-white hover:text-black font-black text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(4,178,20,0.5)] transition flex items-center gap-1.5 active:scale-95 shrink-0"
-                    >
-                      <span>Explore {slide.cityShort}</span>
-                      <span className="text-sm font-black">→</span>
-                    </a>
                   </div>
                 </div>
               </div>
