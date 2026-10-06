@@ -17,7 +17,8 @@ export async function getStaticPaths() {
     'vijayawada-amaravati': 'vijayawada-amaravati',
     'guntur': 'guntur',
     'kakinada': 'kakinada',
-    'nellore': 'nellore'
+    'nellore': 'nellore',
+    'ongole': 'ongole'
   };
 
   return Object.entries(cityAliases).map(([citySlug, targetSlug]) => {
@@ -38,6 +39,7 @@ const { location, slug } = Astro.props;
 
 const cityName = location.cityName || location.name;
 const heroImage = location.heroImage;
+const heroPoster = location.heroPosterImage || location.heroImage;
 const subLocalities = location.subLocalities || [];
 ---
 
@@ -112,7 +114,7 @@ const subLocalities = location.subLocalities || [];
 
       <div class="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full">
         
-        {/* 6 CITIES QUICK NAVIGATION TABS (NAVIGATE IMAGES & PLACES INSTANTLY) */}
+        {/* 7 CITIES QUICK NAVIGATION TABS (NAVIGATE IMAGES & PLACES INSTANTLY) */}
         <div class="mb-4 sm:mb-6 overflow-x-auto pb-2 scrollbar-none -mx-3 px-3 sm:mx-0 sm:px-0">
           <div class="flex items-center gap-2 min-w-max justify-start sm:justify-center">
             <span class="text-[10px] font-black uppercase tracking-widest text-[#7CFF3A] mr-1 hidden sm:inline-block">
@@ -130,7 +132,7 @@ const subLocalities = location.subLocalities || [];
                       : 'bg-[#121814] text-gray-300 hover:text-white hover:bg-[#1A241E] border border-white/10'
                   }`}
                 >
-                  <span>{loc.slug === 'visakhapatnam' ? '🌊' : loc.slug === 'rajahmundry' ? '🌉' : loc.slug === 'vijayawada-amaravati' ? '🏛️' : loc.slug === 'guntur' ? '🛕' : loc.slug === 'kakinada' ? '⚓' : '🌅'}</span>
+                  <span>{loc.slug === 'visakhapatnam' ? '🌊' : loc.slug === 'rajahmundry' ? '🌉' : loc.slug === 'vijayawada-amaravati' ? '🏛️' : loc.slug === 'guntur' ? '🛕' : loc.slug === 'kakinada' ? '⚓' : loc.slug === 'nellore' ? '🌅' : '🌾'}</span>
                   <span>{loc.cityName || loc.name}</span>
                   {isCurrent && <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping" />}
                 </a>
@@ -146,7 +148,7 @@ const subLocalities = location.subLocalities || [];
           <div class="lg:col-span-7 w-full flex justify-center">
             <div class="relative w-full max-w-lg lg:max-w-none rounded-3xl overflow-hidden border-2 border-[#7CFF3A]/80 bg-black shadow-[0_0_35px_rgba(124,255,58,0.25)] group">
               <img
-                src={heroImage}
+                src={heroPoster}
                 alt={`D-VIEW Invisible Safety in ${cityName}`}
                 class="w-full h-auto aspect-square object-contain rounded-3xl transition-transform duration-500 group-hover:scale-[1.01]"
                 loading="eager"
@@ -219,16 +221,6 @@ const subLocalities = location.subLocalities || [];
               <!-- Gradient Overlay -->
               <div class="absolute inset-0 bg-gradient-to-t from-[#0e1613] via-transparent to-black/40 pointer-events-none" />
 
-              <!-- Top Floating Badges -->
-              <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                <span class="w-7 h-7 rounded-lg bg-black/80 backdrop-blur-md border border-[#7CFF3A]/40 text-[#7CFF3A] font-black text-xs flex items-center justify-center shadow-lg">
-                  0{idx + 1}
-                </span>
-                <span class="text-[10px] font-extrabold uppercase tracking-wider text-black bg-[#7CFF3A] px-2.5 py-0.5 rounded-full shadow-md">
-                  Tier-3 Verified
-                </span>
-              </div>
-
               {sub.tag && (
                 <div class="absolute bottom-2 left-3 right-3 pointer-events-none">
                   <span class="inline-block text-[9.5px] font-bold text-[#7CFF3A] bg-black/85 backdrop-blur-md px-2 py-0.5 rounded border border-[#7CFF3A]/30 truncate max-w-full">
@@ -267,6 +259,97 @@ const subLocalities = location.subLocalities || [];
       </div>
     </section>
 
+    {/* WEATHER SHIELD SECTION FOR CITY (ZERO GIFT KIT) */}
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs uppercase tracking-[0.3em] text-[#7CFF3A] font-bold block">
+            SS-316 METALLURGY TRUST & GUARANTEES
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold uppercase text-white tracking-tight">
+            Specific Weather Shield ({cityName})
+          </h2>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Why cheap steel fails in Andhra Pradesh: coastal salt-air and river mists cause immediate pitting and corrosion on ordinary mild steel and cheap SS-202 cables within months.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-white/10">
+              <span class="text-2xl mt-0.5">💧</span>
+              <div>
+                <h4 class="text-sm font-bold text-white uppercase">The Environmental Challenge</h4>
+                <p class="text-xs text-gray-300 mt-1">{location.weatherChallenge}</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-[#7CFF3A]/40">
+              <span class="text-2xl mt-0.5">🛡️</span>
+              <div>
+                <h4 class="text-sm font-bold text-[#7CFF3A] uppercase">The Material: Molybdenum-Infused SS-316</h4>
+                <p class="text-xs text-gray-300 mt-1">{location.engineeringSolution}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
+              <span class="text-xl sm:text-2xl font-black text-[#7CFF3A] block">10 YEARS</span>
+              <span class="text-[10px] uppercase tracking-wider text-gray-300 font-semibold block mt-0.5">
+                Anti-Rust Replacement Warranty
+              </span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#101714] border border-white/10 text-center">
+              <span class="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
+              <span class="text-[10px] uppercase tracking-wider text-gray-300 font-semibold block mt-0.5">
+                Periodic Tension Inspection
+              </span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
+              <span class="text-xl sm:text-2xl font-black text-[#7CFF3A] block">400+ KG</span>
+              <span class="text-[10px] uppercase tracking-wider text-gray-300 font-semibold block mt-0.5">
+                Cable Breaking Tension Load
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden border border-[#7CFF3A]/30 shadow-2xl group">
+            <img 
+              src={heroImage} 
+              alt={`D-VIEW SS-316 Weather Shield in ${cityName}`} 
+              class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-[#0a0f0d]/60 to-transparent pointer-events-none" />
+            <div class="absolute top-4 right-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#7CFF3A]/50 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-wider shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse" />
+                ASTM B117 Saline Certified
+              </span>
+            </div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <div class="inline-flex items-center gap-2 bg-[#7CFF3A] text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                Marine Metallurgy Armor
+              </div>
+              <h4 class="text-lg font-bold text-white">SS-316 Molybdenum Barrier</h4>
+              <p class="text-xs text-gray-300 mt-1 leading-relaxed">
+                Infused with 2.5% Molybdenum core alloy, preventing salt-spray pitting, river-fog oxidation, and thermal slackening across {cityName}.
+              </p>
+              <div class="mt-3 flex items-center gap-2 pt-2 border-t border-white/10 text-[10px] text-gray-300 font-mono">
+                <span class="text-[#7CFF3A]">● AISI-316</span>
+                <span>•</span>
+                <span>400KG Tensile</span>
+                <span>•</span>
+                <span>UV-Nylon Core</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     {/* CITY BOTTOM INQUIRY BANNER */}
     <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -296,30 +379,5 @@ const subLocalities = location.subLocalities || [];
 
     {/* LUXURY FOOTER WITH PERSONAL & COMPANY DETAILS */}
     <Footer />
-
-    {/* FLOATING ACTION BUTTONS MATCHING SCREENSHOT */}
-    <!-- Bottom Left: Floating Circular WhatsApp Button (Matching Reference) -->
-    <a
-      href={`https://wa.me/919494328999?text=${encodeURIComponent(`Hi D-View! I checked your ${cityName} balcony calculator. Please quote your lowest price.`)}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="fixed bottom-6 left-5 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-[0_0_30px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all group cursor-pointer border-2 border-white/80"
-      aria-label="Chat on WhatsApp"
-    >
-      <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current text-white" viewBox="0 0 24 24">
-        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.222-.553-1.821-.755-3.003-2.617-3.093-2.738-.09-.12-1.002-1.334-1.002-2.545 0-1.21.636-1.807.863-2.052.226-.245.496-.307.662-.307.166 0 .331.002.477.009.153.008.358-.058.558.423.209.502.712 1.737.774 1.862.062.126.104.272.02.438-.083.167-.125.271-.249.417-.124.145-.262.325-.374.436-.125.124-.256.26-.11.511.146.252.648 1.07 1.39 1.732.955.851 1.76 1.114 2.012 1.239.252.126.4.105.548-.063.147-.168.627-.732.793-.984.167-.251.332-.209.559-.125.227.084 1.442.68 1.689.805.247.126.413.188.474.293.061.104.061.606-.083 1.011z"/>
-      </svg>
-    </a>
-
-    <!-- Bottom Right: Floating Circular Call Now Button -->
-    <a
-      href="tel:+919494328999"
-      class="fixed bottom-6 right-5 z-50 flex flex-col items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#04B214] to-[#028A0F] text-white shadow-[0_0_30px_rgba(4,178,20,0.6)] hover:scale-110 active:scale-95 transition-all group cursor-pointer border-2 border-[#7CFF3A]"
-    >
-      <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-bounce" viewBox="0 0 24 24">
-        <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2a7 7 0 0 1 7 7z"/>
-      </svg>
-      <span class="text-[8px] sm:text-[9px] font-black tracking-wider uppercase mt-0.5">Call Now</span>
-    </a>
   </main>
 </Layout>

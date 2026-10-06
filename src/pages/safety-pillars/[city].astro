@@ -14,7 +14,8 @@ export async function getStaticPaths() {
     'vijayawada-amaravati': 'vijayawada-amaravati',
     'guntur': 'guntur',
     'kakinada': 'kakinada',
-    'nellore': 'nellore'
+    'nellore': 'nellore',
+    'ongole': 'ongole'
   };
 
   return Object.entries(cityAliases).map(([alias, targetSlug]) => {
@@ -64,6 +65,11 @@ const CITY_SEO: Record<string, { title: string; description: string; canonical: 
     title: 'SS-316 Invisible Grills in Nellore | Balcony Safety for Magunta Layout, Balaji Nagar | D-View',
     description: 'Architectural SS-316 invisible safety grills in Nellore. Monsoon-proof anchoring, Penna riverfront sunset preservation, high-floor child & elder protection.',
     canonical: 'https://dviewsolutions.com/safety-pillars/nellore'
+  },
+  ongole: {
+    title: 'SS-316 Invisible Grills in Ongole | Balcony Safety for Bhagyanagar, Lawyerpet, Kurnool Road | D-View',
+    description: 'Certified SS-316 Marine Grade invisible safety grills in Ongole. 100% unblocked Prakasam cityscape view, child & pet fall protection for Bhagyanagar & Lawyerpet high-rises.',
+    canonical: 'https://dviewsolutions.com/safety-pillars/ongole'
   }
 };
 

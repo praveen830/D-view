@@ -388,6 +388,62 @@ export const CITIES_SLIDES: LocationSlide[] = [
         image: '/assets/corridors/nellore-podalakur.jpg'
       }
     ]
+  },
+  {
+    id: 'ongole',
+    locationPath: '/locations/ongole',
+    slug: 'ongole',
+    name: 'Ongole',
+    cityShort: 'ONGOLE',
+    categoryTag: 'PRAKASAM INLAND SKYLINE & HIGH-RISE SAFETY',
+    mainTitle: 'PRAKASAM PRIDE — ONGOLE',
+    subline: 'SS-316 Invisible Safety Grills across Bhagyanagar, Lawyerpet & Kurnool Road.',
+    microCue: 'Tap anywhere to view Ongole projects & pricing',
+    badge: 'Prakasam High-Tension SS-316',
+    emotionHook: 'Bhagyanagar & Lawyerpet high-rises lo open breeze view asalu block avvakunda pillalu mariyu peddavallaki 100% safety!',
+    landmarkDesc: 'High-rise apartment balcony overlooking Kurnool Road Ridge and Ongole cityscape through vertical SS-316 invisible safety grills.',
+    heroImage: '/images/dashboard/dashboard-ongole.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-ongole-9x16.jpg',
+    activeBelts: ['Bhagyanagar', 'Lawyerpet', 'Kurnool Road Belt', 'Santhapet', 'Mangamuru Road', 'Housing Board Colony'],
+    weatherChallenge: 'Inland summer heat and dry highway dust wearing down traditional painted grills and causing frequent rust.',
+    weatherSolution: 'Certified SS-316 high-tensile wire rope coated with UV-resistant transparent nylon sheath and heavy-duty 6063-T6 aluminum tracks.',
+    subLocations: [
+      {
+        name: 'Bhagyanagar Prime High-Rises',
+        elevation: 'High-Floor Balconies',
+        tag: '100% Toddler Fall Protection',
+        desc: 'Uncompromised skyline views and absolute fall protection for children and families.',
+        image: '/assets/corridors/ongole-bhagyanagar.jpg'
+      },
+      {
+        name: 'Lawyerpet Central Residences',
+        elevation: 'Central Society Living',
+        tag: 'Pigeon & Bird Exclusion',
+        desc: '2-inch precision vertical cables physically preventing pigeons from nesting without dark nylon nets.',
+        image: '/assets/corridors/ongole-lawyerpet.jpg'
+      },
+      {
+        name: 'Kurnool Road Growth Belt',
+        elevation: 'Highway High-Rise Towers',
+        tag: 'High-Tension Tensile Strength',
+        desc: 'Calibrated tension turnbuckles and high-load cables ensuring zero sag and lifetime durability.',
+        image: '/assets/corridors/ongole-kurnoolroad.jpg'
+      },
+      {
+        name: 'Santhapet Established Zone',
+        elevation: 'Urban Commercial & Living',
+        tag: 'Modern Facade | Zero Cage',
+        desc: 'Eliminating rusted iron bars with sleek architectural invisible safety wiring.',
+        image: '/assets/corridors/ongole-santhapet.jpg'
+      },
+      {
+        name: 'Mangamuru Road Gated Belts',
+        elevation: 'Gated Society Residences',
+        tag: 'Senior & Pet Protection',
+        desc: 'Spacious balcony and utility safety containment for family peace of mind.',
+        image: '/assets/corridors/ongole-mangamuru.jpg'
+      }
+    ]
   }
 ];
 
@@ -680,6 +736,43 @@ export const CORRIDOR_ASSETS: Record<string, CorridorAssetInfo> = {
     title: "Podalakur Road & Kavali Belt",
     spec: "Expanding Gated Communities | Pest Control",
     cityId: "nellore"
+  },
+  // Ongole Corridors
+  "Bhagyanagar": {
+    image: "/assets/corridors/ongole-bhagyanagar.jpg",
+    title: "Bhagyanagar Prime High-Rises",
+    spec: "Prime Residential | 100% Toddler Fall Protection",
+    cityId: "ongole"
+  },
+  "Lawyerpet": {
+    image: "/assets/corridors/ongole-lawyerpet.jpg",
+    title: "Lawyerpet Central Residences",
+    spec: "Central Society Living | 100% Pigeon Shield",
+    cityId: "ongole"
+  },
+  "Kurnool Road": {
+    image: "/assets/corridors/ongole-kurnoolroad.jpg",
+    title: "Kurnool Road Growth Belt",
+    spec: "Highway High-Rise Towers | High-Tension SS-316",
+    cityId: "ongole"
+  },
+  "Kurnool Road Belt": {
+    image: "/assets/corridors/ongole-kurnoolroad.jpg",
+    title: "Kurnool Road Growth Belt",
+    spec: "Highway High-Rise Towers | High-Tension SS-316",
+    cityId: "ongole"
+  },
+  "Santhapet": {
+    image: "/assets/corridors/ongole-santhapet.jpg",
+    title: "Santhapet Established Zone",
+    spec: "Modern Facade | Zero Iron Cage Effect",
+    cityId: "ongole"
+  },
+  "Mangamuru Road": {
+    image: "/assets/corridors/ongole-mangamuru.jpg",
+    title: "Mangamuru Road Gated Belts",
+    spec: "Gated Towers | Senior & Pet Safety",
+    cityId: "ongole"
   }
 };
 
@@ -852,6 +945,21 @@ export const SOCIETY_INSTALLATIONS: SocietyInstallation[] = [
     image: '/assets/corridors/nellore-magunta.jpg',
     unitsProtected: '17 Balconies Secured',
     customerNote: 'Penna river breeze stays unblocked while toddlers play safely.'
+  },
+
+  // Ongole Hub
+  {
+    id: 'bhagyanagar-skyline',
+    cityId: 'ongole',
+    cityName: 'Ongole',
+    societyName: 'Bhagyanagar Skyline Enclave',
+    corridor: 'Bhagyanagar',
+    floor: '9th-Floor Balcony View',
+    specs: '2.5mm Marine SS-316',
+    highlight: '100% Uncompromised Open Air & Safety',
+    image: '/assets/corridors/ongole-bhagyanagar.jpg',
+    unitsProtected: '14 Balconies Secured',
+    customerNote: 'Children play safely while unobstructed morning sunlight floods the balcony.'
   }
 ];
 
@@ -971,6 +1079,7 @@ export const getMobileLandmarkClass = (nameOrKey?: string): string => {
   if (clean.includes('guntur')) return 'landmark-guntur';
   if (clean.includes('kakinada')) return 'landmark-kakinada';
   if (clean.includes('nellore')) return 'landmark-nellore';
+  if (clean.includes('ongole') || clean.includes('bhagyanagar') || clean.includes('lawyerpet') || clean.includes('kurnool')) return 'landmark-ongole';
   return '';
 };
 
@@ -1000,10 +1109,10 @@ export const WARRANTY_BADGES = [
     desc: 'Solid anchored installation using 6063-T6 heavy-duty structural aluminum tracks. Includes free periodic wire tension inspections and re-tightening support.'
   },
   {
-    icon: Gift,
-    title: 'Complimentary Maintenance Care Kit (Free Gift)',
-    highlight: 'Free Kit On Installation',
-    desc: 'Every confirmed site installation receives a complimentary High-Grade Microfiber Cleaning Cloth + Specialized SS Surface Shine Spray Kit for lifetime wire clarity.'
+    icon: Droplets,
+    title: 'ASTM B117 Saline Mist Laboratory Certification',
+    highlight: 'NSS Saline Tested',
+    desc: 'Independently tested for 1,000+ continuous hours of saline mist exposure with zero pitting, rusting, or surface discoloration across coastal and riverfront microclimates.'
   }
 ];
 
@@ -1192,6 +1301,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             { id: 'guntur', label: 'Guntur' },
             { id: 'kakinada', label: 'Kakinada' },
             { id: 'nellore', label: 'Nellore' },
+            { id: 'ongole', label: 'Ongole' },
           ].map(tab => (
             <button
               key={tab.id}
@@ -1305,6 +1415,109 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     </section>
   );
 
+  const renderWeatherShieldSection = (isSnap = false) => (
+    <section id="weather-trust" className={`${isSnap ? 'snap-start' : ''} py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]`}>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div className="lg:col-span-7 space-y-6">
+            <span className="text-xs uppercase tracking-[0.3em] text-[#7CFF3A] font-bold block">
+              SS-316 METALLURGY TRUST & GUARANTEES
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-light uppercase text-slate-100 tracking-tight">
+              Specific Weather Shield ({activeSlide.name})
+            </h2>
+            
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+              Why cheap steel fails in Andhra Pradesh: coastal salt-air and river mists cause immediate pitting and corrosion on ordinary mild steel and cheap SS-202 cables within months.
+            </p>
+
+            <div className="space-y-4 pt-2">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-white/10">
+                <Droplets className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
+                <div>
+                  <h4 className="text-sm font-bold text-white uppercase">The Environmental Challenge</h4>
+                  <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherChallenge}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-[#7CFF3A]/40">
+                <ShieldCheck className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
+                <div>
+                  <h4 className="text-sm font-bold text-[#7CFF3A] uppercase">The Material: Molybdenum-Infused SS-316</h4>
+                  <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherSolution}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Trust Guarantees: Zero mention of gift kit */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
+                <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">10 YEARS</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
+                  Anti-Rust Replacement Warranty
+                </span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#101714] border border-white/10 text-center">
+                <span className="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
+                  Periodic Tension Inspection
+                </span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
+                <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">400+ KG</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
+                  Cable Breaking Tension Load
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Certified SS-316 Architecture & Weather Defense Card */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-3xl overflow-hidden border border-[#7CFF3A]/30 shadow-2xl group">
+              <img 
+                src={activeSlide.heroImage} 
+                alt={`D-VIEW SS-316 Weather Shield in ${activeSlide.name}`} 
+                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-[#0a0f0d]/60 to-transparent pointer-events-none" />
+              
+              <div className="absolute top-4 right-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#7CFF3A]/50 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-wider shadow-lg">
+                  <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse" />
+                  ASTM B117 Saline Certified
+                </span>
+              </div>
+
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="inline-flex items-center gap-2 bg-[#7CFF3A] text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                  Marine Metallurgy Armor
+                </div>
+                <h4 className="text-lg font-bold text-white">SS-316 Molybdenum Barrier</h4>
+                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  Infused with 2.5% Molybdenum core alloy, preventing salt-spray pitting, river-fog oxidation, and thermal slackening across {activeSlide.name}.
+                </p>
+                <div className="mt-3 flex items-center gap-2 pt-2 border-t border-white/10 text-[10px] text-gray-300 font-mono">
+                  <span className="text-[#7CFF3A]">● AISI-316</span>
+                  <span>•</span>
+                  <span>400KG Tensile</span>
+                  <span>•</span>
+                  <span>UV-Nylon Core</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+
   const renderWarrantySection = (isSnap = false) => (
     <section id="warranty-section" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-[#090d0b] border-t border-white/10`}>
       <div className="max-w-7xl mx-auto">
@@ -1357,18 +1570,18 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           })}
         </div>
 
-        {/* Complimentary Maintenance Care Kit (Free Gift) Banner */}
+        {/* 100% Free Doorstep Precision Laser Survey Banner */}
         <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-r from-[#101714] via-[#121f19] to-[#101714] border border-[#7CFF3A]/30 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2 text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/40 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest">
-              <Gift className="w-3.5 h-3.5 text-[#7CFF3A]" />
-              <span>Complimentary Care Kit on Site Installation</span>
+              <ShieldCheck className="w-3.5 h-3.5 text-[#7CFF3A]" />
+              <span>100% Free Doorstep Engineering Survey</span>
             </div>
             <h4 className="text-xl sm:text-2xl font-bold text-white">
-              Free SS-316 Maintenance & Surface Shine Care Kit
+              Precision Laser Measurement & Genuine SS-316 Sample Verification
             </h4>
             <p className="text-xs sm:text-sm text-[#C7CDD1] font-normal max-w-2xl leading-relaxed">
-              Every confirmed site installation receives a complimentary High-Grade Microfiber Cleaning Cloth + Specialized SS Surface Shine Spray Kit for lifetime wire clarity.
+              Our certified technicians visit your balcony with digital laser meters, genuine SS-316 cable cross-section samples, and provide accurate on-spot pricing with zero sales pressure.
             </p>
           </div>
           <button
@@ -1376,7 +1589,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             onClick={() => handleOpenBooking(selectedHub)}
             className="px-6 py-3.5 rounded-2xl bg-[#7CFF3A] hover:bg-[#8eff50] text-black text-xs font-black uppercase tracking-wider shadow-[0_0_20px_rgba(124,255,58,0.4)] shrink-0 transition cursor-pointer"
           >
-            Claim With Free Survey →
+            Book Free Laser Survey →
           </button>
         </div>
       </div>
@@ -1419,6 +1632,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <option value="Guntur">Guntur (GUNTUR)</option>
                 <option value="Kakinada">Kakinada (KAKINADA)</option>
                 <option value="Nellore">Nellore (NELLORE)</option>
+                <option value="Ongole">Ongole (ONGOLE)</option>
               </select>
             </div>
 
@@ -1647,15 +1861,15 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             <li><span className="text-slate-300 block">100% Certified Virgin SS-316 Metallurgy</span></li>
             <li><span className="text-slate-300 block">10-Year Anti-Rust Written Warranty Certificate</span></li>
             <li><span className="text-slate-300 block">Zero-Sag Lifetime Tensioning Commitment</span></li>
-            <li><span className="text-slate-300 block">Complimentary SS Shine Spray & Microfiber Kit</span></li>
+            <li><span className="text-slate-300 block">ASTM B117 Saline Mist Corrosion-Proof Tested</span></li>
             <li><span className="text-[#7CFF3A] font-medium block">Free Doorstep Precision Laser Site Measurement</span></li>
           </ul>
         </div>
 
-        {/* Column 4: 6 Regional Hubs & Coverage Corridors */}
+        {/* Column 4: 7 Regional Hubs & Coverage Corridors */}
         <div>
           <h4 className="text-[#7CFF3A] font-bold uppercase tracking-wider text-xs mb-3.5">
-            6 Regional Hubs & Coverage Corridors
+            7 Regional Hubs & Coverage Corridors
           </h4>
           <ul className="space-y-2.5 text-[11px]">
             <li>
@@ -1694,6 +1908,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <span className="text-[10px] text-slate-400 block">Magunta Layout, Penna Riverfront, Balaji Nagar.</span>
               </a>
             </li>
+            <li>
+              <a href="/locations/ongole" className="hover:text-[#7CFF3A] transition block">
+                <span className="text-white font-medium">Ongole Hub</span>
+                <span className="text-[10px] text-slate-400 block">Bhagyanagar, Lawyerpet, Kurnool Road Belt, Santhapet, Mangamuru Road.</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -1727,21 +1947,22 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with D-View on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#7CFF3A] hover:bg-[#8eff50] text-black shadow-[0_0_30px_rgba(124,255,58,0.55)] transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-[0_4px_25px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer border-2 border-white/20"
       >
         {/* Subtle Breathing Pulse Glow Animation */}
-        <span className="absolute inset-0 rounded-full bg-[#7CFF3A] opacity-60 animate-ping -z-10 pointer-events-none" />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping -z-10 pointer-events-none" />
         
-        {/* WhatsApp SVG Icon */}
+        {/* Normal Official WhatsApp SVG Icon (White Phone & Bubble) */}
         <svg 
-          className="w-7 h-7 sm:w-8 sm:h-8 fill-current text-black" 
-          viewBox="0 0 24 24"
+          className="w-8 h-8 sm:w-9 sm:h-9 fill-white text-white drop-shadow-sm" 
+          viewBox="0 0 448 512"
+          aria-hidden="true"
         >
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.222-.553-1.821-.755-3.003-2.617-3.093-2.738-.09-.12-1.002-1.334-1.002-2.545 0-1.21.636-1.807.863-2.052.226-.245.496-.307.662-.307.166 0 .331.002.477.009.153.008.358-.058.558.423.209.502.712 1.737.774 1.862.062.126.104.272.02.438-.083.167-.125.271-.249.417-.124.145-.262.325-.374.436-.125.124-.256.26-.11.511.146.252.648 1.07 1.39 1.732.955.851 1.76 1.114 2.012 1.239.252.126.4.105.548-.063.147-.168.627-.732.793-.984.167-.251.332-.209.559-.125.227.084 1.442.68 1.689.805.247.126.413.188.474.293.061.104.061.606-.083 1.011z"/>
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
         </svg>
 
         {/* Desktop Hover Tooltip */}
-        <span className="hidden md:group-hover:block absolute right-full mr-3 px-3.5 py-2 rounded-xl bg-[#101714] border border-[#7CFF3A]/40 text-[#7CFF3A] text-xs font-semibold whitespace-nowrap shadow-xl">
+        <span className="hidden md:group-hover:block absolute right-full mr-3 px-3.5 py-2 rounded-xl bg-[#101714] border border-[#25D366]/40 text-[#25D366] text-xs font-semibold whitespace-nowrap shadow-xl">
           WhatsApp Concierge (+91 94943 28999)
         </span>
       </a>
@@ -1789,7 +2010,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             type="button"
             className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/40 text-[#7CFF3A] text-xs font-bold uppercase tracking-wider hover:bg-[#7CFF3A] hover:text-black transition cursor-pointer shadow-md"
           >
-            <span>📍 Explore 6 City Sub-Pages</span>
+            <span>📍 Explore 7 City Hubs</span>
             <span className="text-[10px]">▼</span>
           </button>
           <div className="absolute top-full mt-2 left-0 w-64 rounded-2xl bg-[#0a0f0d] border border-[#7CFF3A]/40 p-2 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
@@ -1965,7 +2186,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     <span>{slide.name}</span>
                   </div>
                   <div className="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono text-gray-200 font-bold shadow-lg">
-                    0{idx + 1} / 06
+                    0{idx + 1} / 0{CITIES_SLIDES.length}
                   </div>
                 </div>
               </div>
@@ -1984,7 +2205,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 {/* Desktop Counter */}
                 <div className="absolute top-4 right-6 z-20 pointer-events-none">
                   <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-xs font-mono text-[#7CFF3A] font-bold">
-                    0{idx + 1} / 06
+                    0{idx + 1} / 0{CITIES_SLIDES.length}
                   </span>
                 </div>
 
@@ -2165,9 +2386,10 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </div>
 
           {/* ==================================================================== */}
-          {/* GLOBAL SECTIONS: PROOF, A (WARRANTY), B (CALCULATOR), C (FOOTER)     */}
+          {/* GLOBAL SECTIONS: PROOF, WEATHER, A (WARRANTY), B (CALCULATOR), FOOTER */}
           {/* ==================================================================== */}
           {renderSocietyProofSection(false)}
+          {renderWeatherShieldSection(false)}
           {renderWarrantySection(false)}
           {renderCalculatorSection(false)}
           {renderLuxuryFooter(false)}
@@ -2421,93 +2643,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {/* ----------------------------------------------------------------- */}
           {/* SECTION B: LOCAL WEATHER GUIDE & SS-316 TECHNICAL TRUST         */}
           {/* ----------------------------------------------------------------- */}
-          <section id="weather-trust" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]">
-            <div className="max-w-7xl mx-auto">
-              
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                
-                <div className="lg:col-span-7 space-y-6">
-                  <span className="text-xs uppercase tracking-[0.3em] text-[#7CFF3A] font-bold block">
-                    SS-316 METALLURGY TRUST & GUARANTEES
-                  </span>
-                  <h2 className="text-3xl sm:text-4xl font-light uppercase text-slate-100 tracking-tight">
-                    Specific Weather Shield ({activeSlide.name})
-                  </h2>
-                  
-                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                    Why cheap steel fails in Andhra Pradesh: coastal salt-air and river mists cause immediate pitting and corrosion on ordinary mild steel and cheap SS-202 cables within months.
-                  </p>
-
-                  <div className="space-y-4 pt-2">
-                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-white/10">
-                      <Droplets className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-sm font-bold text-white uppercase">The Environmental Challenge</h4>
-                        <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherChallenge}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-[#7CFF3A]/40">
-                      <ShieldCheck className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-sm font-bold text-[#7CFF3A] uppercase">The Material: Molybdenum-Infused SS-316</h4>
-                        <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherSolution}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Trust Guarantees */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                    <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
-                      <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">10 YEARS</span>
-                      <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
-                        Anti-Rust Replacement Warranty
-                      </span>
-                    </div>
-
-                    <div className="p-4 rounded-2xl bg-[#101714] border border-white/10 text-center">
-                      <span className="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
-                      <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
-                        Periodic Tension Inspection
-                      </span>
-                    </div>
-
-                    <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
-                      <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">FREE GIFT</span>
-                      <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
-                        Microfiber & SS Shine Kit
-                      </span>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Maintenance Gift Kit Photo */}
-                <div className="lg:col-span-5 relative">
-                  <div className="relative rounded-3xl overflow-hidden border border-[#7CFF3A]/30 shadow-2xl">
-                    <img 
-                      src="/images/maintenance-kit.jpg" 
-                      alt="D-VIEW SS-316 Care Kit and Shine Spray" 
-                      className="w-full h-80 object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
-                    
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="inline-flex items-center gap-2 bg-[#7CFF3A] text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
-                        Special Free Gift On Installation
-                      </div>
-                      <h4 className="text-lg font-bold text-white">SS-316 Maintenance Gift Kit</h4>
-                      <p className="text-xs text-slate-300 mt-1">
-                        High-grade microfiber cloth and special SS shine spray to keep your cables looking pristine for decades.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </section>
+          {renderWeatherShieldSection(false)}
 
           {/* ----------------------------------------------------------------- */}
           {/* SECTION A: WARRANTY & SECTION B: ESTIMATE CALCULATOR              */}
@@ -2599,6 +2735,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   <option value="Guntur">Guntur</option>
                   <option value="Kakinada">Kakinada</option>
                   <option value="Nellore">Nellore</option>
+                  <option value="Ongole">Ongole</option>
                 </select>
               </div>
 

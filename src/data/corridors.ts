@@ -532,6 +532,73 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Nellore apartment. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }
+  },
+
+  // ==========================================
+  // STEP 7: ONGOLE DATA INTEGRATION
+  // ==========================================
+  ongole: {
+    cityId: "ongole",
+    cityName: "Ongole",
+    pillarRouting: "ongole",
+    visualParams: {
+      locationType: "inland_growth_corridor",
+      landmarkView: "Kurnool Road Ridge & Bhagyanagar Skyline",
+      brightnessEnforcement: "max_daylight_sunlit",
+      textContrastRatio: "premium_emerald_silver",
+    },
+    pillars: [
+      {
+        id: "children-safety",
+        title: "BHAGYANAGAR & LAWYERPET TODDLER FALL PREVENTION",
+        problem: "Low balcony railings creating dangerous fall hazards in multi-floor apartments.",
+        solution: "Floor-to-ceiling SS-316 vertical wire cables with strict 2-inch safe spacing.",
+        specKey: "SS316_CERTIFIED_TENSION"
+      },
+      {
+        id: "old-age-safety",
+        title: "HEIGHT ANXIETY & LEAN SUPPORT FOR SENIORS",
+        problem: "Fear of heights and weak balcony barriers making elders fearful of outdoor relaxation.",
+        solution: "Reinforced ceiling-to-floor tension tracks providing firm, reassuring support.",
+        specKey: "RIGID_ANCHOR_T6"
+      },
+      {
+        id: "pigeons-safety",
+        title: "ZERO PIGEON NESTING & UNHYGIENIC DROPPINGS",
+        problem: "Wild pigeons nesting on AC ledges and balconies along highway belts.",
+        solution: "Precision 50mm vertical physical barrier preventing bird entry permanently.",
+        specKey: "BIRD_SHIELD_SS316"
+      },
+      {
+        id: "fire-escape",
+        title: "1-MINUTE EMERGENCY RAPID FIRE ESCAPE",
+        problem: "Welded iron window and balcony grilles forming inescapable fire hazards.",
+        solution: "High-tensile cables quickly severable in emergencies with safety wire cutters.",
+        specKey: "1_MIN_SAFE_FIRE_EGRESS"
+      },
+      {
+        id: "modern-luxury",
+        title: "100% UNBLOCKED CROSS-VENTILATION & SKYLINE",
+        problem: "Heavy rusted bars cutting off natural sunlight and air circulation.",
+        solution: "99% optical transparency preserving open vistas and cooling breezes.",
+        specKey: "OPTICAL_LUXURY_316"
+      }
+    ],
+    completedProjects: [
+      {
+        societyName: "Bhagyanagar Skyline Enclave (Ongole)",
+        installationType: "SS-316 2.5mm Marine Grade",
+        status: "Completed",
+        floor: "9th-Floor Balcony",
+        unitsSecured: "14 Balconies Secured",
+        note: "100% toddler safety with uninterrupted open hill & city view."
+      }
+    ],
+    contactSpecs: {
+      phoneDial: "+919494328999",
+      whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Ongole apartment. Please send information.",
+      emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
+    }
   }
 };
 
@@ -545,5 +612,6 @@ export const getSafetyGrillData = (cityId?: string): CitySafetyGrillConfig => {
   if (clean.includes("guntur")) return safetyGrillData.guntur;
   if (clean.includes("kakinada")) return safetyGrillData.kakinada;
   if (clean.includes("nellore")) return safetyGrillData.nellore;
+  if (clean.includes("ongole")) return safetyGrillData.ongole;
   return safetyGrillData[clean] || safetyGrillData.vizag;
 };

@@ -42,6 +42,7 @@ export interface LocationData {
   heroHeadline: string;
   heroSubhead: string;
   heroImage: string;
+  heroPosterImage?: string;
   heroImageAlt: string;
   subLocalities: SubLocality[];
   
@@ -692,6 +693,100 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     seoTitle: 'Invisible Grills in Nellore | Balcony Safety Solutions | D-VIEW',
     seoDescription: 'SS-316 invisible safety grills for apartments in Nellore. Magunta Layout, Balaji Nagar & Dargamitta. Child-safe, pigeon-proof, Penna river views.',
     keywords: ['invisible grills in nellore', 'balcony safety grills magunta layout', 'pigeon barrier grills nellore', 'safety grills balaji nagar']
+  },
+
+  ongole: {
+    slug: 'ongole',
+    name: 'Ongole',
+    cityName: 'Ongole',
+    altName: 'Prakasam City',
+    district: 'Prakasam',
+    badge: 'ONGOLE • BHAGYANAGAR & KURNOOL ROAD SAFETY',
+    tagline: 'Living Spaces Without Fear & Without Cages',
+    emotionHook: 'Bhagyanagar & Lawyerpet high-rises lo open breeze view asalu block avvakunda pillalu mariyu peddavallaki 100% safety!',
+    heroHeadline: 'PREMIUM INVISIBLE GRILLS IN ONGOLE',
+    heroSubhead: 'Engineered SS-316 invisible safety grills across Bhagyanagar, Lawyerpet & Kurnool Road belt. Uncompromised views and certified protection.',
+    heroImage: '/images/dashboard/dashboard-ongole.jpg',
+    heroPosterImage: '/images/dashboard/ongole-city-poster.jpg',
+    heroImageAlt: 'Modern high-rise apartment balcony in Ongole overlooking Kurnool Road with invisible safety grills',
+    subLocalities: [
+      { name: "Bhagyanagar Prime High-Rises", image: "/assets/corridors/ongole-bhagyanagar.jpg", tag: "PRIME RESIDENTIAL | 100% UNBLOCKED PANORAMA", path: "/safety-pillars/ongole?corridor=Bhagyanagar", desc: "Luxury apartments in Bhagyanagar with uncompromised fall protection and full cross-ventilation." },
+      { name: "Lawyerpet Central Residences", image: "/assets/corridors/ongole-lawyerpet.jpg", tag: "CENTRAL ENCLAVE | TODDLER & PIGEON SHIELD", path: "/safety-pillars/ongole?corridor=Lawyerpet", desc: "Central high-floor balconies secured with precision 2-inch marine-grade vertical cables." },
+      { name: "Kurnool Road Growth Belt", image: "/assets/corridors/ongole-kurnoolroad.jpg", tag: "HIGHWAY TOWERS | HIGH-TENSION RESILIENCE", path: "/safety-pillars/ongole?corridor=Kurnool%20Road", desc: "Fast-developing luxury societies along Kurnool road protected against falls and bird nesting." },
+      { name: "Santhapet Established Zone", image: "/assets/corridors/ongole-santhapet.jpg", tag: "MODERN FACADE | ZERO IRON CAGE EFFECT", path: "/safety-pillars/ongole?corridor=Santhapet", desc: "Eliminating rusted iron bars with sleek architectural invisible safety wiring." },
+      { name: "Mangamuru Road Gated Belts", image: "/assets/corridors/ongole-mangamuru.jpg", tag: "GATED TOWERS | SENIOR & PET SAFETY", path: "/safety-pillars/ongole?corridor=Mangamuru%20Road", desc: "Spacious balcony and utility safety containment for family peace of mind." }
+    ],
+    
+    landmarkHeadline: 'AIRY BALCONIES. UNCOMPROMISED SAFETY. ONGOLE PRIDE.',
+    landmarkSubhead: 'Preserve natural light and breezes across Bhagyanagar, Lawyerpet, and Kurnool Road with modern structural invisible grills.',
+    landmarkFeature: 'Kurnool Road Ridge & Ongole City Skyline',
+    landmarkImage: '/images/dashboard/dashboard-ongole.jpg',
+    
+    technicalHeadline: 'ENGINEERED FOR PRAKASAM INLAND WEATHER & HIGH-FLOOR WINDS',
+    technicalSubtitle: 'Ongole’s seasonal heat and dry dust demand premium anti-static, marine SS-316 cabling.',
+    weatherChallenge: 'Inland summer heat and dust winds accelerate wear on traditional painted iron grills.',
+    engineeringSolution: 'SS-316 high-tensile multi-strand stainless steel wires anchored to rigid 6063-T6 aluminum tracks with 10-year rust warranty.',
+    recommendedGrade: 'SS-316 Marine Grade Wire',
+    corrosionAdvisory: 'High-tensile SS-316 wire coated with transparent nylon resists oxidation and remains maintenance-free.',
+    technicalSpecs: [
+      { label: 'Wire Grade', value: 'SS-316 Marine Grade Stainless Steel', note: 'Certified 100% rust-free' },
+      { label: 'Tensile Strength', value: '> 400 kg Breaking Tension', note: 'Impact certified for adult containment' },
+      { label: 'Spacing', value: '2-Inch (50mm) Safe Spacing', note: 'Zero footholds for children or pigeons' },
+      { label: 'Track System', value: '6063-T6 Structural Aluminum', note: 'Heavy-duty concealed anchors' }
+    ],
+    
+    areasHeadline: 'AREAS WE SERVE IN ONGOLE',
+    areasSubtitle: 'Free on-site measurements across Bhagyanagar, Lawyerpet, Kurnool Road Belt, and Santhapet.',
+    areas: [
+      { name: 'Bhagyanagar', type: 'Prime Residential Colony', highlight: 'Luxury high-rise apartment balcony safety' },
+      { name: 'Lawyerpet', type: 'Central Residential Belt', highlight: 'Pigeon protection & toddler fall security' },
+      { name: 'Kurnool Road Belt', type: 'High-Rise Corridor', highlight: 'Modern highway towers & gated communities' },
+      { name: 'Santhapet & Trunk Road', type: 'Established Urban Belt', highlight: 'Balcony facade modernization' },
+      { name: 'Mangamuru Road', type: 'Emerging Residential Corridor', highlight: 'Gated society apartment installations' },
+      { name: 'Housing Board Colony', type: 'Residential Enclave', highlight: 'Duplex & terrace safety systems' }
+    ],
+    
+    projects: [
+      {
+        id: 'ogl-01',
+        title: 'Bhagyanagar Skyline Enclave',
+        locality: 'Bhagyanagar, Ongole',
+        propertyType: '9th Floor Balcony',
+        wireSpec: '2.5mm SS-316 Marine Grade',
+        areaSqFt: 110,
+        highlight: 'Complete toddler fall protection while preserving breezy open hill views.',
+        image: '/assets/corridors/ongole-bhagyanagar.jpg'
+      },
+      {
+        id: 'ogl-02',
+        title: 'Lawyerpet Premium Heights',
+        locality: 'Lawyerpet, Ongole',
+        propertyType: '6th Floor Balcony & Utility',
+        wireSpec: '2.5mm SS-316',
+        areaSqFt: 92,
+        highlight: 'Permanent pigeon exclusion without ugly dark nylon safety nets.',
+        image: '/assets/corridors/ongole-lawyerpet.jpg'
+      }
+    ],
+    
+    faqs: [
+      {
+        question: 'How fast can invisible grills be installed in Ongole?',
+        answer: 'D-VIEW provides same-day or next-day on-site measurement in Ongole across Bhagyanagar, Lawyerpet, and Kurnool Road. Fabrication and installation are typically completed within 24 to 48 hours.'
+      },
+      {
+        question: 'Can invisible grills stop pigeons in Ongole apartments?',
+        answer: 'Yes. The 2-inch (50mm) vertical gap physically prevents pigeons from entering or landing, permanently protecting floor tiles and AC units without blocking natural light.'
+      },
+      {
+        question: 'What warranty is offered in Ongole?',
+        answer: 'We provide a 5 to 10-year warranty covering material integrity and anti-rust performance on certified SS-316 marine-grade wires.'
+      }
+    ],
+    
+    seoTitle: 'Invisible Grills in Ongole | Balcony Safety Solutions | D-VIEW',
+    seoDescription: 'SS-316 invisible safety grills in Ongole. Bhagyanagar, Lawyerpet & Kurnool Road. Child safety, pigeon protection, 10-year warranty. Free measurement.',
+    keywords: ['invisible grills in ongole', 'balcony safety grills bhagyanagar', 'invisible grills lawyerpet', 'safety grills kurnool road ongole']
   }
 };
 

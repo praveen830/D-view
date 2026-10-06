@@ -74,11 +74,11 @@ export default function DynamicQRCode({ locationSlug, cityName }: DynamicQRCodeP
             Scan this dynamic QR code with your smartphone camera to save or revisit this official D-VIEW {cityName} specifications page anytime, or share it directly with your apartment association (RWA).
           </p>
 
-          {/* Complimentary Gift Hook */}
+          {/* Direct Laser Site Survey Hook */}
           <div className="mt-3 p-3 rounded-xl bg-[#1A2420] border border-[#7CFF3A]/30 flex items-center gap-2.5">
-            <span className="text-base">🎁</span>
+            <span className="text-base">🛡️</span>
             <span className="text-xs font-semibold text-[#E2E8F0]">
-              <strong className="text-[#7CFF3A]">Complimentary Balcony Kit:</strong> Includes free Microfiber Cloth + SS Shine Spray Kit with every complete installation.
+              <strong className="text-[#7CFF3A]">Doorstep Technical Survey:</strong> Includes precision digital laser measurement and certified SS-316 sample inspection.
             </span>
           </div>
 

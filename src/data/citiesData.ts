@@ -78,10 +78,22 @@ export const citiesData: CityConfig[] = [
     tagline: "Tranquility & Trust: Nellore Barrage & Penna Riverfront",
     subline: "Elegantly framed sunset views with elder and pet safety security.",
     landmark: "Nellore Barrage & Penna River Horizon",
-    heroImage: "/assets/locations/nellore.png",
-    localHeroImage: "/assets/locations/nellore.png",
+    heroImage: "/images/dashboard/dashboard-nellore.jpg",
+    localHeroImage: "/images/dashboard/dashboard-nellore.jpg",
     keyAreas: ["Magunta Layout", "Balaji Nagar", "Dargamitta", "Vedayapalem", "Podalakur Road", "Kavali Road"],
     weatherAngle: "Riverbank dampness and seasonal storms require heavy anchoring and anti-sag wire tension.",
     district: "SPSR Nellore"
+  },
+  {
+    id: "ongole",
+    name: "Ongole",
+    tagline: "Prakasam Pride: Bhagyanagar, Lawyerpet & Kurnool Road Skyline",
+    subline: "100% Uncompromised safety and breezy open balconies across Ongole's thriving high-rise corridors.",
+    landmark: "Kurnool Road Ridge & Chennakesava Swamy Panorama",
+    heroImage: "/images/dashboard/dashboard-ongole.jpg",
+    localHeroImage: "/images/dashboard/dashboard-ongole.jpg",
+    keyAreas: ["Bhagyanagar", "Lawyerpet", "Kurnool Road Belt", "Santhapet", "Mangamuru Road", "Pellur Corridor", "Housing Board Colony"],
+    weatherAngle: "Inland heat and sudden dust winds require SS-316 high-tension steel with anti-dust coating and zero rust guarantees.",
+    district: "Prakasam"
   }
 ];

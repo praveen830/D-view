@@ -89,7 +89,7 @@ export default function Navbar({ currentSlug }: NavbarProps) {
               {cityDropdownOpen && (
                 <div className="absolute top-full mt-2 left-0 w-64 rounded-xl bg-[#0a0f0d] border border-[#7CFF3A]/20 shadow-2xl p-2 z-50 animate-in fade-in backdrop-blur-xl">
                   <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#94a3b8] border-b border-[#24322B]">
-                    6 Andhra Pradesh Hubs
+                    7 Andhra Pradesh Hubs
                   </div>
                   <div className="mt-1 space-y-1">
                     {ALL_LOCATIONS.map((loc) => (

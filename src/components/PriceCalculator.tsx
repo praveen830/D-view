@@ -457,6 +457,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           <option value="guntur">Guntur</option>
                           <option value="kakinada">Kakinada</option>
                           <option value="nellore">Nellore</option>
+                          <option value="ongole">Ongole</option>
                         </select>
                       </div>
                     </div>

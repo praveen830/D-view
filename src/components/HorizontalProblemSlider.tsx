@@ -179,10 +179,10 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
           </div>
         </div>
 
-        {/* 8 Horizontal Cards Container (Left to Right Scrolling, No Toggles) */}
+        {/* 8 Horizontal Cards Container (Compact, Main Text Only) */}
         <div
           ref={scrollRef}
-          className="flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 pt-2 no-scrollbar"
+          className="flex gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 pt-1 no-scrollbar"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {SHOWCASE_8_CARDS.map((card) => {
@@ -191,18 +191,18 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
             return (
               <div
                 key={card.id}
-                className={`w-[300px] sm:w-[350px] md:w-[370px] shrink-0 snap-center rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1.5 ${
+                className={`w-[260px] sm:w-[290px] md:w-[310px] shrink-0 snap-center rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 ${
                   isProblem
-                    ? 'bg-[#180C0E] border-2 border-red-600/40 hover:border-red-500 hover:shadow-[0_15px_40px_rgba(239,68,68,0.25)]'
-                    : 'bg-[#052920] border-2 border-[#7CFF3A]/40 hover:border-[#7CFF3A] hover:shadow-[0_15px_40px_rgba(124,255,58,0.25)]'
+                    ? 'bg-[#180C0E] border border-red-600/40 hover:border-red-500 hover:shadow-[0_10px_25px_rgba(239,68,68,0.25)]'
+                    : 'bg-[#052920] border border-[#7CFF3A]/40 hover:border-[#7CFF3A] hover:shadow-[0_10px_25px_rgba(124,255,58,0.25)]'
                 }`}
               >
-                {/* Visual Area with Image */}
-                <div className="relative h-[340px] sm:h-[370px] w-full overflow-hidden bg-black/80">
+                {/* Visual Area with Image - Reduced Compact Height */}
+                <div className="relative h-[210px] sm:h-[230px] w-full overflow-hidden bg-black/80">
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                   
@@ -216,9 +216,9 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                   />
 
                   {/* Top Tag */}
-                  <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
+                  <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between z-10">
                     <span
-                      className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider backdrop-blur-md border shadow-lg ${
+                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider backdrop-blur-md border shadow-md ${
                         isProblem
                           ? 'bg-red-950/90 text-red-300 border-red-500/50'
                           : 'bg-emerald-950/90 text-[#7CFF3A] border-[#7CFF3A]/50'
@@ -228,47 +228,47 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                     </span>
 
                     <span
-                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider backdrop-blur-md ${
+                      className={`px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-wider backdrop-blur-md ${
                         isProblem
                           ? 'bg-red-600 text-white'
                           : 'bg-[#7CFF3A] text-black font-black'
                       }`}
                     >
-                      {isProblem ? 'PROBLEM CASE' : 'SOLUTION CASE'}
+                      {isProblem ? 'PROBLEM' : 'SOLUTION'}
                     </span>
                   </div>
 
                   {/* Bottom Image Floating Badge */}
-                  <div className="absolute bottom-3 left-3 right-3 z-10">
+                  <div className="absolute bottom-2 left-2 right-2 z-10">
                     <span
-                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-extrabold backdrop-blur-md border shadow-lg ${
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold backdrop-blur-md border shadow-md truncate max-w-full ${
                         isProblem
                           ? 'bg-red-950/95 text-red-200 border-red-500/50'
                           : 'bg-emerald-950/95 text-[#7CFF3A] border-[#7CFF3A]/50'
                       }`}
                     >
                       <span
-                        className={`w-2 h-2 rounded-full ${
+                        className={`w-1.5 h-1.5 rounded-full shrink-0 ${
                           isProblem ? 'bg-red-500 animate-pulse' : 'bg-[#7CFF3A]'
                         }`}
                       />
-                      <span>{card.badge}</span>
+                      <span className="truncate">{card.badge}</span>
                     </span>
                   </div>
                 </div>
 
-                {/* Content Area */}
-                <div className="p-5 flex flex-col justify-between flex-grow text-left">
+                {/* Content Area - Compact Main Text Only */}
+                <div className="p-3.5 sm:p-4 flex flex-col justify-between flex-grow text-left">
                   <div>
                     <span
-                      className={`text-[10px] font-bold uppercase tracking-widest block mb-1 ${
+                      className={`text-[9px] font-extrabold uppercase tracking-widest block mb-0.5 ${
                         isProblem ? 'text-red-400' : 'text-[#7CFF3A]'
                       }`}
                     >
                       {card.category}
                     </span>
                     <h3
-                      className={`text-lg font-black tracking-tight leading-snug transition-colors ${
+                      className={`text-base font-black tracking-tight leading-snug transition-colors ${
                         isProblem
                           ? 'text-white group-hover:text-red-300'
                           : 'text-white group-hover:text-[#7CFF3A]'
@@ -276,40 +276,21 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                     >
                       {card.title}
                     </h3>
-                    <p className="text-xs text-gray-300 font-semibold mb-3">
+                    <p className="text-[11px] text-gray-300 font-medium mt-1 leading-snug">
                       {card.subtitle}
                     </p>
-
-                    {/* Description Box */}
-                    <div
-                      className={`p-3 rounded-2xl border text-xs leading-relaxed mb-3 ${
-                        isProblem
-                          ? 'bg-[#241013] border-red-900/60 text-red-100/90'
-                          : 'bg-[#092B1F] border-[#7CFF3A]/30 text-emerald-100/90'
-                      }`}
-                    >
-                      <p>{card.description}</p>
-                    </div>
-
-                    {/* Key Bullet */}
-                    <div className="flex items-start gap-1.5 text-[11px] font-semibold text-gray-300">
-                      <span className={isProblem ? 'text-red-400' : 'text-[#7CFF3A]'}>
-                        {isProblem ? '✕' : '✓'}
-                      </span>
-                      <span>{card.bullet}</span>
-                    </div>
                   </div>
 
                   {/* Bottom Action CTA */}
                   <a
                     href={`/contact?reason=${encodeURIComponent(card.category)}`}
-                    className={`mt-4 w-full py-2.5 rounded-xl text-xs font-bold transition-all duration-300 text-center block shadow-lg cursor-pointer ${
+                    className={`mt-3 w-full py-2 rounded-xl text-[11px] font-bold transition-all duration-300 text-center block shadow-md cursor-pointer ${
                       isProblem
                         ? 'bg-red-700/80 hover:bg-red-600 text-white'
                         : 'bg-[#028A0F] hover:bg-[#7CFF3A] hover:text-black text-white'
                     }`}
                   >
-                    {isProblem ? `Solve This in ${cityName} →` : `Get Certified Protection in ${cityName} →`}
+                    {isProblem ? `Solve in ${cityName} →` : `Protect in ${cityName} →`}
                   </a>
                 </div>
               </div>
