@@ -21,17 +21,29 @@ export interface AreaServed {
   highlight: string;
 }
 
+export interface SubLocality {
+  name: string;
+  path: string;
+  desc: string;
+  image?: string;
+  tag?: string;
+}
+
+
 export interface LocationData {
   slug: string;
   name: string;
+  cityName: string;
   altName?: string;
   district: string;
   badge: string;
+  tagline: string;
   emotionHook?: string;
   heroHeadline: string;
   heroSubhead: string;
   heroImage: string;
   heroImageAlt: string;
+  subLocalities: SubLocality[];
   
   // Landmark & View
   landmarkHeadline: string;
@@ -73,14 +85,23 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
   rajahmundry: {
     slug: 'rajahmundry',
     name: 'Rajahmundry',
+    cityName: 'Rajamahendravaram',
     altName: 'Rajamahendravaram',
     district: 'East Godavari',
     badge: 'RAJAHMUNDRY • GODAVARI BALCONY SAFETY',
+    tagline: 'Living Spaces Without Fear & Without Cages',
     emotionHook: 'Mana Godavari river breeze view invisible grills valla asalu block avvakunda entha peaceful ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN RAJAHMUNDRY',
     heroSubhead: 'Experience the sweeping Godavari river breeze from a new elevation with uncompromising, certified architectural safety.',
-    heroImage: '/images/rajahmundry-hero.jpg',
+    heroImage: '/images/dashboard/dashboard-rajahmundry.jpg',
     heroImageAlt: 'Luxury high-rise apartment balcony in Rajahmundry overlooking the Godavari Arch Bridge with invisible safety grills',
+    subLocalities: [
+      { name: "Morampudi Residential Towers", image: "/assets/locations/sub/rajahmundry-morampudi.jpg", tag: "RIVER-VIEW BALCONY | FRESH RIVER BREEZE", path: "/safety-pillars/rajahmundry?corridor=Morampudi", desc: "High-rise apartment balcony looking out at open green residential layouts and fresh Godavari breeze through vertical wires." },
+      { name: "Godavari Arch Bridge Riverfront", image: "/assets/locations/rajahmundry-godavari-bridge.jpg", tag: "HISTORIC RIVER PANORAMA | 100% PIGEON SHIELD", path: "/safety-pillars/rajahmundry?corridor=Godavari%20Arch%20Bridge", desc: "Balcony view directly framing the yellow Godavari Arch Bridge and boats drifting on the water through transparent SS-316 wires." },
+      { name: "Bommuru Gated Communities", image: "/assets/locations/sub/rajahmundry-bommuru.jpg", tag: "ZERO BIRD DROPPINGS | 2-INCH SAFE SPACING", path: "/safety-pillars/rajahmundry?corridor=Bommuru", desc: "Luxury society balcony view with pigeon-proof vertical safety wire screens." },
+      { name: "Diwancheruvu & Lalacheruvu Hub", image: "/assets/locations/sub/rajahmundry-diwancheruvu.jpg", tag: "ELEVATED TOWERS | WIND & DUST SHIELD", path: "/safety-pillars/rajahmundry?corridor=Diwancheruvu", desc: "Elevated highway residential towers with clean sunlight penetration." },
+      { name: "Vemagiri Riverfront Belts", image: "/assets/locations/sub/rajahmundry-vemagiri.jpg", tag: "RIVERBANK BALCONIES | ZERO FALL HAZARD", path: "/safety-pillars/rajahmundry?corridor=Vemagiri", desc: "Riverbank apartment terrace overlooking water streams through stainless-steel invisible grills." }
+    ],
     
     landmarkHeadline: 'SAFETY WITHOUT LOSING THE GODAVARI VIEW',
     landmarkSubhead: 'Wake up to the serene Godavari horizon, unblocked sunrise reflections, and continuous cross-ventilation—while keeping children, elders, and pets secure.',
@@ -177,14 +198,24 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
   visakhapatnam: {
     slug: 'visakhapatnam',
     name: 'Visakhapatnam',
+    cityName: 'Visakhapatnam',
     altName: 'Vizag',
     district: 'Visakhapatnam',
     badge: 'VISAKHAPATNAM • COASTAL BALCONY SAFETY',
+    tagline: 'Living Spaces Without Fear & Without Cages',
     emotionHook: 'Mana Vizag sea coast view invisible grills valla asalu block avvakunda entha luxury ga undo!',
     heroHeadline: 'UNBLOCKED VIZAG VIEWS, 101% BREATHTAKING & SECURE',
     heroSubhead: 'RK Beach to Kailasagiri - Experience uninterrupted coastal panoramic views with zero safety compromise.',
-    heroImage: '/images/visakhapatnam-hero.jpg',
+    heroImage: '/images/dashboard/dashboard-visakhapatnam.jpg',
     heroImageAlt: 'Penthouse balcony in Visakhapatnam overlooking RK Beach and Kailasagiri with SS-316 invisible safety grills',
+    subLocalities: [
+      { name: "Madhurawada (27-Floor High-Rises)", image: "/assets/locations/sub/vizag-madhurawada.png", tag: "25TH-FLOOR PENTHOUSE | 27 TOWERS LOCKDOWN", path: "/safety-pillars/vizag?corridor=Madhurawada", desc: "25th-floor penthouse balcony looking through vertical SS-316 wires at high-rise valley towers surrounded by green coastal hills." },
+      { name: "Rushikonda Luxury Hillside", image: "/assets/locations/sub/vizag-rushikonda.png", tag: "COASTAL VILLA BALCONIES | UNBLOCKED BLUE WAVES", path: "/safety-pillars/vizag?corridor=Rushikonda", desc: "Luxury coastal hillside villa balcony overlooking turquoise blue ocean waves crashing near rocky shores." },
+      { name: "Yendada Sea-Facing Corridor", image: "/assets/locations/sub/vizag-yendada.png", tag: "HIGH-ALTITUDE BAY PANORAMA | MARINE SS-316", path: "/safety-pillars/vizag?corridor=Yendada", desc: "Wide balcony perspective facing the deep coastal ocean shoreline through crisp, transparent safety cables." },
+      { name: "PM Palem (Stadium Road)", image: "/assets/locations/sub/vizag-pmpalem.png", tag: "GATED TOWERS | TODDLER LOCKDOWN", path: "/safety-pillars/vizag?corridor=PM%20Palem", desc: "Modern gated community high-rise elevation looking towards mountain ridges through 2-inch safe spaced cables." },
+      { name: "Anandapuram Growth Corridor", image: "/assets/locations/sub/vizag-anandapuram.png", tag: "VALLEY PENTHOUSE | NATURAL CROSS-AIRFLOW", path: "/safety-pillars/vizag?corridor=Anandapuram", desc: "High-rise apartment balcony overlooking lush green open landscapes and modern expressway developments." },
+      { name: "Gajuwaka Industrial Belt", image: "/assets/locations/sub/vizag-gajuwaka.png", tag: "URBAN TOWERS | ANTI-STATIC DUST RESISTANT", path: "/safety-pillars/vizag?corridor=Gajuwaka", desc: "Urban high-rise apartment balcony framed with anti-dust coated SS-316 wires." }
+    ],
     
     landmarkHeadline: 'SAFETY WITHOUT LOSING THE COASTAL VIEW',
     landmarkSubhead: 'Take in the vast Bay of Bengal and Kailasagiri horizons with zero visual obstruction, while protecting high-rise living from intense ocean crosswinds.',
@@ -277,14 +308,24 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
   'vijayawada-amaravati': {
     slug: 'vijayawada-amaravati',
     name: 'Vijayawada + Amaravati',
+    cityName: 'Vijayawada / Amaravati',
     altName: 'Amaravati Capital Region',
     district: 'NTR / Guntur',
     badge: 'VIJAYAWADA & AMARAVATI • CAPITAL REGION SAFETY',
+    tagline: 'Living Spaces Without Fear & Without Cages',
     emotionHook: 'Mana Krishna river & Amaravati skyline view invisible grills valla asalu block avvakunda entha modern ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN VIJAYAWADA & AMARAVATI',
     heroSubhead: 'Architectural safety tailored for the capital region’s prestigious towers, overlooking the majestic Krishna River and vibrant skyline.',
-    heroImage: '/images/vijayawada-hero.jpg',
+    heroImage: '/images/dashboard/dashboard-vijayawada.jpg',
     heroImageAlt: 'Modern high-rise balcony in Vijayawada overlooking Prakasam Barrage and the Krishna River',
+    subLocalities: [
+      { name: "Benz Circle & Bandar Road Towers", image: "/assets/locations/sub/vijayawada-benzcircle.jpg", tag: "BENZ CIRCLE TOWERS | SKYLINE PANORAMA", path: "/safety-pillars/vijayawada?corridor=Benz%20Circle", desc: "Prestigious urban towers overlooking the city center with thermal-stabilized tension cables." },
+      { name: "HappyNest Amaravati High-Rises", image: "/assets/locations/sub/vijayawada-happynest.jpg", tag: "GOVERNMENT HIGH-RISE | 18TH-FLOOR TODDLER LOCKDOWN", path: "/safety-pillars/vijayawada?corridor=HappyNest%20Amaravati", desc: "High-floor G+18 towers in Amaravati capital corridor with 100% fall protection and open river breeze." },
+      { name: "Moghalrajpuram Residential Hub", image: "/assets/locations/sub/vijayawada-moghalrajpuram.jpg", tag: "CENTRAL RESIDENTIAL | 100% PIGEON FREE", path: "/safety-pillars/vijayawada?corridor=Moghalrajpuram", desc: "Complete pigeon exclusion and child security for established residential communities." },
+      { name: "Gunadala Hill-Facing Enclaves", image: "/assets/locations/sub/vijayawada-gunadala.jpg", tag: "HILL-FACING TOWERS | CYCLONIC WIND SHIELD", path: "/safety-pillars/vijayawada?corridor=Gunadala", desc: "Hillside apartment terraces overlooking Mary Matha shrine ridge with stainless steel cables." },
+      { name: "Kanuru & Poranki Penthouse Living", image: "/assets/locations/sub/vijayawada-kanuru.jpg", tag: "EXPANSION TOWNSHIPS | 2-INCH SAFE SPACING", path: "/safety-pillars/vijayawada?corridor=Kanuru", desc: "Modern residential gated township balconies protected with high-tensile SS-316 cables." },
+      { name: "Tadepalli & Krishna Riverfront", image: "/assets/locations/sub/vijayawada-tadepalli.jpg", tag: "KRISHNA RIVERFRONT | UNBLOCKED BARRAGE VIEW", path: "/safety-pillars/vijayawada?corridor=Tadepalli", desc: "Cooling Krishna river breezes preserved without obstructive traditional metal grilles." }
+    ],
     
     landmarkHeadline: 'MODERN HOMES. OPEN KRISHNA RIVER VIEWS.',
     landmarkSubhead: 'Enjoy panoramic Prakasam Barrage sunsets, cool river breezes, and modern architectural aesthetics while securing high-floor balconies for your family.',
@@ -377,14 +418,23 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
   kakinada: {
     slug: 'kakinada',
     name: 'Kakinada',
+    cityName: 'Kakinada',
     altName: 'Kakinada Smart City',
     district: 'Kakinada',
     badge: 'KAKINADA • COASTAL RESIDENTIAL SAFETY',
+    tagline: 'Living Spaces Without Fear & Without Cages',
     emotionHook: 'Mana Kakinada coastal palm & port breeze view invisible grills valla asalu block avvakunda entha fresh ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN KAKINADA',
     heroSubhead: 'Harmonize your living space with coastal palm vistas and fresh marine air through high-grade stainless steel invisible safety grills.',
-    heroImage: '/images/kakinada-hero.jpg',
+    heroImage: '/images/dashboard/dashboard-kakinada.jpg',
     heroImageAlt: 'Coastal residential balcony in Kakinada with invisible safety grills overlooking palm trees and sea',
+    subLocalities: [
+      { name: "Sarpavaram Gated Enclaves", image: "/assets/locations/sub/kakinada-sarpavaram.jpg", tag: "GATED APARTMENTS | 100% PIGEON EXCLUSION", path: "/safety-pillars/kakinada?corridor=Sarpavaram", desc: "Modern family apartment balconies with permanent bird barrier and crystal daylight." },
+      { name: "Vakalapudi Beachfront Corridor", image: "/assets/locations/sub/kakinada-vakalapudi.jpg", tag: "COASTAL LIGHTHOUSE BELT | SS-316 MARINE GRADE", path: "/safety-pillars/kakinada?corridor=Vakalapudi", desc: "Direct coastal sea breeze flows freely while ensuring absolute toddler fall prevention." },
+      { name: "Madhavapatnam Corridors", image: "/assets/locations/sub/kakinada-madhavapatnam.jpg", tag: "EXPANSION RESIDENCES | CHILD FALL BARRIER", path: "/safety-pillars/kakinada?corridor=Madhavapatnam", desc: "G+5 residential balcony safety with seamless floor-to-ceiling invisible lines." },
+      { name: "Ramanayyapeta Prime Residences", image: "/assets/locations/sub/kakinada-ramanayyapeta.jpg", tag: "CENTRAL RESIDENTIAL | SENIOR VERTIGO RELIEF", path: "/safety-pillars/kakinada?corridor=Ramanayyapeta", desc: "Zero pigeon roosting and full peace of mind for seniors and young families." },
+      { name: "Jagannaickpur Historic Belt", image: "/assets/locations/sub/kakinada-jagannaickpur.jpg", tag: "HISTORIC PORT BELT | 10-YR ANTI-RUST WARRANTY", path: "/safety-pillars/kakinada?corridor=Jagannaickpur", desc: "Port-adjacent residential living with corrosion-proof SS-316 stainless cables." }
+    ],
     
     landmarkHeadline: 'COASTAL LIVING. OPEN VIEWS. MODERN SAFETY.',
     landmarkSubhead: 'Protect your family without blocking Kakinada’s breezy port horizons, lush green canopies, and morning sunshine.',
@@ -461,14 +511,23 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
   guntur: {
     slug: 'guntur',
     name: 'Guntur',
+    cityName: 'Guntur',
     altName: 'Guntur City & Capital Belt',
     district: 'Guntur',
     badge: 'GUNTUR • MODERN RESIDENTIAL SAFETY',
+    tagline: 'Living Spaces Without Fear & Without Cages',
     emotionHook: 'Mana Guntur high-rise skyline view invisible grills valla asalu block avvakunda entha safe & open ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN GUNTUR',
     heroSubhead: 'Elevate your apartment living with sleek, modern balcony safety that replaces archaic iron bars with crystal-clear panoramic freedom.',
-    heroImage: '/images/guntur-hero.jpg',
+    heroImage: '/images/dashboard/dashboard-guntur.jpg',
     heroImageAlt: 'Luxury apartment balcony in Guntur overlooking city horizon and Kondaveedu landscape',
+    subLocalities: [
+      { name: "Brodipet Central Residences", image: "/assets/locations/sub/guntur-brodipet.jpg", tag: "CENTRAL LUXURY | ZERO PIGEON ROOSTING", path: "/safety-pillars/guntur?corridor=Brodipet", desc: "Core city residential apartment balconies upgraded from rusted bars to invisible lines." },
+      { name: "Arundelpet High-Floor Towers", image: "/assets/locations/sub/guntur-arundelpet.jpg", tag: "URBAN DISTRICT | 100% TODDLER SECURITY", path: "/safety-pillars/guntur?corridor=Arundelpet", desc: "Apartment balcony safety systems maintaining natural daylight and open city views." },
+      { name: "Amaravati Road Corridors", image: "/assets/locations/sub/guntur-amaravatiroad.jpg", tag: "LUXURY TOWNSHIPS | UNBLOCKED HILL HORIZONS", path: "/safety-pillars/guntur?corridor=Amaravati%20Road", desc: "G+12 township balcony installations with tested SS-316 high-tensile wire rope." },
+      { name: "Namburu Gated Enclaves", image: "/assets/locations/sub/guntur-namburu.jpg", tag: "INSTITUTIONAL BELT | 2-INCH SAFE SPACING", path: "/safety-pillars/guntur?corridor=Namburu", desc: "Gated community villa and apartment terrace child protection systems." },
+      { name: "Kaza Growth Corridor", image: "/assets/locations/sub/guntur-kaza.jpg", tag: "EXPRESSWAY TOWERS | AERODYNAMIC WIND PASS", path: "/safety-pillars/guntur?corridor=Kaza", desc: "Terrace and balcony safety engineered to allow natural high winds to pass safely." }
+    ],
     
     landmarkHeadline: 'MODERN RESIDENTIAL LIVING WITH BETTER BALCONY SAFETY.',
     landmarkSubhead: 'Enjoy unobstructed sunrise views toward Kondaveedu hills and open countryside without feeling locked inside a metal cage.',
@@ -545,14 +604,23 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
   nellore: {
     slug: 'nellore',
     name: 'Nellore',
+    cityName: 'Nellore',
     altName: 'Simhapuri',
     district: 'SPSR Nellore',
     badge: 'NELLORE • PENNA RIVER & URBAN SAFETY',
+    tagline: 'Living Spaces Without Fear & Without Cages',
     emotionHook: 'Mana Penna riverfront sunset view invisible grills valla asalu block avvakunda entha serene ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN NELLORE',
     heroSubhead: 'Enjoy unobstructed Penna River and sunset panoramas with modern architectural safety engineered for high-floor coastal living.',
-    heroImage: '/images/nellore-hero.jpg',
+    heroImage: '/images/dashboard/dashboard-nellore.jpg',
     heroImageAlt: 'Modern high-rise balcony in Nellore overlooking Penna river and city sunset with invisible grills',
+    subLocalities: [
+      { name: "Magunta Layout Premium Balconies", image: "/assets/locations/sub/nellore-maguntalayout.jpg", tag: "PREMIUM COLONY | PENNA SUNSET PRESERVATION", path: "/safety-pillars/nellore?corridor=Magunta%20Layout", desc: "Luxury apartment balconies preserving Penna river sunset views without dark iron cages." },
+      { name: "Balaji Nagar Central Enclave", image: "/assets/locations/sub/nellore-balajinagar.jpg", tag: "URBAN RESIDENTIAL | 100% PIGEON SHIELD", path: "/safety-pillars/nellore?corridor=Balaji%20Nagar", desc: "Pigeon protection and toddler safety across multi-storey central residential enclaves." },
+      { name: "Dargamitta High-Rise Towers", image: "/assets/locations/sub/nellore-dargamitta.jpg", tag: "ESTABLISHED ZONE | MODERN FACADE UPGRADE", path: "/safety-pillars/nellore?corridor=Dargamitta", desc: "Balcony modernization with invisible structural stainless steel wire cables." },
+      { name: "Vedayapalem High-Rise Living", image: "/assets/locations/sub/nellore-vedayapalem.jpg", tag: "HIGH-RISE BELT | CERTIFIED FALL PROTECTION", path: "/safety-pillars/nellore?corridor=Vedayapalem", desc: "Certified fall protection for children and seniors across high-floor towers." },
+      { name: "Podalakuru Road Gated Belts", image: "/assets/locations/sub/nellore-podalakur.jpg", tag: "GROWTH CORRIDOR | MARINE SS-316 RESILIENCE", path: "/safety-pillars/nellore?corridor=Podalakuru%20Road", desc: "Gated community apartment installations with UV-coated anti-corrosion cabling." }
+    ],
     
     landmarkHeadline: 'OPEN VIEWS. CLEAN DESIGN. SMARTER BALCONY SAFETY.',
     landmarkSubhead: 'Maintain natural breezes and panoramic daylight across your balconies while securing children, elderly family members, and pets.',
@@ -632,3 +700,6 @@ export const ALL_LOCATIONS = Object.values(LOCATIONS_DATA);
 export function getLocationBySlug(slug: string): LocationData | undefined {
   return LOCATIONS_DATA[slug];
 }
+
+// Re-export emotional transformation cards
+export * from './emotionalCards';

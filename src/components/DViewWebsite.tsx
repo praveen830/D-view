@@ -31,6 +31,7 @@ export interface LocationSlide {
   emotionHook: string;
   landmarkDesc: string;
   heroImage: string;
+  mobileHeroImage?: string;
   activeBelts: string[];
   weatherChallenge: string;
   weatherSolution: string;
@@ -51,7 +52,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Coastal Marine Line SS-316',
     emotionHook: 'Mana Vizag sea coast view invisible grills valla asalu block avvakunda entha luxury ga undo!',
     landmarkDesc: 'Luxury penthouse interior balcony framing RK Beach coastal waves and Kailasagiri hillside through vertical SS-316 cables.',
-    heroImage: '/assets/locations/vizag-novotel-straight.jpg',
+    heroImage: '/images/dashboard/dashboard-visakhapatnam.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-visakhapatnam-9x16.jpg',
     activeBelts: ['Madhurawada (27-Floor High-Rises)', 'Yendada', 'Rushikonda', 'PM Palem', 'Anandapuram', 'Pendurthi', 'Gajuwaka'],
     weatherChallenge: "Vizag's high-salinity salt-air and marine damp humidity rapidly corrode cheap iron or low-grade steel wires within months.",
     weatherSolution: 'Strictly Marine Grade SS-316 infused with Molybdenum core for zero-decay corrosion resistance.',
@@ -113,7 +115,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Godavari Riverfront Corridor',
     emotionHook: 'Pigeon problem lekunda, challani Godavari gaali & arch bridge view asalu aagakunda intiki 100% safety!',
     landmarkDesc: 'Modern apartment balcony with floor tiles, railing, and vertical invisible safety wires framing the Godavari Arch Bridge and river cruise boats.',
-    heroImage: '/assets/locations/rajahmundry-godavari-bridge.jpg',
+    heroImage: '/images/dashboard/dashboard-rajahmundry.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-rajahmundry-9x16.jpg',
     activeBelts: ['Morampudi', 'Bommuru', 'Diwancheruvu', 'Lalacheruvu', 'Vemagiri', 'Gadaala Residential Belts'],
     weatherChallenge: 'Daily river vapor mist and heavy pigeon nesting colonies on open balcony ledges.',
     weatherSolution: 'Precision 2-inch SS-316 tensioned cables preventing bird entry while allowing 99% free river cross-ventilation.',
@@ -168,7 +171,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Capital & Krishna Waterfront',
     emotionHook: 'Modern luxury high-rise look ki taggattu, iron bars cage lekunda uncompromised open balcony!',
     landmarkDesc: 'Skyscraper balcony overlooking Krishna River & illuminated Prakasam Barrage lights through vertical SS-316 cables.',
-    heroImage: '/assets/locations/vijayawada.png',
+    heroImage: '/images/dashboard/dashboard-vijayawada.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-vijayawada-9x16.jpg',
     activeBelts: ['Benz Circle', 'Moghalrajpuram', 'Gunadala', 'Kanuru', 'Poranki', 'Amaravati HappyNest (G+18)', 'Tadepalli'],
     weatherChallenge: 'Intense summer thermal expansion and high-velocity wind gusts on skyscraper floors above 15 levels.',
     weatherSolution: 'High-tensile multi-strand core cables certified up to 400kg load per strand with thermal compensation.',
@@ -230,7 +234,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Kondaveedu Horizons Belt',
     emotionHook: 'Kondaveedu hill breeze intloki vasthundi, pillalu unna elevations bayam lekunda safe setup!',
     landmarkDesc: 'Luxury apartment balcony framing Kondaveedu ridge skyline and Guntur urban expanse through floor-to-ceiling SS-316 invisible wire cables.',
-    heroImage: '/assets/locations/guntur-townscape.jpg',
+    heroImage: '/images/dashboard/dashboard-guntur.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-guntur-9x16.jpg',
     activeBelts: ['Brodipet', 'Arundelpet', 'Amaravati Road', 'Namburu', 'Kaza & Tadepalli Belt (900+ listings)'],
     weatherChallenge: 'Heavy dry winds carrying abrasive dust particulates that erode and dull conventional iron bars.',
     weatherSolution: 'Anti-static smooth nylon-12 coated SS-316 cables shed dust effortlessly and maintain lifelong shine.',
@@ -285,7 +290,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Deepwater Port & Coastal Corridor',
     emotionHook: 'Uppu gaali thupattu pattakunda, high-grade Marine wire security tho lifetime durability!',
     landmarkDesc: 'Coastal apartment balcony framing Vakalapudi Lighthouse and palm shoreline with marine-grade SS-316 wires.',
-    heroImage: '/assets/locations/kakinada.png',
+    heroImage: '/images/dashboard/dashboard-kakinada.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-kakinada-9x16.jpg',
     activeBelts: ['Sarpavaram', 'Madhavapatnam', 'Ramanayyapeta', 'Vakalapudi', 'Jagannaickpur'],
     weatherChallenge: 'Aggressive industrial port emissions mixed with salty maritime mist causing pitting corrosion.',
     weatherSolution: 'Certified Marine Grade SS-316 tested against ASTM B117 standards for extreme saline resistance.',
@@ -340,7 +346,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Penna Riverfront Horizon',
     emotionHook: 'Pedda vallu, pillalu unna balcony lo nilabadataniki absolute strong and safe support!',
     landmarkDesc: 'High-rise balcony sunset view over Nellore Barrage and Penna River through vertical safety cables.',
-    heroImage: '/assets/locations/nellore.png',
+    heroImage: '/images/dashboard/dashboard-nellore.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-nellore-9x16.jpg',
     activeBelts: ['Magunta Layout', 'Balaji Nagar', 'Dargamitta', 'Vedayapalem', 'Podalakur Road', 'Kavali Road'],
     weatherChallenge: 'Continuous seasonal monsoon dampness loosening weak anchor points and corroding inferior wires.',
     weatherSolution: 'Precision aluminum track tensioners anchored deep in structural concrete with non-corrosive fasteners.',
@@ -1757,7 +1764,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* ========================================================= */}
       {/* 1. TOP MINIMAL NAVIGATION HEADER                          */}
       {/* ========================================================= */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5 px-6 sm:px-12 flex items-center justify-between pointer-events-auto transition-all">
+      <header className="sticky top-0 z-50 w-full bg-[#0a0f0d]/95 backdrop-blur-md border-b border-white/10 py-3.5 px-4 sm:px-12 flex items-center justify-between pointer-events-auto transition-all">
         
         {/* Left: Thin menu mark `= MENU` and brand title `D-VIEW INVISIBLE SAFETY` */}
         <div className="flex items-center gap-6">
@@ -1774,6 +1781,32 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               D-VIEW <span className="font-semibold text-[#7CFF3A] drop-shadow-[0_0_15px_rgba(124,255,58,0.45)]">INVISIBLE SAFETY</span>
             </span>
           </a>
+        </div>
+
+        {/* Middle: 6 Cities Quick Navigation Dropdown */}
+        <div className="relative group hidden md:block">
+          <button
+            type="button"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/40 text-[#7CFF3A] text-xs font-bold uppercase tracking-wider hover:bg-[#7CFF3A] hover:text-black transition cursor-pointer shadow-md"
+          >
+            <span>📍 Explore 6 City Sub-Pages</span>
+            <span className="text-[10px]">▼</span>
+          </button>
+          <div className="absolute top-full mt-2 left-0 w-64 rounded-2xl bg-[#0a0f0d] border border-[#7CFF3A]/40 p-2 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="px-3 py-1 text-[10px] font-bold text-gray-400 uppercase tracking-widest border-b border-white/10 mb-1">
+              Select City Sub-Page
+            </div>
+            {CITIES_SLIDES.map((c) => (
+              <a
+                key={c.id}
+                href={c.locationPath}
+                className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-gray-200 hover:text-black hover:bg-[#7CFF3A] transition"
+              >
+                <span>{c.name}</span>
+                <span className="text-[#7CFF3A] group-hover:text-black font-black">→</span>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Right: Direct concierge telephone `+91 94943 28999` and `CONTACT US` */}
@@ -1890,94 +1923,164 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* TIER 1: MAIN DASHBOARD (100vh FULL-SCREEN SNAP-SCROLL SLIDES)         */}
       {/* ==================================================================== */}
       {tier === 'tier1' && (
-        <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+        <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-[#080B09]">
+          
+          {/* STICKY 6 CITIES QUICK NAVIGATION TABS (INSTANTLY SWITCH BETWEEN PLACES) */}
+          <div className="sticky top-0 z-40 w-full bg-black/95 backdrop-blur-md border-b border-[#7CFF3A]/30 py-2 px-2 sm:px-3 overflow-x-auto scrollbar-none shadow-xl">
+            <div className="flex items-center gap-1.5 sm:gap-2 min-w-max justify-start sm:justify-center max-w-7xl mx-auto">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#7CFF3A] mr-1 hidden sm:inline-block">
+                Select City:
+              </span>
+              {CITIES_SLIDES.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#slide-${s.id}`}
+                  className="px-3 py-1.5 rounded-full text-xs font-extrabold transition-all bg-[#121814] text-gray-300 hover:text-white hover:bg-[#1A241E] border border-white/10 hover:border-[#7CFF3A]/50 flex items-center gap-1.5 active:scale-95"
+                >
+                  <span>{s.id === 'vizag' ? '🌊' : s.id === 'rajahmundry' ? '🌉' : s.id === 'vijayawada' ? '🏛️' : s.id === 'guntur' ? '🛕' : s.id === 'kakinada' ? '⚓' : '🌅'}</span>
+                  <span>{s.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* 6 CITIES SLIDES: 100% IMMERSIVE FULL SCREEN COVERAGE (NO WASTED EMPTY SPACE) */}
           {CITIES_SLIDES.map((slide, idx) => (
             <section
               key={slide.id}
-              onClick={() => { window.location.href = slide.locationPath; }}
-              className="relative w-full h-screen snap-start snap-always overflow-hidden flex items-end justify-start cursor-pointer select-none"
+              id={`slide-${slide.id}`}
+              className="relative w-full h-[calc(100dvh-100px)] min-h-[560px] snap-start snap-always flex flex-col justify-between overflow-hidden select-none border-b border-white/5 bg-black"
             >
-              {/* Full Bleed Bright Interior Balcony Photography with Mobile Portrait Landmark Framing */}
-              <div 
-                className={`bg-adaptive-landmark absolute inset-0 bg-cover transition-transform duration-700 hover:scale-[1.015] ${getMobileLandmarkClass(slide.id)}`}
-                style={{ 
-                  backgroundImage: `url(${slide.heroImage})`,
-                  ['--bg-pos-mob' as any]: getMobileFocalPosition(slide.id)
-                }}
-              >
-                {/* High Priority Eager Download for Slide 0 LCP Core Web Vitals */}
-                {idx === 0 && (
+              {/* ============================================================ */}
+              {/* MOBILE VIEW: TRUE 100% FULLSCREEN 9:16 IMMERSIVE EXPERIENCE  */}
+              {/* ============================================================ */}
+              <div className="md:hidden absolute inset-0 w-full h-full">
+                {/* 100% Fullscreen 9:16 Vertical Image covering entire mobile screen edge-to-edge */}
+                <picture className="absolute inset-0 w-full h-full">
+                  <source media="(max-width: 768px)" srcSet={slide.mobileHeroImage || slide.heroImage} />
                   <img
                     src={slide.heroImage}
-                    alt=""
-                    aria-hidden="true"
-                    className="hidden"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    sizes="(max-width: 768px) 100vw, 1920px"
+                    alt={`D-VIEW Invisible Grills in ${slide.name}`}
+                    className="w-full h-full object-cover object-center"
+                    loading={idx === 0 ? "eager" : "lazy"}
+                    fetchPriority={idx === 0 ? "high" : "auto"}
                   />
-                )}
+                </picture>
 
+                {/* Subtle top & bottom dark vignette so badges & buttons are crystal clear */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/85 pointer-events-none" />
 
-                {/* Natural Daytime Architectural Clarity: Smooth Brand Black (#0B0D0C) Bottom Gradient for Legibility */}
-                <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/30 to-transparent pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 h-72 sm:h-96 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/85 via-45% to-transparent pointer-events-none" />
-              </div>
+                {/* Full screen tap-target navigates directly to the city corridor page */}
+                <a
+                  href={slide.locationPath}
+                  className="absolute inset-0 z-10 block"
+                  aria-label={`Explore ${slide.name} Invisible Grills`}
+                />
 
-              {/* Minimal Text at Bottom-Left: Sleek, compact architectural framing that preserves 90%+ unobstructed landmark view */}
-              <div className="relative z-20 max-w-xl text-left flex flex-col items-start px-5 sm:px-16 pb-6 sm:pb-12">
-                
-                {/* Category Pill - Compact & Elegant */}
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#151C19]/90 backdrop-blur-md border border-[#7CFF3A]/30 text-[9px] sm:text-[10px] font-semibold text-[#7CFF3A] uppercase tracking-wider mb-2 shadow-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A]"></span>
-                  <span>{slide.categoryTag}</span>
+                {/* Mobile Top HUD */}
+                <div className="absolute top-3 inset-x-3.5 z-20 flex items-center justify-between pointer-events-none">
+                  <div className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-[#7CFF3A]/40 text-[10px] font-black text-[#7CFF3A] uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse" />
+                    <span>{slide.name}</span>
+                  </div>
+                  <div className="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono text-[#7CFF3A] font-bold shadow-lg">
+                    0{idx + 1} / 06
+                  </div>
                 </div>
 
-                {/* Title in Refined Proportions with Glowing Brand Green (#7CFF3A) Accent */}
-                <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase leading-snug mb-1.5 drop-shadow-md">
-                  {slide.mainTitle.includes(' — ') ? (
-                    <>
-                      {slide.mainTitle.split(' — ')[0]} — <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">{slide.mainTitle.split(' — ')[1]}</span>
-                    </>
-                  ) : slide.mainTitle.includes('AMARAVATI') ? (
-                    <>
-                      {slide.mainTitle.replace('AMARAVATI', '')}<span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">AMARAVATI</span>
-                    </>
-                  ) : slide.mainTitle.includes("KAKINADA'S") ? (
-                    <>
-                      <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">KAKINADA'S</span>{slide.mainTitle.replace("KAKINADA'S", '')}
-                    </>
-                  ) : (
-                    slide.mainTitle
-                  )}
-                </h2>
+                {/* Mobile Bottom HUD - Floating Glass Action Card */}
+                <div className="absolute bottom-3 inset-x-3.5 z-20 pointer-events-auto">
+                  <div className="p-3 rounded-2xl bg-black/85 backdrop-blur-xl border border-[#7CFF3A]/50 shadow-[0_4px_30px_rgba(0,0,0,0.8)] flex items-center justify-between gap-2.5">
+                    <div className="min-w-0 flex-1 pl-1">
+                      <div className="text-sm font-black text-white flex items-center gap-1.5 truncate">
+                        <span>{slide.name}</span>
+                        <span className="text-[10px] text-[#7CFF3A] font-bold px-1.5 py-0.5 bg-[#7CFF3A]/10 rounded border border-[#7CFF3A]/30">SS-316</span>
+                      </div>
+                      <div className="text-[11px] text-gray-300 truncate mt-0.5 font-medium">
+                        {slide.badge}
+                      </div>
+                    </div>
 
-                {/* Subline in Brushed Silver - Compact & Crisp */}
-                <p className="text-[11px] sm:text-xs text-[#C7CDD1] font-normal tracking-wide max-w-lg mb-2 line-clamp-2 drop-shadow">
-                  {slide.subline}
-                </p>
-
-                {/* Micro-cue in Brand Green */}
-                <div className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] uppercase tracking-[0.15em] text-[#7CFF3A] font-semibold hover:text-white transition-colors">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A] animate-ping"></span>
-                  <span>{slide.microCue}</span>
+                    <a
+                      href={slide.locationPath}
+                      className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#028A0F] to-[#04B214] hover:from-[#04B214] hover:to-[#7CFF3A] text-white hover:text-black font-black text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(4,178,20,0.5)] transition flex items-center gap-1.5 active:scale-95 shrink-0"
+                    >
+                      <span>Explore {slide.cityShort}</span>
+                      <span className="text-sm font-black">→</span>
+                    </a>
+                  </div>
                 </div>
-
               </div>
 
-              {/* Slide Counter on Side & Scroll Down Cue */}
-              <div className="absolute bottom-6 right-5 sm:bottom-12 sm:right-12 z-20 flex flex-col items-end text-right">
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#C7CDD1] font-mono">
-                  <span className="text-[#7CFF3A] font-bold">0{idx + 1}</span> / 06
-                </span>
-                {idx === 5 && (
-                  <span className="hidden sm:inline-block text-[9px] uppercase tracking-widest text-[#7CFF3A] font-mono mt-1 font-semibold animate-pulse">
-                    Scroll down for Proof, Warranty & Calculator ↓
+              {/* ============================================================ */}
+              {/* DESKTOP VIEW: LUXURY 2-COLUMN SPLIT SHOWCASE                 */}
+              {/* ============================================================ */}
+              <div className="hidden md:flex relative w-full h-full flex-col justify-between p-6">
+                {/* Ambient Full-Bleed Atmospheric Background */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center filter blur-3xl scale-125 opacity-40 pointer-events-none transition-all duration-700"
+                  style={{ backgroundImage: `url(${slide.heroImage})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none" />
+
+                {/* Desktop Counter */}
+                <div className="absolute top-4 right-6 z-20 pointer-events-none">
+                  <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-xs font-mono text-[#7CFF3A] font-bold">
+                    0{idx + 1} / 06
                   </span>
-                )}
-              </div>
+                </div>
 
+                {/* Main Content Grid */}
+                <div className="relative z-10 w-full max-w-6xl mx-auto flex-1 grid grid-cols-12 gap-8 items-center justify-center my-auto">
+                  {/* Poster Image Card */}
+                  <div className="col-span-7 flex flex-col items-center justify-center">
+                    <a
+                      href={slide.locationPath}
+                      className="relative block w-full max-w-[480px] aspect-square rounded-3xl overflow-hidden border-2 border-[#7CFF3A] shadow-[0_0_35px_rgba(124,255,58,0.35)] bg-black/90 group transition-all duration-300 hover:scale-[1.01] active:scale-98 cursor-pointer"
+                    >
+                      <img
+                        src={slide.heroImage}
+                        alt={`D-VIEW Invisible Grills in ${slide.name}`}
+                        className="w-full h-full object-contain rounded-3xl"
+                        loading={idx === 0 ? "eager" : "lazy"}
+                        fetchPriority={idx === 0 ? "high" : "auto"}
+                      />
+                    </a>
+                  </div>
+
+                  {/* Desktop Side Details */}
+                  <div className="col-span-5 flex flex-col items-start text-left space-y-4">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/30 text-xs font-bold text-[#7CFF3A] uppercase tracking-wider">
+                      <span>📍 {slide.categoryTag}</span>
+                    </div>
+
+                    <h2 className="text-2xl lg:text-3xl font-black text-white uppercase leading-snug tracking-tight">
+                      {slide.name} • <span className="text-[#7CFF3A]">Architectural Safety</span>
+                    </h2>
+
+                    <p className="text-sm text-gray-300 font-normal leading-relaxed">
+                      {slide.landmarkDesc}
+                    </p>
+
+                    <div className="p-3.5 rounded-2xl bg-[#121A15] border border-[#2B3A32] w-full space-y-1.5">
+                      <div className="text-xs font-bold text-[#7CFF3A] uppercase tracking-wider">
+                        Prominent Service Belts:
+                      </div>
+                      <div className="text-xs text-gray-300 font-medium">
+                        {slide.activeBelts.slice(0, 4).join(' • ')}
+                      </div>
+                    </div>
+
+                    <a
+                      href={slide.locationPath}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#7CFF3A] hover:bg-[#8eff50] text-black font-extrabold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(124,255,58,0.4)] transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                    >
+                      <span>Check {slide.cityShort} Price & Solutions</span>
+                      <span className="text-base font-black">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </section>
           ))}
 

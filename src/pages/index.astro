@@ -8,9 +8,10 @@ import DViewWebsite from '../components/DViewWebsite.tsx';
   description="Certified SS-316 marine-grade invisible grills for modern luxury high-rises and balconies across Visakhapatnam, Rajamahendravaram, Vijayawada, Guntur, Kakinada & Nellore. Free site measurements."
   canonicalUrl="https://dviewsolutions.com"
   cityName="Andhra Pradesh"
-  ogImage="/assets/locations/vizag-novotel-straight.jpg"
-  preloadHeroImage="/assets/locations/vizag-novotel-straight.jpg"
+  ogImage="/images/dashboard/dashboard-visakhapatnam.jpg"
+  preloadHeroImage="/images/dashboard/dashboard-visakhapatnam.jpg"
   hideFloatingButtons={true}
 >
-  <DViewWebsite client:load />
+  {/* Main Dashboard with 6 Cities Showcase, Calculator, and Formula Banner */}
+  <DViewWebsite client:load tier="tier1" />
 </Layout>

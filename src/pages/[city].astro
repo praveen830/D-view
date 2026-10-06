@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import DViewWebsite from '../components/DViewWebsite.tsx';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import HorizontalProblemSlider from '../components/HorizontalProblemSlider';
+import HeroPriceCalculator from '../components/HeroPriceCalculator';
 import { ALL_LOCATIONS, type LocationData } from '../data/locations';
 
 export async function getStaticPaths() {
@@ -11,6 +13,7 @@ export async function getStaticPaths() {
     'rajamahendravaram': 'rajahmundry',
     'vijayawada': 'vijayawada-amaravati',
     'amaravati': 'vijayawada-amaravati',
+    'vijayawada-amaravati': 'vijayawada-amaravati',
     'guntur': 'guntur',
     'kakinada': 'kakinada',
     'nellore': 'nellore'
@@ -31,15 +34,288 @@ interface Props {
 }
 
 const { location, slug } = Astro.props;
+
+const cityName = location.cityName || location.name;
+const heroImage = location.heroImage;
+const subLocalities = location.subLocalities || [];
 ---
 
 <Layout
-  title={`${location.name} SS-316 Invisible Safety Grills | D-VIEW Luxury Architectural Safety`}
-  description={`Engineered SS-316 invisible safety grills for luxury high-rise balconies in ${location.name}. Uncompromised views, 100% fall protection, child & pet safety with 10-year warranty.`}
-  canonicalUrl={`https://dviewsolutions.in/${slug}`}
-  cityName={location.name}
-  ogImage={location.heroImage}
+  title={`D-VIEW Invisible Safety | ${cityName} SS-316 Balcony Grills`}
+  description={`Engineered SS-316 invisible safety grills across ${cityName}. Living spaces without fear & without cages. 100% fall protection, child & pet safety with 10-year warranty.`}
+  canonicalUrl={`https://dviewsolutions.com/${slug}`}
+  cityName={cityName}
+  ogImage={heroImage}
+  preloadHeroImage={heroImage}
   keywords={location.keywords}
 >
-  <DViewWebsite client:load initialCitySlug={slug} tier="tier2" />
+  <main class="min-h-screen bg-[#0B0D0C] text-white">
+    {/* TOP BRAND NAVIGATION BAR MATCHING REFERENCE SCREENSHOT */}
+    <header class="w-full bg-black/60 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        {/* Left: Brand Logo matching screenshot */}
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#062419] to-[#028A0F] border border-[#7CFF3A]/40 flex items-center justify-center shadow-[0_0_15px_rgba(124,255,58,0.3)]">
+            <svg class="w-6 h-6 text-[#7CFF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-lg sm:text-xl font-black text-white tracking-wider">D-VIEW</span>
+              <span class="text-[10px] font-black text-[#7CFF3A] bg-[#7CFF3A]/15 border border-[#7CFF3A]/30 px-1.5 py-0.5 rounded uppercase tracking-wider">SOLUTIONS</span>
+            </div>
+            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-widest">
+              INVISIBLE GRILLS & SAFETY SOLUTIONS
+            </span>
+          </div>
+        </a>
+
+        {/* Middle: Navigation Links matching screenshot */}
+        <nav class="hidden md:flex items-center gap-7 text-xs font-bold tracking-wider uppercase">
+          <a href="/" class="text-[#7CFF3A] hover:text-white transition flex items-center gap-1">
+            Home
+          </a>
+          <a href="#problem-solutions" class="text-gray-300 hover:text-[#7CFF3A] transition flex items-center gap-1">
+            Solutions <span class="text-[9px]">⌵</span>
+          </a>
+          <a href="#corridors" class="text-gray-300 hover:text-[#7CFF3A] transition">
+            Applications
+          </a>
+          <a href="#formula" class="text-gray-300 hover:text-[#7CFF3A] transition">
+            About
+          </a>
+          <a href="/contact" class="text-gray-300 hover:text-[#7CFF3A] transition">
+            Contact
+          </a>
+        </nav>
+
+        {/* Right: City Service Area Pill Badge matching screenshot */}
+        <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121A16] border border-[#7CFF3A]/40 text-right">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#7CFF3A] animate-pulse"></span>
+          <div>
+            <span class="block text-xs font-black text-white">{cityName}</span>
+            <span class="block text-[9px] font-semibold text-[#7CFF3A] uppercase tracking-wider">Our Service Area</span>
+          </div>
+          <span class="text-base text-gray-400 ml-1">🌉</span>
+        </div>
+
+      </div>
+    </header>
+
+    {/* TIER 1: CLEAN CITY SHOWCASE & ESTIMATE CALCULATOR (MOBILE & DESKTOP OPTIMIZED) */}
+    <section class="relative w-full bg-[#080B09] py-4 sm:py-8 lg:py-12 border-b border-white/10 overflow-hidden">
+      <!-- Subtle ambient background glow -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#7CFF3A]/5 blur-[120px] pointer-events-none rounded-full"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full">
+        
+        {/* 6 CITIES QUICK NAVIGATION TABS (NAVIGATE IMAGES & PLACES INSTANTLY) */}
+        <div class="mb-4 sm:mb-6 overflow-x-auto pb-2 scrollbar-none -mx-3 px-3 sm:mx-0 sm:px-0">
+          <div class="flex items-center gap-2 min-w-max justify-start sm:justify-center">
+            <span class="text-[10px] font-black uppercase tracking-widest text-[#7CFF3A] mr-1 hidden sm:inline-block">
+              Select City:
+            </span>
+            {ALL_LOCATIONS.map((loc) => {
+              const targetSlug = loc.slug === 'visakhapatnam' ? 'vizag' : loc.slug === 'vijayawada-amaravati' ? 'vijayawada' : loc.slug;
+              const isCurrent = loc.slug === location.slug || loc.slug === slug || (slug === 'vizag' && loc.slug === 'visakhapatnam');
+              return (
+                <a
+                  href={`/${targetSlug}`}
+                  class={`px-3.5 py-1.5 rounded-full text-xs font-extrabold transition-all duration-300 flex items-center gap-1.5 ${
+                    isCurrent
+                      ? 'bg-[#7CFF3A] text-black shadow-[0_0_15px_rgba(124,255,58,0.5)] scale-105 ring-2 ring-[#7CFF3A]/50'
+                      : 'bg-[#121814] text-gray-300 hover:text-white hover:bg-[#1A241E] border border-white/10'
+                  }`}
+                >
+                  <span>{loc.slug === 'visakhapatnam' ? '🌊' : loc.slug === 'rajahmundry' ? '🌉' : loc.slug === 'vijayawada-amaravati' ? '🏛️' : loc.slug === 'guntur' ? '🛕' : loc.slug === 'kakinada' ? '⚓' : '🌅'}</span>
+                  <span>{loc.cityName || loc.name}</span>
+                  {isCurrent && <span class="w-1.5 h-1.5 rounded-full bg-black animate-ping" />}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 2-COLUMN SPLIT: FULL IMAGE ON ONE SIDE, ESTIMATE CALCULATOR BESIDE IT */}
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center max-w-6xl mx-auto">
+          
+          {/* FULL CITY POSTER IMAGE (100% VISIBLE, BALCONY & PLACE PRESERVED) */}
+          <div class="lg:col-span-7 w-full flex justify-center">
+            <div class="relative w-full max-w-lg lg:max-w-none rounded-3xl overflow-hidden border-2 border-[#7CFF3A]/80 bg-black shadow-[0_0_35px_rgba(124,255,58,0.25)] group">
+              <img
+                src={heroImage}
+                alt={`D-VIEW Invisible Safety in ${cityName}`}
+                class="w-full h-auto aspect-square object-contain rounded-3xl transition-transform duration-500 group-hover:scale-[1.01]"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          {/* ESTIMATE CALCULATOR BESIDE IT (PAKANA ESTIMATE CALCULATOR) */}
+          <div class="lg:col-span-5 w-full max-w-lg mx-auto lg:max-w-none">
+            <HeroPriceCalculator client:load citySlug={slug} cityName={cityName} />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* TIER 2: HORIZONTAL SLIDING VIEW (LEFT TO RIGHT SCROLLING CARDS) */}
+    <div id="problem-solutions">
+      <HorizontalProblemSlider client:load cityName={cityName} />
+    </div>
+
+    {/* INTERACTIVE 9:16 LIVE DRAG SLIDER */}
+    <section class="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
+      <div class="text-center max-w-2xl mx-auto mb-4">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-[#7CFF3A] text-xs font-bold tracking-widest uppercase mb-1.5">
+          Live Interactive Handle
+        </span>
+        <h3 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Drag to Compare: <span class="text-[#7CFF3A]">Danger vs 100% Security</span>
+        </h3>
+      </div>
+      <BeforeAfterSlider client:visible />
+    </section>
+
+    {/* TIER 3: REGIONAL SUB-LOCALITIES / SUB-PAGES GRID */}
+    <section id="corridors" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-[#7CFF3A] text-xs font-bold tracking-widest uppercase mb-3">
+          Verified Regional Corridors
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          Active Residential Belts in <span class="text-[#7CFF3A]">{cityName}</span>
+        </h2>
+        <p class="mt-3 text-sm sm:text-base text-gray-400">
+          Tailored on-site measurements and certified architectural installations across all premier high-rise and villa communities.
+        </p>
+      </div>
+
+      <!-- Grid of Sub-Localities -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {subLocalities.map((sub, idx) => (
+          <a
+            href={sub.path || `/safety-pillars/${slug}?corridor=${encodeURIComponent(sub.name)}`}
+            class="group rounded-2xl bg-[#0e1613] border border-white/10 hover:border-[#7CFF3A]/80 overflow-hidden transition-all duration-300 hover:shadow-[0_12px_40px_rgba(124,255,58,0.2)] flex flex-col justify-between hover:-translate-y-1.5 block cursor-pointer"
+          >
+            <!-- Card Image with Gradient Overlay & Badges -->
+            <div class="relative w-full h-48 sm:h-52 overflow-hidden bg-black/60">
+              {sub.image ? (
+                <img
+                  src={sub.image}
+                  alt={`${sub.name} - Invisible Safety Grill Installation in ${cityName}`}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-full h-full bg-[#121816] flex items-center justify-center text-gray-500 text-xs">
+                  {sub.name}
+                </div>
+              )}
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0e1613] via-transparent to-black/40 pointer-events-none" />
+
+              <!-- Top Floating Badges -->
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                <span class="w-7 h-7 rounded-lg bg-black/80 backdrop-blur-md border border-[#7CFF3A]/40 text-[#7CFF3A] font-black text-xs flex items-center justify-center shadow-lg">
+                  0{idx + 1}
+                </span>
+                <span class="text-[10px] font-extrabold uppercase tracking-wider text-black bg-[#7CFF3A] px-2.5 py-0.5 rounded-full shadow-md">
+                  Tier-3 Verified
+                </span>
+              </div>
+
+              {sub.tag && (
+                <div class="absolute bottom-2 left-3 right-3 pointer-events-none">
+                  <span class="inline-block text-[9.5px] font-bold text-[#7CFF3A] bg-black/85 backdrop-blur-md px-2 py-0.5 rounded border border-[#7CFF3A]/30 truncate max-w-full">
+                    {sub.tag}
+                  </span>
+                </div>
+              )}
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-[#7CFF3A] transition-colors leading-snug">
+                  {sub.name}
+                </h3>
+                <p class="mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed line-clamp-2">
+                  {sub.desc}
+                </p>
+
+                <div class="mt-4 flex flex-wrap gap-1.5 text-[10px] font-semibold text-gray-400">
+                  <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10 text-gray-300">SS-316 Marine</span>
+                  <span class="px-2 py-0.5 rounded bg-black/50 border border-white/10 text-gray-300">2" Safe Spacing</span>
+                  <span class="px-2 py-0.5 rounded bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-[#7CFF3A]">Verified Site</span>
+                </div>
+              </div>
+
+              <div class="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-bold text-[#7CFF3A] group-hover:text-white transition-colors">
+                <span>View Verified Installations</span>
+                <span class="w-6 h-6 rounded-full bg-[#7CFF3A]/15 group-hover:bg-[#7CFF3A] group-hover:text-black flex items-center justify-center transition-all group-hover:translate-x-1">
+                  →
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+
+    {/* CITY BOTTOM INQUIRY BANNER */}
+    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#121A15] to-[#18261F] border border-[#7CFF3A]/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="text-xs font-bold text-[#7CFF3A] uppercase tracking-wider">
+            Fast Response in {cityName}
+          </span>
+          <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">
+            Need an accurate measurement for your balcony?
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-300 mt-1">
+            Our local {cityName} technicians arrive with digital laser meters & genuine SS-316 samples within 24 hours.
+          </p>
+        </div>
+        <div class="flex-shrink-0 w-full sm:w-auto">
+          <a
+            href={`/contact?city=${slug}`}
+            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-[#7CFF3A] text-black font-extrabold text-sm hover:bg-[#68e028] transition-all shadow-[0_10px_25px_rgba(124,255,58,0.3)] hover:-translate-y-0.5"
+          >
+            <span>Book Free Site Visit in {cityName}</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* FLOATING ACTION BUTTONS MATCHING SCREENSHOT */}
+    <!-- Bottom Left: Floating Circular WhatsApp Button (Matching Reference) -->
+    <a
+      href={`https://wa.me/919494328999?text=${encodeURIComponent(`Hi D-View! I checked your ${cityName} balcony calculator. Please quote your lowest price.`)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 left-5 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-[0_0_30px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all group cursor-pointer border-2 border-white/80"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current text-white" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.077-2.222-.553-1.821-.755-3.003-2.617-3.093-2.738-.09-.12-1.002-1.334-1.002-2.545 0-1.21.636-1.807.863-2.052.226-.245.496-.307.662-.307.166 0 .331.002.477.009.153.008.358-.058.558.423.209.502.712 1.737.774 1.862.062.126.104.272.02.438-.083.167-.125.271-.249.417-.124.145-.262.325-.374.436-.125.124-.256.26-.11.511.146.252.648 1.07 1.39 1.732.955.851 1.76 1.114 2.012 1.239.252.126.4.105.548-.063.147-.168.627-.732.793-.984.167-.251.332-.209.559-.125.227.084 1.442.68 1.689.805.247.126.413.188.474.293.061.104.061.606-.083 1.011z"/>
+      </svg>
+    </a>
+
+    <!-- Bottom Right: Floating Circular Call Now Button -->
+    <a
+      href="tel:+919494328999"
+      class="fixed bottom-6 right-5 z-50 flex flex-col items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#04B214] to-[#028A0F] text-white shadow-[0_0_30px_rgba(4,178,20,0.6)] hover:scale-110 active:scale-95 transition-all group cursor-pointer border-2 border-[#7CFF3A]"
+    >
+      <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-bounce" viewBox="0 0 24 24">
+        <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2a7 7 0 0 1 7 7z"/>
+      </svg>
+      <span class="text-[8px] sm:text-[9px] font-black tracking-wider uppercase mt-0.5">Call Now</span>
+    </a>
+  </main>
 </Layout>

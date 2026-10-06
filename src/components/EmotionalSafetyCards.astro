@@ -1,0 +1,51 @@
+---
+import { emotionalCards } from '../data/emotionalCards';
+---
+
+<section class="w-full bg-[#031B15] py-12 px-4 text-white">
+  <div class="max-w-7xl mx-auto mb-8 text-center">
+    <span class="text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-[#028A0F]/20 text-[#3DED97] border border-[#028A0F]/50 font-bold">
+      Why D-View Invisible Safety
+    </span>
+    <h2 class="text-2xl md:text-4xl font-extrabold mt-3 text-white">
+      Balcony Protection <span class="text-[#3DED97]">Without Cages</span>
+    </h2>
+    <p class="text-sm text-gray-300 mt-2">
+      Engineered for zero fall risk, complete hygiene, and unobstructed panoramas.
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {emotionalCards.map((card) => (
+      <div class="rounded-2xl overflow-hidden bg-[#052920] border border-white/10 shadow-xl flex flex-col group">
+        <div class="relative h-64 sm:h-72 w-full overflow-hidden">
+          <img 
+            src={card.image} 
+            alt={card.title} 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded text-[11px] font-bold text-[#3DED97] border border-white/10">
+            {card.tag}
+          </span>
+        </div>
+
+        <div class="p-4 flex flex-col justify-between flex-grow">
+          <div>
+            <h3 class="text-lg font-bold text-white group-hover:text-[#3DED97] transition-colors">{card.title}</h3>
+            <p class="text-xs text-[#3DED97] font-medium mb-3">{card.subtitle}</p>
+            
+            <div class="space-y-2 text-xs">
+              <div class="bg-red-950/40 p-2.5 rounded-lg border border-red-500/20 text-red-200">
+                <span class="font-bold text-red-400">Before: </span>{card.problem}
+              </div>
+              <div class="bg-[#028A0F]/20 p-2.5 rounded-lg border border-[#028A0F]/40 text-emerald-200">
+                <span class="font-bold text-[#3DED97]">With D-View: </span>{card.solution}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
