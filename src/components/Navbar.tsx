@@ -25,14 +25,17 @@ export default function Navbar({ currentSlug }: NavbarProps) {
   const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -58,19 +61,9 @@ export default function Navbar({ currentSlug }: NavbarProps) {
                   <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-[#7CFF3A] rounded-full animate-ping"></span>
                 </div>
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xl font-black tracking-tight text-white group-hover:text-[#7CFF3A] transition-colors">
-                    D-VIEW
-                  </span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#7CFF3A]/15 text-[#7CFF3A] font-black tracking-wider uppercase border border-[#7CFF3A]/30">
-                    LUXURY
-                  </span>
-                </div>
-                <span className="text-[9px] tracking-widest text-[#94a3b8] uppercase font-bold">
-                  BALCONY SAFETY ENGINEERING
-                </span>
-              </div>
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-[#7CFF3A] transition-colors whitespace-nowrap">
+                D-VIEW
+              </span>
             </a>
 
             {/* City Selector Pill */}

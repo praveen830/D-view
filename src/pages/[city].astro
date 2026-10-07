@@ -51,37 +51,29 @@ const subLocalities = location.subLocalities || [];
   ogImage={heroImage}
   preloadHeroImage={heroImage}
   keywords={location.keywords}
+  faqs={location.faqs || []}
 >
   <main class="min-h-screen bg-[#0B0D0C] text-white">
     {/* TOP BRAND NAVIGATION BAR MATCHING REFERENCE SCREENSHOT */}
     <header class="w-full bg-black/60 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Left: Brand Logo matching screenshot */}
-        <a href="/" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#062419] to-[#028A0F] border border-[#7CFF3A]/40 flex items-center justify-center shadow-[0_0_15px_rgba(124,255,58,0.3)]">
-            <svg class="w-6 h-6 text-[#7CFF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        {/* Left: Brand Logo in a clean straight line */}
+        <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#062419] to-[#028A0F] border border-[#7CFF3A]/40 flex items-center justify-center shadow-[0_0_15px_rgba(124,255,58,0.3)] shrink-0">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#7CFF3A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
           </div>
-          <div>
-            <div class="flex items-center gap-1.5">
-              <span class="text-lg sm:text-xl font-black text-white tracking-wider">D-VIEW</span>
-              <span class="text-[10px] font-black text-[#7CFF3A] bg-[#7CFF3A]/15 border border-[#7CFF3A]/30 px-1.5 py-0.5 rounded uppercase tracking-wider">SOLUTIONS</span>
-            </div>
-            <span class="block text-[8px] sm:text-[9px] font-bold text-gray-400 uppercase tracking-widest">
-              INVISIBLE GRILLS & SAFETY SOLUTIONS
-            </span>
-          </div>
+          <span class="text-xl sm:text-2xl font-black text-white tracking-wider whitespace-nowrap group-hover:text-[#7CFF3A] transition-colors">
+            D-VIEW
+          </span>
         </a>
 
-        {/* Middle: Navigation Links matching screenshot */}
+        {/* Middle: Navigation Links */}
         <nav class="hidden md:flex items-center gap-7 text-xs font-bold tracking-wider uppercase">
           <a href="/" class="text-[#7CFF3A] hover:text-white transition flex items-center gap-1">
             Home
-          </a>
-          <a href="#problem-solutions" class="text-gray-300 hover:text-[#7CFF3A] transition flex items-center gap-1">
-            Solutions <span class="text-[9px]">⌵</span>
           </a>
           <a href="#corridors" class="text-gray-300 hover:text-[#7CFF3A] transition">
             Applications
@@ -141,6 +133,20 @@ const subLocalities = location.subLocalities || [];
           </div>
         </div>
 
+        {/* Primary Page Heading for SEO & Topical Authority */}
+        <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-[#7CFF3A] text-xs font-bold uppercase tracking-widest mb-2 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse"></span>
+            <span>Certified SS-316 Balcony Engineering</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase leading-tight">
+            Invisible Safety Grills in <span class="text-[#7CFF3A]">{cityName}</span>
+          </h1>
+          <p class="mt-2 text-xs sm:text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Engineered SS-316 high-tensile balcony protection with 100% unblocked views, toddler safety, and 10-year anti-rust warranty across {cityName}.
+          </p>
+        </div>
+
         {/* 2-COLUMN SPLIT: FULL IMAGE ON ONE SIDE, ESTIMATE CALCULATOR BESIDE IT */}
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center max-w-6xl mx-auto">
           
@@ -152,13 +158,14 @@ const subLocalities = location.subLocalities || [];
                 alt={`D-VIEW Invisible Safety in ${cityName}`}
                 class="w-full h-auto aspect-square object-contain rounded-3xl transition-transform duration-500 group-hover:scale-[1.01]"
                 loading="eager"
+                decoding="async"
               />
             </div>
           </div>
 
           {/* ESTIMATE CALCULATOR BESIDE IT (PAKANA ESTIMATE CALCULATOR) */}
           <div class="lg:col-span-5 w-full max-w-lg mx-auto lg:max-w-none">
-            <HeroPriceCalculator client:load citySlug={slug} cityName={cityName} />
+            <HeroPriceCalculator client:idle citySlug={slug} cityName={cityName} />
           </div>
 
         </div>
@@ -167,7 +174,7 @@ const subLocalities = location.subLocalities || [];
 
     {/* TIER 2: HORIZONTAL SLIDING VIEW (LEFT TO RIGHT SCROLLING CARDS) */}
     <div id="problem-solutions">
-      <HorizontalProblemSlider client:load cityName={cityName} />
+      <HorizontalProblemSlider client:visible cityName={cityName} />
     </div>
 
     {/* INTERACTIVE 9:16 LIVE DRAG SLIDER */}
@@ -212,6 +219,7 @@ const subLocalities = location.subLocalities || [];
                   alt={`${sub.name} - Invisible Safety Grill Installation in ${cityName}`}
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
               ) : (
                 <div class="w-full h-full bg-[#121816] flex items-center justify-center text-gray-500 text-xs">
@@ -322,6 +330,7 @@ const subLocalities = location.subLocalities || [];
               alt={`D-VIEW SS-316 Weather Shield in ${cityName}`} 
               class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
+              decoding="async"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-[#0a0f0d]/60 to-transparent pointer-events-none" />
             <div class="absolute top-4 right-4">

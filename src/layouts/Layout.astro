@@ -10,6 +10,7 @@ interface Props {
   preloadHeroImage?: string;
   keywords?: string[];
   hideFloatingButtons?: boolean;
+  faqs?: { question: string; answer: string }[];
 }
 
 const {
@@ -20,50 +21,53 @@ const {
   ogImage = '/assets/locations/vizag-novotel-straight.jpg',
   preloadHeroImage,
   keywords = ['invisible grills andhra pradesh', 'balcony safety solutions', 'ss 316 invisible grills', 'coastal balcony safety'],
-  hideFloatingButtons = false
+  hideFloatingButtons = false,
+  faqs = []
 } = Astro.props;
 
-const schemaData = {
+// Ensure Open Graph image URL is fully-qualified absolute URL
+const absoluteOgImage = ogImage.startsWith('http')
+  ? ogImage
+  : `https://dviewsolutions.com${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
+
+const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "name": "D-View Invisible Safety Grills",
+  "name": "D-VIEW Invisible Safety Grills",
   "image": "https://dviewsolutions.com/assets/locations/rajahmundry.png",
   "telephone": "+919494328999",
   "email": "contact@dviewsolutions.com",
-  "url": "https://dviewsolutions.com",
+  "url": canonicalUrl,
   "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Andhra Pradesh",
+    "addressCountry": "IN"
+  },
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Visakhapatnam"
-    },
-    {
-      "@type": "City",
-      "name": "Rajamahendravaram"
-    },
-    {
-      "@type": "City",
-      "name": "Vijayawada"
-    },
-    {
-      "@type": "City",
-      "name": "Guntur"
-    },
-    {
-      "@type": "City",
-      "name": "Kakinada"
-    },
-    {
-      "@type": "City",
-      "name": "Nellore"
-    },
-    {
-      "@type": "City",
-      "name": "Ongole"
-    }
+    { "@type": "City", "name": "Visakhapatnam" },
+    { "@type": "City", "name": "Rajamahendravaram" },
+    { "@type": "City", "name": "Vijayawada" },
+    { "@type": "City", "name": "Guntur" },
+    { "@type": "City", "name": "Kakinada" },
+    { "@type": "City", "name": "Nellore" },
+    { "@type": "City", "name": "Ongole" }
   ],
-  "description": "Architectural high-tensile SS-316 invisible safety grills for luxury apartments, balcony child fall safety, pet security, and pigeon control with 10-year warranty."
+  "description": description || "Architectural high-tensile SS-316 invisible safety grills for luxury apartments, balcony child fall safety, pet security, and pigeon control with 10-year warranty."
 };
+
+const faqSchema = faqs && faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+} : null;
 ---
 
 <!doctype html>
@@ -71,6 +75,7 @@ const schemaData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0B0D0C" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     <!-- Primary SEO -->
@@ -79,21 +84,30 @@ const schemaData = {
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords.join(', ')} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="geo.region" content="IN-AP" />
+    <meta name="geo.placename" content={cityName} />
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="D-VIEW Solutions" />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalUrl} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+    <meta name="twitter:image:alt" content={title} />
 
     <!-- High-Priority LCP Hero Image Preload for Mobile Core Web Vitals -->
     {preloadHeroImage && (
@@ -105,8 +119,13 @@ const schemaData = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Structured Data Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <!-- Structured Data Schema (Local Business) -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+    <!-- Structured Data Schema (FAQPage if present) -->
+    {faqSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )}
   </head>
   <body class="bg-[#0B0D0C] text-[#F8FAFC] antialiased selection:bg-[#7CFF3A] selection:text-[#0B0D0C]">
     <slot />

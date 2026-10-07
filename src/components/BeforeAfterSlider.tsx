@@ -39,14 +39,30 @@ export default function BeforeAfterSlider({
     };
   }, [updateWidth]);
 
+  const rafId = useRef<number | null>(null);
+
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = clientX - rect.left;
-    let percent = (x / rect.width) * 100;
-    if (percent < 0) percent = 0;
-    if (percent > 100) percent = 100;
-    setSliderPos(percent);
+    if (rafId.current !== null) {
+      cancelAnimationFrame(rafId.current);
+    }
+    rafId.current = requestAnimationFrame(() => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = clientX - rect.left;
+      let percent = (x / rect.width) * 100;
+      if (percent < 0) percent = 0;
+      if (percent > 100) percent = 100;
+      setSliderPos(percent);
+    });
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
   }, []);
 
   // Global mouse & touch listeners for continuous dragging even outside container
@@ -121,6 +137,8 @@ export default function BeforeAfterSlider({
           alt="After D-VIEW Invisible Safety" 
           className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
           draggable={false}
+          loading="lazy"
+          decoding="async"
         />
         <span className="absolute top-4 right-4 bg-emerald-950/85 backdrop-blur-md border border-emerald-500/40 text-emerald-200 text-xs px-2.5 py-1 rounded-full font-bold shadow-lg z-10 pointer-events-none">
           AFTER: 100% Safe
@@ -137,6 +155,8 @@ export default function BeforeAfterSlider({
             className="absolute inset-0 w-full h-full object-cover max-w-none select-none pointer-events-none"
             style={{ width: containerWidth ? `${containerWidth}px` : '100%' }}
             draggable={false}
+            loading="lazy"
+            decoding="async"
           />
           <span className="absolute top-4 left-4 bg-red-950/85 backdrop-blur-md border border-red-500/40 text-red-200 text-xs px-2.5 py-1 rounded-full font-bold shadow-lg pointer-events-none whitespace-nowrap">
             BEFORE: Danger & Fear

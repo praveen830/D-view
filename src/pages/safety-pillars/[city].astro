@@ -93,6 +93,7 @@ const canonicalUrl = corridorParam
   ogImage={location.heroImage}
   preloadHeroImage={location.heroImage}
   keywords={location.keywords}
+  faqs={location.faqs || []}
 >
   <DViewWebsite client:load initialCitySlug={slug} initialCorridor={corridorParam} tier="tier3" />
 </Layout>
