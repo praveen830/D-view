@@ -39,7 +39,7 @@ const { location, slug } = Astro.props;
 
 const cityName = location.cityName || location.name;
 const heroImage = location.heroImage;
-const heroPoster = location.heroPosterImage || location.heroImage;
+const heroPoster = location.heroImage;
 const subLocalities = location.subLocalities || [];
 ---
 
@@ -153,7 +153,7 @@ const subLocalities = location.subLocalities || [];
               <img
                 src={heroPoster}
                 alt={`D-VIEW Invisible Safety in ${cityName}`}
-                class="w-full h-auto aspect-square object-contain rounded-3xl transition-transform duration-500 group-hover:scale-[1.01]"
+                class="w-full h-auto aspect-square object-cover rounded-3xl transition-transform duration-500 group-hover:scale-[1.01]"
                 loading="eager"
                 decoding="async"
               />

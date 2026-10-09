@@ -94,7 +94,8 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     emotionHook: 'Mana Godavari river breeze view invisible grills valla asalu block avvakunda entha peaceful ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN RAJAHMUNDRY',
     heroSubhead: 'Experience the sweeping Godavari river breeze from a new elevation with uncompromising, certified architectural safety.',
-    heroImage: '/images/camera/camera-rajahmundry-sq.jpg',
+    heroImage: '/images/dashboard/dashboard-rajahmundry.jpg',
+    heroPosterImage: '/images/dashboard/dashboard-rajahmundry.jpg',
     heroImageAlt: 'Luxury high-rise apartment balcony in Rajahmundry overlooking the Godavari Arch Bridge with invisible safety grills',
     subLocalities: [
       { name: "Morampudi Residential Towers", image: "/assets/locations/sub/rajahmundry-morampudi.jpg", tag: "RIVER-VIEW BALCONY | FRESH RIVER BREEZE", path: "/safety-pillars/rajahmundry?corridor=Morampudi", desc: "High-rise apartment balcony looking out at open green residential layouts and fresh Godavari breeze through vertical wires." },
@@ -207,7 +208,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     emotionHook: 'Mana Vizag sea coast view invisible grills valla asalu block avvakunda entha luxury ga undo!',
     heroHeadline: 'UNBLOCKED VIZAG VIEWS, 101% BREATHTAKING & SECURE',
     heroSubhead: 'RK Beach to Kailasagiri - Experience uninterrupted coastal panoramic views with zero safety compromise.',
-    heroImage: '/images/camera/camera-visakhapatnam-sq.jpg',
+    heroImage: '/images/dashboard/dashboard-visakhapatnam.jpg',
     heroImageAlt: 'Penthouse balcony in Visakhapatnam overlooking RK Beach and Kailasagiri with SS-316 invisible safety grills',
     subLocalities: [
       { name: "Madhurawada (27-Floor High-Rises)", image: "/assets/locations/sub/vizag-madhurawada.png", tag: "25TH-FLOOR PENTHOUSE | 27 TOWERS LOCKDOWN", path: "/safety-pillars/vizag?corridor=Madhurawada", desc: "25th-floor penthouse balcony looking through vertical SS-316 wires at high-rise valley towers surrounded by green coastal hills." },
@@ -317,7 +318,8 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     emotionHook: 'Mana Krishna river & Amaravati skyline view invisible grills valla asalu block avvakunda entha modern ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN VIJAYAWADA & AMARAVATI',
     heroSubhead: 'Architectural safety tailored for the capital region’s prestigious towers, overlooking the majestic Krishna River and vibrant skyline.',
-    heroImage: '/images/camera/camera-vijayawada-sq.jpg',
+    heroImage: '/images/dashboard/dashboard-vijayawada.jpg',
+    heroPosterImage: '/images/dashboard/dashboard-vijayawada.jpg',
     heroImageAlt: 'Modern high-rise balcony in Vijayawada overlooking Prakasam Barrage and the Krishna River',
     subLocalities: [
       { name: "Benz Circle & Bandar Road Towers", image: "/assets/locations/sub/vijayawada-benzcircle.jpg", tag: "BENZ CIRCLE TOWERS | SKYLINE PANORAMA", path: "/safety-pillars/vijayawada?corridor=Benz%20Circle", desc: "Prestigious urban towers overlooking the city center with thermal-stabilized tension cables." },
@@ -427,7 +429,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     emotionHook: 'Mana Kakinada coastal palm & port breeze view invisible grills valla asalu block avvakunda entha fresh ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN KAKINADA',
     heroSubhead: 'Harmonize your living space with coastal palm vistas and fresh marine air through high-grade stainless steel invisible safety grills.',
-    heroImage: '/images/camera/camera-kakinada-sq.jpg',
+    heroImage: '/images/dashboard/dashboard-kakinada.jpg',
     heroImageAlt: 'Coastal residential balcony in Kakinada with invisible safety grills overlooking palm trees and sea',
     subLocalities: [
       { name: "Sarpavaram Gated Enclaves", image: "/assets/locations/sub/kakinada-sarpavaram.jpg", tag: "GATED APARTMENTS | 100% PIGEON EXCLUSION", path: "/safety-pillars/kakinada?corridor=Sarpavaram", desc: "Modern family apartment balconies with permanent bird barrier and crystal daylight." },
@@ -520,7 +522,8 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     emotionHook: 'Mana Guntur high-rise skyline view invisible grills valla asalu block avvakunda entha safe & open ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN GUNTUR',
     heroSubhead: 'Elevate your apartment living with sleek, modern balcony safety that replaces archaic iron bars with crystal-clear panoramic freedom.',
-    heroImage: '/images/camera/camera-guntur-sq.jpg',
+    heroImage: '/images/dashboard/dashboard-guntur.jpg',
+    heroPosterImage: '/images/dashboard/dashboard-guntur.jpg',
     heroImageAlt: 'Luxury apartment balcony in Guntur overlooking city horizon and Kondaveedu landscape',
     subLocalities: [
       { name: "Brodipet Central Residences", image: "/assets/locations/sub/guntur-brodipet.jpg", tag: "CENTRAL LUXURY | ZERO PIGEON ROOSTING", path: "/safety-pillars/guntur?corridor=Brodipet", desc: "Core city residential apartment balconies upgraded from rusted bars to invisible lines." },
@@ -613,7 +616,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     emotionHook: 'Mana Penna riverfront sunset view invisible grills valla asalu block avvakunda entha serene ga undo!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN NELLORE',
     heroSubhead: 'Enjoy unobstructed Penna River and sunset panoramas with modern architectural safety engineered for high-floor coastal living.',
-    heroImage: '/images/camera/camera-nellore-sq.jpg',
+    heroImage: '/images/dashboard/dashboard-nellore.jpg',
     heroImageAlt: 'Modern high-rise balcony in Nellore overlooking Penna river and city sunset with invisible grills',
     subLocalities: [
       { name: "Magunta Layout Premium Balconies", image: "/assets/locations/sub/nellore-maguntalayout.jpg", tag: "PREMIUM COLONY | PENNA SUNSET PRESERVATION", path: "/safety-pillars/nellore?corridor=Magunta%20Layout", desc: "Luxury apartment balconies preserving Penna river sunset views without dark iron cages." },
@@ -706,8 +709,8 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     emotionHook: 'Bhagyanagar & Lawyerpet high-rises lo open breeze view asalu block avvakunda pillalu mariyu peddavallaki 100% safety!',
     heroHeadline: 'PREMIUM INVISIBLE GRILLS IN ONGOLE',
     heroSubhead: 'Engineered SS-316 invisible safety grills across Bhagyanagar, Lawyerpet & Kurnool Road belt. Uncompromised views and certified protection.',
-    heroImage: '/images/camera/camera-ongole-sq.jpg',
-    heroPosterImage: '/images/dashboard/ongole-city-poster.jpg',
+    heroImage: '/images/dashboard/dashboard-ongole.jpg',
+    heroPosterImage: '/images/dashboard/dashboard-ongole.jpg',
     heroImageAlt: 'Modern high-rise apartment balcony in Ongole overlooking Kurnool Road with invisible safety grills',
     subLocalities: [
       { name: "Bhagyanagar Prime High-Rises", image: "/assets/corridors/ongole-bhagyanagar.jpg", tag: "PRIME RESIDENTIAL | 100% UNBLOCKED PANORAMA", path: "/safety-pillars/ongole?corridor=Bhagyanagar", desc: "Luxury apartments in Bhagyanagar with uncompromised fall protection and full cross-ventilation." },
@@ -720,7 +723,7 @@ export const LOCATIONS_DATA: Record<string, LocationData> = {
     landmarkHeadline: 'AIRY BALCONIES. UNCOMPROMISED SAFETY. ONGOLE PRIDE.',
     landmarkSubhead: 'Preserve natural light and breezes across Bhagyanagar, Lawyerpet, and Kurnool Road with modern structural invisible grills.',
     landmarkFeature: 'Kurnool Road Ridge & Ongole City Skyline',
-    landmarkImage: '/images/camera/camera-ongole-sq.jpg',
+    landmarkImage: '/assets/corridors/ongole-bhagyanagar.jpg',
     
     technicalHeadline: 'ENGINEERED FOR PRAKASAM INLAND WEATHER & HIGH-FLOOR WINDS',
     technicalSubtitle: 'Ongole’s seasonal heat and dry dust demand premium anti-static, marine SS-316 cabling.',
