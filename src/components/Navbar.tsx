@@ -55,15 +55,11 @@ export default function Navbar({ currentSlug }: NavbarProps) {
           {/* Brand Logo */}
           <div className="flex items-center gap-3">
             <a href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#121816] to-[#1A2420] border border-[#24322B] group-hover:border-[#7CFF3A]/60 flex items-center justify-center transition-all duration-300 shadow-md">
-                <div className="relative">
-                  <ShieldCheck className="w-5 h-5 text-[#7CFF3A]" />
-                  <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-[#7CFF3A] rounded-full animate-ping"></span>
-                </div>
-              </div>
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-[#7CFF3A] transition-colors whitespace-nowrap">
-                D-VIEW
-              </span>
+              <img 
+                src="/images/d-view-logo-horizontal.png" 
+                alt="D-VIEW Invisible Grills & Safety Solutions" 
+                className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              />
             </a>
 
             {/* City Selector Pill */}

@@ -1806,9 +1806,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         
         {/* Column 1: Brand & Direct Personal Concierge */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-[#7CFF3A]" />
-            <span className="text-white font-bold tracking-widest text-sm uppercase">D-VIEW INVISIBLE SAFETY GRILLS</span>
+          <div className="flex items-center gap-3 mb-2">
+            <img 
+              src="/images/d-view-logo-horizontal.png" 
+              alt="D-VIEW Invisible Grills & Safety Solutions" 
+              className="h-9 w-auto object-contain" 
+            />
           </div>
           <p className="text-[11px] leading-relaxed text-slate-300 font-light">
             India's premier architectural invisible safety grill specialist. 100% safety, zero view obstruction.
@@ -1997,10 +2000,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             <span className="text-base leading-none">=</span> MENU
           </button>
 
-          <a href="/" className="flex items-center gap-2 group">
-            <span className="text-sm sm:text-base font-light tracking-[0.25em] text-white uppercase">
-              D-VIEW <span className="font-semibold text-[#7CFF3A] drop-shadow-[0_0_15px_rgba(124,255,58,0.45)]">INVISIBLE SAFETY</span>
-            </span>
+          <a href="/" className="flex items-center gap-2.5 group">
+            <img 
+              src="/images/d-view-logo-horizontal.png" 
+              alt="D-VIEW Invisible Grills & Safety Solutions" 
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+            />
           </a>
         </div>
 
@@ -2064,9 +2069,13 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-white/10">
-                <span className="text-xs uppercase tracking-[0.25em] text-[#7CFF3A] font-bold">
-                  D-VIEW INVISIBLE SAFETY
-                </span>
+                <a href="/" className="flex items-center gap-2">
+                  <img 
+                    src="/images/d-view-logo-horizontal.png" 
+                    alt="D-VIEW Invisible Safety Grills" 
+                    className="h-8 w-auto object-contain" 
+                  />
+                </a>
                 <button 
                   type="button"
                   onClick={() => setIsMenuOpen(false)}
