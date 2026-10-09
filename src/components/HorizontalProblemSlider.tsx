@@ -186,7 +186,6 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [autoPlay, setAutoPlay] = useState(true);
   const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // High-performance 60fps RAF scroll (zero lag, snappy easeOutCubic curve)
@@ -212,26 +211,9 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
     requestAnimationFrame(animate);
   };
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const el = scrollRef.current;
-      const cardWidth = el.firstElementChild?.clientWidth || 310;
-      const step = cardWidth + 24;
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      const target = direction === 'left' ? Math.max(0, el.scrollLeft - step) : Math.min(maxScroll, el.scrollLeft + step);
-      smoothScrollTo(target, 320);
-    }
-    // Temporarily pause auto-slide for 4 seconds when user manually clicks arrows
-    setIsPaused(true);
-    if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
-    pauseTimerRef.current = setTimeout(() => {
-      setIsPaused(false);
-    }, 4000);
-  };
-
-  // Fast, responsive auto-sliding interval (1.8 seconds) with zero lag
+  // Smooth 1-second auto-sliding interval (1s)
   useEffect(() => {
-    if (!autoPlay || isPaused) return;
+    if (isPaused) return;
 
     const interval = setInterval(() => {
       if (scrollRef.current) {
@@ -242,22 +224,22 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
 
         // Loop smoothly when reaching the end
         if (el.scrollLeft >= maxScroll - 25) {
-          smoothScrollTo(0, 400);
+          smoothScrollTo(0, 350);
         } else {
-          smoothScrollTo(el.scrollLeft + step, 350);
+          smoothScrollTo(el.scrollLeft + step, 280);
         }
       }
-    }, 1800); // 1.8s snappy interval - fast, lively, no server lag feel
+    }, 1000); // Snappy 1-second auto-slide interval
 
     return () => clearInterval(interval);
-  }, [autoPlay, isPaused]);
+  }, [isPaused]);
 
   return (
     <section className="w-full bg-[#031B15] py-14 px-4 sm:px-6 lg:px-8 text-white relative">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header with Navigation Arrows & Auto-Slide Indicator */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        {/* Section Header */}
+        <div className="mb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7CFF3A]/15 border border-[#7CFF3A]/30 text-[#7CFF3A] text-xs font-bold tracking-widest uppercase mb-2 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse"></span>
@@ -267,53 +249,8 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
               12 Real-World Scenarios: <span className="text-[#7CFF3A]">Problems & D-VIEW Solutions</span>
             </h2>
             <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl">
-              Automatic showcase smoothly slides through each scenario. Hover or touch any card to stop and read details.
+              Automatic showcase smoothly slides through each scenario every 1s. Hover or touch any card to pause and read details.
             </p>
-          </div>
-
-          {/* Controls: Auto-Play Indicator & Manual Arrow Buttons */}
-          <div className="flex items-center gap-3 self-end md:self-auto">
-            {/* Auto-Slide Status Toggle */}
-            <button
-              type="button"
-              onClick={() => setAutoPlay(!autoPlay)}
-              title={autoPlay ? 'Click to pause auto-sliding' : 'Click to resume auto-sliding'}
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#052920] border border-white/20 hover:border-[#7CFF3A]/60 text-xs font-medium text-gray-200 transition shadow-md active:scale-95 cursor-pointer"
-            >
-              {autoPlay ? (
-                <>
-                  <span className={`w-2.5 h-2.5 rounded-full ${isPaused ? 'bg-amber-400' : 'bg-[#7CFF3A] animate-pulse'}`}></span>
-                  <span className="text-[11px] sm:text-xs font-semibold">
-                    {isPaused ? 'Paused (Reading)' : 'Fast Auto-Slide (1.8s)'}
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                  <span className="text-[11px] sm:text-xs text-gray-400">Auto-Slide Paused</span>
-                </>
-              )}
-            </button>
-
-            {/* Manual Left/Right Scroll Arrows */}
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => scroll('left')}
-                className="w-11 h-11 rounded-full bg-[#052920] border border-white/20 hover:border-[#7CFF3A] text-white hover:text-[#7CFF3A] flex items-center justify-center transition shadow-lg active:scale-95 cursor-pointer text-lg"
-                aria-label="Scroll Left"
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                onClick={() => scroll('right')}
-                className="w-11 h-11 rounded-full bg-[#052920] border border-white/20 hover:border-[#7CFF3A] text-white hover:text-[#7CFF3A] flex items-center justify-center transition shadow-lg active:scale-95 cursor-pointer text-lg"
-                aria-label="Scroll Right"
-              >
-                →
-              </button>
-            </div>
           </div>
         </div>
 
