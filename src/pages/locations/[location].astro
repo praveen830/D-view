@@ -39,7 +39,7 @@ const { location, slug } = Astro.props;
 
 const cityName = location.cityName || location.name;
 const heroImage = location.heroImage;
-const heroPoster = location.heroImage;
+const heroPoster = location.heroPosterImage || location.heroImage;
 const subLocalities = location.subLocalities || [];
 ---
 

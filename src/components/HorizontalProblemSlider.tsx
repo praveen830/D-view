@@ -243,13 +243,13 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7CFF3A]/15 border border-[#7CFF3A]/30 text-[#7CFF3A] text-xs font-bold tracking-widest uppercase mb-2 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse"></span>
-              Real Balcony Problem vs Solution Showcase
+              Why Choose Invisible Grills?
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-              12 Real-World Scenarios: <span className="text-[#7CFF3A]">Problems & D-VIEW Solutions</span>
+              Why Install Invisible Grills? <span className="text-[#7CFF3A]">One Single Installation, Every Problem Solved.</span>
             </h2>
-            <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl">
-              Automatic showcase smoothly slides through each scenario every 1s. Hover or touch any card to pause and read details.
+            <p className="text-xs sm:text-sm text-gray-300 mt-2 max-w-3xl leading-relaxed">
+              A single modern installation solves all your major balcony challenges at once — guaranteeing 100% toddler safety, eliminating pigeon mess, preventing iron rust, and giving you crystal-clear open views without that caged feeling.
             </p>
           </div>
         </div>
