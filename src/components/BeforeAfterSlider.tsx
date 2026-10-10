@@ -65,7 +65,10 @@ export default function BeforeAfterSlider({
     };
   }, []);
 
-  // Global mouse & touch listeners for continuous dragging even outside container
+  // Touch gesture direction tracking for buttery-smooth mobile scrolling
+  const touchStartRef = useRef<{ x: number; y: number; isHorizontal?: boolean } | null>(null);
+
+  // Global mouse & touch listeners for continuous dragging
   useEffect(() => {
     const handleWindowMouseMove = (e: MouseEvent) => {
       if (isDragging) {
@@ -74,13 +77,15 @@ export default function BeforeAfterSlider({
     };
 
     const handleWindowTouchMove = (e: TouchEvent) => {
-      if (isDragging && e.touches.length > 0) {
+      if (!isDragging || e.touches.length === 0) return;
+      if (touchStartRef.current?.isHorizontal) {
         handleMove(e.touches[0].clientX);
       }
     };
 
     const handleWindowEnd = () => {
       setIsDragging(false);
+      touchStartRef.current = null;
     };
 
     if (isDragging) {
@@ -88,6 +93,7 @@ export default function BeforeAfterSlider({
       window.addEventListener('mouseup', handleWindowEnd);
       window.addEventListener('touchmove', handleWindowTouchMove, { passive: true });
       window.addEventListener('touchend', handleWindowEnd);
+      window.addEventListener('touchcancel', handleWindowEnd);
     }
 
     return () => {
@@ -95,14 +101,49 @@ export default function BeforeAfterSlider({
       window.removeEventListener('mouseup', handleWindowEnd);
       window.removeEventListener('touchmove', handleWindowTouchMove);
       window.removeEventListener('touchend', handleWindowEnd);
+      window.removeEventListener('touchcancel', handleWindowEnd);
     };
   }, [isDragging, handleMove]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
     if (e.touches.length > 0) {
-      handleMove(e.touches[0].clientX);
+      touchStartRef.current = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY,
+        isHorizontal: undefined,
+      };
     }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!touchStartRef.current || e.touches.length === 0) return;
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const deltaX = Math.abs(currentX - touchStartRef.current.x);
+    const deltaY = Math.abs(currentY - touchStartRef.current.y);
+
+    // Distinguish between vertical page scroll and horizontal comparison slider drag
+    if (touchStartRef.current.isHorizontal === undefined) {
+      if (deltaY > 8 && deltaY > deltaX) {
+        // User is scrolling the page vertically! Do not hijack scroll.
+        touchStartRef.current.isHorizontal = false;
+        setIsDragging(false);
+        return;
+      } else if (deltaX > 8 && deltaX > deltaY) {
+        // User is intentionally sliding left/right to compare
+        touchStartRef.current.isHorizontal = true;
+        setIsDragging(true);
+      }
+    }
+
+    if (touchStartRef.current.isHorizontal) {
+      handleMove(currentX);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    touchStartRef.current = null;
+    setIsDragging(false);
   };
 
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -124,12 +165,15 @@ export default function BeforeAfterSlider({
         </p>
       </div>
 
-      {/* 9:16 Aspect Ratio Frame */}
+      {/* 9:16 Aspect Ratio Frame - touch-pan-y permits smooth page scrolling */}
       <div 
         ref={containerRef}
-        className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/20 cursor-ew-resize touch-none ring-1 ring-white/10"
+        className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/20 cursor-ew-resize touch-pan-y ring-1 ring-white/10"
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchEnd}
       >
         {/* AFTER IMAGE (Solution - Background) */}
         <img 

@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { 
-  Calendar, 
-  MapPin, 
-  Phone, 
-  User, 
-  CheckCircle2, 
+  Check, 
+  ChevronDown, 
   ArrowRight, 
   MessageSquare,
   ShieldCheck,
-  Building2,
-  Sparkles
+  CheckCircle2,
+  Plus,
+  Minus
 } from 'lucide-react';
 import { ALL_LOCATIONS } from '../data/locations';
 
@@ -23,249 +21,370 @@ export default function SiteVisitForm({ defaultCitySlug = 'rajahmundry', cityNam
   const [phone, setPhone] = useState('');
   const [city, setCity] = useState(defaultCitySlug);
   const [area, setArea] = useState('');
-  const [propertyType, setPropertyType] = useState('High-Rise Apartment');
-  const [approxDimensions, setApproxDimensions] = useState('');
-  const [preferredDate, setPreferredDate] = useState('');
-  const [message, setMessage] = useState('');
+  const [customArea, setCustomArea] = useState('');
+  const [selectedRequirements, setSelectedRequirements] = useState<string[]>(['BALCONY']);
+  const [showNote, setShowNote] = useState(false);
+  const [note, setNote] = useState('');
+  const [connectGoogle, setConnectGoogle] = useState(false);
+  const [consentAgreed, setConsentAgreed] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const activeCity = ALL_LOCATIONS.find(c => c.slug === city) || ALL_LOCATIONS[0];
+  const cityAreas = activeCity.areas || [];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!phone || phone.length < 10) {
-      alert('Please enter a valid 10-digit mobile number');
-      return;
+  const toggleRequirement = (req: string) => {
+    if (selectedRequirements.includes(req)) {
+      setSelectedRequirements(selectedRequirements.filter(r => r !== req));
+    } else {
+      setSelectedRequirements([...selectedRequirements, req]);
     }
-    setIsSubmitted(true);
   };
 
-  const getWhatsAppBookingUrl = () => {
-    const text = `Hi D-VIEW Solutions!
-I would like to schedule a Free On-Site Measurement:
-- Name: ${name || 'Prospective Customer'}
-- City: ${activeCity.name}
-- Area/Colony: ${area || 'Not specified'}
-- Property Type: ${propertyType}
-- Dimensions: ${approxDimensions || 'To be measured by D-VIEW'}
-- Preferred Date: ${preferredDate || 'Earliest available'}
-${message ? `- Notes: ${message}` : ''}
+  const finalArea = area === 'other' ? (customArea || 'Custom Locality') : (area || 'Not specified');
 
-Please confirm technician visit time.`;
+  const buildWhatsAppUrl = () => {
+    const text = `Hi, I am interested in this work.
+• Name: ${name || 'Customer'}
+• Mobile: +91 ${phone || ''}
+• City: ${activeCity.name}
+• Area: ${finalArea}
+• Requirements: ${selectedRequirements.length > 0 ? selectedRequirements.join(', ') : 'Balcony'}
+${note ? `• Note: ${note}` : ''}
+
+Please share the details.`;
 
     return `https://wa.me/919494328999?text=${encodeURIComponent(text)}`;
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim()) {
+      alert('Please enter your name');
+      return;
+    }
+    if (!phone || phone.replace(/\D/g, '').length < 10) {
+      alert('Please enter a valid 10-digit mobile number');
+      return;
+    }
+    if (!area) {
+      alert(`Please select your area / locality in ${activeCity.name}`);
+      return;
+    }
+    if (area === 'other' && !customArea.trim()) {
+      alert('Please enter your locality / apartment name');
+      return;
+    }
+    if (!consentAgreed) {
+      alert('Please agree to project sharing terms to schedule your site visit');
+      return;
+    }
+
+    setIsSubmitted(true);
+    // Direct WhatsApp redirect
+    window.open(buildWhatsAppUrl(), '_blank');
+  };
+
   return (
-    <section id="book-visit" className="relative py-20 bg-[#0B0D0C] border-t border-[#24322B] overflow-hidden">
-      <div className="absolute inset-0 wire-grid-overlay opacity-25 pointer-events-none"></div>
+    <section id="book-visit" className="relative py-16 sm:py-24 bg-[#080B09] border-t border-white/10 overflow-hidden">
+      {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7CFF3A]/5 rounded-full blur-[140px] pointer-events-none"></div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-xl mx-auto px-4 sm:px-6 w-full">
         
-        {/* Card Container */}
-        <div className="bg-[#121816] rounded-3xl border border-[#24322B] shadow-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-[#7CFF3A]/10 rounded-full blur-3xl pointer-events-none"></div>
-
+        {/* Form Container - Simple, Clean Theme matching D-VIEW */}
+        <div className="bg-[#101713] rounded-3xl border border-[#24322B] shadow-2xl p-6 sm:p-9 relative overflow-hidden text-left">
+          
           {!isSubmitted ? (
-            <div>
-              {/* Header */}
-              <div className="text-center max-w-2xl mx-auto mb-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/30 text-xs font-semibold text-[#7CFF3A] uppercase tracking-wider mb-4">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>Zero Obligation • Accurate Laser Measurement</span>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
+              {/* 01 / SITE DETAILS HEADER */}
+              <div>
+                <div className="text-[11px] font-extrabold tracking-[0.2em] text-[#7CFF3A] uppercase mb-1">
+                  01 / SITE DETAILS
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                  READY TO MAKE YOUR <br />
-                  <span className="text-[#7CFF3A]">BALCONY SAFER?</span>
+                <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight pb-4 border-b border-[#24322B] flex items-center justify-between">
+                  <span>INVISIBLE GRILLS • {activeCity.name}</span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-[#1A261F] text-[#7CFF3A] font-bold border border-[#7CFF3A]/30 lowercase tracking-normal">
+                    ap hub
+                  </span>
                 </h2>
-                <p className="mt-3 text-sm sm:text-base text-[#C7CDD1]">
-                  Book a free on-site consultation with our certified technical engineers in <strong className="text-white">{activeCity.name}</strong>. We bring wire samples, laser-measure your space, and provide transparent written pricing.
-                </p>
               </div>
 
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                      Full Name *
-                    </label>
-                    <div className="relative">
-                      <User className="absolute left-3.5 top-3.5 w-4 h-4 text-[#64748B]" />
-                      <input
-                        type="text"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="e.g. Rajesh Kumar"
-                        className="w-full pl-10 pr-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#7CFF3A] transition-colors"
-                      />
-                    </div>
-                  </div>
+              {/* YOUR NAME */}
+              <div>
+                <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
+                  YOUR NAME <span className="text-[#7CFF3A]">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="e.g. Arjun Mehta"
+                  className="w-full px-4 py-3.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#7CFF3A] transition-colors"
+                />
+              </div>
 
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                      Phone Number (WhatsApp) *
-                    </label>
-                    <div className="relative">
-                      <Phone className="absolute left-3.5 top-3.5 w-4 h-4 text-[#64748B]" />
-                      <input
-                        type="tel"
-                        required
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder="e.g. 9876543210"
-                        className="w-full pl-10 pr-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#7CFF3A] transition-colors"
-                      />
-                    </div>
+              {/* MOBILE NUMBER */}
+              <div>
+                <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
+                  MOBILE NUMBER <span className="text-[#7CFF3A]">*</span>
+                </label>
+                <div className="flex rounded-xl overflow-hidden border border-[#2A3C33] focus-within:border-[#7CFF3A] transition-colors bg-[#16201B]">
+                  <div className="px-4 py-3.5 bg-[#1C2923] border-r border-[#2A3C33] text-sm font-bold text-gray-300 flex items-center justify-center">
+                    +91
                   </div>
+                  <input
+                    type="tel"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="98765 43210"
+                    maxLength={13}
+                    className="w-full px-4 py-3.5 text-sm bg-transparent text-white placeholder-gray-500 focus:outline-none"
+                  />
                 </div>
+              </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                      City Hub *
-                    </label>
+              {/* CITY & AREA / LOCALITY */}
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
+                    SELECT CITY HUB <span className="text-[#7CFF3A]">*</span>
+                  </label>
+                  <div className="relative">
                     <select
                       value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      className="w-full px-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A] transition-colors"
+                      onChange={(e) => {
+                        setCity(e.target.value);
+                        setArea('');
+                        setCustomArea('');
+                      }}
+                      className="w-full appearance-none px-4 py-3.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A] transition-colors cursor-pointer"
                     >
                       {ALL_LOCATIONS.map((loc) => (
-                        <option key={loc.slug} value={loc.slug}>
-                          {loc.name}
+                        <option key={loc.slug} value={loc.slug} className="bg-[#16201B] text-white">
+                          {loc.name} ({loc.district || 'Andhra Pradesh'})
                         </option>
                       ))}
                     </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                      Locality / Apartment *
-                    </label>
-                    <div className="relative">
-                      <MapPin className="absolute left-3.5 top-3.5 w-4 h-4 text-[#64748B]" />
-                      <input
-                        type="text"
-                        required
-                        value={area}
-                        onChange={(e) => setArea(e.target.value)}
-                        placeholder="e.g. Morampudi / Yendada"
-                        className="w-full pl-10 pr-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#7CFF3A] transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                      Property Type
-                    </label>
-                    <div className="relative">
-                      <Building2 className="absolute left-3.5 top-3.5 w-4 h-4 text-[#64748B]" />
-                      <select
-                        value={propertyType}
-                        onChange={(e) => setPropertyType(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A] transition-colors"
-                      >
-                        <option>High-Rise Apartment</option>
-                        <option>Gated Villa / Duplex</option>
-                        <option>Penthouse / Open Terrace</option>
-                        <option>Independent House</option>
-                        <option>Commercial Property</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                      Approximate Opening Dimensions (Optional)
-                    </label>
-                    <input
-                      type="text"
-                      value={approxDimensions}
-                      onChange={(e) => setApproxDimensions(e.target.value)}
-                      placeholder="e.g. 12ft × 8ft (1 Balcony)"
-                      className="w-full px-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#7CFF3A] transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                      Preferred Date for Measurement Visit
-                    </label>
-                    <div className="relative">
-                      <Calendar className="absolute left-3.5 top-3.5 w-4 h-4 text-[#64748B]" />
-                      <input
-                        type="date"
-                        value={preferredDate}
-                        onChange={(e) => setPreferredDate(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A] transition-colors"
-                      />
-                    </div>
+                    <ChevronDown className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">
-                    Special Requirements or Questions (Optional)
+                  <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
+                    AREA / LOCALITY <span className="text-[#7CFF3A]">*</span>
                   </label>
-                  <textarea
-                    rows={2}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="e.g. Toddler safety, pigeon protection, high wind area..."
-                    className="w-full px-4 py-3 text-sm bg-[#151C19] border border-[#24322B] rounded-xl text-white placeholder-[#64748B] focus:outline-none focus:border-[#7CFF3A] transition-colors"
-                  ></textarea>
+                  <div className="relative">
+                    <select
+                      required
+                      value={area}
+                      onChange={(e) => setArea(e.target.value)}
+                      className="w-full appearance-none px-4 py-3.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A] transition-colors cursor-pointer"
+                    >
+                      <option value="" disabled className="bg-[#16201B] text-gray-500">
+                        Select your area in {activeCity.name}
+                      </option>
+                      {cityAreas.map((a, idx) => (
+                        <option key={idx} value={a.name} className="bg-[#16201B] text-white">
+                          {a.name} ({a.type})
+                        </option>
+                      ))}
+                      <option value="other" className="bg-[#16201B] text-white">
+                        + Other Area / Colony in {activeCity.name}
+                      </option>
+                    </select>
+                    <ChevronDown className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  </div>
+
+                  {area === 'other' && (
+                    <input
+                      type="text"
+                      required
+                      value={customArea}
+                      onChange={(e) => setCustomArea(e.target.value)}
+                      placeholder={`Enter your apartment / colony in ${activeCity.name}`}
+                      className="mt-2.5 w-full px-4 py-3 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#7CFF3A]"
+                    />
+                  )}
+
+                  <p className="text-[11px] text-gray-400 mt-1.5 font-normal">
+                    So we send the nearest checked installer.
+                  </p>
+                </div>
+              </div>
+
+              {/* 02 / REQUIREMENT SECTION */}
+              <div className="pt-2">
+                <div className="text-[11px] font-extrabold tracking-[0.2em] text-[#7CFF3A] uppercase">
+                  02 / REQUIREMENT
+                </div>
+                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">
+                  OPTIONAL • SELECT ALL THAT APPLY
                 </div>
 
-                {/* Submit and WhatsApp CTAs */}
-                <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                  <button
-                    type="submit"
-                    className="flex-1 flex items-center justify-center gap-2 py-4 px-8 rounded-xl font-extrabold text-sm sm:text-base text-[#0B0D0C] bg-[#7CFF3A] hover:bg-[#8FFF52] transition-all duration-200 shadow-[0_0_25px_rgba(124,255,58,0.25)] hover:shadow-[0_0_35px_rgba(124,255,58,0.4)]"
-                  >
-                    <span>BOOK FREE ON-SITE MEASUREMENT</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
-
-                  <a
-                    href={getWhatsAppBookingUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-bold text-sm text-[#C7CDD1] bg-[#151C19] hover:bg-[#1A2420] border border-[#24322B] hover:border-[#7CFF3A]/40 transition-colors"
-                  >
-                    <MessageSquare className="w-4 h-4 text-[#7CFF3A]" />
-                    <span>WhatsApp Directly</span>
-                  </a>
+                {/* 2x2 SELECTION GRID */}
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                  {[
+                    { id: 'BALCONY', label: 'BALCONY' },
+                    { id: 'WINDOWS', label: 'WINDOWS' },
+                    { id: 'STAIRCASE / DUPLEX', label: 'STAIRCASE / DUPLEX' },
+                    { id: 'FULL FLAT / VILLA', label: 'FULL FLAT / VILLA' },
+                  ].map((item) => {
+                    const isSelected = selectedRequirements.includes(item.id);
+                    return (
+                      <button
+                        type="button"
+                        key={item.id}
+                        onClick={() => toggleRequirement(item.id)}
+                        className={`flex items-center justify-between px-3.5 sm:px-4 py-3 rounded-xl border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer text-left ${
+                          isSelected
+                            ? 'bg-[#1D2A22] border-[#7CFF3A] text-white shadow-[0_0_12px_rgba(124,255,58,0.15)]'
+                            : 'bg-[#16201B] border-[#2A3C33] text-gray-300 hover:border-gray-500 hover:text-white'
+                        }`}
+                      >
+                        <span className="truncate pr-2">{item.label}</span>
+                        <div
+                          className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 border transition-all ${
+                            isSelected
+                              ? 'border-[#7CFF3A] bg-[#7CFF3A] text-black'
+                              : 'border-gray-500 bg-transparent'
+                          }`}
+                        >
+                          {isSelected && <Check className="w-2.5 h-2.5 stroke-[3]" />}
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
 
-              </form>
-            </div>
+                {/* + ADD A NOTE (OPTIONAL) */}
+                <div className="mt-3">
+                  {!showNote ? (
+                    <button
+                      type="button"
+                      onClick={() => setShowNote(true)}
+                      className="text-xs font-bold text-gray-400 hover:text-[#7CFF3A] uppercase tracking-wider inline-flex items-center gap-1 transition-colors cursor-pointer"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      <span>+ ADD A NOTE (OPTIONAL)</span>
+                    </button>
+                  ) : (
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-xs font-bold text-[#7CFF3A] uppercase tracking-wider">
+                          YOUR NOTE (OPTIONAL)
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowNote(false);
+                            setNote('');
+                          }}
+                          className="text-xs text-gray-400 hover:text-white"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                      <textarea
+                        rows={2}
+                        value={note}
+                        onChange={(e) => setNote(e.target.value)}
+                        placeholder="e.g. 5th floor sea view, toddler safety, need installation by this weekend..."
+                        className="w-full px-3.5 py-2.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#7CFF3A]"
+                      ></textarea>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* GOOGLE ACCOUNT CONNECT / VERIFY OPTION */}
+              <div className="p-3.5 rounded-xl bg-[#16201B] border border-[#2A3C33] flex items-center justify-between gap-3">
+                <label className="flex items-center gap-2.5 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={connectGoogle}
+                    onChange={(e) => setConnectGoogle(e.target.checked)}
+                    className="w-4 h-4 rounded accent-[#7CFF3A] cursor-pointer"
+                  />
+                  <div className="flex items-center gap-1.5">
+                    {/* Google G SVG */}
+                    <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                    </svg>
+                    <span className="text-xs font-bold text-gray-200">
+                      Connect with Google account
+                    </span>
+                  </div>
+                </label>
+                <span className="text-[10px] text-[#7CFF3A] bg-[#7CFF3A]/10 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                  Verified
+                </span>
+              </div>
+
+              {/* CONSENT CHECKBOX */}
+              <div className="pt-1">
+                <label className="flex items-start gap-2.5 cursor-pointer text-[11px] text-gray-400 leading-relaxed select-none">
+                  <input
+                    type="checkbox"
+                    checked={consentAgreed}
+                    onChange={(e) => setConsentAgreed(e.target.checked)}
+                    className="w-4 h-4 mt-0.5 rounded accent-[#7CFF3A] cursor-pointer flex-shrink-0"
+                  />
+                  <span>
+                    I agree that D-VIEW may share my project details with our verified installation expert in {activeCity.name} to schedule a site survey and quote via Call or WhatsApp. See the <a href="/about" className="underline hover:text-white">Privacy Policy</a>.
+                  </span>
+                </label>
+              </div>
+
+              {/* SUBMIT BUTTON - D-VIEW Signature Green */}
+              <div>
+                <button
+                  type="submit"
+                  className="w-full py-4 px-6 rounded-xl font-extrabold text-sm sm:text-base tracking-wider uppercase text-black bg-[#7CFF3A] hover:bg-[#6be630] transition-all shadow-[0_0_25px_rgba(124,255,58,0.35)] hover:shadow-[0_0_35px_rgba(124,255,58,0.5)] hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer active:translate-y-0"
+                >
+                  <span>SEND REQUEST ON WHATSAPP</span>
+                  <span className="text-lg leading-none">→</span>
+                </button>
+
+                <p className="text-center text-[11px] text-gray-400 mt-3 font-medium">
+                  Complimentary site visit • One checked installer • No spam
+                </p>
+              </div>
+
+            </form>
           ) : (
             <div className="text-center py-10 space-y-4">
-              <div className="w-20 h-20 rounded-full bg-[#7CFF3A]/20 border border-[#7CFF3A] flex items-center justify-center mx-auto text-[#7CFF3A]">
-                <CheckCircle2 className="w-10 h-10" />
+              <div className="w-16 h-16 rounded-full bg-[#7CFF3A]/20 border border-[#7CFF3A] flex items-center justify-center mx-auto text-[#7CFF3A]">
+                <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-extrabold text-white">
-                Free Site Visit Request Received!
+              <h3 className="text-2xl font-black text-white uppercase">
+                Free Site Visit Request Sent!
               </h3>
-              <p className="text-base text-[#C7CDD1] max-w-lg mx-auto">
-                Thank you <strong className="text-white">{name}</strong>. Our local site engineer for <strong className="text-[#7CFF3A]">{activeCity.name}</strong> has received your request for <strong className="text-white">{area}</strong>.
+              <p className="text-xs sm:text-sm text-gray-300 max-w-sm mx-auto leading-relaxed">
+                Thank you <strong className="text-white">{name}</strong>. Our verified installer for <strong className="text-[#7CFF3A]">{activeCity.name} ({finalArea})</strong> has been notified.
               </p>
-              <div className="pt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="pt-4 flex flex-col gap-2.5">
                 <a
-                  href={getWhatsAppBookingUrl()}
+                  href={buildWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-sm shadow-lg hover:opacity-90"
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#25D366] text-white font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 hover:opacity-95"
                 >
-                  <MessageSquare className="w-5 h-5" />
-                  <span>Send Details on WhatsApp for Instant Confirmation</span>
+                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <span>Open WhatsApp Conversation Now</span>
                 </a>
+                <button
+                  type="button"
+                  onClick={() => setIsSubmitted(false)}
+                  className="text-xs text-gray-400 hover:text-white underline pt-2"
+                >
+                  Submit another site measurement
+                </button>
               </div>
             </div>
           )}
