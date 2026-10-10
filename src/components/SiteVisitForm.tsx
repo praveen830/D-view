@@ -43,7 +43,7 @@ export default function SiteVisitForm({ defaultCitySlug = 'rajahmundry', cityNam
   const finalArea = area === 'other' ? (customArea || 'Custom Locality') : (area || 'Not specified');
 
   const buildWhatsAppUrl = () => {
-    const text = `Hi, I am interested in this work.
+    const text = `Hi, I am interested in a site visit.
 • Name: ${name || 'Customer'}
 • Mobile: +91 ${phone || ''}
 • City: ${activeCity.name}
