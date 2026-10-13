@@ -2208,24 +2208,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   aria-label={`Explore ${slide.name} Invisible Grills`}
                 />
 
-                {/* Mobile Top Minimal Badge & Slogan */}
-                <div className="absolute top-3 inset-x-3.5 z-20 flex flex-col gap-2 pointer-events-none">
-                  <div className="flex items-center justify-between">
-                    <div className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-emerald-300 text-[10px] font-black text-[#16A34A] uppercase tracking-wider flex items-center gap-1.5 shadow-md">
-                      <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
-                      <span>{slide.name}</span>
-                    </div>
-                    <div className="px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-[10px] font-mono text-slate-800 font-bold shadow-md">
-                      0{idx + 1} / 0{CITIES_SLIDES.length}
-                    </div>
-                  </div>
-                  {/* Prominently Highlighted Brand Slogan Pill on Mobile */}
-                  <div className="w-fit mx-auto px-3 py-1 rounded-full bg-slate-950/90 backdrop-blur-md border border-emerald-400 text-[9px] font-black uppercase tracking-wider text-white flex items-center gap-1 shadow-lg">
-                    <span className="text-[#16A34A] font-bold">—</span>
-                    <span>INVISIBLE GRILLS & SAFETY SOLUTIONS</span>
-                    <span className="text-[#16A34A] font-bold">—</span>
-                  </div>
-                </div>
               </div>
 
               {/* ============================================================ */}

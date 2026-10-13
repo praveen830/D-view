@@ -111,7 +111,6 @@ I am interested in D-View Invisible Grills. Please schedule a 100% Free Site Vis
   };
 
   return (
-  return (
     <div className="bg-white/95 sm:bg-white backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-slate-200 sm:border-2 sm:border-emerald-500/80 p-3.5 sm:p-5 shadow-2xl text-left relative overflow-hidden select-none">
       
       {/* Top Header: CHECK [CITY] PRICE NOW */}
