@@ -235,20 +235,20 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
   }, [isPaused]);
 
   return (
-    <section className="w-full bg-[#031B15] py-14 px-4 sm:px-6 lg:px-8 text-white relative">
+    <section className="w-full bg-slate-50 py-14 px-4 sm:px-6 lg:px-8 text-slate-900 border-y border-slate-200 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7CFF3A]/15 border border-[#7CFF3A]/30 text-[#7CFF3A] text-xs font-bold tracking-widest uppercase mb-2 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[#16A34A] text-xs font-bold tracking-widest uppercase mb-2 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse"></span>
               Why Choose Invisible Grills?
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Why Install Invisible Grills? <span className="text-[#7CFF3A]">One Single Installation, Every Problem Solved.</span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Why Install Invisible Grills? <span className="text-[#16A34A]">One Single Installation, Every Problem Solved.</span>
             </h2>
-            <p className="text-xs sm:text-sm text-gray-300 mt-2 max-w-3xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-3xl leading-relaxed">
               A single modern installation solves all your major balcony challenges at once — guaranteeing 100% toddler safety, eliminating pigeon mess, preventing iron rust, and giving you crystal-clear open views without that caged feeling.
             </p>
           </div>
@@ -273,14 +273,14 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
             return (
               <div
                 key={card.id}
-                className={`w-[260px] sm:w-[290px] md:w-[310px] shrink-0 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 ${
+                className={`w-[260px] sm:w-[290px] md:w-[310px] shrink-0 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 bg-white ${
                   isProblem
-                    ? 'bg-[#180C0E] border border-red-600/40 hover:border-red-500 hover:shadow-[0_10px_25px_rgba(239,68,68,0.25)]'
-                    : 'bg-[#052920] border border-[#7CFF3A]/40 hover:border-[#7CFF3A] hover:shadow-[0_10px_25px_rgba(124,255,58,0.25)]'
+                    ? 'border border-rose-200 hover:border-rose-400 hover:shadow-lg'
+                    : 'border border-emerald-200 hover:border-emerald-400 hover:shadow-lg'
                 }`}
               >
                 {/* Visual Area with Image - Reduced Compact Height */}
-                <div className="relative h-[210px] sm:h-[230px] w-full overflow-hidden bg-black/80">
+                <div className="relative h-[210px] sm:h-[230px] w-full overflow-hidden bg-slate-100">
                   <img
                     src={card.image}
                     alt={card.title}
@@ -290,30 +290,26 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                   
                   {/* Subtle Gradient Overlay */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-t ${
-                      isProblem
-                        ? 'from-[#180C0E] via-transparent to-black/60'
-                        : 'from-[#052920] via-transparent to-black/60'
-                    } pointer-events-none`}
+                    className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none"
                   />
 
                   {/* Top Tag */}
                   <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between z-10">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider backdrop-blur-md border shadow-md ${
+                      className={`px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider backdrop-blur-md border shadow-sm ${
                         isProblem
-                          ? 'bg-red-950/90 text-red-300 border-red-500/50'
-                          : 'bg-emerald-950/90 text-[#7CFF3A] border-[#7CFF3A]/50'
+                          ? 'bg-white/95 text-rose-700 border-rose-200'
+                          : 'bg-white/95 text-emerald-800 border-emerald-200'
                       }`}
                     >
                       {card.tag}
                     </span>
 
                     <span
-                      className={`px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-wider backdrop-blur-md ${
+                      className={`px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-wider shadow-sm ${
                         isProblem
-                          ? 'bg-red-600 text-white'
-                          : 'bg-[#7CFF3A] text-black font-black'
+                          ? 'bg-rose-600 text-white'
+                          : 'bg-emerald-600 text-white font-bold'
                       }`}
                     >
                       {isProblem ? 'PROBLEM' : 'SOLUTION'}
@@ -323,15 +319,15 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                   {/* Bottom Image Floating Badge */}
                   <div className="absolute bottom-2 left-2 right-2 z-10">
                     <span
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold backdrop-blur-md border shadow-md truncate max-w-full ${
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold backdrop-blur-md border shadow-sm truncate max-w-full ${
                         isProblem
-                          ? 'bg-red-950/95 text-red-200 border-red-500/50'
-                          : 'bg-emerald-950/95 text-[#7CFF3A] border-[#7CFF3A]/50'
+                          ? 'bg-rose-950/90 text-rose-100 border-rose-400/40'
+                          : 'bg-emerald-950/90 text-emerald-100 border-emerald-400/40'
                       }`}
                     >
                       <span
                         className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                          isProblem ? 'bg-red-500 animate-pulse' : 'bg-[#7CFF3A]'
+                          isProblem ? 'bg-rose-400 animate-pulse' : 'bg-emerald-400'
                         }`}
                       />
                       <span className="truncate">{card.badge}</span>
@@ -340,11 +336,11 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                 </div>
 
                 {/* Content Area - Compact Main Text Only */}
-                <div className="p-3.5 sm:p-4 flex flex-col justify-between flex-grow text-left">
+                <div className="p-3.5 sm:p-4 flex flex-col justify-between flex-grow text-left bg-white">
                   <div>
                     <span
                       className={`text-[9px] font-extrabold uppercase tracking-widest block mb-0.5 ${
-                        isProblem ? 'text-red-400' : 'text-[#7CFF3A]'
+                        isProblem ? 'text-rose-600' : 'text-[#16A34A]'
                       }`}
                     >
                       {card.category}
@@ -352,13 +348,13 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                     <h3
                       className={`text-base font-black tracking-tight leading-snug transition-colors ${
                         isProblem
-                          ? 'text-white group-hover:text-red-300'
-                          : 'text-white group-hover:text-[#7CFF3A]'
+                          ? 'text-slate-900 group-hover:text-rose-600'
+                          : 'text-slate-900 group-hover:text-[#16A34A]'
                       }`}
                     >
                       {card.title}
                     </h3>
-                    <p className="text-[11px] text-gray-300 font-medium mt-1 leading-snug">
+                    <p className="text-[11px] text-slate-600 font-medium mt-1 leading-snug">
                       {card.subtitle}
                     </p>
                   </div>
@@ -366,10 +362,10 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
                   {/* Bottom Action CTA */}
                   <a
                     href={`/contact?reason=${encodeURIComponent(card.category)}`}
-                    className={`mt-3 w-full py-2 rounded-xl text-[11px] font-bold transition-all duration-300 text-center block shadow-md cursor-pointer ${
+                    className={`mt-3 w-full py-2 rounded-xl text-[11px] font-bold transition-all duration-300 text-center block shadow-sm cursor-pointer ${
                       isProblem
-                        ? 'bg-red-700/80 hover:bg-red-600 text-white'
-                        : 'bg-[#028A0F] hover:bg-[#7CFF3A] hover:text-black text-white'
+                        ? 'bg-rose-600 hover:bg-rose-700 text-white'
+                        : 'bg-[#16A34A] hover:bg-emerald-700 text-white'
                     }`}
                   >
                     {isProblem ? `Solve in ${cityName} →` : `Protect in ${cityName} →`}
@@ -382,7 +378,7 @@ export const HorizontalProblemSlider: React.FC<HorizontalProblemSliderProps> = (
 
         {/* Scroll Indicator Prompt */}
         <div className="text-center mt-4">
-          <span className="text-xs text-gray-400 font-medium inline-flex items-center gap-2">
+          <span className="text-xs text-slate-500 font-medium inline-flex items-center gap-2">
             <span>⇄</span> Scroll horizontally to see all 12 problems & solutions
           </span>
         </div>

@@ -118,25 +118,24 @@ Please arrange a Free On-Site Digital Measurement visit.`;
   };
 
   return (
-    <section id="calculator" className="relative py-20 bg-[#0a0f0d] border-y border-[#24322B] overflow-hidden">
-      {/* Background Wire Grids and Emerald Glows */}
-      <div className="absolute inset-0 wire-grid-overlay opacity-25 pointer-events-none"></div>
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#7CFF3A]/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#7CFF3A]/5 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="calculator" className="relative py-20 bg-slate-50 border-y border-slate-200 overflow-hidden">
+      {/* Background Emerald Glow */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#131b17] border border-[#7CFF3A]/30 text-xs font-bold text-[#7CFF3A] uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-[#16A34A] uppercase tracking-wider mb-4">
             <Calculator className="w-3.5 h-3.5" />
             <span>Interactive Cost Estimator</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             ESTIMATE YOUR BALCONY <br className="hidden sm:inline" />
-            <span className="text-[#7CFF3A]">SAFETY INVESTMENT</span>
+            <span className="text-[#16A34A]">SAFETY INVESTMENT</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#cbd5e1]">
+          <p className="mt-4 text-base sm:text-lg text-slate-600">
             Select your opening dimensions and cable grade for an instant, transparent price range.
           </p>
         </div>
@@ -145,12 +144,12 @@ Please arrange a Free On-Site Digital Measurement visit.`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Controls Column */}
-          <div className="lg:col-span-7 bg-[#131b17] rounded-2xl border border-[#24322B] p-6 sm:p-8 shadow-xl">
+          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
             <div className="space-y-6">
               
               {/* City Selection */}
               <div>
-                <label className="block text-xs font-black uppercase tracking-wider text-[#94a3b8] mb-2.5">
+                <label className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-2.5">
                   1. Select Location Hub
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -164,29 +163,29 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       }}
                       className={`px-3 py-2 rounded-xl text-xs font-bold transition-all text-left flex items-center justify-between border ${
                         selectedCity === loc.slug
-                          ? 'bg-[#7CFF3A]/15 border-[#7CFF3A] text-[#7CFF3A]'
-                          : 'bg-[#0a0f0d] border-[#24322B] text-[#cbd5e1] hover:border-[#384C42]'
+                          ? 'bg-emerald-50 border-[#16A34A] text-[#16A34A]'
+                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300'
                       }`}
                     >
                       <span>{loc.name}</span>
-                      {selectedCity === loc.slug && <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A]"></span>}
+                      {selectedCity === loc.slug && <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>}
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Dimensions Input */}
-              <div className="pt-2 border-t border-[#24322B]">
-                <label className="block text-xs font-black uppercase tracking-wider text-[#94a3b8] mb-3">
+              <div className="pt-2 border-t border-slate-200">
+                <label className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-3">
                   2. Balcony Opening Dimensions (Feet)
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   
                   {/* Width */}
-                  <div className="bg-[#0a0f0d] rounded-xl p-4 border border-[#24322B]">
+                  <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-xs font-semibold text-[#cbd5e1]">Width (Span)</span>
-                      <span className="text-sm font-black text-[#7CFF3A]">{width} ft</span>
+                      <span className="text-xs font-semibold text-slate-700">Width (Span)</span>
+                      <span className="text-sm font-black text-[#16A34A]">{width} ft</span>
                     </div>
                     <input
                       type="range"
@@ -195,10 +194,10 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       step="1"
                       value={width}
                       onChange={(e) => setWidth(Number(e.target.value))}
-                      className="w-full h-1.5 bg-[#24322B] rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
+                      className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#16A34A]"
                     />
                     <div className="mt-3 flex items-center justify-between">
-                      <span className="text-[11px] text-[#94a3b8]">Numeric:</span>
+                      <span className="text-[11px] text-slate-500">Numeric:</span>
                       <div className="flex items-center gap-1.5">
                         <input
                           type="number"
@@ -206,18 +205,18 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           max="60"
                           value={width}
                           onChange={(e) => setWidth(Math.max(1, Number(e.target.value)))}
-                          className="w-20 px-2 py-1 text-xs text-center bg-[#131b17] border border-[#24322B] rounded-lg text-white font-bold focus:outline-none focus:border-[#7CFF3A]"
+                          className="w-20 px-2 py-1 text-xs text-center bg-white border border-slate-300 rounded-lg text-slate-900 font-bold focus:outline-none focus:border-[#16A34A]"
                         />
-                        <span className="text-xs text-[#94a3b8]">ft</span>
+                        <span className="text-xs text-slate-500">ft</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Height */}
-                  <div className="bg-[#0a0f0d] rounded-xl p-4 border border-[#24322B]">
+                  <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-xs font-semibold text-[#cbd5e1]">Height (Floor to Ceiling)</span>
-                      <span className="text-sm font-black text-[#7CFF3A]">{height} ft</span>
+                      <span className="text-xs font-semibold text-slate-700">Height (Floor to Ceiling)</span>
+                      <span className="text-sm font-black text-[#16A34A]">{height} ft</span>
                     </div>
                     <input
                       type="range"
@@ -226,10 +225,10 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       step="0.5"
                       value={height}
                       onChange={(e) => setHeight(Number(e.target.value))}
-                      className="w-full h-1.5 bg-[#24322B] rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
+                      className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#16A34A]"
                     />
                     <div className="mt-3 flex items-center justify-between">
-                      <span className="text-[11px] text-[#94a3b8]">Numeric:</span>
+                      <span className="text-[11px] text-slate-500">Numeric:</span>
                       <div className="flex items-center gap-1.5">
                         <input
                           type="number"
@@ -238,9 +237,9 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           step="0.5"
                           value={height}
                           onChange={(e) => setHeight(Math.max(1, Number(e.target.value)))}
-                          className="w-20 px-2 py-1 text-xs text-center bg-[#131b17] border border-[#24322B] rounded-lg text-white font-bold focus:outline-none focus:border-[#7CFF3A]"
+                          className="w-20 px-2 py-1 text-xs text-center bg-white border border-slate-300 rounded-lg text-slate-900 font-bold focus:outline-none focus:border-[#16A34A]"
                         />
-                        <span className="text-xs text-[#94a3b8]">ft</span>
+                        <span className="text-xs text-slate-500">ft</span>
                       </div>
                     </div>
                   </div>
@@ -248,20 +247,20 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                 </div>
 
                 {(isWidthWarning || isHeightWarning) && (
-                  <div className="mt-3 p-3 rounded-lg bg-[#2D1A10] border border-amber-500/30 flex items-start gap-2.5 text-xs text-amber-200">
-                    <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <div className="mt-3 p-3 rounded-lg bg-amber-50 border border-amber-300 flex items-start gap-2.5 text-xs text-amber-800">
+                    <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                     <span>Large dimensions detected ({width}×{height} ft). Balconies above 30ft width benefit from mid-span structural stiffener tracks, which our engineer will inspect during the free site visit.</span>
                   </div>
                 )}
               </div>
 
               {/* Wire Thickness Options */}
-              <div className="pt-2 border-t border-[#24322B]">
+              <div className="pt-2 border-t border-slate-200">
                 <div className="flex justify-between items-center mb-3">
-                  <label className="text-xs font-black uppercase tracking-wider text-[#94a3b8]">
+                  <label className="text-xs font-black uppercase tracking-wider text-slate-700">
                     3. SS-316 Marine Cable Thickness
                   </label>
-                  <span className="text-[11px] text-[#7CFF3A] font-bold">100% Genuine SS-316</span>
+                  <span className="text-[11px] text-[#16A34A] font-bold">100% Genuine SS-316</span>
                 </div>
                 <div className="space-y-2.5">
                   {THICKNESS_OPTIONS.map((opt) => (
@@ -270,25 +269,25 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       onClick={() => setThickness(opt.value)}
                       className={`p-3.5 rounded-xl border cursor-pointer transition-all ${
                         thickness === opt.value
-                          ? 'bg-[#1a2420] border-[#7CFF3A] shadow-[0_0_15px_rgba(124,255,58,0.15)]'
-                          : 'bg-[#0a0f0d] border-[#24322B] hover:border-[#384C42]'
+                          ? 'bg-emerald-50 border-[#16A34A] shadow-sm'
+                          : 'bg-slate-50 border-slate-200 hover:border-slate-300'
                       }`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                            thickness === opt.value ? 'border-[#7CFF3A] bg-[#7CFF3A]' : 'border-[#64748B]'
+                            thickness === opt.value ? 'border-[#16A34A] bg-[#16A34A]' : 'border-slate-300'
                           }`}>
-                            {thickness === opt.value && <div className="w-1.5 h-1.5 rounded-full bg-black"></div>}
+                            {thickness === opt.value && <div className="w-1.5 h-1.5 rounded-full bg-white"></div>}
                           </div>
                           <div>
-                            <span className="text-sm font-bold text-white">{opt.label}</span>
-                            <span className="block text-xs text-[#94a3b8]">{opt.description}</span>
+                            <span className="text-sm font-bold text-slate-900">{opt.label}</span>
+                            <span className="block text-xs text-slate-500">{opt.description}</span>
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs font-bold text-[#7CFF3A]">₹{opt.minRate} - ₹{opt.maxRate}</span>
-                          <span className="block text-[10px] text-[#94a3b8]">per sq.ft</span>
+                          <span className="text-xs font-bold text-[#16A34A]">₹{opt.minRate} - ₹{opt.maxRate}</span>
+                          <span className="block text-[10px] text-slate-500">per sq.ft</span>
                         </div>
                       </div>
                     </div>
@@ -300,45 +299,43 @@ Please arrange a Free On-Site Digital Measurement visit.`;
           </div>
 
           {/* Results Summary Card */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#131b17] to-[#0a0f0d] rounded-2xl border border-[#24322B] p-6 sm:p-8 shadow-2xl relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#7CFF3A]/10 rounded-full blur-2xl pointer-events-none"></div>
-
-            <div className="flex items-center justify-between pb-4 border-b border-[#24322B]">
-              <span className="text-xs font-black tracking-wider uppercase text-[#94a3b8]">
+          <div className="lg:col-span-5 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xl relative">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+              <span className="text-xs font-black tracking-wider uppercase text-slate-500">
                 Real-Time Calculated Output
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#7CFF3A]/10 text-[#7CFF3A] border border-[#7CFF3A]/30">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-[#16A34A] border border-emerald-200">
                 {activeCityObj.name} Hub
               </span>
             </div>
 
             {/* Area Metric */}
-            <div className="py-6 border-b border-[#24322B] space-y-4">
+            <div className="py-6 border-b border-slate-200 space-y-4">
               <div className="flex justify-between items-baseline">
-                <span className="text-sm text-[#cbd5e1] font-medium">Total Calculated Area:</span>
-                <span className="text-3xl font-black text-white">{totalArea} <span className="text-sm font-normal text-[#94a3b8]">sq.ft</span></span>
+                <span className="text-sm text-slate-600 font-medium">Total Calculated Area:</span>
+                <span className="text-3xl font-black text-slate-900">{totalArea} <span className="text-sm font-normal text-slate-500">sq.ft</span></span>
               </div>
-              <div className="grid grid-cols-2 gap-2 text-xs bg-[#0a0f0d] p-3 rounded-xl border border-[#24322B]">
+              <div className="grid grid-cols-2 gap-2 text-xs bg-slate-50 p-3 rounded-xl border border-slate-200">
                 <div>
-                  <span className="text-[#94a3b8] block text-[10px] uppercase font-bold">Dimensions</span>
-                  <span className="text-white font-semibold">{width} ft × {height} ft</span>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Dimensions</span>
+                  <span className="text-slate-900 font-semibold">{width} ft × {height} ft</span>
                 </div>
                 <div>
-                  <span className="text-[#94a3b8] block text-[10px] uppercase font-bold">Cable Gauge</span>
-                  <span className="text-[#7CFF3A] font-bold">{selectedThicknessObj.label.split(' ')[0]}</span>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold">Cable Gauge</span>
+                  <span className="text-[#16A34A] font-bold">{selectedThicknessObj.label.split(' ')[0]}</span>
                 </div>
               </div>
             </div>
 
             {/* Estimated Price Range Highlight */}
             <div className="py-6">
-              <span className="block text-xs font-bold text-[#94a3b8] uppercase tracking-wider mb-1">
+              <span className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
                 Estimated Investment Range
               </span>
-              <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                ₹{minEstimate.toLocaleString('en-IN')} <span className="text-lg text-[#94a3b8] font-normal">to</span> ₹{maxEstimate.toLocaleString('en-IN')}
+              <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                ₹{minEstimate.toLocaleString('en-IN')} <span className="text-lg text-slate-500 font-normal">to</span> ₹{maxEstimate.toLocaleString('en-IN')}
               </div>
-              <p className="mt-2 text-xs text-[#94a3b8] leading-relaxed">
+              <p className="mt-2 text-xs text-slate-600 leading-relaxed">
                 Includes SS-316 wire rope, 6063-T6 aluminum tracks, and certified installation.
               </p>
             </div>
@@ -348,7 +345,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
-                className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-extrabold text-sm text-black bg-[#7CFF3A] hover:bg-[#8eff50] transition-all shadow-[0_0_25px_rgba(124,255,58,0.3)] hover:shadow-[0_0_35px_rgba(124,255,58,0.5)]"
+                className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-extrabold text-sm text-slate-950 bg-[#7CFF3A] hover:bg-[#68e028] transition-all shadow-[0_4px_16px_rgba(124,255,58,0.4)] hover:shadow-[0_6px_22px_rgba(124,255,58,0.55)] cursor-pointer"
               >
                 <span>Book Free Site Visit With This Quote</span>
                 <ArrowRight className="w-4 h-4" />
@@ -358,16 +355,16 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                 href={createWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-xs text-[#cbd5e1] bg-[#0a0f0d] hover:bg-[#1A2420] border border-[#24322B] hover:border-[#7CFF3A]/50 transition-all"
+                className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-xs text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-[#16A34A] transition-all cursor-pointer"
               >
-                <MessageSquare className="w-4 h-4 text-[#7CFF3A]" />
+                <MessageSquare className="w-4 h-4 text-[#16A34A]" />
                 <span>Discuss on WhatsApp with Saved Dimensions</span>
               </a>
             </div>
 
             {/* Disclaimer */}
-            <div className="mt-6 pt-4 border-t border-[#24322B]">
-              <p className="text-[11px] text-[#64748B] leading-relaxed">
+            <div className="mt-6 pt-4 border-t border-slate-200">
+              <p className="text-[11px] text-slate-500 leading-relaxed">
                 * Indicative estimate. Final pricing confirmed during free on-site laser measurement based on anchor substrate and structural profiles.
               </p>
             </div>
@@ -380,14 +377,14 @@ Please arrange a Free On-Site Digital Measurement visit.`;
 
       {/* Modal: Book Site Visit & Dynamic WhatsApp QR */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in">
-          <div className="relative w-full max-w-2xl bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in">
+          <div className="relative w-full max-w-2xl bg-white border border-slate-200 rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
             
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 p-2 text-[#94a3b8] hover:text-white rounded-lg bg-[#131b17] border border-[#24322B]"
+              className="absolute top-4 right-4 p-2 text-slate-500 hover:text-slate-800 rounded-lg bg-slate-100 hover:bg-slate-200"
             >
               <X className="w-5 h-5" />
             </button>
@@ -395,16 +392,16 @@ Please arrange a Free On-Site Digital Measurement visit.`;
             {!isSubmitted ? (
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="w-2 h-2 rounded-full bg-[#7CFF3A]"></span>
-                  <span className="text-xs font-black uppercase tracking-wider text-[#7CFF3A]">
+                  <span className="w-2 h-2 rounded-full bg-[#16A34A]"></span>
+                  <span className="text-xs font-black uppercase tracking-wider text-[#16A34A]">
                     Free On-Site Laser Measurement
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-white">
+                <h3 className="text-2xl font-black text-slate-900">
                   Book Free Site Visit With This Quote
                 </h3>
-                <p className="mt-1 text-sm text-[#cbd5e1]">
-                  Estimated: <strong className="text-white">₹{minEstimate.toLocaleString('en-IN')} – ₹{maxEstimate.toLocaleString('en-IN')}</strong> ({totalArea} sq.ft, {selectedThicknessObj.label})
+                <p className="mt-1 text-sm text-slate-600">
+                  Estimated: <strong className="text-slate-900">₹{minEstimate.toLocaleString('en-IN')} – ₹{maxEstimate.toLocaleString('en-IN')}</strong> ({totalArea} sq.ft, {selectedThicknessObj.label})
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-6">
@@ -412,44 +409,44 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                   {/* Clean Lead Form */}
                   <form onSubmit={handleSubmitLead} className="md:col-span-7 space-y-4">
                     <div>
-                      <label className="block text-xs font-bold text-[#94a3b8] mb-1">Your Full Name</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Your Full Name</label>
                       <div className="relative">
-                        <User className="absolute left-3 top-3 w-4 h-4 text-[#64748B]" />
+                        <User className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                         <input
                           type="text"
                           required
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="e.g. Ramesh Varma"
-                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A]"
+                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:bg-white focus:outline-none focus:border-[#16A34A]"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[#94a3b8] mb-1">Phone Number (WhatsApp Preferred)</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Phone Number (WhatsApp Preferred)</label>
                       <div className="relative">
-                        <Phone className="absolute left-3 top-3 w-4 h-4 text-[#64748B]" />
+                        <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                         <input
                           type="tel"
                           required
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="e.g. 9494328999"
-                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A]"
+                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:bg-white focus:outline-none focus:border-[#16A34A]"
                         />
                       </div>
                     </div>
 
                     {/* Simple Location Dropdown */}
                     <div>
-                      <label className="block text-xs font-bold text-[#94a3b8] mb-1">Location / City</label>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">Location / City</label>
                       <div className="relative">
-                        <MapPin className="absolute left-3 top-3 w-4 h-4 text-[#64748B]" />
+                        <MapPin className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                         <select
                           value={modalCity}
                           onChange={(e) => setModalCity(e.target.value)}
-                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-[#131b17] border border-[#24322B] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A]"
+                          className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:bg-white focus:outline-none focus:border-[#16A34A]"
                         >
                           <option value="visakhapatnam">Visakhapatnam</option>
                           <option value="rajahmundry">Rajamahendravaram</option>
@@ -464,19 +461,19 @@ Please arrange a Free On-Site Digital Measurement visit.`;
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-xl font-black text-sm text-black bg-[#7CFF3A] hover:bg-[#8eff50] transition-all shadow-[0_0_20px_rgba(124,255,58,0.35)]"
+                      className="w-full py-3.5 rounded-xl font-black text-sm text-slate-950 bg-[#7CFF3A] hover:bg-[#68e028] transition-all shadow-[0_4px_16px_rgba(124,255,58,0.4)] cursor-pointer"
                     >
                       Confirm Free Site Visit Booking
                     </button>
                   </form>
 
                   {/* WhatsApp QR Code side */}
-                  <div className="md:col-span-5 flex flex-col items-center justify-center p-4 rounded-xl bg-[#131b17] border border-[#24322B] text-center">
-                    <span className="text-[10px] font-black text-[#94a3b8] uppercase tracking-wider mb-2">
+                  <div className="md:col-span-5 flex flex-col items-center justify-center p-4 rounded-xl bg-slate-50 border border-slate-200 text-center">
+                    <span className="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-2">
                       Scan with Phone to Send
                     </span>
                     {qrCodeDataUrl ? (
-                      <div className="p-2 bg-white rounded-xl shadow-md">
+                      <div className="p-2 bg-white rounded-xl shadow-md border border-slate-200">
                         <img 
                           src={qrCodeDataUrl} 
                           alt="Dynamic WhatsApp QR Code for Balcony Estimate" 
@@ -484,14 +481,14 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                         />
                       </div>
                     ) : (
-                      <div className="w-32 h-32 bg-[#0a0f0d] rounded-xl flex items-center justify-center text-xs text-[#94a3b8]">
+                      <div className="w-32 h-32 bg-slate-100 rounded-xl flex items-center justify-center text-xs text-slate-400">
                         Generating QR...
                       </div>
                     )}
-                    <span className="mt-2.5 text-xs text-white font-bold">
+                    <span className="mt-2.5 text-xs text-slate-900 font-bold">
                       Direct WhatsApp Chat
                     </span>
-                    <span className="text-[10px] text-[#94a3b8] mt-0.5">
+                    <span className="text-[10px] text-slate-500 mt-0.5">
                       Links to chat with your {totalArea} sq.ft quote
                     </span>
                   </div>
@@ -500,19 +497,19 @@ Please arrange a Free On-Site Digital Measurement visit.`;
               </div>
             ) : (
               <div className="text-center py-8 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-[#7CFF3A]/20 border border-[#7CFF3A] flex items-center justify-center mx-auto text-[#7CFF3A]">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 border border-[#16A34A] flex items-center justify-center mx-auto text-[#16A34A]">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-black text-white">Site Visit Confirmed!</h3>
-                <p className="text-sm text-[#cbd5e1] max-w-md mx-auto">
-                  Thank you <strong className="text-white">{name}</strong>. Our certified <strong className="text-[#7CFF3A]">{modalCityObj.name}</strong> installation team will contact you at <strong className="text-white">{phone}</strong> to confirm your complimentary laser measurement visit.
+                <h3 className="text-2xl font-black text-slate-900">Site Visit Confirmed!</h3>
+                <p className="text-sm text-slate-600 max-w-md mx-auto">
+                  Thank you <strong className="text-slate-900">{name}</strong>. Our certified <strong className="text-[#16A34A]">{modalCityObj.name}</strong> installation team will contact you at <strong className="text-slate-900">{phone}</strong> to confirm your complimentary laser measurement visit.
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <a
                     href={createWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#7CFF3A] text-black font-extrabold text-sm hover:bg-[#8eff50] transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-extrabold text-sm hover:opacity-95 transition-all shadow-md"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Open in WhatsApp Now</span>
@@ -523,7 +520,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                       setIsSubmitted(false);
                       setIsModalOpen(false);
                     }}
-                    className="px-6 py-3 rounded-xl bg-[#131b17] border border-[#24322B] text-white text-sm font-semibold hover:bg-[#1A2420]"
+                    className="px-6 py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-slate-200"
                   >
                     Close
                   </button>

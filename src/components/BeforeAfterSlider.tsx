@@ -154,13 +154,13 @@ export default function BeforeAfterSlider({
   return (
     <div className="w-full max-w-sm sm:max-w-md mx-auto my-6 px-4 select-none">
       <div className="text-center mb-4">
-        <span className="inline-block px-3 py-0.5 rounded-full bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-[#7CFF3A] text-[11px] font-bold tracking-wider uppercase mb-1.5">
+        <span className="inline-block px-3 py-0.5 rounded-full bg-emerald-50 border border-emerald-300 text-[#16A34A] text-[11px] font-bold tracking-wider uppercase mb-1.5">
           Live Split Comparison
         </span>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-          Before vs After <span className="text-[#7CFF3A]">Installation</span>
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Before vs After <span className="text-[#16A34A]">Installation</span>
         </h3>
-        <p className="text-xs text-[#3DED97] mt-1 font-medium">
+        <p className="text-xs text-[#16A34A] mt-1 font-semibold">
           Drag the slider handle ⇄ left or right
         </p>
       </div>
@@ -168,7 +168,7 @@ export default function BeforeAfterSlider({
       {/* 9:16 Aspect Ratio Frame - touch-pan-y permits smooth page scrolling */}
       <div 
         ref={containerRef}
-        className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/20 cursor-ew-resize touch-pan-y ring-1 ring-white/10"
+        className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-xl border border-slate-200 cursor-ew-resize touch-pan-y ring-1 ring-slate-100"
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -184,7 +184,7 @@ export default function BeforeAfterSlider({
           loading="lazy"
           decoding="async"
         />
-        <span className="absolute top-4 right-4 bg-emerald-950/85 backdrop-blur-md border border-emerald-500/40 text-emerald-200 text-xs px-2.5 py-1 rounded-full font-bold shadow-lg z-10 pointer-events-none">
+        <span className="absolute top-4 right-4 bg-white/95 backdrop-blur-md border border-emerald-300 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-bold shadow-md z-10 pointer-events-none">
           AFTER: 100% Safe
         </span>
 
@@ -202,7 +202,7 @@ export default function BeforeAfterSlider({
             loading="lazy"
             decoding="async"
           />
-          <span className="absolute top-4 left-4 bg-red-950/85 backdrop-blur-md border border-red-500/40 text-red-200 text-xs px-2.5 py-1 rounded-full font-bold shadow-lg pointer-events-none whitespace-nowrap">
+          <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-md border border-rose-300 text-rose-800 text-xs px-2.5 py-1 rounded-full font-bold shadow-md pointer-events-none whitespace-nowrap">
             BEFORE: Danger & Fear
           </span>
         </div>
@@ -212,8 +212,8 @@ export default function BeforeAfterSlider({
           className="absolute top-0 bottom-0 w-0.5 bg-white shadow-xl pointer-events-none z-20"
           style={{ left: `${sliderPos}%` }}
         >
-          <div className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white text-black font-black text-sm flex items-center justify-center border-2 border-[#028A0F] shadow-2xl transition-transform ${
-            isDragging ? 'scale-110 ring-4 ring-[#7CFF3A]/40' : ''
+          <div className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white text-slate-900 font-black text-sm flex items-center justify-center border-2 border-[#16A34A] shadow-2xl transition-transform ${
+            isDragging ? 'scale-110 ring-4 ring-emerald-400/40' : ''
           }`}>
             ⇄
           </div>
@@ -222,15 +222,15 @@ export default function BeforeAfterSlider({
 
       {/* Problem vs Solution Comparison Text Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-4">
-        <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/30 text-left">
-          <p className="text-[10px] font-bold text-red-400 uppercase tracking-wide">Before Case</p>
-          <p className="text-xs font-semibold text-red-200 mt-0.5">
+        <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-left">
+          <p className="text-[10px] font-bold text-rose-600 uppercase tracking-wide">Before Case</p>
+          <p className="text-xs font-semibold text-rose-900 mt-0.5">
             Low railing danger & bird infestation
           </p>
         </div>
-        <div className="p-3 rounded-xl bg-[#0F2218]/80 border border-[#7CFF3A]/30 text-left">
-          <p className="text-[10px] font-bold text-[#7CFF3A] uppercase tracking-wide">With D-VIEW</p>
-          <p className="text-xs font-semibold text-emerald-200 mt-0.5">
+        <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-left">
+          <p className="text-[10px] font-bold text-[#16A34A] uppercase tracking-wide">With D-VIEW</p>
+          <p className="text-xs font-semibold text-emerald-900 mt-0.5">
             100% child-safe SS-316 invisible protection
           </p>
         </div>

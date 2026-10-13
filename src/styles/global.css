@@ -1,35 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-black: #0B0D0C;
-  --color-brand-charcoal: #121816;
-  --color-brand-card: #151C19;
-  --color-brand-card-hover: #1A2420;
-  --color-brand-border: #24322B;
-  --color-brand-border-light: #384C42;
-  --color-brand-green: #7CFF3A;
-  --color-brand-green-accent: #7CFF3A;
-  --color-brand-green-deep: #68E028;
-  --color-brand-green-dark: #0D4A22;
-  --color-brand-silver: #C7CDD1;
-  --color-brand-silver-light: #E2E8F0;
-  --color-brand-silver-muted: #94A3B8;
+  --color-brand-black: #FFFFFF;
+  --color-brand-charcoal: #F8FAFC;
+  --color-brand-card: #FFFFFF;
+  --color-brand-card-hover: #F1F5F9;
+  --color-brand-border: #E2E8F0;
+  --color-brand-border-light: #CBD5E1;
+  --color-brand-green: #16A34A;
+  --color-brand-green-accent: #15803D;
+  --color-brand-green-deep: #0D8239;
+  --color-brand-green-dark: #064E3B;
+  --color-brand-silver: #475569;
+  --color-brand-silver-light: #1E293B;
+  --color-brand-silver-muted: #64748B;
 }
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
   
   html {
     scroll-behavior: smooth;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #0B0D0C;
-    color: #F8FAFC;
+    background-color: #FFFFFF;
+    color: #0F172A;
   }
 
   body {
-    background-color: #0B0D0C;
+    background-color: #FFFFFF;
+    color: #0F172A;
     overflow-x: hidden;
   }
 }
@@ -39,14 +40,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0D0C;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #24322B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #384C42;
+  background: #94A3B8;
 }
 
 /* Invisible Grill Wire Texture Utility disabled to keep images clean and natural */

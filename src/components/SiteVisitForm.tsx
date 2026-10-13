@@ -85,26 +85,26 @@ Please share the details.`;
   };
 
   return (
-    <section id="book-visit" className="relative py-16 sm:py-24 bg-[#080B09] border-t border-white/10 overflow-hidden">
+    <section id="book-visit" className="relative py-16 sm:py-24 bg-slate-50 border-t border-slate-200 overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7CFF3A]/5 rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="relative max-w-xl mx-auto px-4 sm:px-6 w-full">
         
-        {/* Form Container - Simple, Clean Theme matching D-VIEW */}
-        <div className="bg-[#101713] rounded-3xl border border-[#24322B] shadow-2xl p-6 sm:p-9 relative overflow-hidden text-left">
+        {/* Form Container - Clean, Realistic White Theme matching D-VIEW */}
+        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-9 relative overflow-hidden text-left">
           
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="space-y-6">
               
               {/* 01 / SITE DETAILS HEADER */}
               <div>
-                <div className="text-[11px] font-extrabold tracking-[0.2em] text-[#7CFF3A] uppercase mb-1">
+                <div className="text-[11px] font-extrabold tracking-[0.2em] text-[#16A34A] uppercase mb-1">
                   01 / SITE DETAILS
                 </div>
-                <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight pb-4 border-b border-[#24322B] flex items-center justify-between">
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-tight pb-4 border-b border-slate-200 flex items-center justify-between">
                   <span>INVISIBLE GRILLS • {activeCity.name}</span>
-                  <span className="text-xs px-2.5 py-1 rounded-full bg-[#1A261F] text-[#7CFF3A] font-bold border border-[#7CFF3A]/30 lowercase tracking-normal">
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-emerald-50 text-[#16A34A] font-bold border border-emerald-200 lowercase tracking-normal">
                     ap hub
                   </span>
                 </h2>
@@ -112,8 +112,8 @@ Please share the details.`;
 
               {/* YOUR NAME */}
               <div>
-                <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
-                  YOUR NAME <span className="text-[#7CFF3A]">*</span>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  YOUR NAME <span className="text-[#16A34A]">*</span>
                 </label>
                 <input
                   type="text"
@@ -121,17 +121,17 @@ Please share the details.`;
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Arjun Mehta"
-                  className="w-full px-4 py-3.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#7CFF3A] transition-colors"
+                  className="w-full px-4 py-3.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-colors"
                 />
               </div>
 
               {/* MOBILE NUMBER */}
               <div>
-                <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
-                  MOBILE NUMBER <span className="text-[#7CFF3A]">*</span>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  MOBILE NUMBER <span className="text-[#16A34A]">*</span>
                 </label>
-                <div className="flex rounded-xl overflow-hidden border border-[#2A3C33] focus-within:border-[#7CFF3A] transition-colors bg-[#16201B]">
-                  <div className="px-4 py-3.5 bg-[#1C2923] border-r border-[#2A3C33] text-sm font-bold text-gray-300 flex items-center justify-center">
+                <div className="flex rounded-xl overflow-hidden border border-slate-300 focus-within:border-[#16A34A] focus-within:ring-1 focus-within:ring-[#16A34A] transition-colors bg-slate-50">
+                  <div className="px-4 py-3.5 bg-slate-100 border-r border-slate-300 text-sm font-bold text-slate-700 flex items-center justify-center">
                     +91
                   </div>
                   <input
@@ -141,7 +141,7 @@ Please share the details.`;
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="98765 43210"
                     maxLength={13}
-                    className="w-full px-4 py-3.5 text-sm bg-transparent text-white placeholder-gray-500 focus:outline-none"
+                    className="w-full px-4 py-3.5 text-sm bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -149,8 +149,8 @@ Please share the details.`;
               {/* CITY & AREA / LOCALITY */}
               <div className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
-                    SELECT CITY HUB <span className="text-[#7CFF3A]">*</span>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    SELECT CITY HUB <span className="text-[#16A34A]">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -160,42 +160,42 @@ Please share the details.`;
                         setArea('');
                         setCustomArea('');
                       }}
-                      className="w-full appearance-none px-4 py-3.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A] transition-colors cursor-pointer"
+                      className="w-full appearance-none px-4 py-3.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-colors cursor-pointer"
                     >
                       {ALL_LOCATIONS.map((loc) => (
-                        <option key={loc.slug} value={loc.slug} className="bg-[#16201B] text-white">
+                        <option key={loc.slug} value={loc.slug} className="bg-white text-slate-900">
                           {loc.name} ({loc.district || 'Andhra Pradesh'})
                         </option>
                       ))}
                     </select>
-                    <ChevronDown className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <ChevronDown className="w-4 h-4 text-slate-500 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#C7CDD1] uppercase tracking-wider mb-2">
-                    AREA / LOCALITY <span className="text-[#7CFF3A]">*</span>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    AREA / LOCALITY <span className="text-[#16A34A]">*</span>
                   </label>
                   <div className="relative">
                     <select
                       required
                       value={area}
                       onChange={(e) => setArea(e.target.value)}
-                      className="w-full appearance-none px-4 py-3.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white focus:outline-none focus:border-[#7CFF3A] transition-colors cursor-pointer"
+                      className="w-full appearance-none px-4 py-3.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:bg-white focus:outline-none focus:border-[#16A34A] focus:ring-1 focus:ring-[#16A34A] transition-colors cursor-pointer"
                     >
-                      <option value="" disabled className="bg-[#16201B] text-gray-500">
+                      <option value="" disabled className="bg-white text-slate-400">
                         Select your area in {activeCity.name}
                       </option>
                       {cityAreas.map((a, idx) => (
-                        <option key={idx} value={a.name} className="bg-[#16201B] text-white">
+                        <option key={idx} value={a.name} className="bg-white text-slate-900">
                           {a.name} ({a.type})
                         </option>
                       ))}
-                      <option value="other" className="bg-[#16201B] text-white">
+                      <option value="other" className="bg-white text-slate-900">
                         + Other Area / Colony in {activeCity.name}
                       </option>
                     </select>
-                    <ChevronDown className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <ChevronDown className="w-4 h-4 text-slate-500 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
 
                   {area === 'other' && (
@@ -205,11 +205,11 @@ Please share the details.`;
                       value={customArea}
                       onChange={(e) => setCustomArea(e.target.value)}
                       placeholder={`Enter your apartment / colony in ${activeCity.name}`}
-                      className="mt-2.5 w-full px-4 py-3 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#7CFF3A]"
+                      className="mt-2.5 w-full px-4 py-3 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#16A34A]"
                     />
                   )}
 
-                  <p className="text-[11px] text-gray-400 mt-1.5 font-normal">
+                  <p className="text-[11px] text-slate-500 mt-1.5 font-normal">
                     So we send the nearest checked installer.
                   </p>
                 </div>
@@ -217,10 +217,10 @@ Please share the details.`;
 
               {/* 02 / REQUIREMENT SECTION */}
               <div className="pt-2">
-                <div className="text-[11px] font-extrabold tracking-[0.2em] text-[#7CFF3A] uppercase">
+                <div className="text-[11px] font-extrabold tracking-[0.2em] text-[#16A34A] uppercase">
                   02 / REQUIREMENT
                 </div>
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">
+                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-3">
                   OPTIONAL • SELECT ALL THAT APPLY
                 </div>
 
@@ -240,16 +240,16 @@ Please share the details.`;
                         onClick={() => toggleRequirement(item.id)}
                         className={`flex items-center justify-between px-3.5 sm:px-4 py-3 rounded-xl border text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer text-left ${
                           isSelected
-                            ? 'bg-[#1D2A22] border-[#7CFF3A] text-white shadow-[0_0_12px_rgba(124,255,58,0.15)]'
-                            : 'bg-[#16201B] border-[#2A3C33] text-gray-300 hover:border-gray-500 hover:text-white'
+                            ? 'bg-emerald-50 border-[#16A34A] text-emerald-950 shadow-sm'
+                            : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-400 hover:text-slate-900'
                         }`}
                       >
                         <span className="truncate pr-2">{item.label}</span>
                         <div
                           className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 border transition-all ${
                             isSelected
-                              ? 'border-[#7CFF3A] bg-[#7CFF3A] text-black'
-                              : 'border-gray-500 bg-transparent'
+                              ? 'border-[#16A34A] bg-[#16A34A] text-white'
+                              : 'border-slate-300 bg-transparent'
                           }`}
                         >
                           {isSelected && <Check className="w-2.5 h-2.5 stroke-[3]" />}
@@ -265,7 +265,7 @@ Please share the details.`;
                     <button
                       type="button"
                       onClick={() => setShowNote(true)}
-                      className="text-xs font-bold text-gray-400 hover:text-[#7CFF3A] uppercase tracking-wider inline-flex items-center gap-1 transition-colors cursor-pointer"
+                      className="text-xs font-bold text-slate-600 hover:text-[#16A34A] uppercase tracking-wider inline-flex items-center gap-1 transition-colors cursor-pointer"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>+ ADD A NOTE (OPTIONAL)</span>
@@ -273,7 +273,7 @@ Please share the details.`;
                   ) : (
                     <div>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs font-bold text-[#7CFF3A] uppercase tracking-wider">
+                        <span className="text-xs font-bold text-[#16A34A] uppercase tracking-wider">
                           YOUR NOTE (OPTIONAL)
                         </span>
                         <button
@@ -282,7 +282,7 @@ Please share the details.`;
                             setShowNote(false);
                             setNote('');
                           }}
-                          className="text-xs text-gray-400 hover:text-white"
+                          className="text-xs text-slate-500 hover:text-slate-800"
                         >
                           Cancel
                         </button>
@@ -292,7 +292,7 @@ Please share the details.`;
                         value={note}
                         onChange={(e) => setNote(e.target.value)}
                         placeholder="e.g. 5th floor sea view, toddler safety, need installation by this weekend..."
-                        className="w-full px-3.5 py-2.5 text-sm bg-[#16201B] border border-[#2A3C33] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#7CFF3A]"
+                        className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#16A34A]"
                       ></textarea>
                     </div>
                   )}
@@ -300,13 +300,13 @@ Please share the details.`;
               </div>
 
               {/* GOOGLE ACCOUNT CONNECT / VERIFY OPTION */}
-              <div className="p-3.5 rounded-xl bg-[#16201B] border border-[#2A3C33] flex items-center justify-between gap-3">
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
                 <label className="flex items-center gap-2.5 cursor-pointer select-none">
                   <input
                     type="checkbox"
                     checked={connectGoogle}
                     onChange={(e) => setConnectGoogle(e.target.checked)}
-                    className="w-4 h-4 rounded accent-[#7CFF3A] cursor-pointer"
+                    className="w-4 h-4 rounded accent-[#16A34A] cursor-pointer"
                   />
                   <div className="flex items-center gap-1.5">
                     {/* Google G SVG */}
@@ -316,27 +316,27 @@ Please share the details.`;
                       <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
                       <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
                     </svg>
-                    <span className="text-xs font-bold text-gray-200">
+                    <span className="text-xs font-bold text-slate-700">
                       Connect with Google account
                     </span>
                   </div>
                 </label>
-                <span className="text-[10px] text-[#7CFF3A] bg-[#7CFF3A]/10 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                <span className="text-[10px] text-[#16A34A] bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
                   Verified
                 </span>
               </div>
 
               {/* CONSENT CHECKBOX */}
               <div className="pt-1">
-                <label className="flex items-start gap-2.5 cursor-pointer text-[11px] text-gray-400 leading-relaxed select-none">
+                <label className="flex items-start gap-2.5 cursor-pointer text-[11px] text-slate-500 leading-relaxed select-none">
                   <input
                     type="checkbox"
                     checked={consentAgreed}
                     onChange={(e) => setConsentAgreed(e.target.checked)}
-                    className="w-4 h-4 mt-0.5 rounded accent-[#7CFF3A] cursor-pointer flex-shrink-0"
+                    className="w-4 h-4 mt-0.5 rounded accent-[#16A34A] cursor-pointer flex-shrink-0"
                   />
                   <span>
-                    I agree that D-VIEW may share my project details with our verified installation expert in {activeCity.name} to schedule a site survey and quote via Call or WhatsApp. See the <a href="/about" className="underline hover:text-white">Privacy Policy</a>.
+                    I agree that D-VIEW may share my project details with our verified installation expert in {activeCity.name} to schedule a site survey and quote via Call or WhatsApp. See the <a href="/about" className="underline hover:text-slate-900">Privacy Policy</a>.
                   </span>
                 </label>
               </div>
@@ -345,13 +345,13 @@ Please share the details.`;
               <div>
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 rounded-xl font-extrabold text-sm sm:text-base tracking-wider uppercase text-black bg-[#7CFF3A] hover:bg-[#6be630] transition-all shadow-[0_0_25px_rgba(124,255,58,0.35)] hover:shadow-[0_0_35px_rgba(124,255,58,0.5)] hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer active:translate-y-0"
+                  className="w-full py-4 px-6 rounded-xl font-extrabold text-sm sm:text-base tracking-wider uppercase text-slate-950 bg-[#7CFF3A] hover:bg-[#6be630] transition-all shadow-[0_4px_20px_rgba(124,255,58,0.4)] hover:shadow-[0_6px_28px_rgba(124,255,58,0.55)] hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer active:translate-y-0"
                 >
                   <span>SEND REQUEST ON WHATSAPP</span>
                   <span className="text-lg leading-none">→</span>
                 </button>
 
-                <p className="text-center text-[11px] text-gray-400 mt-3 font-medium">
+                <p className="text-center text-[11px] text-slate-500 mt-3 font-medium">
                   Complimentary site visit • One checked installer • No spam
                 </p>
               </div>
@@ -359,14 +359,14 @@ Please share the details.`;
             </form>
           ) : (
             <div className="text-center py-10 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-[#7CFF3A]/20 border border-[#7CFF3A] flex items-center justify-center mx-auto text-[#7CFF3A]">
+              <div className="w-16 h-16 rounded-full bg-emerald-50 border border-[#16A34A] flex items-center justify-center mx-auto text-[#16A34A]">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase">
+              <h3 className="text-2xl font-black text-slate-900 uppercase">
                 Free Site Visit Request Sent!
               </h3>
-              <p className="text-xs sm:text-sm text-gray-300 max-w-sm mx-auto leading-relaxed">
-                Thank you <strong className="text-white">{name}</strong>. Our verified installer for <strong className="text-[#7CFF3A]">{activeCity.name} ({finalArea})</strong> has been notified.
+              <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
+                Thank you <strong className="text-slate-900">{name}</strong>. Our verified installer for <strong className="text-[#16A34A]">{activeCity.name} ({finalArea})</strong> has been notified.
               </p>
               <div className="pt-4 flex flex-col gap-2.5">
                 <a
@@ -381,7 +381,7 @@ Please share the details.`;
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="text-xs text-gray-400 hover:text-white underline pt-2"
+                  className="text-xs text-slate-500 hover:text-slate-900 underline pt-2"
                 >
                   Submit another site measurement
                 </button>

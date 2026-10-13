@@ -1274,19 +1274,19 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   // =========================================================================
 
   const renderSocietyProofSection = (isSnap = false) => (
-    <section id="society-proof-section" className={`${isSnap ? 'snap-start' : ''} relative py-16 sm:py-20 px-5 sm:px-12 bg-[#090d0b] border-t border-white/10`}>
+    <section id="society-proof-section" className={`${isSnap ? 'snap-start' : ''} relative py-16 sm:py-20 px-5 sm:px-12 bg-slate-50 border-t border-slate-200`}>
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-3 shadow-sm">
-            <Building2 className="w-3.5 h-3.5 text-[#7CFF3A]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-[10px] font-bold text-[#16A34A] uppercase tracking-widest mb-3 shadow-sm">
+            <Building2 className="w-3.5 h-3.5 text-[#16A34A]" />
             <span>REAL HIGH-RISE PROOF • 850+ VERIFIED APARTMENTS</span>
           </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-white tracking-tight">
-            RECENTLY COMPLETED INSTALLATIONS ACROSS <span className="text-[#7CFF3A]">ANDHRA SOCIETIES</span>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-slate-900 tracking-tight">
+            RECENTLY COMPLETED INSTALLATIONS ACROSS <span className="text-[#16A34A]">ANDHRA SOCIETIES</span>
           </h2>
-          <p className="text-[#C7CDD1] text-xs sm:text-sm mt-3 leading-relaxed font-normal">
+          <p className="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed font-normal">
             Over 850+ luxury high-rise balconies secured with certified SS-316 marine-grade invisible safety cables.
           </p>
         </div>
@@ -1309,8 +1309,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               onClick={() => setSocietyFilter(tab.id)}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition cursor-pointer ${
                 societyFilter === tab.id
-                  ? 'bg-[#7CFF3A] text-black shadow-[0_0_18px_rgba(124,255,58,0.4)]'
-                  : 'bg-[#101714] text-[#C7CDD1] border border-[#24322B] hover:border-[#7CFF3A]/40 hover:text-white'
+                  ? 'bg-[#16A34A] text-white shadow-md'
+                  : 'bg-white text-slate-700 border border-slate-300 hover:border-emerald-500 hover:text-slate-900'
               }`}
             >
               {tab.label}
@@ -1323,11 +1323,11 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {filteredSocieties.map((society) => (
             <div
               key={society.id}
-              className="group rounded-3xl overflow-hidden border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 bg-[#101714] transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_35px_rgba(124,255,58,0.22)]"
+              className="group rounded-3xl overflow-hidden border border-slate-200 hover:border-emerald-500 bg-white transition-all duration-300 flex flex-col justify-between hover:shadow-xl shadow-sm"
             >
               <div>
-                {/* 100% Clean Architectural Balcony Photo - ZERO floating badges over image */}
-                <div className="relative h-60 sm:h-64 w-full overflow-hidden">
+                {/* 100% Clean Architectural Balcony Photo */}
+                <div className="relative h-60 sm:h-64 w-full overflow-hidden bg-slate-100">
                   <img
                     src={society.image}
                     alt={`${society.societyName} SS-316 Balcony Invisible Grills`}
@@ -1337,54 +1337,54 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     width="640"
                     height="360"
                   />
-                  {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
+                  {/* Subtle bottom blend */}
+                  <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Content Container Below Image */}
                 <div className="p-6">
                   {/* Top Status & Units Row */}
                   <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7CFF3A]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#7CFF3A]" />
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#16A34A]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
                       <span>Verified Installation</span>
                     </span>
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-200 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-700 px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200">
                       {society.unitsProtected}
                     </span>
                   </div>
 
                   {/* Society Name */}
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#7CFF3A] transition mb-1">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#16A34A] transition mb-1">
                     {society.societyName}
                   </h3>
 
                   {/* Location Subline */}
-                  <div className="flex items-center gap-1.5 text-xs text-[#cbd5e1] mb-3">
-                    <MapPin className="w-3.5 h-3.5 text-[#7CFF3A] shrink-0" />
+                  <div className="flex items-center gap-1.5 text-xs text-slate-600 mb-3">
+                    <MapPin className="w-3.5 h-3.5 text-[#16A34A] shrink-0" />
                     <span>{society.corridor}, {society.cityName}</span>
                   </div>
 
                   {/* Specs & Floor Pill Container */}
-                  <div className="p-3 rounded-xl bg-[#090d0b] border border-white/10 mb-3 space-y-1">
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 mb-3 space-y-1">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="text-slate-400 font-medium">Elevation:</span>
-                      <span className="text-slate-200 font-semibold">{society.floor}</span>
+                      <span className="text-slate-500 font-medium">Elevation:</span>
+                      <span className="text-slate-800 font-semibold">{society.floor}</span>
                     </div>
                     <div className="flex items-center justify-between text-xs">
-                      <span className="text-slate-400 font-medium">Metallurgy:</span>
-                      <span className="text-[#7CFF3A] font-bold">{society.specs}</span>
+                      <span className="text-slate-500 font-medium">Metallurgy:</span>
+                      <span className="text-[#16A34A] font-bold">{society.specs}</span>
                     </div>
                   </div>
 
                   {/* Highlight Feature */}
-                  <div className="text-xs font-semibold text-[#7CFF3A] mb-2 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A] shrink-0" />
+                  <div className="text-xs font-semibold text-[#16A34A] mb-2 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A] shrink-0" />
                     <span>{society.highlight}</span>
                   </div>
 
                   {/* Resident / Society Feedback Note */}
-                  <p className="text-xs text-slate-300 italic font-light leading-relaxed">
+                  <p className="text-xs text-slate-600 italic font-light leading-relaxed">
                     "{society.customerNote}"
                   </p>
                 </div>
@@ -1392,14 +1392,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
               {/* Bottom Action Footer */}
               <div className="p-6 pt-0">
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-medium">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[10px] uppercase tracking-wider text-slate-500 font-medium">
                     10-Year Anti-Rust Guaranteed
                   </span>
                   <button
                     type="button"
                     onClick={() => handleOpenBooking(society.cityName, society.societyName)}
-                    className="text-xs font-bold text-[#7CFF3A] hover:text-[#95ff5e] transition flex items-center gap-1 cursor-pointer"
+                    className="text-xs font-bold text-[#16A34A] hover:text-emerald-700 transition flex items-center gap-1 cursor-pointer"
                   >
                     <span>Request Similar Setup</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -1416,59 +1416,59 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   );
 
   const renderWeatherShieldSection = (isSnap = false) => (
-    <section id="weather-trust" className={`${isSnap ? 'snap-start' : ''} py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]`}>
+    <section id="weather-trust" className={`${isSnap ? 'snap-start' : ''} py-20 px-6 sm:px-12 border-t border-slate-200 bg-white`}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs uppercase tracking-[0.3em] text-[#7CFF3A] font-bold block">
+            <span className="text-xs uppercase tracking-[0.3em] text-[#16A34A] font-bold block">
               SS-316 METALLURGY TRUST & GUARANTEES
             </span>
-            <h2 className="text-3xl sm:text-4xl font-light uppercase text-slate-100 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold uppercase text-slate-900 tracking-tight">
               Specific Weather Shield ({activeSlide.name})
             </h2>
             
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
               Why cheap steel fails in Andhra Pradesh: coastal salt-air and river mists cause immediate pitting and corrosion on ordinary mild steel and cheap SS-202 cables within months.
             </p>
 
             <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-white/10">
-                <Droplets className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <Droplets className="w-6 h-6 text-[#16A34A] shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase">The Environmental Challenge</h4>
-                  <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherChallenge}</p>
+                  <h4 className="text-sm font-bold text-slate-900 uppercase">The Environmental Challenge</h4>
+                  <p className="text-xs text-slate-600 mt-1">{activeSlide.weatherChallenge}</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#101714] border border-[#7CFF3A]/40">
-                <ShieldCheck className="w-6 h-6 text-[#7CFF3A] shrink-0 mt-1" />
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-emerald-50/50 border border-emerald-300">
+                <ShieldCheck className="w-6 h-6 text-[#16A34A] shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-sm font-bold text-[#7CFF3A] uppercase">The Material: Molybdenum-Infused SS-316</h4>
-                  <p className="text-xs text-slate-300 mt-1">{activeSlide.weatherSolution}</p>
+                  <h4 className="text-sm font-bold text-[#16A34A] uppercase">The Material: Molybdenum-Infused SS-316</h4>
+                  <p className="text-xs text-slate-700 mt-1">{activeSlide.weatherSolution}</p>
                 </div>
               </div>
             </div>
 
-            {/* Trust Guarantees: Zero mention of gift kit */}
+            {/* Trust Guarantees */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
-                <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">10 YEARS</span>
-                <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
+              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center">
+                <span className="text-xl sm:text-2xl font-black text-[#16A34A] block">10 YEARS</span>
+                <span className="text-[10px] uppercase tracking-wider text-slate-700 font-semibold block mt-0.5">
                   Anti-Rust Replacement Warranty
                 </span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#101714] border border-white/10 text-center">
-                <span className="text-xl sm:text-2xl font-black text-white block">1 YEAR FREE</span>
-                <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                <span className="text-xl sm:text-2xl font-black text-slate-900 block">1 YEAR FREE</span>
+                <span className="text-[10px] uppercase tracking-wider text-slate-600 font-semibold block mt-0.5">
                   Periodic Tension Inspection
                 </span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-center">
-                <span className="text-xl sm:text-2xl font-black text-[#7CFF3A] block">400+ KG</span>
-                <span className="text-[10px] uppercase tracking-wider text-[#cbd5e1] font-semibold block mt-0.5">
+              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center">
+                <span className="text-xl sm:text-2xl font-black text-[#16A34A] block">400+ KG</span>
+                <span className="text-[10px] uppercase tracking-wider text-slate-700 font-semibold block mt-0.5">
                   Cable Breaking Tension Load
                 </span>
               </div>
@@ -1478,31 +1478,31 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
           {/* Certified SS-316 Architecture & Weather Defense Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-[#7CFF3A]/30 shadow-2xl group">
+            <div className="relative rounded-3xl overflow-hidden border border-emerald-300 shadow-xl group">
               <img 
                 src={activeSlide.heroImage} 
                 alt={`D-VIEW SS-316 Weather Shield in ${activeSlide.name}`} 
                 className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f0d] via-[#0a0f0d]/60 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
               
               <div className="absolute top-4 right-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#7CFF3A]/50 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-wider shadow-lg">
-                  <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-emerald-300 text-[10px] font-bold text-[#16A34A] uppercase tracking-wider shadow-lg">
+                  <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
                   ASTM B117 Saline Certified
                 </span>
               </div>
 
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="inline-flex items-center gap-2 bg-[#7CFF3A] text-black text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+                <div className="inline-flex items-center gap-2 bg-[#16A34A] text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-2">
                   Marine Metallurgy Armor
                 </div>
                 <h4 className="text-lg font-bold text-white">SS-316 Molybdenum Barrier</h4>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                <p className="text-xs text-slate-200 mt-1 leading-relaxed">
                   Infused with 2.5% Molybdenum core alloy, preventing salt-spray pitting, river-fog oxidation, and thermal slackening across {activeSlide.name}.
                 </p>
-                <div className="mt-3 flex items-center gap-2 pt-2 border-t border-white/10 text-[10px] text-gray-300 font-mono">
-                  <span className="text-[#7CFF3A]">● AISI-316</span>
+                <div className="mt-3 flex items-center gap-2 pt-2 border-t border-white/20 text-[10px] text-slate-200 font-mono">
+                  <span className="text-emerald-400">● AISI-316</span>
                   <span>•</span>
                   <span>400KG Tensile</span>
                   <span>•</span>
@@ -1519,49 +1519,49 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   );
 
   const renderWarrantySection = (isSnap = false) => (
-    <section id="warranty-section" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-[#090d0b] border-t border-white/10`}>
+    <section id="warranty-section" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-slate-50 border-t border-slate-200`}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-3 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[10px] font-bold text-[#16A34A] uppercase tracking-widest mb-3 shadow-sm">
             <span>UNCONDITIONAL PEACE OF MIND • STRUCTURAL INTEGRITY</span>
           </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-white tracking-tight">
-            OFFICIAL 10-YEAR STRUCTURAL WARRANTY & <span className="text-[#7CFF3A]">UNCONDITIONAL GUARANTEE</span>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-slate-900 tracking-tight">
+            OFFICIAL 10-YEAR STRUCTURAL WARRANTY & <span className="text-[#16A34A]">UNCONDITIONAL GUARANTEE</span>
           </h2>
-          <p className="text-[#C7CDD1] text-xs sm:text-sm mt-3 font-normal leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-sm mt-3 font-normal leading-relaxed">
             Certified Virgin Marine-Grade SS-316 metallurgy engineered for coastal & riverfront longevity.
           </p>
         </div>
 
-        {/* 4 Core Trust Cards (Grid layout with Emerald Borders & Glow) */}
+        {/* 4 Core Trust Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {WARRANTY_BADGES.map((badge, bIdx) => {
             const Icon = badge.icon;
             return (
               <div 
                 key={bIdx}
-                className="rounded-3xl p-6 sm:p-8 bg-[#101714] border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_0_30px_rgba(124,255,58,0.18)] group"
+                className="rounded-3xl p-6 sm:p-8 bg-white border border-slate-200 hover:border-emerald-500 transition-all duration-300 flex flex-col justify-between hover:shadow-xl shadow-sm group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-black/60 border border-[#7CFF3A]/40 flex items-center justify-center text-[#7CFF3A] mb-5 group-hover:scale-110 transition-transform shadow-lg">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#16A34A] mb-5 group-hover:scale-110 transition-transform shadow-sm">
                     <Icon className="w-6 h-6 stroke-[2]" />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#7CFF3A] block mb-1">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#16A34A] block mb-1">
                     {badge.highlight}
                   </span>
-                  <h3 className="text-lg font-bold text-white mb-2.5">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2.5">
                     {badge.title}
                   </h3>
-                  <p className="text-xs text-[#C7CDD1] leading-relaxed font-normal">
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
                     {badge.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-[#7CFF3A] font-medium">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#16A34A] font-medium">
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#7CFF3A]" /> 100% Certified
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" /> 100% Certified
                   </span>
-                  <span className="text-[#C7CDD1] text-[10px] uppercase tracking-wider">
+                  <span className="text-slate-500 text-[10px] uppercase tracking-wider">
                     D-View Guarantee
                   </span>
                 </div>
@@ -1571,23 +1571,23 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         </div>
 
         {/* 100% Free Doorstep Precision Laser Survey Banner */}
-        <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-r from-[#101714] via-[#121f19] to-[#101714] border border-[#7CFF3A]/30 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-r from-emerald-50 via-slate-50 to-emerald-50 border border-emerald-300 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/40 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#7CFF3A]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-300 text-[10px] font-bold text-[#16A34A] uppercase tracking-widest shadow-sm">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#16A34A]" />
               <span>100% Free Doorstep Engineering Survey</span>
             </div>
-            <h4 className="text-xl sm:text-2xl font-bold text-white">
+            <h4 className="text-xl sm:text-2xl font-bold text-slate-900">
               Precision Laser Measurement & Genuine SS-316 Sample Verification
             </h4>
-            <p className="text-xs sm:text-sm text-[#C7CDD1] font-normal max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl leading-relaxed">
               Our certified technicians visit your balcony with digital laser meters, genuine SS-316 cable cross-section samples, and provide accurate on-spot pricing with zero sales pressure.
             </p>
           </div>
           <button
             type="button"
             onClick={() => handleOpenBooking(selectedHub)}
-            className="px-6 py-3.5 rounded-2xl bg-[#7CFF3A] hover:bg-[#8eff50] text-black text-xs font-black uppercase tracking-wider shadow-[0_0_20px_rgba(124,255,58,0.4)] shrink-0 transition cursor-pointer"
+            className="px-6 py-3.5 rounded-2xl bg-[#16A34A] hover:bg-emerald-700 text-white text-xs font-black uppercase tracking-wider shadow-lg shrink-0 transition cursor-pointer"
           >
             Book Free Laser Survey →
           </button>
@@ -1597,34 +1597,34 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   );
 
   const renderCalculatorSection = (isSnap = false) => (
-    <section id="estimate-calculator" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-[#0c120f] border-t border-white/10`}>
+    <section id="estimate-calculator" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-white border-t border-slate-200`}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-3 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[10px] font-bold text-[#16A34A] uppercase tracking-widest mb-3 shadow-sm">
             <span>TRANSPARENT PRICING & ESTIMATOR</span>
           </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-white tracking-tight">
-            INSTANT BALCONY SAFETY <span className="text-[#7CFF3A]">ESTIMATE CALCULATOR</span>
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-slate-900 tracking-tight">
+            INSTANT BALCONY SAFETY <span className="text-[#16A34A]">ESTIMATE CALCULATOR</span>
           </h2>
-          <p className="text-[#C7CDD1] text-xs sm:text-sm mt-3 font-normal leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-sm mt-3 font-normal leading-relaxed">
             Transparent, real-time pricing tailored to your balcony dimensions.
           </p>
         </div>
 
-        <div className="bg-[#101714] border border-[#7CFF3A]/30 rounded-3xl p-6 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Sliders Column */}
           <div className="lg:col-span-7 space-y-7">
             
             {/* City Selector */}
             <div>
-              <label className="block text-xs uppercase font-bold text-slate-300 mb-2">
+              <label className="block text-xs uppercase font-bold text-slate-700 mb-2">
                 Target City Hub
               </label>
               <select
                 value={selectedHub}
                 onChange={(e) => setSelectedHub(e.target.value)}
-                className="w-full bg-[#090d0b] border border-[#7CFF3A]/30 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-[#7CFF3A] font-medium"
+                className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-emerald-500 font-medium shadow-sm"
               >
                 <option value="Visakhapatnam">Visakhapatnam (VIZAG)</option>
                 <option value="Rajamahendravaram">Rajamahendravaram (RAJAHMUNDRY)</option>
@@ -1638,9 +1638,9 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
             {/* Width Slider */}
             <div>
-              <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
+              <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-700 mb-2">
                 <span>Balcony Width (Feet)</span>
-                <span className="text-[#7CFF3A] text-base font-black">{width} Feet</span>
+                <span className="text-[#16A34A] text-base font-black">{width} Feet</span>
               </div>
               <input 
                 type="range" 
@@ -1648,9 +1648,9 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 max="35" 
                 value={width} 
                 onChange={(e) => setWidth(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
+                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#16A34A]"
               />
-              <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+              <div className="flex justify-between text-[10px] text-slate-500 mt-1">
                 <span>4 ft</span>
                 <span>18 ft</span>
                 <span>35 ft</span>
@@ -1659,9 +1659,9 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
             {/* Height Slider */}
             <div>
-              <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-300 mb-2">
+              <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-700 mb-2">
                 <span>Balcony Height (Feet)</span>
-                <span className="text-[#7CFF3A] text-base font-black">{height} Feet</span>
+                <span className="text-[#16A34A] text-base font-black">{height} Feet</span>
               </div>
               <input 
                 type="range" 
@@ -1669,9 +1669,9 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 max="14" 
                 value={height} 
                 onChange={(e) => setHeight(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#7CFF3A]"
+                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#16A34A]"
               />
-              <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+              <div className="flex justify-between text-[10px] text-slate-500 mt-1">
                 <span>3 ft</span>
                 <span>8 ft (Default)</span>
                 <span>14 ft</span>
@@ -1680,7 +1680,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
             {/* Cable Specification Selector */}
             <div>
-              <label className="block text-xs uppercase font-bold text-slate-300 mb-2">
+              <label className="block text-xs uppercase font-bold text-slate-700 mb-2">
                 SS-316 Cable Thickness Selector
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -1693,14 +1693,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     key={spec.val}
                     type="button"
                     onClick={() => setCableThickness(spec.val)}
-                    className={`p-3.5 rounded-2xl border text-left transition cursor-pointer ${
+                    className={`p-3.5 rounded-2xl border text-left transition cursor-pointer shadow-sm ${
                       cableThickness === spec.val
-                        ? 'bg-[#7CFF3A]/20 border-[#7CFF3A] text-white shadow-[0_0_15px_rgba(124,255,58,0.25)]'
-                        : 'bg-[#090d0b] border-white/10 text-slate-400 hover:text-white'
+                        ? 'bg-emerald-50 border-emerald-500 text-slate-900 shadow-md ring-1 ring-emerald-500'
+                        : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300'
                     }`}
                   >
                     <span className="text-xs font-bold block">{spec.label}</span>
-                    <span className="text-[10px] text-[#7CFF3A] block mt-1">{spec.desc}</span>
+                    <span className="text-[10px] text-[#16A34A] block mt-1 font-semibold">{spec.desc}</span>
                   </button>
                 ))}
               </div>
@@ -1709,30 +1709,30 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </div>
 
           {/* Instant Live Pricing Card & Direct WhatsApp Booking */}
-          <div className="lg:col-span-5 bg-[#090d0b] border border-[#7CFF3A]/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
+          <div className="lg:col-span-5 bg-white border border-emerald-300 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl">
             <div className="text-center">
-              <span className="text-[11px] uppercase tracking-wider text-[#cbd5e1] font-semibold">
+              <span className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">
                 Total Area
               </span>
-              <div className="text-3xl sm:text-4xl font-black text-white mt-1 mb-3">
-                {calculatedArea} <span className="text-sm font-normal text-slate-400">sq.ft</span>
+              <div className="text-3xl sm:text-4xl font-black text-slate-900 mt-1 mb-3">
+                {calculatedArea} <span className="text-sm font-normal text-slate-500">sq.ft</span>
               </div>
 
-              <span className="text-[11px] uppercase tracking-wider text-[#C7CDD1] font-semibold">
+              <span className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">
                 Estimated Total
               </span>
-              <div className="text-3xl sm:text-4xl font-black text-[#7CFF3A] mt-1 mb-2 drop-shadow-[0_0_15px_rgba(124,255,58,0.35)]">
+              <div className="text-3xl sm:text-4xl font-black text-[#16A34A] mt-1 mb-2">
                 ₹{estimatedMin.toLocaleString()} - ₹{estimatedMax.toLocaleString()}
               </div>
-              <p className="text-[11px] text-[#C7CDD1] leading-normal font-normal">
+              <p className="text-[11px] text-slate-600 leading-normal font-normal">
                 Includes SS-316 cables, tracks, tensioners & installation.
               </p>
             </div>
 
             {/* Direct Inputs */}
-            <div className="mt-6 pt-5 border-t border-white/10 space-y-3">
+            <div className="mt-6 pt-5 border-t border-slate-100 space-y-3">
               <div>
-                <label className="text-[10px] uppercase font-bold text-[#C7CDD1] block mb-1">
+                <label className="text-[10px] uppercase font-bold text-slate-700 block mb-1">
                   Customer Name
                 </label>
                 <input 
@@ -1740,12 +1740,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="e.g. Ramesh Varma"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full bg-[#101714] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#7CFF3A]"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:border-emerald-500"
                 />
               </div>
 
               <div>
-                <label className="text-[10px] uppercase font-bold text-[#C7CDD1] block mb-1">
+                <label className="text-[10px] uppercase font-bold text-slate-700 block mb-1">
                   Phone Number
                 </label>
                 <input 
@@ -1753,14 +1753,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="+91 94943 28999"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full bg-[#101714] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#7CFF3A]"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:border-emerald-500"
                 />
               </div>
             </div>
 
             {/* Dynamic WhatsApp QR Code Inline */}
-            <div className="bg-[#101714] border border-white/10 rounded-2xl p-4 text-center mt-4">
-              <div className="w-28 h-28 mx-auto bg-white p-2 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center mt-4">
+              <div className="w-28 h-28 mx-auto bg-white p-2 rounded-xl flex items-center justify-center shadow-md border border-slate-100">
                 <img 
                   src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/919494328999?text=${getWhatsAppMessage()}`} 
                   alt="Dynamic WhatsApp QR Code"
@@ -1771,7 +1771,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   height="112"
                 />
               </div>
-              <span className="block text-[10px] text-[#C7CDD1] mt-2 font-medium">
+              <span className="block text-[10px] text-slate-500 mt-2 font-medium">
                 Scan QR code or click below for instant WhatsApp booking
               </span>
             </div>
@@ -1780,7 +1780,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <button
                 type="button"
                 onClick={() => handleOpenBooking(selectedHub)}
-                className="w-full bg-[#7CFF3A] hover:bg-[#8eff50] text-black py-3.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-[0_0_20px_rgba(124,255,58,0.4)] transition cursor-pointer"
+                className="w-full bg-[#16A34A] hover:bg-emerald-700 text-white py-3.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-lg transition cursor-pointer"
               >
                 Book Free Laser Measurement With This Quote →
               </button>
@@ -1788,7 +1788,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full bg-white/5 hover:bg-white/10 border border-[#7CFF3A]/40 text-[#7CFF3A] py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider block text-center transition"
+                className="w-full bg-slate-50 hover:bg-slate-100 border border-emerald-300 text-[#16A34A] py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider block text-center transition"
               >
                 Direct WhatsApp Chat (+91 94943 28999)
               </a>
@@ -1801,41 +1801,46 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   );
 
   const renderLuxuryFooter = (isSnap = false) => (
-    <footer className={`${isSnap ? 'snap-start' : ''} relative border-t border-white/10 bg-[#090d0b] pt-16 pb-28 md:pb-14 px-5 sm:px-12 text-slate-400 text-xs`}>
+    <footer className={`${isSnap ? 'snap-start' : ''} relative border-t border-slate-200 bg-slate-50 pt-16 pb-28 md:pb-14 px-5 sm:px-12 text-slate-600 text-xs`}>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         
         {/* Column 1: Brand & Direct Personal Concierge */}
         <div className="space-y-4">
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex flex-col gap-2.5 mb-2">
             <img 
               src="/images/d-view-logo-horizontal.png" 
               alt="D-VIEW Invisible Grills & Safety Solutions" 
               className="h-9 w-auto object-contain" 
             />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[10px] font-black uppercase tracking-wider text-[#16A34A] w-fit shadow-sm">
+              <span className="text-[#16A34A] font-black">—</span>
+              <span className="text-slate-900 font-extrabold tracking-wider">INVISIBLE GRILLS & SAFETY SOLUTIONS</span>
+              <span className="text-[#16A34A] font-black">—</span>
+            </div>
           </div>
-          <p className="text-[11px] leading-relaxed text-slate-300 font-light">
+          <p className="text-[11px] leading-relaxed text-slate-600 font-normal">
             India's premier architectural invisible safety grill specialist. 100% safety, zero view obstruction.
           </p>
-          <div className="space-y-2 text-slate-200 text-xs pt-1">
-            <a href="tel:+919494328999" className="flex items-center gap-2 hover:text-[#7CFF3A] transition">
-              <Phone className="w-4 h-4 text-[#7CFF3A] shrink-0" />
+          <div className="space-y-2 text-slate-800 text-xs pt-1">
+            <a href="tel:+919494328999" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
+              <Phone className="w-4 h-4 text-[#16A34A] shrink-0" />
               <span>📞 Direct Call: +91 94943 28999</span>
             </a>
             <a 
               href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
               target="_blank"
               rel="noreferrer" 
-              className="flex items-center gap-2 hover:text-[#7CFF3A] transition"
+              className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium"
             >
-              <MessageSquare className="w-4 h-4 text-[#7CFF3A] shrink-0" />
+              <MessageSquare className="w-4 h-4 text-[#16A34A] shrink-0" />
               <span>💬 WhatsApp Concierge: +91 94943 28999</span>
             </a>
-            <a href="mailto:invisiblesafety4@gmail.com" className="flex items-center gap-2 hover:text-[#7CFF3A] transition">
-              <Mail className="w-4 h-4 text-[#7CFF3A] shrink-0" />
+            <a href="mailto:invisiblesafety4@gmail.com" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
+              <Mail className="w-4 h-4 text-[#16A34A] shrink-0" />
               <span>✉️ Official Email: invisiblesafety4@gmail.com</span>
             </a>
-            <div className="pt-2 text-[11px] text-slate-400 leading-relaxed border-t border-white/5">
-              <span className="text-slate-300 font-semibold block">🏢 Registered Head Office:</span>
+            <div className="pt-2 text-[11px] text-slate-500 leading-relaxed border-t border-slate-200">
+              <span className="text-slate-800 font-semibold block">🏢 Registered Head Office:</span>
               Rajamahendravaram, Andhra Pradesh.
             </div>
           </div>
@@ -1843,78 +1848,78 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
         {/* Column 2: Safety Collections */}
         <div>
-          <h4 className="text-[#7CFF3A] font-bold uppercase tracking-wider text-xs mb-3.5">
+          <h4 className="text-[#16A34A] font-bold uppercase tracking-wider text-xs mb-3.5">
             Safety Collections
           </h4>
-          <ul className="space-y-2 text-[11px] text-slate-300">
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">SS-316 Balcony Invisible Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Window Architectural Safety Cables</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Penthouse & High-Rise Elevation Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Duplex Staircase & Terrace Railing Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#7CFF3A] transition block">Anti-Pigeon & Bird Exclusion Systems</a></li>
+          <ul className="space-y-2 text-[11px] text-slate-700">
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">SS-316 Balcony Invisible Grills</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Window Architectural Safety Cables</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Penthouse & High-Rise Elevation Grills</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Duplex Staircase & Terrace Railing Grills</a></li>
+            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Anti-Pigeon & Bird Exclusion Systems</a></li>
           </ul>
         </div>
 
         {/* Column 3: Quality Standards & Customer Assurance */}
         <div>
-          <h4 className="text-[#7CFF3A] font-bold uppercase tracking-wider text-xs mb-3.5">
+          <h4 className="text-[#16A34A] font-bold uppercase tracking-wider text-xs mb-3.5">
             Quality Standards & Customer Assurance
           </h4>
-          <ul className="space-y-2 text-[11px] text-slate-300">
-            <li><span className="text-slate-300 block">100% Certified Virgin SS-316 Metallurgy</span></li>
-            <li><span className="text-slate-300 block">10-Year Anti-Rust Written Warranty Certificate</span></li>
-            <li><span className="text-slate-300 block">Zero-Sag Lifetime Tensioning Commitment</span></li>
-            <li><span className="text-slate-300 block">ASTM B117 Saline Mist Corrosion-Proof Tested</span></li>
-            <li><span className="text-[#7CFF3A] font-medium block">Free Doorstep Precision Laser Site Measurement</span></li>
+          <ul className="space-y-2 text-[11px] text-slate-700">
+            <li><span className="text-slate-800 font-medium block">100% Certified Virgin SS-316 Metallurgy</span></li>
+            <li><span className="text-slate-700 block">10-Year Anti-Rust Written Warranty Certificate</span></li>
+            <li><span className="text-slate-700 block">Zero-Sag Lifetime Tensioning Commitment</span></li>
+            <li><span className="text-slate-700 block">ASTM B117 Saline Mist Corrosion-Proof Tested</span></li>
+            <li><span className="text-[#16A34A] font-bold block">Free Doorstep Precision Laser Site Measurement</span></li>
           </ul>
         </div>
 
         {/* Column 4: 7 Regional Hubs & Coverage Corridors */}
         <div>
-          <h4 className="text-[#7CFF3A] font-bold uppercase tracking-wider text-xs mb-3.5">
+          <h4 className="text-[#16A34A] font-bold uppercase tracking-wider text-xs mb-3.5">
             7 Regional Hubs & Coverage Corridors
           </h4>
           <ul className="space-y-2.5 text-[11px]">
             <li>
-              <a href="/locations/vizag" className="hover:text-[#7CFF3A] transition block">
-                <span className="text-white font-medium">Visakhapatnam Hub</span>
-                <span className="text-[10px] text-slate-400 block">Madhurawada (27-Floor Towers), Yendada, Rushikonda, PM Palem, Anandapuram, Gajuwaka.</span>
+              <a href="/locations/vizag" className="hover:text-[#16A34A] transition block">
+                <span className="text-slate-900 font-bold">Visakhapatnam Hub</span>
+                <span className="text-[10px] text-slate-500 block">Madhurawada (27-Floor Towers), Yendada, Rushikonda, PM Palem, Anandapuram, Gajuwaka.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/rajahmundry" className="hover:text-[#7CFF3A] transition block">
-                <span className="text-white font-medium">Rajamahendravaram Hub</span>
-                <span className="text-[10px] text-slate-400 block">Morampudi, Bommuru, Diwancheruvu, Lalacheruvu, Vemagiri, Gadaala Belts.</span>
+              <a href="/locations/rajahmundry" className="hover:text-[#16A34A] transition block">
+                <span className="text-slate-900 font-bold">Rajamahendravaram Hub</span>
+                <span className="text-[10px] text-slate-500 block">Morampudi, Bommuru, Diwancheruvu, Lalacheruvu, Vemagiri, Gadaala Belts.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/vijayawada" className="hover:text-[#7CFF3A] transition block">
-                <span className="text-white font-medium">Vijayawada & Amaravati Hub</span>
-                <span className="text-[10px] text-slate-400 block">Benz Circle, Moghalrajpuram, HappyNest G+18, Tadepalli Riverside.</span>
+              <a href="/locations/vijayawada" className="hover:text-[#16A34A] transition block">
+                <span className="text-slate-900 font-bold">Vijayawada & Amaravati Hub</span>
+                <span className="text-[10px] text-slate-500 block">Benz Circle, Moghalrajpuram, HappyNest G+18, Tadepalli Riverside.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/guntur" className="hover:text-[#7CFF3A] transition block">
-                <span className="text-white font-medium">Guntur Hub</span>
-                <span className="text-[10px] text-slate-400 block">Brodipet, Arundelpet, Amaravati Road, Namburu, Kaza Belt.</span>
+              <a href="/locations/guntur" className="hover:text-[#16A34A] transition block">
+                <span className="text-slate-900 font-bold">Guntur Hub</span>
+                <span className="text-[10px] text-slate-500 block">Brodipet, Arundelpet, Amaravati Road, Namburu, Kaza Belt.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/kakinada" className="hover:text-[#7CFF3A] transition block">
-                <span className="text-white font-medium">Kakinada Hub</span>
-                <span className="text-[10px] text-slate-400 block">Sarpavaram, Vakalapudi Lighthouse Belt, Ramanayyapeta.</span>
+              <a href="/locations/kakinada" className="hover:text-[#16A34A] transition block">
+                <span className="text-slate-900 font-bold">Kakinada Hub</span>
+                <span className="text-[10px] text-slate-500 block">Sarpavaram, Vakalapudi Lighthouse Belt, Ramanayyapeta.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/nellore" className="hover:text-[#7CFF3A] transition block">
-                <span className="text-white font-medium">Nellore Hub</span>
-                <span className="text-[10px] text-slate-400 block">Magunta Layout, Penna Riverfront, Balaji Nagar.</span>
+              <a href="/locations/nellore" className="hover:text-[#16A34A] transition block">
+                <span className="text-slate-900 font-bold">Nellore Hub</span>
+                <span className="text-[10px] text-slate-500 block">Magunta Layout, Penna Riverfront, Balaji Nagar.</span>
               </a>
             </li>
             <li>
-              <a href="/locations/ongole" className="hover:text-[#7CFF3A] transition block">
-                <span className="text-white font-medium">Ongole Hub</span>
-                <span className="text-[10px] text-slate-400 block">Bhagyanagar, Lawyerpet, Kurnool Road Belt, Santhapet, Mangamuru Road.</span>
+              <a href="/locations/ongole" className="hover:text-[#16A34A] transition block">
+                <span className="text-slate-900 font-bold">Ongole Hub</span>
+                <span className="text-[10px] text-slate-500 block">Bhagyanagar, Lawyerpet, Kurnool Road Belt, Santhapet, Mangamuru Road.</span>
               </a>
             </li>
           </ul>
@@ -1923,10 +1928,10 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       </div>
 
       {/* Universal Copyright Bar */}
-      <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
         <p>© 2026 D-View Invisible Safety Grills. All Rights Reserved. Protecting Families Across Andhra Pradesh.</p>
         <div className="flex flex-wrap gap-3 text-[10px] uppercase tracking-wider">
-          <span className="text-[#7CFF3A] font-semibold">100% Invisible Grills</span>
+          <span className="text-[#16A34A] font-semibold">100% Invisible Grills</span>
           <span>•</span>
           <span>Zero Safety Nets</span>
           <span>•</span>
@@ -1983,29 +1988,37 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   );
 
   return (
-    <div className="min-h-screen bg-[#0a0f0d] text-slate-100 font-sans antialiased selection:bg-[#7CFF3A] selection:text-black">
+    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#16A34A] selection:text-white">
       
       {/* ========================================================= */}
       {/* 1. TOP MINIMAL NAVIGATION HEADER                          */}
       {/* ========================================================= */}
-      <header className="sticky top-0 z-50 w-full bg-[#0a0f0d]/95 backdrop-blur-md border-b border-white/10 py-3.5 px-4 sm:px-12 flex items-center justify-between pointer-events-auto transition-all">
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 py-3.5 px-4 sm:px-12 flex items-center justify-between pointer-events-auto transition-all">
         
         {/* Left: Thin menu mark `= MENU` and brand title `D-VIEW INVISIBLE SAFETY` */}
         <div className="flex items-center gap-6">
           <button
             type="button"
             onClick={() => setIsMenuOpen(true)}
-            className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-300 hover:text-[#7CFF3A] transition cursor-pointer font-medium"
+            className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-700 hover:text-[#16A34A] transition cursor-pointer font-bold"
           >
             <span className="text-base leading-none">=</span> MENU
           </button>
 
-          <a href="/" className="flex items-center gap-2.5 group">
+          <a href="/" className="flex items-center gap-3 group">
             <img 
               src="/images/d-view-logo-horizontal.png" 
               alt="D-VIEW Invisible Grills & Safety Solutions" 
               className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
+            {/* Prominently Highlighted Brand Slogan Badge */}
+            <div className="hidden lg:flex items-center pl-3 border-l-2 border-emerald-500/40">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[10px] xl:text-[11px] font-black uppercase tracking-wider text-[#16A34A] shadow-sm">
+                <span className="text-[#16A34A] font-extrabold">—</span>
+                <span className="text-slate-900 font-extrabold tracking-[0.14em]">INVISIBLE GRILLS & SAFETY SOLUTIONS</span>
+                <span className="text-[#16A34A] font-extrabold">—</span>
+              </span>
+            </div>
           </a>
         </div>
 
@@ -2013,44 +2026,44 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
         <div className="relative group hidden md:block">
           <button
             type="button"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/40 text-[#7CFF3A] text-xs font-bold uppercase tracking-wider hover:bg-[#7CFF3A] hover:text-black transition cursor-pointer shadow-md"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-[#16A34A] text-xs font-bold uppercase tracking-wider hover:bg-[#16A34A] hover:text-white transition cursor-pointer shadow-sm"
           >
             <span>📍 Explore 7 City Hubs</span>
             <span className="text-[10px]">▼</span>
           </button>
-          <div className="absolute top-full mt-2 left-0 w-64 rounded-2xl bg-[#0a0f0d] border border-[#7CFF3A]/40 p-2 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <div className="px-3 py-1 text-[10px] font-bold text-gray-400 uppercase tracking-widest border-b border-white/10 mb-1">
+          <div className="absolute top-full mt-2 left-0 w-64 rounded-2xl bg-white border border-slate-200 p-2 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="px-3 py-1 text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-slate-100 mb-1">
               Select City Sub-Page
             </div>
             {CITIES_SLIDES.map((c) => (
               <a
                 key={c.id}
                 href={c.locationPath}
-                className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-gray-200 hover:text-black hover:bg-[#7CFF3A] transition"
+                className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-white hover:bg-[#16A34A] transition"
               >
                 <span>{c.name}</span>
-                <span className="text-[#7CFF3A] group-hover:text-black font-black">→</span>
+                <span className="text-[#16A34A] group-hover:text-white font-black">→</span>
               </a>
             ))}
           </div>
         </div>
 
         {/* Right: Direct concierge telephone `+91 94943 28999` and `CONTACT US` */}
-        <div className="flex items-center gap-6 sm:gap-8 text-xs uppercase tracking-[0.2em] text-slate-300 font-medium">
+        <div className="flex items-center gap-6 sm:gap-8 text-xs uppercase tracking-[0.2em] text-slate-700 font-semibold">
           <button
             type="button"
             onClick={() => handleOpenBooking()}
-            className="hidden sm:inline-block hover:text-[#7CFF3A] transition cursor-pointer text-slate-300"
+            className="hidden sm:inline-block hover:text-[#16A34A] transition cursor-pointer text-slate-700"
           >
             CONTACT US
           </button>
           
           <a
             href="tel:+919494328999"
-            className="text-white hover:text-[#7CFF3A] transition flex items-center gap-1.5"
+            className="text-slate-900 hover:text-[#16A34A] transition flex items-center gap-1.5"
           >
-            <Phone className="w-3.5 h-3.5 text-[#7CFF3A] stroke-[2]" />
-            <span className="hidden sm:inline text-slate-200">+91 94943 28999</span>
+            <Phone className="w-3.5 h-3.5 text-[#16A34A] stroke-[2]" />
+            <span className="hidden sm:inline text-slate-800 font-bold">+91 94943 28999</span>
           </a>
         </div>
 
@@ -2062,24 +2075,31 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 flex">
           <div 
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div className="relative w-full max-w-sm bg-[#0a0f0d] border-r border-white/10 h-full p-8 z-10 flex flex-col justify-between overflow-y-auto">
+          <div className="relative w-full max-w-sm bg-white border-r border-slate-200 h-full p-8 z-10 flex flex-col justify-between overflow-y-auto shadow-2xl">
             
             <div>
-              <div className="flex items-center justify-between pb-6 border-b border-white/10">
-                <a href="/" className="flex items-center gap-2">
-                  <img 
-                    src="/images/d-view-logo-horizontal.png" 
-                    alt="D-VIEW Invisible Safety Grills" 
-                    className="h-8 w-auto object-contain" 
-                  />
-                </a>
+              <div className="flex items-center justify-between pb-5 border-b border-slate-200">
+                <div className="flex flex-col gap-1.5">
+                  <a href="/" className="flex items-center gap-2">
+                    <img 
+                      src="/images/d-view-logo-horizontal.png" 
+                      alt="D-VIEW Invisible Safety Grills" 
+                      className="h-8 w-auto object-contain" 
+                    />
+                  </a>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-300 text-[9px] font-black uppercase tracking-wider text-[#16A34A] w-fit">
+                    <span className="text-[#16A34A]">—</span>
+                    <span className="text-slate-900 font-extrabold">INVISIBLE GRILLS & SAFETY SOLUTIONS</span>
+                    <span className="text-[#16A34A]">—</span>
+                  </span>
+                </div>
                 <button 
                   type="button"
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-slate-400 hover:text-white p-1 cursor-pointer"
+                  className="text-slate-500 hover:text-slate-900 p-1 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -2087,7 +2107,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
               {/* Service Locations List (Tier 1 -> Tier 2) */}
               <div className="mt-8">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold block mb-4">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold block mb-4">
                   SELECT CITY HUB (TIER 2 CORRIDORS)
                 </span>
                 <div className="space-y-2">
@@ -2096,15 +2116,15 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       key={slide.id}
                       href={slide.locationPath}
                       onClick={() => setIsMenuOpen(false)}
-                      className="block p-3 rounded-xl hover:bg-white/5 border border-transparent hover:border-[#7CFF3A]/30 transition group"
+                      className="block p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-emerald-300 transition group"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-white group-hover:text-[#7CFF3A]">
+                        <span className="text-sm font-semibold text-slate-900 group-hover:text-[#16A34A]">
                           {slide.name}
                         </span>
-                        <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-[#7CFF3A]" />
+                        <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#16A34A]" />
                       </div>
-                      <span className="text-[11px] text-slate-400 block mt-0.5">
+                      <span className="text-[11px] text-slate-500 block mt-0.5">
                         {slide.categoryTag}
                       </span>
                     </a>
@@ -2113,25 +2133,25 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               </div>
 
               {/* Quick Navigation Links */}
-              <div className="mt-8 pt-6 border-t border-white/10 space-y-3 text-xs tracking-wider text-slate-300 uppercase">
+              <div className="mt-8 pt-6 border-t border-slate-200 space-y-3 text-xs tracking-wider text-slate-700 uppercase font-semibold">
                 <a 
                   href="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-[#7CFF3A] transition"
+                  className="block hover:text-[#16A34A] transition"
                 >
                   Tier 1: City Showcase Slides
                 </a>
                 <a 
                   href={`/locations/${activeSlide.id}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-[#7CFF3A] transition"
+                  className="block hover:text-[#16A34A] transition"
                 >
                   Tier 2: {activeSlide.name} Corridors
                 </a>
                 <a 
                   href={`/safety-pillars/${activeSlide.id}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-[#7CFF3A] transition text-[#7CFF3A]"
+                  className="block hover:text-[#16A34A] transition text-[#16A34A]"
                 >
                   Tier 3: 6-Pillar Proofs & Pricing
                 </a>
@@ -2139,10 +2159,10 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             </div>
 
             {/* Concierge Info at Bottom */}
-            <div className="pt-8 border-t border-white/10 text-xs text-slate-400 space-y-1">
-              <p className="text-white font-bold tracking-wider">Direct Concierge</p>
-              <p className="text-slate-300">+91 94943 28999</p>
-              <p className="text-slate-400">contact@dviewsolutions.com</p>
+            <div className="pt-8 border-t border-slate-200 text-xs text-slate-500 space-y-1">
+              <p className="text-slate-900 font-bold tracking-wider">Direct Concierge</p>
+              <p className="text-slate-800 font-medium">+91 94943 28999</p>
+              <p className="text-slate-600">contact@dviewsolutions.com</p>
             </div>
 
           </div>
@@ -2153,14 +2173,14 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* TIER 1: MAIN DASHBOARD (100vh FULL-SCREEN SNAP-SCROLL SLIDES)         */}
       {/* ==================================================================== */}
       {tier === 'tier1' && (
-        <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-[#080B09]">
+        <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-slate-50">
           
-          {/* 6 CITIES SLIDES: 100% IMMERSIVE FULL SCREEN COVERAGE (NO WASTED EMPTY SPACE) */}
+          {/* 6 CITIES SLIDES: 100% IMMERSIVE FULL SCREEN COVERAGE */}
           {CITIES_SLIDES.map((slide, idx) => (
             <section
               key={slide.id}
               id={`slide-${slide.id}`}
-              className="relative w-full h-[calc(100dvh-56px)] min-h-[580px] snap-start snap-always flex flex-col justify-between overflow-hidden select-none border-b border-white/5 bg-black"
+              className="relative w-full h-[calc(100dvh-56px)] min-h-[580px] snap-start snap-always flex flex-col justify-between overflow-hidden select-none border-b border-slate-200 bg-white"
             >
               {/* ============================================================ */}
               {/* MOBILE VIEW: TRUE 100% FULLSCREEN 9:16 IMMERSIVE EXPERIENCE  */}
@@ -2179,7 +2199,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 </picture>
 
                 {/* Subtle top & bottom dark vignette */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
 
                 {/* Full screen tap-target navigates directly to the city corridor page */}
                 <a
@@ -2188,14 +2208,22 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   aria-label={`Explore ${slide.name} Invisible Grills`}
                 />
 
-                {/* Mobile Top Minimal Badge */}
-                <div className="absolute top-3 inset-x-3.5 z-20 flex items-center justify-between pointer-events-none">
-                  <div className="px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-[#7CFF3A]/30 text-[10px] font-black text-[#7CFF3A] uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
-                    <span className="w-2 h-2 rounded-full bg-[#7CFF3A] animate-pulse" />
-                    <span>{slide.name}</span>
+                {/* Mobile Top Minimal Badge & Slogan */}
+                <div className="absolute top-3 inset-x-3.5 z-20 flex flex-col gap-2 pointer-events-none">
+                  <div className="flex items-center justify-between">
+                    <div className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-emerald-300 text-[10px] font-black text-[#16A34A] uppercase tracking-wider flex items-center gap-1.5 shadow-md">
+                      <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
+                      <span>{slide.name}</span>
+                    </div>
+                    <div className="px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-[10px] font-mono text-slate-800 font-bold shadow-md">
+                      0{idx + 1} / 0{CITIES_SLIDES.length}
+                    </div>
                   </div>
-                  <div className="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[10px] font-mono text-gray-200 font-bold shadow-lg">
-                    0{idx + 1} / 0{CITIES_SLIDES.length}
+                  {/* Prominently Highlighted Brand Slogan Pill on Mobile */}
+                  <div className="w-fit mx-auto px-3 py-1 rounded-full bg-slate-950/90 backdrop-blur-md border border-emerald-400 text-[9px] font-black uppercase tracking-wider text-white flex items-center gap-1 shadow-lg">
+                    <span className="text-[#16A34A] font-bold">—</span>
+                    <span>INVISIBLE GRILLS & SAFETY SOLUTIONS</span>
+                    <span className="text-[#16A34A] font-bold">—</span>
                   </div>
                 </div>
               </div>
@@ -2203,17 +2231,16 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               {/* ============================================================ */}
               {/* DESKTOP VIEW: LUXURY 2-COLUMN SPLIT SHOWCASE                 */}
               {/* ============================================================ */}
-              <div className="hidden md:flex relative w-full h-full flex-col justify-between p-6">
-                {/* Ambient Full-Bleed Atmospheric Background */}
+              <div className="hidden md:flex relative w-full h-full flex-col justify-between p-6 bg-slate-50">
+                {/* Ambient Atmospheric Background */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center filter blur-3xl scale-125 opacity-40 pointer-events-none transition-all duration-700"
+                  className="absolute inset-0 bg-cover bg-center filter blur-3xl scale-125 opacity-20 pointer-events-none transition-all duration-700"
                   style={{ backgroundImage: `url(${slide.heroImage})` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none" />
 
                 {/* Desktop Counter */}
                 <div className="absolute top-4 right-6 z-20 pointer-events-none">
-                  <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-xs font-mono text-[#7CFF3A] font-bold">
+                  <span className="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-[#16A34A] font-bold shadow-sm">
                     0{idx + 1} / 0{CITIES_SLIDES.length}
                   </span>
                 </div>
@@ -2224,7 +2251,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   <div className="col-span-7 flex flex-col items-center justify-center">
                     <a
                       href={slide.locationPath}
-                      className="relative block w-full max-w-[480px] aspect-square rounded-3xl overflow-hidden border-2 border-[#7CFF3A] shadow-[0_0_35px_rgba(124,255,58,0.35)] bg-black/90 group transition-all duration-300 hover:scale-[1.01] active:scale-98 cursor-pointer"
+                      className="relative block w-full max-w-[480px] aspect-square rounded-3xl overflow-hidden border-2 border-emerald-500 shadow-xl bg-white group transition-all duration-300 hover:scale-[1.01] active:scale-98 cursor-pointer"
                     >
                       <img
                         src={slide.heroImage}
@@ -2238,30 +2265,37 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
                   {/* Desktop Side Details */}
                   <div className="col-span-5 flex flex-col items-start text-left space-y-4">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#151C19] border border-[#7CFF3A]/30 text-xs font-bold text-[#7CFF3A] uppercase tracking-wider">
+                    {/* Prominently Highlighted Brand Slogan Badge */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border-2 border-emerald-500 text-[11px] font-black tracking-wider uppercase text-emerald-950 shadow-sm">
+                      <span className="text-[#16A34A] font-extrabold text-sm">—</span>
+                      <span className="font-extrabold tracking-[0.14em]">INVISIBLE GRILLS & SAFETY SOLUTIONS</span>
+                      <span className="text-[#16A34A] font-extrabold text-sm">—</span>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-xs font-bold text-[#16A34A] uppercase tracking-wider">
                       <span>📍 {slide.categoryTag}</span>
                     </div>
 
-                    <h2 className="text-2xl lg:text-3xl font-black text-white uppercase leading-snug tracking-tight">
-                      {slide.name} • <span className="text-[#7CFF3A]">Architectural Safety</span>
+                    <h2 className="text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-snug tracking-tight">
+                      {slide.name} • <span className="text-[#16A34A]">Architectural Safety</span>
                     </h2>
 
-                    <p className="text-sm text-gray-300 font-normal leading-relaxed">
+                    <p className="text-sm text-slate-600 font-normal leading-relaxed">
                       {slide.landmarkDesc}
                     </p>
 
-                    <div className="p-3.5 rounded-2xl bg-[#121A15] border border-[#2B3A32] w-full space-y-1.5">
-                      <div className="text-xs font-bold text-[#7CFF3A] uppercase tracking-wider">
+                    <div className="p-3.5 rounded-2xl bg-white border border-slate-200 w-full space-y-1.5 shadow-sm">
+                      <div className="text-xs font-bold text-[#16A34A] uppercase tracking-wider">
                         Prominent Service Belts:
                       </div>
-                      <div className="text-xs text-gray-300 font-medium">
+                      <div className="text-xs text-slate-700 font-medium">
                         {slide.activeBelts.slice(0, 4).join(' • ')}
                       </div>
                     </div>
 
                     <a
                       href={slide.locationPath}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#7CFF3A] hover:bg-[#8eff50] text-black font-extrabold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(124,255,58,0.4)] transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#16A34A] hover:bg-emerald-700 text-white font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95 cursor-pointer"
                     >
                       <span>Check {slide.cityShort} Price & Solutions</span>
                       <span className="text-base font-black">→</span>
@@ -2289,7 +2323,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* CRITICAL: ONLY LOCAL PROMINENT CORRIDORS - ZERO 6-PILLAR GRID HERE!  */}
       {/* ==================================================================== */}
       {tier === 'tier2' && (
-        <main id="location-tier2" className="min-h-screen pb-28 sm:pb-20">
+        <main id="location-tier2" className="min-h-screen pb-28 sm:pb-20 bg-slate-50">
           
           {/* Top 35vh (Mobile) / 45vh (Desktop) Bright Hero Background Section */}
           <section className="relative h-[35vh] sm:h-[45vh] min-h-[260px] w-full overflow-hidden flex items-end justify-start">
@@ -2302,7 +2336,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               }}
             >
               {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
-              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/80 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent pointer-events-none" />
             </div>
 
             {/* Concise Header in Bottom-Left */}
@@ -2310,21 +2344,21 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               {/* Breadcrumb Back */}
               <a 
                 href="/" 
-                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C7CDD1] hover:text-[#7CFF3A] transition mb-2 group font-medium"
+                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-slate-200 hover:text-white transition mb-2 group font-medium drop-shadow"
               >
                 <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
                 <span>City Showcase (Tier 1)</span>
               </a>
 
               {/* 1 concise line emotion tag in Signature Brand Green Pill */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#151C19]/90 backdrop-blur-md border border-[#7CFF3A]/30 text-[9px] sm:text-[10px] font-semibold text-[#7CFF3A] uppercase tracking-wider mb-2 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7CFF3A]"></span>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md border border-emerald-300 text-[9px] sm:text-[10px] font-bold text-[#16A34A] uppercase tracking-wider mb-2 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>
                 <span>"{activeSlide.emotionHook}"</span>
               </div>
 
               {/* 1 title in Pure White with City Accent in Brand Green */}
               <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold uppercase text-white tracking-tight drop-shadow-md">
-                <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">{activeSlide.name}</span> • Prominent Residential & High-Rise Corridors
+                <span className="text-emerald-400 drop-shadow-[0_0_12px_rgba(52,211,153,0.35)]">{activeSlide.name}</span> • Prominent Residential & High-Rise Corridors
               </h1>
             </div>
           </section>
@@ -2336,7 +2370,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <a
                   key={idx}
                   href={`/safety-pillars/${activeSlide.id}?corridor=${encodeURIComponent(corridor.name)}`}
-                  className="group rounded-3xl overflow-hidden border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_35px_rgba(124,255,58,0.25)] cursor-pointer"
+                  className="group rounded-3xl overflow-hidden border border-slate-200 hover:border-emerald-500 bg-white transition-all duration-300 flex flex-col hover:shadow-xl cursor-pointer"
                 >
                   {/* High-Definition Sunlit Balcony Visual - 100% CLEAN & UNOBSTRUCTED */}
                   <div className="relative h-64 sm:h-72 w-full overflow-hidden">
@@ -2353,7 +2387,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       sizes="(max-width: 768px) 100vw, 1920px"
                     />
                     {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
-                    <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-white to-transparent pointer-events-none" />
                   </div>
 
                   {/* Card Content in Brushed Silver & Deep Green */}
@@ -2361,29 +2395,29 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                     <div>
                       {/* Specifications Row Below Image */}
                       <div className="flex flex-wrap items-center gap-2 mb-2.5">
-                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#7CFF3A] uppercase tracking-wider">
-                          <MapPin className="w-3.5 h-3.5 text-[#7CFF3A] shrink-0" />
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#16A34A] uppercase tracking-wider">
+                          <MapPin className="w-3.5 h-3.5 text-[#16A34A] shrink-0" />
                           {corridor.elevation}
                         </span>
-                        <span className="text-white/20 text-xs">•</span>
-                        <span className="text-[10px] uppercase font-semibold tracking-wider text-[#C7CDD1] px-2 py-0.5 rounded-md bg-[#151C19] border border-[#24322B]">
+                        <span className="text-slate-300 text-xs">•</span>
+                        <span className="text-[10px] uppercase font-bold tracking-wider text-slate-700 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200">
                           {corridor.tag}
                         </span>
                       </div>
 
-                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#7CFF3A] transition mb-1.5 sm:mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#16A34A] transition mb-1.5 sm:mb-2">
                         {corridor.name}
                       </h3>
-                      <p className="text-xs sm:text-sm text-[#C7CDD1] leading-relaxed font-normal">
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                         {corridor.desc}
                       </p>
                     </div>
 
-                    <div className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-                      <span className="text-[#7CFF3A] font-bold group-hover:translate-x-1 transition flex items-center gap-1 text-[11px] sm:text-xs">
+                    <div className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                      <span className="text-[#16A34A] font-bold group-hover:translate-x-1 transition flex items-center gap-1 text-[11px] sm:text-xs">
                         View 6-Pillar Solutions & Pricing →
                       </span>
-                      <span className="text-[10px] uppercase tracking-wider text-[#C7CDD1]">
+                      <span className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
                         SS-316 Certified
                       </span>
                     </div>
@@ -2412,7 +2446,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* OPENS ONLY AFTER CLICKING A TIER 2 SUB-LOCATION CARD!                 */}
       {/* ==================================================================== */}
       {tier === 'tier3' && (
-        <main id="location-tier3" className="min-h-screen pb-28 sm:pb-20">
+        <main id="location-tier3" className="min-h-screen pb-28 sm:pb-20 bg-white">
           
           {/* Dynamic Top Hero Section (Height: 32vh on mobile, 42vh on desktop) */}
           <section className="relative h-[32vh] sm:h-[42vh] min-h-[240px] w-full overflow-hidden flex items-end justify-start">
@@ -2425,7 +2459,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               }}
             >
               {/* Natural Daytime Architectural Clarity: 100% Bright Sunlit View */}
-              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0B0D0C] via-[#0B0D0C]/80 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent pointer-events-none" />
             </div>
 
             {/* Header Micro-Copy in Bottom-Left */}
@@ -2435,23 +2469,23 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                 <a 
                   href={`/locations/${activeSlide.id}`} 
-                  className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C7CDD1] hover:text-[#7CFF3A] transition group font-medium"
+                  className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-slate-200 hover:text-white transition group font-medium drop-shadow"
                 >
                   <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition" />
                   <span>Back to {activeSlide.name} Corridors (Tier 2)</span>
                 </a>
 
-                {/* Corridor Pill Badge with Signature Brand Green #7CFF3A border and glow */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#151C19]/90 backdrop-blur-md border border-[#7CFF3A]/30 text-[10px] sm:text-[11px] font-semibold text-[#7CFF3A] shadow-[0_0_15px_rgba(124,255,58,0.25)]">
+                {/* Corridor Pill Badge with Signature Brand Green */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-emerald-300 text-[10px] sm:text-[11px] font-bold text-[#16A34A] shadow-md">
                   <span>📍 Focused Corridor: {currentCorridorDisplayName}</span>
                 </div>
               </div>
 
               {/* Heading (White & Brand Green) */}
               <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold uppercase text-white tracking-tight drop-shadow-md">
-                THE 6-PILLAR PROBLEM-SOLVER <span className="text-[#7CFF3A] drop-shadow-[0_0_12px_rgba(124,255,58,0.35)]">SOLUTIONS</span>
+                THE 6-PILLAR PROBLEM-SOLVER <span className="text-emerald-400 drop-shadow-[0_0_12px_rgba(52,211,153,0.35)]">SOLUTIONS</span>
               </h1>
-              <p className="text-xs sm:text-sm text-[#C7CDD1] font-normal tracking-wide mt-1 sm:mt-2 drop-shadow-md line-clamp-2 sm:line-clamp-none">
+              <p className="text-xs sm:text-sm text-slate-200 font-normal tracking-wide mt-1 sm:mt-2 drop-shadow-md line-clamp-2 sm:line-clamp-none">
                 Tailored architectural invisible grill engineering for {currentCorridorDisplayName} residences.
               </p>
 
@@ -2461,17 +2495,17 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {/* ----------------------------------------------------------------- */}
           {/* SECTION A: THE 6-PILLAR PROBLEM-SOLVER GRID                       */}
           {/* ----------------------------------------------------------------- */}
-          <section id="pillars-section" className="py-10 sm:py-12 px-5 sm:px-12">
+          <section id="pillars-section" className="py-10 sm:py-12 px-5 sm:px-12 bg-white">
             <div className="max-w-7xl mx-auto">
               
               <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#151C19]/90 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest mb-2 shadow-sm">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-bold text-[#16A34A] uppercase tracking-widest mb-2 shadow-sm">
                   <span>REAL PROOF SOLUTIONS • SS-316 ARCHITECTURAL CERTIFIED</span>
                 </div>
-                <h2 className="text-xl sm:text-3xl font-extrabold uppercase text-white tracking-tight">
-                  High-Definition <span className="text-[#7CFF3A]">Balcony Protection</span>
+                <h2 className="text-xl sm:text-3xl font-extrabold uppercase text-slate-900 tracking-tight">
+                  High-Definition <span className="text-[#16A34A]">Balcony Protection</span>
                 </h2>
-                <p className="text-[#C7CDD1] text-xs sm:text-sm mt-1.5 sm:mt-2 leading-relaxed font-normal">
+                <p className="text-slate-600 text-xs sm:text-sm mt-1.5 sm:mt-2 leading-relaxed font-normal">
                   Engineered specifically for {currentCorridorDisplayName} high-rises and residential balconies.
                 </p>
               </div>
@@ -2493,7 +2527,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       return (
                         <div 
                           key={idx}
-                          className="group rounded-3xl overflow-hidden border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/60 bg-[#101714] transition-all duration-300 flex flex-col hover:shadow-[0_0_30px_rgba(124,255,58,0.2)]"
+                          className="group rounded-3xl overflow-hidden border border-slate-200 hover:border-emerald-500 bg-white transition-all duration-300 flex flex-col hover:shadow-xl"
                         >
                           {/* High-Definition Sunlit Balcony Photography - 100% CLEAN & UNOBSTRUCTED */}
                           <div className="relative h-64 w-full overflow-hidden">
@@ -2509,7 +2543,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                               sizes="(max-width: 768px) 100vw, 1920px"
                             />
                             {/* Natural Daytime Architectural Clarity: Subtle bottom blend only */}
-                            <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#101714] to-transparent pointer-events-none" />
+                            <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-white to-transparent pointer-events-none" />
                           </div>
 
                           {/* Content in Deep Emerald Green & Brushed Silver */}
@@ -2518,54 +2552,54 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                               {/* Specification Row Below Image */}
                               <div className="flex items-center justify-between gap-2 mb-3">
                                 <div className="flex items-center gap-2">
-                                  <div className="p-1.5 rounded-lg bg-[#151C19] border border-[#7CFF3A]/30 text-[#7CFF3A]">
-                                    <Icon className="w-4 h-4 text-[#7CFF3A]" />
+                                  <div className="p-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-[#16A34A]">
+                                    <Icon className="w-4 h-4 text-[#16A34A]" />
                                   </div>
-                                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#7CFF3A]">
+                                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#16A34A]">
                                     {card.badge}
                                   </span>
                                 </div>
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-[#C7CDD1] px-2.5 py-1 rounded-md bg-[#151C19] border border-[#24322B]">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-700 px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200">
                                   {card.stat}
                                 </span>
                               </div>
 
                               {/* City-specific pillar title (from corridors.ts) or fallback */}
-                              <h3 className="text-xl font-bold text-white mb-2">
+                              <h3 className="text-xl font-bold text-slate-900 mb-2">
                                 {cityPillar?.title || card.title}
                               </h3>
 
                               {/* City-specific problem/solution injection from corridors.ts */}
                               {cityPillar ? (
                                 <>
-                                  <div className="mb-3 p-3 rounded-xl bg-[#0B0D0C] border border-[#24322B] space-y-2">
+                                  <div className="mb-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
                                     <div>
-                                      <span className="text-[10px] font-bold uppercase tracking-widest text-rose-400 block mb-0.5">⚠ Local Problem</span>
-                                      <p className="text-xs text-[#C7CDD1] leading-relaxed font-normal">{cityPillar.problem}</p>
+                                      <span className="text-[10px] font-bold uppercase tracking-widest text-rose-700 block mb-0.5">⚠ Local Problem</span>
+                                      <p className="text-xs text-rose-950 leading-relaxed font-normal">{cityPillar.problem}</p>
                                     </div>
-                                    <div className="border-t border-[#24322B] pt-2">
-                                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#7CFF3A] block mb-0.5">✓ D-View Solution</span>
-                                      <p className="text-xs text-white leading-relaxed font-normal">{cityPillar.solution}</p>
+                                    <div className="border-t border-slate-200 pt-2.5">
+                                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#16A34A] block mb-0.5">✓ D-View Solution</span>
+                                      <p className="text-xs text-slate-800 leading-relaxed font-normal">{cityPillar.solution}</p>
                                     </div>
                                   </div>
                                 </>
                               ) : (
                                 <>
-                                  <p className="text-xs sm:text-sm text-[#C7CDD1] leading-relaxed mb-2 font-normal">
+                                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-2 font-normal">
                                     {card.desc}
                                   </p>
-                                  <p className="text-xs text-[#7CFF3A] italic leading-relaxed">
+                                  <p className="text-xs text-[#16A34A] italic leading-relaxed font-medium">
                                     "{card.teluguDesc}"
                                   </p>
                                 </>
                               )}
                             </div>
 
-                            <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-[#C7CDD1]">
-                              <span className="flex items-center gap-1.5 text-[#7CFF3A] font-bold">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-[#7CFF3A]" /> Certified SS-316
+                            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                              <span className="flex items-center gap-1.5 text-[#16A34A] font-bold">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" /> Certified SS-316
                               </span>
-                              <span className="uppercase text-[10px] tracking-wider text-[#C7CDD1]">
+                              <span className="uppercase text-[10px] tracking-wider text-slate-500 font-semibold">
                                 100% Reliable
                               </span>
                             </div>
@@ -2587,8 +2621,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 return (
                   <div className="mt-12">
                     <div className="text-center mb-6">
-                      <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#7CFF3A]/10 border border-[#7CFF3A]/30 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-widest">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-bold text-[#16A34A] uppercase tracking-widest">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
                         VERIFIED {cityGrillData.cityName.toUpperCase()} INSTALLATIONS
                       </span>
                     </div>
@@ -2596,34 +2630,34 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       {cityGrillData.completedProjects.map((proj, pi) => (
                         <div
                           key={pi}
-                          className="p-5 rounded-2xl bg-[#101714] border border-[#7CFF3A]/25 hover:border-[#7CFF3A]/50 transition-all group"
+                          className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-400 transition-all group shadow-sm hover:shadow-md"
                         >
                           <div className="flex items-center justify-between mb-3">
-                            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#7CFF3A] uppercase tracking-wider">
-                              <CheckCircle2 className="w-3 h-3" />
+                            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#16A34A] uppercase tracking-wider">
+                              <CheckCircle2 className="w-3 h-3 text-[#16A34A]" />
                               {proj.status}
                             </span>
                             {proj.unitsSecured && (
-                              <span className="text-[10px] font-semibold text-slate-300 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full">
+                              <span className="text-[10px] font-bold text-slate-700 bg-white border border-slate-200 px-2 py-0.5 rounded-full">
                                 {proj.unitsSecured}
                               </span>
                             )}
                           </div>
-                          <h4 className="text-base font-bold text-white group-hover:text-[#7CFF3A] transition mb-1 leading-snug">
+                          <h4 className="text-base font-bold text-slate-900 group-hover:text-[#16A34A] transition mb-1 leading-snug">
                             {proj.societyName}
                           </h4>
-                          <div className="flex items-center gap-1.5 text-[10px] text-[#7CFF3A] font-semibold mb-2">
+                          <div className="flex items-center gap-1.5 text-[10px] text-[#16A34A] font-semibold mb-2">
                             <span>🛡</span>
                             <span>{proj.installationType}</span>
                           </div>
                           {proj.floor && (
-                            <div className="text-[10px] text-slate-400 mb-2">
-                              <MapPin className="w-3 h-3 inline mr-1 text-[#7CFF3A]" />
+                            <div className="text-[10px] text-slate-600 mb-2 font-medium">
+                              <MapPin className="w-3 h-3 inline mr-1 text-[#16A34A]" />
                               {proj.floor}
                             </div>
                           )}
                           {proj.note && (
-                            <p className="text-[11px] text-slate-300 italic leading-relaxed border-t border-white/5 pt-2 mt-2">
+                            <p className="text-[11px] text-slate-600 italic leading-relaxed border-t border-slate-200 pt-2 mt-2">
                               "{proj.note}"
                             </p>
                           )}
@@ -2635,8 +2669,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               })()}
 
               {/* Closing Tagline in Telugu */}
-              <div className="mt-14 text-center p-6 rounded-2xl bg-[#101714] border border-[#7CFF3A]/30 max-w-4xl mx-auto shadow-xl">
-                <p className="text-[#7CFF3A] font-semibold text-sm sm:text-base italic">
+              <div className="mt-14 text-center p-6 rounded-2xl bg-emerald-50 border border-emerald-200 max-w-4xl mx-auto shadow-sm">
+                <p className="text-emerald-950 font-semibold text-sm sm:text-base italic">
                   "Okke Okka Balcony Installation... Enno High-Alert Safety Problems Nundi Mee Intiki Life-Time Premium Protection!"
                 </p>
               </div>
@@ -2665,25 +2699,25 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {/* ----------------------------------------------------------------- */}
           {/* TECHNICAL FAQS SECTION                                            */}
           {/* ----------------------------------------------------------------- */}
-          <section id="faq-section" className="py-20 px-6 sm:px-12 border-t border-white/10 bg-[#090d0b]">
+          <section id="faq-section" className="py-16 sm:py-20 px-6 sm:px-12 border-t border-slate-200 bg-slate-50">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <span className="text-xs uppercase tracking-[0.3em] text-[#7CFF3A] font-bold">
+                <span className="text-xs uppercase tracking-[0.3em] text-[#16A34A] font-bold">
                   FREQUENTLY ASKED QUESTIONS
                 </span>
-                <h2 className="text-2xl sm:text-4xl font-light uppercase text-slate-100 mt-2">
+                <h2 className="text-2xl sm:text-4xl font-extrabold uppercase text-slate-900 mt-2">
                   Architectural Safety Insights
                 </h2>
               </div>
 
               <div className="space-y-4">
                 {FAQS.map((faq, i) => (
-                  <div key={i} className="p-6 rounded-2xl bg-[#101714] border border-white/10">
-                    <h3 className="text-base font-bold text-white mb-2 flex items-center gap-2">
-                      <HelpCircle className="w-4 h-4 text-[#7CFF3A] shrink-0" />
+                  <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                    <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+                      <HelpCircle className="w-4 h-4 text-[#16A34A] shrink-0" />
                       {faq.q}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pl-6 font-light">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pl-6 font-normal">
                       {faq.a}
                     </p>
                   </div>
@@ -2705,38 +2739,38 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* WHATSAPP LEAD MODAL WITH DYNAMIC QR CODE                  */}
       {/* ========================================================= */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md">
-          <div className="relative w-full max-w-md bg-[#111815] border border-[#7CFF3A]/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
+          <div className="relative w-full max-w-md bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xl">
             
             <button 
               type="button"
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer"
+              className="absolute top-5 right-5 text-slate-400 hover:text-slate-700 p-1 rounded-full hover:bg-slate-100 cursor-pointer transition"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="text-left mb-5">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#7CFF3A] font-bold block">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#16A34A] font-bold block">
                 Instant Concierge Booking
               </span>
-              <h3 className="text-xl sm:text-2xl font-black uppercase text-white mt-1">
+              <h3 className="text-xl sm:text-2xl font-extrabold uppercase text-slate-900 mt-1">
                 Book Free Site Measurement
               </h3>
-              <p className="text-xs text-[#cbd5e1] mt-1">
+              <p className="text-xs text-slate-600 mt-1 font-medium">
                 Indicative Quote: ₹{estimatedMin.toLocaleString()} - ₹{estimatedMax.toLocaleString()} ({calculatedArea} sq.ft)
               </p>
             </div>
 
             <div className="space-y-3.5">
               <div>
-                <label className="text-[11px] uppercase font-bold text-slate-300 block mb-1">
+                <label className="text-[11px] uppercase font-bold text-slate-700 block mb-1">
                   Selected City Hub
                 </label>
                 <select 
                   value={selectedHub}
                   onChange={(e) => setSelectedHub(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A] font-medium"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white font-medium"
                 >
                   <option value="Visakhapatnam">Visakhapatnam</option>
                   <option value="Rajamahendravaram">Rajamahendravaram</option>
@@ -2749,7 +2783,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               </div>
 
               <div>
-                <label className="text-[11px] uppercase font-bold text-slate-300 block mb-1">
+                <label className="text-[11px] uppercase font-bold text-slate-700 block mb-1">
                   Corridor / Community
                 </label>
                 <input 
@@ -2757,12 +2791,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="e.g. Madhurawada High-Rises"
                   value={selectedCorridor}
                   onChange={(e) => setSelectedCorridor(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A]"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white"
                 />
               </div>
 
               <div>
-                <label className="text-[11px] uppercase font-bold text-slate-300 block mb-1">
+                <label className="text-[11px] uppercase font-bold text-slate-700 block mb-1">
                   Your Full Name
                 </label>
                 <input 
@@ -2770,12 +2804,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="e.g. Ramesh Varma"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A]"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white"
                 />
               </div>
 
               <div>
-                <label className="text-[11px] uppercase font-bold text-slate-300 block mb-1">
+                <label className="text-[11px] uppercase font-bold text-slate-700 block mb-1">
                   Phone Number (For WhatsApp Confirmation)
                 </label>
                 <input 
@@ -2783,20 +2817,20 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   placeholder="+91 94943 28999"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full bg-[#0a0f0d] border border-[#7CFF3A]/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#7CFF3A]"
+                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white"
                 />
               </div>
 
               {/* Dynamic WhatsApp QR Code */}
-              <div className="bg-[#0a0f0d] border border-white/10 rounded-2xl p-4 text-center mt-3">
-                <div className="w-32 h-32 mx-auto bg-white p-2 rounded-xl flex items-center justify-center">
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center mt-3">
+                <div className="w-32 h-32 mx-auto bg-white p-2 rounded-xl flex items-center justify-center border border-slate-200 shadow-sm">
                   <img 
                     src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/919494328999?text=${getWhatsAppMessage()}`} 
                     alt="WhatsApp QR Code"
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="block text-[11px] text-slate-400 mt-2">
+                <span className="block text-[11px] text-slate-600 font-medium mt-2">
                   Scan with camera to launch WhatsApp booking instantly
                 </span>
               </div>
@@ -2805,7 +2839,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full bg-[#7CFF3A] hover:bg-[#8eff50] text-black py-3.5 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-[0_0_20px_rgba(124,255,58,0.35)] mt-3 transition"
+                className="w-full bg-[#16A34A] hover:bg-emerald-700 text-white py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider block text-center shadow-lg mt-3 transition"
               >
                 Send Details via WhatsApp Directly →
               </a>
