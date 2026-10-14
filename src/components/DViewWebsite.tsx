@@ -1221,22 +1221,11 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   const currentHeroImage = activeCorridorAsset.image;
   const currentCorridorDisplayName = activeCorridorAsset.title || selectedCorridor || activeSlide.name;
 
-  // Calculator State
-  const [width, setWidth] = useState(10);
-  const [height, setHeight] = useState(8);
-  const [cableThickness, setCableThickness] = useState('2.5');
-
   // Booking Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
   const [selectedHub, setSelectedHub] = useState(activeSlide.name);
-
-  // Pricing calculations
-  const calculatedArea = width * height;
-  const ratePerSqFt = cableThickness === '2.0' ? 140 : cableThickness === '2.5' ? 165 : 190;
-  const estimatedMin = calculatedArea * ratePerSqFt;
-  const estimatedMax = Math.round(estimatedMin * 1.15);
 
   const handleOpenBooking = (hubName?: string, corridorName?: string) => {
     setSelectedHub(hubName || activeSlide.name);
@@ -1247,12 +1236,10 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   const getWhatsAppMessage = () => {
     return encodeURIComponent(
       `Hello D-View Invisible Safety Concierge!\n` +
-      `I want to book a Free Site Visit & Measurement.\n\n` +
+      `I would like to book a Free Doorstep Site Visit & Precision Laser Measurement.\n\n` +
       `📍 City Hub: ${selectedHub}\n` +
       `🏢 Community / Corridor: ${currentCorridorDisplayName}\n` +
-      `📐 Dimensions: ${width} ft (W) x ${height} ft (H) = ${calculatedArea} sq.ft\n` +
-      `🛡️ Wire Grade: SS-316 Marine Grade (${cableThickness} mm)\n` +
-      `💰 Indicative Range: ₹${estimatedMin.toLocaleString()} - ₹${estimatedMax.toLocaleString()}\n` +
+      `🛡️ Requirement: SS-316 Marine Grade Invisible Grills\n` +
       `👤 Name: ${customerName || 'Resident'}\n` +
       `📞 Phone: ${customerPhone || 'Via WhatsApp'}`
     );
@@ -1270,7 +1257,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     : SOCIETY_INSTALLATIONS.filter(s => s.cityId === societyFilter);
 
   // =========================================================================
-  // REUSABLE GLOBAL SECTIONS: PROOF, A (WARRANTY), B (CALCULATOR), C (FOOTER)
+  // REUSABLE GLOBAL SECTIONS: PROOF, WARRANTY, FOOTER
   // =========================================================================
 
   const renderSocietyProofSection = (isSnap = false) => (
@@ -1596,349 +1583,273 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     </section>
   );
 
-  const renderCalculatorSection = (isSnap = false) => (
-    <section id="estimate-calculator" className={`${isSnap ? 'snap-start' : ''} relative py-20 px-5 sm:px-12 bg-white border-t border-slate-200`}>
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[10px] font-bold text-[#16A34A] uppercase tracking-widest mb-3 shadow-sm">
-            <span>TRANSPARENT PRICING & ESTIMATOR</span>
-          </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold uppercase text-slate-900 tracking-tight">
-            INSTANT BALCONY SAFETY <span className="text-[#16A34A]">ESTIMATE CALCULATOR</span>
-          </h2>
-          <p className="text-slate-600 text-xs sm:text-sm mt-3 font-normal leading-relaxed">
-            Transparent, real-time pricing tailored to your balcony dimensions.
-          </p>
-        </div>
 
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          {/* Sliders Column */}
-          <div className="lg:col-span-7 space-y-7">
-            
-            {/* City Selector */}
-            <div>
-              <label className="block text-xs uppercase font-bold text-slate-700 mb-2">
-                Target City Hub
-              </label>
-              <select
-                value={selectedHub}
-                onChange={(e) => setSelectedHub(e.target.value)}
-                className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-emerald-500 font-medium shadow-sm"
-              >
-                <option value="Visakhapatnam">Visakhapatnam (VIZAG)</option>
-                <option value="Rajamahendravaram">Rajamahendravaram (RAJAHMUNDRY)</option>
-                <option value="Vijayawada">Vijayawada & Amaravati (VIJAYAWADA)</option>
-                <option value="Guntur">Guntur (GUNTUR)</option>
-                <option value="Kakinada">Kakinada (KAKINADA)</option>
-                <option value="Nellore">Nellore (NELLORE)</option>
-                <option value="Ongole">Ongole (ONGOLE)</option>
-              </select>
-            </div>
-
-            {/* Width Slider */}
-            <div>
-              <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-700 mb-2">
-                <span>Balcony Width (Feet)</span>
-                <span className="text-[#16A34A] text-base font-black">{width} Feet</span>
-              </div>
-              <input 
-                type="range" 
-                min="4" 
-                max="35" 
-                value={width} 
-                onChange={(e) => setWidth(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#16A34A]"
-              />
-              <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-                <span>4 ft</span>
-                <span>18 ft</span>
-                <span>35 ft</span>
-              </div>
-            </div>
-
-            {/* Height Slider */}
-            <div>
-              <div className="flex justify-between items-center text-xs uppercase font-bold text-slate-700 mb-2">
-                <span>Balcony Height (Feet)</span>
-                <span className="text-[#16A34A] text-base font-black">{height} Feet</span>
-              </div>
-              <input 
-                type="range" 
-                min="3" 
-                max="14" 
-                value={height} 
-                onChange={(e) => setHeight(Number(e.target.value))}
-                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#16A34A]"
-              />
-              <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-                <span>3 ft</span>
-                <span>8 ft (Default)</span>
-                <span>14 ft</span>
-              </div>
-            </div>
-
-            {/* Cable Specification Selector */}
-            <div>
-              <label className="block text-xs uppercase font-bold text-slate-700 mb-2">
-                SS-316 Cable Thickness Selector
-              </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                {[
-                  { val: '2.0', label: '2.0 mm Standard', desc: 'Multi-strand transparent nylon coated' },
-                  { val: '2.5', label: '2.5 mm High-Tensile', desc: 'Most Recommended Marine Grade' },
-                  { val: '3.0', label: '3.0 mm Heavy-Duty', desc: 'Skyscraper Armor (G+15)' }
-                ].map(spec => (
-                  <button
-                    key={spec.val}
-                    type="button"
-                    onClick={() => setCableThickness(spec.val)}
-                    className={`p-3.5 rounded-2xl border text-left transition cursor-pointer shadow-sm ${
-                      cableThickness === spec.val
-                        ? 'bg-emerald-50 border-emerald-500 text-slate-900 shadow-md ring-1 ring-emerald-500'
-                        : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300'
-                    }`}
-                  >
-                    <span className="text-xs font-bold block">{spec.label}</span>
-                    <span className="text-[10px] text-[#16A34A] block mt-1 font-semibold">{spec.desc}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-          {/* Instant Live Pricing Card & Direct WhatsApp Booking */}
-          <div className="lg:col-span-5 bg-white border border-emerald-300 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl">
-            <div className="text-center">
-              <span className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">
-                Total Area
-              </span>
-              <div className="text-3xl sm:text-4xl font-black text-slate-900 mt-1 mb-3">
-                {calculatedArea} <span className="text-sm font-normal text-slate-500">sq.ft</span>
-              </div>
-
-              <span className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">
-                Estimated Total
-              </span>
-              <div className="text-3xl sm:text-4xl font-black text-[#16A34A] mt-1 mb-2">
-                ₹{estimatedMin.toLocaleString()} - ₹{estimatedMax.toLocaleString()}
-              </div>
-              <p className="text-[11px] text-slate-600 leading-normal font-normal">
-                Includes SS-316 cables, tracks, tensioners & installation.
-              </p>
-            </div>
-
-            {/* Direct Inputs */}
-            <div className="mt-6 pt-5 border-t border-slate-100 space-y-3">
-              <div>
-                <label className="text-[10px] uppercase font-bold text-slate-700 block mb-1">
-                  Customer Name
-                </label>
-                <input 
-                  type="text" 
-                  placeholder="e.g. Ramesh Varma"
-                  value={customerName}
-                  onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:border-emerald-500"
-                />
-              </div>
-
-              <div>
-                <label className="text-[10px] uppercase font-bold text-slate-700 block mb-1">
-                  Phone Number
-                </label>
-                <input 
-                  type="tel" 
-                  placeholder="+91 62816 20716"
-                  value={customerPhone}
-                  onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:border-emerald-500"
-                />
-              </div>
-            </div>
-
-            {/* Dynamic WhatsApp QR Code Inline */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center mt-4">
-              <div className="w-28 h-28 mx-auto bg-white p-2 rounded-xl flex items-center justify-center shadow-md border border-slate-100">
-                <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/916281620716?text=${getWhatsAppMessage()}`} 
-                  alt="Dynamic WhatsApp QR Code"
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                  decoding="async"
-                  width="112"
-                  height="112"
-                />
-              </div>
-              <span className="block text-[10px] text-slate-500 mt-2 font-medium">
-                Scan QR code or click below for instant WhatsApp booking
-              </span>
-            </div>
-
-            <div className="mt-4 space-y-2">
-              <button
-                type="button"
-                onClick={() => handleOpenBooking(selectedHub)}
-                className="w-full bg-[#16A34A] hover:bg-emerald-700 text-white py-3.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider block text-center shadow-lg transition cursor-pointer"
-              >
-                Book Free Laser Measurement With This Quote →
-              </button>
-              <a 
-                href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full bg-slate-50 hover:bg-slate-100 border border-emerald-300 text-[#16A34A] py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider block text-center transition"
-              >
-                Direct WhatsApp Chat (+91 62816 20716)
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
 
   const renderLuxuryFooter = (isSnap = false) => (
-    <footer className={`${isSnap ? 'snap-start' : ''} relative border-t border-slate-200 bg-slate-50 pt-16 pb-28 md:pb-14 px-5 sm:px-12 text-slate-600 text-xs`}>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-        
-        {/* Column 1: Brand & Direct Personal Concierge */}
-        <div className="space-y-4">
-          <div className="flex flex-col gap-2.5 mb-2">
-            <img 
-              src="/images/d-view-logo-horizontal.png" 
-              alt="D-VIEW Invisible Grills & Safety Solutions" 
-              className="h-9 w-auto object-contain" 
-            />
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-[10px] font-black uppercase tracking-wider text-[#16A34A] w-fit shadow-sm">
-              <span className="text-[#16A34A] font-black">—</span>
-              <span className="text-slate-900 font-extrabold tracking-wider">INVISIBLE GRILLS & SAFETY SOLUTIONS</span>
-              <span className="text-[#16A34A] font-black">—</span>
+    <footer className={`${isSnap ? 'snap-start' : ''} relative border-t border-slate-200 bg-white pt-14 pb-28 md:pb-14 px-5 sm:px-12 text-slate-600 text-xs antialiased`}>
+      <div className="max-w-7xl mx-auto">
+
+        {/* ------------------------------------------------------------ */}
+        {/* 1. TOP 4 COLUMNS: HELP | SERVICES | ABOUT D-VIEW | CONNECT   */}
+        {/* ------------------------------------------------------------ */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-12 border-b border-slate-200">
+          
+          {/* Column 1: HELP */}
+          <div>
+            <h4 className="text-slate-900 font-extrabold uppercase tracking-[0.16em] text-[11px] mb-4">
+              HELP
+            </h4>
+            <p className="text-[11px] leading-relaxed text-slate-600 mb-4">
+              Call <a href="tel:+916281620716" className="underline font-bold text-slate-900 hover:text-[#16A34A] transition">+91 62816 20716</a> or <a href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`} target="_blank" rel="noopener noreferrer" className="underline font-bold text-[#16A34A] hover:underline">WhatsApp us</a>. You can also <a href="mailto:dviewsolutions32@gmail.com" className="underline font-bold text-slate-900 hover:text-[#16A34A] transition">email us</a>.
+            </p>
+            <ul className="space-y-2.5 text-[11px] text-slate-700">
+              <li>
+                <a href="/contact#faq" className="hover:text-[#16A34A] transition block font-medium">FAQ & Installation Queries</a>
+              </li>
+              <li>
+                <a href="/about#maintenance" className="hover:text-[#16A34A] transition block font-medium">Care & Maintenance Guide</a>
+              </li>
+              <li>
+                <a href="/locations" className="hover:text-[#16A34A] transition block font-medium">Service Areas & Corridors</a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-[#16A34A] transition block font-medium">Central Support & Helpline</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 2: SERVICES */}
+          <div>
+            <h4 className="text-slate-900 font-extrabold uppercase tracking-[0.16em] text-[11px] mb-4">
+              SERVICES
+            </h4>
+            <ul className="space-y-2.5 text-[11px] text-slate-700">
+              <li>
+                <button 
+                  type="button" 
+                  onClick={() => setIsModalOpen(true)}
+                  className="text-[#16A34A] font-bold hover:underline flex items-center gap-1 cursor-pointer text-left"
+                >
+                  <span>Book a Free Site Visit</span>
+                  <span className="text-xs">→</span>
+                </button>
+              </li>
+              <li>
+                <a href="/solutions" className="hover:text-[#16A34A] transition block font-medium">Balcony Invisible Grills (SS-316)</a>
+              </li>
+              <li>
+                <a href="/solutions" className="hover:text-[#16A34A] transition block font-medium">Window Architectural Safety Cables</a>
+              </li>
+              <li>
+                <a href="/solutions" className="hover:text-[#16A34A] transition block font-medium">Anti-Pigeon & Bird Exclusion Grills</a>
+              </li>
+              <li>
+                <a href="/solutions" className="hover:text-[#16A34A] transition block font-medium">Duplex & Staircase Safety Systems</a>
+              </li>
+              <li>
+                <a href="/about#warranty" className="hover:text-[#16A34A] transition block font-medium">10-Year Warranty Guide</a>
+              </li>
+              <li>
+                <a href="/solutions" className="hover:text-[#16A34A] transition block font-medium">All Engineering Services</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: ABOUT D-VIEW */}
+          <div>
+            <h4 className="text-slate-900 font-extrabold uppercase tracking-[0.16em] text-[11px] mb-4">
+              ABOUT D-VIEW
+            </h4>
+            <ul className="space-y-2.5 text-[11px] text-slate-700">
+              <li>
+                <a href="/about" className="hover:text-[#16A34A] transition block font-medium">Our Story & Heritage</a>
+              </li>
+              <li>
+                <a href="/about#metallurgy" className="hover:text-[#16A34A] transition block font-medium">Certified SS-316 Marine Metallurgy</a>
+              </li>
+              <li>
+                <a href="/projects" className="hover:text-[#16A34A] transition block font-medium">Lifestyle Project Gallery</a>
+              </li>
+              <li>
+                <a href="/about#standards" className="hover:text-[#16A34A] transition block font-medium">400 KG Tensile Material Standards</a>
+              </li>
+              <li>
+                <a href="/about#fire-safety" className="hover:text-[#16A34A] transition block font-medium">1-Minute Fire Escape Egress</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: CONNECT */}
+          <div>
+            <h4 className="text-slate-900 font-extrabold uppercase tracking-[0.16em] text-[11px] mb-4">
+              CONNECT
+            </h4>
+            <p className="text-[11px] leading-relaxed text-slate-600 mb-4 font-normal">
+              <a href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`} target="_blank" rel="noopener noreferrer" className="underline font-bold text-[#16A34A] hover:underline">WhatsApp us</a> and D-VIEW passes your request to our certified local engineering team across 7 cities in Andhra Pradesh, who visits your home, provides laser measurement, gives the written quote, installs and provides the 10-year warranty directly.
+            </p>
+            
+            <div className="space-y-2 text-[11px] pt-1">
+              <span className="text-slate-900 font-bold block uppercase tracking-wider text-[10px]">Direct Support</span>
+              <a href="tel:+916281620716" className="flex items-center gap-2 hover:text-[#16A34A] transition text-slate-800 font-semibold">
+                <span className="text-[#16A34A]">📞</span>
+                <span>+91 62816 20716</span>
+              </a>
+              <a href="mailto:dviewsolutions32@gmail.com" className="flex items-center gap-2 hover:text-[#16A34A] transition text-slate-800 font-medium">
+                <span className="text-[#16A34A]">✉️</span>
+                <span>dviewsolutions32@gmail.com</span>
+              </a>
+              <div className="pt-2 text-[10px] text-slate-500">
+                <span className="text-slate-800 font-semibold block">🏢 Registered Head Office:</span>
+                Rajamahendravaram, Andhra Pradesh, India.
+              </div>
             </div>
           </div>
-          <p className="text-[11px] leading-relaxed text-slate-600 font-normal">
-            India's premier architectural invisible safety grill specialist. 100% safety, zero view obstruction.
+
+        </div>
+
+        {/* ------------------------------------------------------------ */}
+        {/* 2. DEDICATED 7 SERVICE BASES & REGIONAL HUBS GRID             */}
+        {/* ------------------------------------------------------------ */}
+        <div className="py-10 border-b border-slate-200">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+            <div>
+              <h4 className="text-slate-900 font-extrabold uppercase tracking-[0.16em] text-[11px]">
+                OUR 7 SERVICE BASES & REGIONAL HUBS (ANDHRA PRADESH)
+              </h4>
+              <p className="text-[11px] text-slate-500 mt-1">
+                Certified local technicians stationed across all major urban growth corridors with same-day laser measurements.
+              </p>
+            </div>
+            <a href="/locations" className="inline-flex items-center gap-1 text-[11px] font-bold text-[#16A34A] hover:underline whitespace-nowrap">
+              <span>View All 7 Hubs</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4 text-[11px]">
+            {/* Vizag */}
+            <a href="/locations/vizag" className="p-3 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-extrabold text-slate-900 group-hover:text-[#16A34A]">Visakhapatnam (Vizag)</span>
+                <span className="text-[10px] text-[#16A34A] font-bold">Explore →</span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-relaxed">
+                Madhurawada (27-Floor Towers), Yendada, Rushikonda, PM Palem, Gajuwaka.
+              </span>
+            </a>
+
+            {/* Rajahmundry */}
+            <a href="/locations/rajahmundry" className="p-3 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-extrabold text-slate-900 group-hover:text-[#16A34A]">Rajamahendravaram</span>
+                <span className="text-[10px] text-[#16A34A] font-bold">Explore →</span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-relaxed">
+                Morampudi, Bommuru, Diwancheruvu, Lalacheruvu, Vemagiri, Godavari Belts.
+              </span>
+            </a>
+
+            {/* Vijayawada */}
+            <a href="/locations/vijayawada" className="p-3 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-extrabold text-slate-900 group-hover:text-[#16A34A]">Vijayawada & Amaravati</span>
+                <span className="text-[10px] text-[#16A34A] font-bold">Explore →</span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-relaxed">
+                Benz Circle, Moghalrajpuram, HappyNest G+18, Kanuru, Tadepalli Riverfront.
+              </span>
+            </a>
+
+            {/* Guntur */}
+            <a href="/locations/guntur" className="p-3 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-extrabold text-slate-900 group-hover:text-[#16A34A]">Guntur Hub</span>
+                <span className="text-[10px] text-[#16A34A] font-bold">Explore →</span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-relaxed">
+                Brodipet, Arundelpet, Amaravati Road, Namburu, Kaza & Tadepalli Belts.
+              </span>
+            </a>
+
+            {/* Kakinada */}
+            <a href="/locations/kakinada" className="p-3 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-extrabold text-slate-900 group-hover:text-[#16A34A]">Kakinada Hub</span>
+                <span className="text-[10px] text-[#16A34A] font-bold">Explore →</span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-relaxed">
+                Sarpavaram, Vakalapudi Lighthouse Belt, Ramanayyapeta, Madhavapatnam.
+              </span>
+            </a>
+
+            {/* Nellore */}
+            <a href="/locations/nellore" className="p-3 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-extrabold text-slate-900 group-hover:text-[#16A34A]">Nellore Hub</span>
+                <span className="text-[10px] text-[#16A34A] font-bold">Explore →</span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-relaxed">
+                Magunta Layout, Penna Riverfront, Balaji Nagar, Dargamitta, Vedayapalem.
+              </span>
+            </a>
+
+            {/* Ongole */}
+            <a href="/locations/ongole" className="p-3 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/40 transition group">
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-extrabold text-slate-900 group-hover:text-[#16A34A]">Ongole Hub</span>
+                <span className="text-[10px] text-[#16A34A] font-bold">Explore →</span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-relaxed">
+                Bhagyanagar, Lawyerpet, Kurnool Road Belt, Santhapet, Mangamuru Road.
+              </span>
+            </a>
+
+            {/* Free Measurement Callout */}
+            <div className="p-3 rounded-xl border border-emerald-300 bg-emerald-50/60 flex flex-col justify-between">
+              <div>
+                <span className="font-black text-slate-900 text-[11px] block">Need Free Measurement?</span>
+                <span className="text-[10px] text-slate-600 block mt-0.5">We dispatch our engineer with laser toolkit in 2 hours.</span>
+              </div>
+              <a href="tel:+916281620716" className="mt-2 text-[10px] font-black text-[#16A34A] hover:underline flex items-center gap-1">
+                <span>Call +91 62816 20716</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ------------------------------------------------------------ */}
+        {/* 3. BOTTOM BAR: INDIA | SITEMAP | LEGAL & PRIVACY | COOKIES    */}
+        {/* ------------------------------------------------------------ */}
+        <div className="pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+          
+          {/* Left: Region Flag */}
+          <div className="flex items-center gap-2 font-medium text-slate-700">
+            <span className="text-base leading-none">🇮🇳</span>
+            <span>India • Andhra Pradesh</span>
+          </div>
+
+          {/* Right: Sitemap, Legal & Privacy, Cookies */}
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 font-medium text-slate-600">
+            <a href="/sitemap" className="hover:text-slate-900 transition">Sitemap</a>
+            <a href="/privacy" className="hover:text-slate-900 transition">Legal & Privacy</a>
+            <a href="/privacy#cookies" className="hover:text-slate-900 transition">Cookies</a>
+          </div>
+
+        </div>
+
+        {/* ------------------------------------------------------------ */}
+        {/* 4. LARGE CENTERED BRAND WORDMARK MATCHING REFERENCE PHOTO    */}
+        {/* ------------------------------------------------------------ */}
+        <div className="pt-8 text-center border-t border-slate-100">
+          <div className="text-2xl sm:text-3xl md:text-4xl font-black tracking-[0.24em] sm:tracking-[0.32em] text-slate-950 uppercase select-none">
+            D-VIEW
+          </div>
+          <p className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-[0.28em] mt-1.5">
+            ARCHITECTURAL INVISIBLE SAFETY GRILLS • ZERO CAGES • 10-YEAR WARRANTY
           </p>
-          <div className="space-y-2 text-slate-800 text-xs pt-1">
-            <a href="tel:+916281620716" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
-              <Phone className="w-4 h-4 text-[#16A34A] shrink-0" />
-              <span>📞 Direct Call: +91 62816 20716</span>
-            </a>
-            <a 
-              href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`}
-              target="_blank"
-              rel="noreferrer" 
-              className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium"
-            >
-              <MessageSquare className="w-4 h-4 text-[#16A34A] shrink-0" />
-              <span>💬 WhatsApp Concierge: +91 62816 20716</span>
-            </a>
-            <a href="mailto:dviewsolutions32@gmail.com" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
-              <Mail className="w-4 h-4 text-[#16A34A] shrink-0" />
-              <span>✉️ Official Email: dviewsolutions32@gmail.com</span>
-            </a>
-            <div className="pt-2 text-[11px] text-slate-500 leading-relaxed border-t border-slate-200">
-              <span className="text-slate-800 font-semibold block">🏢 Registered Head Office:</span>
-              Rajamahendravaram, Andhra Pradesh.
-            </div>
-          </div>
         </div>
 
-        {/* Column 2: Safety Collections */}
-        <div>
-          <h4 className="text-[#16A34A] font-bold uppercase tracking-wider text-xs mb-3.5">
-            Safety Collections
-          </h4>
-          <ul className="space-y-2 text-[11px] text-slate-700">
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">SS-316 Balcony Invisible Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Window Architectural Safety Cables</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Penthouse & High-Rise Elevation Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Duplex Staircase & Terrace Railing Grills</a></li>
-            <li><a href="/safety-pillars/vizag" className="hover:text-[#16A34A] transition block">Anti-Pigeon & Bird Exclusion Systems</a></li>
-          </ul>
-        </div>
-
-        {/* Column 3: Quality Standards & Customer Assurance */}
-        <div>
-          <h4 className="text-[#16A34A] font-bold uppercase tracking-wider text-xs mb-3.5">
-            Quality Standards & Customer Assurance
-          </h4>
-          <ul className="space-y-2 text-[11px] text-slate-700">
-            <li><span className="text-slate-800 font-medium block">100% Certified Virgin SS-316 Metallurgy</span></li>
-            <li><span className="text-slate-700 block">10-Year Anti-Rust Written Warranty Certificate</span></li>
-            <li><span className="text-slate-700 block">Zero-Sag Lifetime Tensioning Commitment</span></li>
-            <li><span className="text-slate-700 block">ASTM B117 Saline Mist Corrosion-Proof Tested</span></li>
-            <li><span className="text-[#16A34A] font-bold block">Free Doorstep Precision Laser Site Measurement</span></li>
-          </ul>
-        </div>
-
-        {/* Column 4: 7 Regional Hubs & Coverage Corridors */}
-        <div>
-          <h4 className="text-[#16A34A] font-bold uppercase tracking-wider text-xs mb-3.5">
-            7 Regional Hubs & Coverage Corridors
-          </h4>
-          <ul className="space-y-2.5 text-[11px]">
-            <li>
-              <a href="/locations/vizag" className="hover:text-[#16A34A] transition block">
-                <span className="text-slate-900 font-bold">Visakhapatnam Hub</span>
-                <span className="text-[10px] text-slate-500 block">Madhurawada (27-Floor Towers), Yendada, Rushikonda, PM Palem, Anandapuram, Gajuwaka.</span>
-              </a>
-            </li>
-            <li>
-              <a href="/locations/rajahmundry" className="hover:text-[#16A34A] transition block">
-                <span className="text-slate-900 font-bold">Rajamahendravaram Hub</span>
-                <span className="text-[10px] text-slate-500 block">Morampudi, Bommuru, Diwancheruvu, Lalacheruvu, Vemagiri, Gadaala Belts.</span>
-              </a>
-            </li>
-            <li>
-              <a href="/locations/vijayawada" className="hover:text-[#16A34A] transition block">
-                <span className="text-slate-900 font-bold">Vijayawada & Amaravati Hub</span>
-                <span className="text-[10px] text-slate-500 block">Benz Circle, Moghalrajpuram, HappyNest G+18, Tadepalli Riverside.</span>
-              </a>
-            </li>
-            <li>
-              <a href="/locations/guntur" className="hover:text-[#16A34A] transition block">
-                <span className="text-slate-900 font-bold">Guntur Hub</span>
-                <span className="text-[10px] text-slate-500 block">Brodipet, Arundelpet, Amaravati Road, Namburu, Kaza Belt.</span>
-              </a>
-            </li>
-            <li>
-              <a href="/locations/kakinada" className="hover:text-[#16A34A] transition block">
-                <span className="text-slate-900 font-bold">Kakinada Hub</span>
-                <span className="text-[10px] text-slate-500 block">Sarpavaram, Vakalapudi Lighthouse Belt, Ramanayyapeta.</span>
-              </a>
-            </li>
-            <li>
-              <a href="/locations/nellore" className="hover:text-[#16A34A] transition block">
-                <span className="text-slate-900 font-bold">Nellore Hub</span>
-                <span className="text-[10px] text-slate-500 block">Magunta Layout, Penna Riverfront, Balaji Nagar.</span>
-              </a>
-            </li>
-            <li>
-              <a href="/locations/ongole" className="hover:text-[#16A34A] transition block">
-                <span className="text-slate-900 font-bold">Ongole Hub</span>
-                <span className="text-[10px] text-slate-500 block">Bhagyanagar, Lawyerpet, Kurnool Road Belt, Santhapet, Mangamuru Road.</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      {/* Universal Copyright Bar */}
-      <div className="max-w-7xl mx-auto pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-        <p>© 2026 D-View Invisible Safety Grills. All Rights Reserved. Protecting Families Across Andhra Pradesh.</p>
-        <div className="flex flex-wrap gap-3 text-[10px] uppercase tracking-wider">
-          <span className="text-[#16A34A] font-semibold">100% Invisible Grills</span>
-          <span>•</span>
-          <span>Zero Safety Nets</span>
-          <span>•</span>
-          <span>SS-316 Marine Grade</span>
-          <span>•</span>
-          <span>10-Year Warranty</span>
-        </div>
       </div>
     </footer>
   );
@@ -2279,7 +2190,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       href={slide.locationPath}
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#16A34A] hover:bg-emerald-700 text-white font-extrabold text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95 cursor-pointer"
                     >
-                      <span>Check {slide.cityShort} Price & Solutions</span>
+                      <span>Explore {slide.cityShort} Safety Solutions</span>
                       <span className="text-base font-black">→</span>
                     </a>
                   </div>
@@ -2288,12 +2199,10 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             </section>
           ))}
 
-          {/* ==================================================================== */}
-          {/* GLOBAL SECTIONS: PROOF, A (WARRANTY), B (CALCULATOR), C (FOOTER)     */}
+          {/* GLOBAL SECTIONS: PROOF, WARRANTY, FOOTER                            */}
           {/* ==================================================================== */}
           {renderSocietyProofSection(true)}
           {renderWarrantySection(true)}
-          {renderCalculatorSection(true)}
           {renderLuxuryFooter(true)}
           {renderFloatingQuickConnect()}
 
@@ -2410,13 +2319,11 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             </div>
           </div>
 
-          {/* ==================================================================== */}
-          {/* GLOBAL SECTIONS: PROOF, WEATHER, A (WARRANTY), B (CALCULATOR), FOOTER */}
+          {/* GLOBAL SECTIONS: PROOF, WEATHER, WARRANTY, FOOTER                   */}
           {/* ==================================================================== */}
           {renderSocietyProofSection(false)}
           {renderWeatherShieldSection(false)}
           {renderWarrantySection(false)}
-          {renderCalculatorSection(false)}
           {renderLuxuryFooter(false)}
           {renderFloatingQuickConnect()}
 
@@ -2671,11 +2578,9 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           {renderWeatherShieldSection(false)}
 
           {/* ----------------------------------------------------------------- */}
-          {/* SECTION A: WARRANTY & SECTION B: ESTIMATE CALCULATOR              */}
+          {/* SECTION A: WARRANTY & TRUST STANDARDS                             */}
           {/* ----------------------------------------------------------------- */}
           {renderWarrantySection(false)}
-
-          {renderCalculatorSection(false)}
 
 
           {/* ----------------------------------------------------------------- */}
@@ -2740,7 +2645,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 Book Free Site Measurement
               </h3>
               <p className="text-xs text-slate-600 mt-1 font-medium">
-                Indicative Quote: ₹{estimatedMin.toLocaleString()} - ₹{estimatedMax.toLocaleString()} ({calculatedArea} sq.ft)
+                Free Doorstep Precision Laser Site Measurement Across Andhra Pradesh
               </p>
             </div>
 

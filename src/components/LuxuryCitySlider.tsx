@@ -7,8 +7,7 @@ import {
   ShieldCheck, 
   Play, 
   Pause,
-  Compass,
-  Calculator
+  Compass
 } from 'lucide-react';
 import { citiesData, type CityConfig } from '../data/citiesData';
 
@@ -170,11 +169,10 @@ export default function LuxuryCitySlider() {
             </a>
 
             <a
-              href="#calculator"
+              href="/contact#book-visit"
               className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#151C19]/80 hover:bg-[#1A2420] border border-[#24322B] hover:border-[#7CFF3A]/60 backdrop-blur-md transition-all"
             >
-              <Calculator className="w-4 h-4 text-[#7CFF3A]" />
-              <span>CALCULATE ESTIMATE</span>
+              <span>BOOK FREE SITE VISIT</span>
             </a>
           </div>
 

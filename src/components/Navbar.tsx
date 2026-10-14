@@ -6,7 +6,6 @@ import {
   X, 
   PhoneCall, 
   ArrowRight,
-  Calculator,
   Grid3X3,
   HelpCircle,
   FolderKanban,
@@ -161,13 +160,13 @@ export default function Navbar({ currentSlug }: NavbarProps) {
               )}
             </div>
 
-            {/* 2. Estimate Calculator */}
+            {/* 2. Service Areas */}
             <a 
-              href="#calculator" 
+              href="/locations" 
               className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all"
             >
-              <Calculator className="w-4 h-4 text-[#16A34A]" />
-              <span>Estimate Calculator</span>
+              <MapPin className="w-4 h-4 text-[#16A34A]" />
+              <span>Service Areas</span>
             </a>
 
             {/* 3. Projects */}
@@ -299,13 +298,13 @@ export default function Navbar({ currentSlug }: NavbarProps) {
             <div className="pt-2 border-t border-slate-200"></div>
 
             <a
-              href="#calculator"
+              href="/locations"
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#16A34A]"
             >
               <span className="flex items-center gap-2">
-                <Calculator className="w-4 h-4 text-[#16A34A]" />
-                Estimate Calculator
+                <MapPin className="w-4 h-4 text-[#16A34A]" />
+                Service Areas (7 Hubs)
               </span>
               <ArrowRight className="w-4 h-4 text-slate-400" />
             </a>

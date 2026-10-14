@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar';
-import PriceCalculator from '../../components/PriceCalculator';
 import PhotoGallery from '../../components/PhotoGallery.astro';
 import ServicesGrid from '../../components/ServicesGrid.astro';
 import SiteVisitForm from '../../components/SiteVisitForm';
@@ -35,7 +34,6 @@ import Footer from '../../components/Footer.astro';
 
     <ServicesGrid />
     <PhotoGallery cityName="Andhra Pradesh" />
-    <PriceCalculator client:load defaultCitySlug="visakhapatnam" cityName="Andhra Pradesh" />
     <SiteVisitForm client:visible defaultCitySlug="visakhapatnam" cityName="Andhra Pradesh" />
   </main>
 
