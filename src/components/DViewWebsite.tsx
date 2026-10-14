@@ -35,6 +35,8 @@ export interface LocationSlide {
   activeBelts: string[];
   weatherChallenge: string;
   weatherSolution: string;
+  safetyText?: string;
+  keywordPings?: string[];
   subLocations: SubLocationCorridor[];
 }
 
@@ -57,6 +59,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     activeBelts: ['Madhurawada (27-Floor High-Rises)', 'Yendada', 'Rushikonda', 'PM Palem', 'Anandapuram', 'Pendurthi', 'Gajuwaka'],
     weatherChallenge: "Vizag's high-salinity salt-air and marine damp humidity rapidly corrode cheap iron or low-grade steel wires within months.",
     weatherSolution: 'Strictly Marine Grade SS-316 infused with Molybdenum core for zero-decay corrosion resistance.',
+    safetyText: '100% Toddler & Child Fall Protection • Zero Pigeon Menace • Coastal SS-316 Rust Immunity',
+    keywordPings: ['Invisible Grills Vizag', 'Balcony Safety Madhurawada', 'SS-316 Marine Grade', 'Toddler Fall Protection', 'Rushikonda Ocean Views'],
     subLocations: [
       {
         name: 'Madhurawada (27-Floor High-Rises)',
@@ -120,6 +124,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     activeBelts: ['Morampudi', 'Bommuru', 'Diwancheruvu', 'Lalacheruvu', 'Vemagiri', 'Gadaala Residential Belts'],
     weatherChallenge: 'Daily river vapor mist and heavy pigeon nesting colonies on open balcony ledges.',
     weatherSolution: 'Precision 2-inch SS-316 tensioned cables preventing bird entry while allowing 99% free river cross-ventilation.',
+    safetyText: '100% Fall Containment • Zero Pigeon Infestation • Unobstructed Godavari Arch Bridge Breeze',
+    keywordPings: ['Invisible Grills Rajahmundry', 'Godavari Arch Bridge View', 'Balcony Safety Morampudi', 'Pigeon Proof Balcony', '10-Year Warranty'],
     subLocations: [
       {
         name: 'Morampudi Residential Towers',
@@ -176,6 +182,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     activeBelts: ['Benz Circle', 'Moghalrajpuram', 'Gunadala', 'Kanuru', 'Poranki', 'Amaravati HappyNest (G+18)', 'Tadepalli'],
     weatherChallenge: 'Intense summer thermal expansion and high-velocity wind gusts on skyscraper floors above 15 levels.',
     weatherSolution: 'High-tensile multi-strand core cables certified up to 400kg load per strand with thermal compensation.',
+    safetyText: 'Skyscraper High-Rise Fall Security • HappyNest & Riverside Balcony Safety • Certified 400kg/Strand',
+    keywordPings: ['Invisible Grills Vijayawada', 'Amaravati HappyNest Grills', 'Benz Circle Towers', 'High-Rise Balcony Safety', 'Prakasam Barrage View'],
     subLocations: [
       {
         name: 'Benz Circle Corridor Towers',
@@ -239,6 +247,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     activeBelts: ['Brodipet', 'Arundelpet', 'Amaravati Road', 'Namburu', 'Kaza & Tadepalli Belt (900+ listings)'],
     weatherChallenge: 'Heavy dry winds carrying abrasive dust particulates that erode and dull conventional iron bars.',
     weatherSolution: 'Anti-static smooth nylon-12 coated SS-316 cables shed dust effortlessly and maintain lifelong shine.',
+    safetyText: 'Meticulous Fall Security for Apartments & Villas • Anti-Dust Smooth Nylon Coating • Zero-Climb Intervals',
+    keywordPings: ['Invisible Grills Guntur', 'Brodipet High-Rises', 'Arundelpet Balcony Safety', 'Kondaveedu Horizon', 'Toddler Anti-Climb Spacing'],
     subLocations: [
       {
         name: 'Brodipet High-End Residencies',
@@ -290,11 +300,13 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Deepwater Port & Coastal Corridor',
     emotionHook: 'Uppu gaali thupattu pattakunda, high-grade Marine wire security tho lifetime durability!',
     landmarkDesc: 'Coastal apartment balcony framing Vakalapudi Lighthouse and palm shoreline with marine-grade SS-316 wires.',
-    heroImage: '/images/cities/hero-kakinada.jpg',
-    mobileHeroImage: '/images/cities/hero-kakinada.jpg',
+    heroImage: '/images/dashboard/dashboard-kakinada.jpg',
+    mobileHeroImage: '/images/dashboard/dashboard-kakinada-9x16.jpg',
     activeBelts: ['Sarpavaram', 'Madhavapatnam', 'Ramanayyapeta', 'Vakalapudi', 'Jagannaickpur'],
     weatherChallenge: 'Aggressive industrial port emissions mixed with salty maritime mist causing pitting corrosion.',
     weatherSolution: 'Certified Marine Grade SS-316 tested against ASTM B117 standards for extreme saline resistance.',
+    safetyText: 'Permanent Rust Immunity Against Marine Port Emissions • 100% Child & Pet Containment • Unblocked Sea Breeze',
+    keywordPings: ['Invisible Grills Kakinada', 'Sarpavaram High-Rise', 'Vakalapudi Port Balcony', 'Marine Grade SS-316', 'Coastal Rust Shield'],
     subLocations: [
       {
         name: 'Vakalapudi Port & Lighthouse Corridor',
@@ -351,6 +363,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     activeBelts: ['Magunta Layout', 'Balaji Nagar', 'Dargamitta', 'Vedayapalem', 'Podalakur Road', 'Kavali Road'],
     weatherChallenge: 'Continuous seasonal monsoon dampness loosening weak anchor points and corroding inferior wires.',
     weatherSolution: 'Precision aluminum track tensioners anchored deep in structural concrete with non-corrosive fasteners.',
+    safetyText: 'Tranquil Balcony Living for Elders & Children • 60-Sec Fire Escape System • Penna Riverfront Protection',
+    keywordPings: ['Invisible Grills Nellore', 'Magunta Layout Flats', 'Balaji Nagar Balcony Safety', 'Penna Riverfront View', 'Fire Escape Safety'],
     subLocations: [
       {
         name: 'Magunta Layout Premium Flats',
@@ -407,6 +421,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     activeBelts: ['Bhagyanagar', 'Lawyerpet', 'Kurnool Road Belt', 'Santhapet', 'Mangamuru Road', 'Housing Board Colony'],
     weatherChallenge: 'Inland summer heat and dry highway dust wearing down traditional painted grills and causing frequent rust.',
     weatherSolution: 'Certified SS-316 high-tensile wire rope coated with UV-resistant transparent nylon sheath and heavy-duty 6063-T6 aluminum tracks.',
+    safetyText: 'Prakasam High-Tension SS-316 Cable Lock • Zero Cage Feeling • 100% Fall Containment on High Floors',
+    keywordPings: ['Invisible Grills Ongole', 'Bhagyanagar High-Rises', 'Lawyerpet Balcony Safety', 'Kurnool Road Towers', 'Child & Pet Shield'],
     subLocations: [
       {
         name: 'Bhagyanagar Prime High-Rises',
@@ -2109,8 +2125,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   />
                 </picture>
 
-                {/* Subtle top & bottom dark vignette */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
+                {/* Bottom gradient vignette for crisp text legibility while upper 75% remains unblocked */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 pointer-events-none" />
 
                 {/* Full screen tap-target navigates directly to the city corridor page */}
                 <a
@@ -2118,6 +2134,24 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   className="absolute inset-0 z-10 block"
                   aria-label={`Explore ${slide.name} Invisible Grills`}
                 />
+
+                {/* Mobile Bottom Information: Exactly 2-3 lines of clean text (NO map symbol, NO counter, NO extra buttons) */}
+                <div className="absolute bottom-24 inset-x-0 z-20 px-5 pb-2 text-left pointer-events-none">
+                  {/* Line 1: Place Name in Brand Green (No map icon) */}
+                  <div className="text-xs sm:text-sm font-black text-[#7CFF3A] tracking-[0.22em] uppercase drop-shadow mb-1">
+                    {slide.name}
+                  </div>
+
+                  {/* Line 2: Semantic H1 Headline */}
+                  <h1 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight leading-tight drop-shadow-md mb-1.5">
+                    Invisible Grills in <span className="text-[#7CFF3A]">{slide.cityShort}</span>
+                  </h1>
+
+                  {/* Line 3: Semantic H2 / Subline */}
+                  <h2 className="text-xs sm:text-sm text-slate-100/95 font-medium leading-snug drop-shadow max-w-sm">
+                    {slide.subline || "SS-316 Marine Grade Invisible Grills for 100% Balcony Safety & Open Views."}
+                  </h2>
+                </div>
 
               </div>
 
@@ -2130,13 +2164,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   className="absolute inset-0 bg-cover bg-center filter blur-3xl scale-125 opacity-20 pointer-events-none transition-all duration-700"
                   style={{ backgroundImage: `url(${slide.heroImage})` }}
                 />
-
-                {/* Desktop Counter */}
-                <div className="absolute top-4 right-6 z-20 pointer-events-none">
-                  <span className="px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono text-[#16A34A] font-bold shadow-sm">
-                    0{idx + 1} / 0{CITIES_SLIDES.length}
-                  </span>
-                </div>
 
                 {/* Main Content Grid */}
                 <div className="relative z-10 w-full max-w-6xl mx-auto flex-1 grid grid-cols-12 gap-8 items-center justify-center my-auto">
@@ -2157,7 +2184,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                   </div>
 
                   {/* Desktop Side Details */}
-                  <div className="col-span-5 flex flex-col items-start text-left space-y-4">
+                  <div className="col-span-5 flex flex-col items-start text-left space-y-3.5">
                     {/* Prominently Highlighted Brand Slogan Badge */}
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border-2 border-emerald-500 text-[11px] font-black tracking-wider uppercase text-emerald-950 shadow-sm">
                       <span className="text-[#16A34A] font-extrabold text-sm">—</span>
@@ -2165,20 +2192,21 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                       <span className="text-[#16A34A] font-extrabold text-sm">—</span>
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-xs font-bold text-[#16A34A] uppercase tracking-wider">
-                      <span>📍 {slide.categoryTag}</span>
+                    {/* Place Name (Clean - No map icon) */}
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-xs font-black text-[#16A34A] uppercase tracking-wider">
+                      <span>{slide.name} ({slide.cityShort})</span>
                     </div>
 
                     <h2 className="text-2xl lg:text-3xl font-black text-slate-900 uppercase leading-snug tracking-tight">
-                      {slide.name} • <span className="text-[#16A34A]">Architectural Safety</span>
+                      Invisible Grills in <span className="text-[#16A34A]">{slide.name}</span>
                     </h2>
 
                     <p className="text-sm text-slate-600 font-normal leading-relaxed">
-                      {slide.landmarkDesc}
+                      {slide.subline || slide.landmarkDesc}
                     </p>
 
-                    <div className="p-3.5 rounded-2xl bg-white border border-slate-200 w-full space-y-1.5 shadow-sm">
-                      <div className="text-xs font-bold text-[#16A34A] uppercase tracking-wider">
+                    <div className="p-3 rounded-2xl bg-white border border-slate-200 w-full space-y-1 shadow-sm">
+                      <div className="text-[11px] font-bold text-[#16A34A] uppercase tracking-wider">
                         Prominent Service Belts:
                       </div>
                       <div className="text-xs text-slate-700 font-medium">
