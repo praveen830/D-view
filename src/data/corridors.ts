@@ -126,7 +126,7 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       }
     ],
     contactSpecs: {
-      phoneDial: "+919494328999",
+      phoneDial: "+916281620716",
       whatsappPreFill: "Hello D-View, I am interested in SS-316 invisible safety grills for my Vizag balcony. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }
@@ -208,7 +208,7 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       }
     ],
     contactSpecs: {
-      phoneDial: "+919494328999",
+      phoneDial: "+916281620716",
       whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Rajahmundry home. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }
@@ -298,7 +298,7 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       }
     ],
     contactSpecs: {
-      phoneDial: "+919494328999",
+      phoneDial: "+916281620716",
       whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Amaravati flat. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }
@@ -372,7 +372,7 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       }
     ],
     contactSpecs: {
-      phoneDial: "+919494328999",
+      phoneDial: "+916281620716",
       whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Guntur balcony. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }
@@ -454,7 +454,7 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       }
     ],
     contactSpecs: {
-      phoneDial: "+919494328999",
+      phoneDial: "+916281620716",
       whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Kakinada home. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }
@@ -528,7 +528,7 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       }
     ],
     contactSpecs: {
-      phoneDial: "+919494328999",
+      phoneDial: "+916281620716",
       whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Nellore apartment. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }
@@ -595,7 +595,7 @@ export const safetyGrillData: Record<string, CitySafetyGrillConfig> = {
       }
     ],
     contactSpecs: {
-      phoneDial: "+919494328999",
+      phoneDial: "+916281620716",
       whatsappPreFill: "Hello D-View, I am interested in safe invisible grills for my Ongole apartment. Please send information.",
       emergencySpec: "1_MIN_SAFE_FIRE_EGRESS"
     }

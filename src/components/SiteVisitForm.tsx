@@ -53,7 +53,7 @@ ${note ? `• Note: ${note}` : ''}
 
 Please share the details.`;
 
-    return `https://wa.me/919494328999?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/916281620716?text=${encodeURIComponent(text)}`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {

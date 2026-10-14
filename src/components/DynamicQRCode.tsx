@@ -93,7 +93,7 @@ export default function DynamicQRCode({ locationSlug, cityName }: DynamicQRCodeP
             </button>
 
             <a
-              href={`https://wa.me/919494328999?text=Hi%20D-VIEW,%20I%20am%20reviewing%20the%20${encodeURIComponent(cityName)}%20invisible%20grills%20page.`}
+              href={`https://wa.me/916281620716?text=Hi%20D-VIEW,%20I%20am%20reviewing%20the%20${encodeURIComponent(cityName)}%20invisible%20grills%20page.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-[#0B0D0C] bg-[#7CFF3A] hover:bg-[#8FFF52] transition-colors"

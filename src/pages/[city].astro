@@ -115,6 +115,21 @@ const subLocalities = location.subLocalities || [];
               decoding="async"
             />
 
+            {/* TOP THEMED BANNER MATCHING BRAND THEME */}
+            <div class="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-4 pointer-events-none z-10">
+              <div class="bg-black/65 backdrop-blur-md border border-white/20 rounded-2xl px-3 py-2.5 sm:px-4 sm:py-3 text-center shadow-xl">
+                <span class="block text-[9px] sm:text-[10px] font-black uppercase tracking-[0.22em] text-[#7CFF3A] mb-0.5">
+                  BUILDING SAFER SPACES, TOGETHER
+                </span>
+                <span class="block text-xs sm:text-sm font-black uppercase text-white tracking-wide">
+                  PREMIUM INVISIBLE GRILLS IN <span class="text-[#7CFF3A]">{cityName.toUpperCase()}</span>
+                </span>
+                <span class="block text-[9px] sm:text-[11px] font-semibold text-slate-200 tracking-wide mt-0.5 truncate">
+                  Experience the Beauty of {location.landmarkFeature || cityName}
+                </span>
+              </div>
+            </div>
+
             {/* ACTION BUTTONS DIRECTLY OVER THE IMAGE - NO BLUR */}
             <div class="absolute bottom-3 sm:bottom-4 inset-x-0 px-2.5 sm:px-4 flex items-center justify-between gap-1.5 sm:gap-2.5 z-10">
               {/* 1. Contact Us */}
@@ -141,7 +156,7 @@ const subLocalities = location.subLocalities || [];
 
               {/* 3. WhatsApp */}
               <a
-                href={`https://wa.me/919494328999?text=${encodeURIComponent('Hi, I am interested in a site visit. Please share the details.')}`}
+                href={`https://wa.me/916281620716?text=${encodeURIComponent('Hi, I am interested in a site visit. Please share the details.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex-1 min-w-0 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-2 sm:py-2.5 rounded-xl bg-white/95 hover:bg-white text-slate-900 hover:text-[#25D366] border border-slate-200 hover:border-[#25D366] text-[11px] sm:text-xs font-bold transition-all shadow-md text-center"

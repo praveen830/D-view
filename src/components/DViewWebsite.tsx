@@ -290,8 +290,8 @@ export const CITIES_SLIDES: LocationSlide[] = [
     badge: 'Deepwater Port & Coastal Corridor',
     emotionHook: 'Uppu gaali thupattu pattakunda, high-grade Marine wire security tho lifetime durability!',
     landmarkDesc: 'Coastal apartment balcony framing Vakalapudi Lighthouse and palm shoreline with marine-grade SS-316 wires.',
-    heroImage: '/images/dashboard/dashboard-kakinada.jpg?v=tier1_fresh',
-    mobileHeroImage: '/images/dashboard/dashboard-kakinada-9x16.jpg?v=tier1_fresh',
+    heroImage: '/images/cities/hero-kakinada.jpg',
+    mobileHeroImage: '/images/cities/hero-kakinada.jpg',
     activeBelts: ['Sarpavaram', 'Madhavapatnam', 'Ramanayyapeta', 'Vakalapudi', 'Jagannaickpur'],
     weatherChallenge: 'Aggressive industrial port emissions mixed with salty maritime mist causing pitting corrosion.',
     weatherSolution: 'Certified Marine Grade SS-316 tested against ASTM B117 standards for extreme saline resistance.',
@@ -1750,7 +1750,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 </label>
                 <input 
                   type="tel" 
-                  placeholder="+91 94943 28999"
+                  placeholder="+91 62816 20716"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
                   className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:border-emerald-500"
@@ -1762,7 +1762,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center mt-4">
               <div className="w-28 h-28 mx-auto bg-white p-2 rounded-xl flex items-center justify-center shadow-md border border-slate-100">
                 <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/919494328999?text=${getWhatsAppMessage()}`} 
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/916281620716?text=${getWhatsAppMessage()}`} 
                   alt="Dynamic WhatsApp QR Code"
                   className="w-full h-full object-contain"
                   loading="lazy"
@@ -1785,12 +1785,12 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 Book Free Laser Measurement With This Quote →
               </button>
               <a 
-                href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
+                href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full bg-slate-50 hover:bg-slate-100 border border-emerald-300 text-[#16A34A] py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider block text-center transition"
               >
-                Direct WhatsApp Chat (+91 94943 28999)
+                Direct WhatsApp Chat (+91 62816 20716)
               </a>
             </div>
           </div>
@@ -1822,22 +1822,22 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             India's premier architectural invisible safety grill specialist. 100% safety, zero view obstruction.
           </p>
           <div className="space-y-2 text-slate-800 text-xs pt-1">
-            <a href="tel:+919494328999" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
+            <a href="tel:+916281620716" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
               <Phone className="w-4 h-4 text-[#16A34A] shrink-0" />
-              <span>📞 Direct Call: +91 94943 28999</span>
+              <span>📞 Direct Call: +91 62816 20716</span>
             </a>
             <a 
-              href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
+              href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`}
               target="_blank"
               rel="noreferrer" 
               className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium"
             >
               <MessageSquare className="w-4 h-4 text-[#16A34A] shrink-0" />
-              <span>💬 WhatsApp Concierge: +91 94943 28999</span>
+              <span>💬 WhatsApp Concierge: +91 62816 20716</span>
             </a>
-            <a href="mailto:invisiblesafety4@gmail.com" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
+            <a href="mailto:dviewsolutions32@gmail.com" className="flex items-center gap-2 hover:text-[#16A34A] transition font-medium">
               <Mail className="w-4 h-4 text-[#16A34A] shrink-0" />
-              <span>✉️ Official Email: invisiblesafety4@gmail.com</span>
+              <span>✉️ Official Email: dviewsolutions32@gmail.com</span>
             </a>
             <div className="pt-2 text-[11px] text-slate-500 leading-relaxed border-t border-slate-200">
               <span className="text-slate-800 font-semibold block">🏢 Registered Head Office:</span>
@@ -1951,7 +1951,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     <aside aria-label="Quick Connect Floating Actions">
       {/* 1. Floating WhatsApp Button (Bottom-Right on ALL devices) */}
       <a
-        href={`https://wa.me/919494328999?text=${quickConnectWAMessage}`}
+        href={`https://wa.me/916281620716?text=${quickConnectWAMessage}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with D-View on WhatsApp"
@@ -1971,18 +1971,18 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
         {/* Desktop Hover Tooltip */}
         <span className="hidden md:group-hover:block absolute right-full mr-3 px-3.5 py-2 rounded-xl bg-[#101714] border border-[#25D366]/40 text-[#25D366] text-xs font-semibold whitespace-nowrap shadow-xl">
-          WhatsApp Concierge (+91 94943 28999)
+          WhatsApp Concierge (+91 62816 20716)
         </span>
       </a>
 
       {/* 2. Floating Quick Call Button (Bottom-Left on Mobile) */}
       <a
-        href="tel:+919494328999"
+        href="tel:+916281620716"
         aria-label="Direct Phone Call"
         className="md:hidden fixed bottom-6 left-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#101714]/95 backdrop-blur-md border border-[#7CFF3A]/40 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] active:scale-95 transition-all text-xs font-semibold uppercase tracking-wider group cursor-pointer"
       >
         <Phone className="w-4 h-4 text-[#7CFF3A] shrink-0 stroke-[2.5]" />
-        <span className="text-white font-bold tracking-normal">Call +91 94943 28999</span>
+        <span className="text-white font-bold tracking-normal">Call +91 62816 20716</span>
       </a>
     </aside>
   );
@@ -2048,7 +2048,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </div>
         </div>
 
-        {/* Right: Direct concierge telephone `+91 94943 28999` and `CONTACT US` */}
+        {/* Right: Direct concierge telephone `+91 62816 20716` and `CONTACT US` */}
         <div className="flex items-center gap-6 sm:gap-8 text-xs uppercase tracking-[0.2em] text-slate-700 font-semibold">
           <button
             type="button"
@@ -2059,11 +2059,11 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           </button>
           
           <a
-            href="tel:+919494328999"
+            href="tel:+916281620716"
             className="text-slate-900 hover:text-[#16A34A] transition flex items-center gap-1.5"
           >
             <Phone className="w-3.5 h-3.5 text-[#16A34A] stroke-[2]" />
-            <span className="hidden sm:inline text-slate-800 font-bold">+91 94943 28999</span>
+            <span className="hidden sm:inline text-slate-800 font-bold">+91 62816 20716</span>
           </a>
         </div>
 
@@ -2161,8 +2161,8 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             {/* Concierge Info at Bottom */}
             <div className="pt-8 border-t border-slate-200 text-xs text-slate-500 space-y-1">
               <p className="text-slate-900 font-bold tracking-wider">Direct Concierge</p>
-              <p className="text-slate-800 font-medium">+91 94943 28999</p>
-              <p className="text-slate-600">contact@dviewsolutions.com</p>
+              <p className="text-slate-800 font-medium">+91 62816 20716</p>
+              <p className="text-slate-600">dviewsolutions32@gmail.com</p>
             </div>
 
           </div>
@@ -2796,7 +2796,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 </label>
                 <input 
                   type="tel"
-                  placeholder="+91 94943 28999"
+                  placeholder="+91 62816 20716"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
                   className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-emerald-500 focus:bg-white"
@@ -2807,7 +2807,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-center mt-3">
                 <div className="w-32 h-32 mx-auto bg-white p-2 rounded-xl flex items-center justify-center border border-slate-200 shadow-sm">
                   <img 
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/919494328999?text=${getWhatsAppMessage()}`} 
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://wa.me/916281620716?text=${getWhatsAppMessage()}`} 
                     alt="WhatsApp QR Code"
                     className="w-full h-full object-contain"
                   />
@@ -2818,7 +2818,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               </div>
 
               <a 
-                href={`https://wa.me/919494328999?text=${getWhatsAppMessage()}`}
+                href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full bg-[#16A34A] hover:bg-emerald-700 text-white py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider block text-center shadow-lg mt-3 transition"

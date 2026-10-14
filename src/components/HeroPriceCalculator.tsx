@@ -107,7 +107,7 @@ export default function HeroPriceCalculator({ citySlug, cityName }: HeroPriceCal
 
 I am interested in D-View Invisible Grills. Please schedule a 100% Free Site Visit & Measurement and apply the 10% – 15% Spot Discount.`;
 
-    return `https://wa.me/919494328999?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/916281620716?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -299,11 +299,11 @@ I am interested in D-View Invisible Grills. Please schedule a 100% Free Site Vis
 
           {/* Direct Phone Call Button */}
           <a
-            href="tel:+919494328999"
+            href="tel:+916281620716"
             className="w-full flex items-center justify-center gap-2 py-2 sm:py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-300 hover:border-[#16A34A] text-slate-800 font-bold text-xs sm:text-sm transition-all shadow-sm active:scale-98 cursor-pointer"
           >
             <span>📞</span>
-            <span>Call Directly for Lowest Spot Quote: <strong className="text-[#16A34A] ml-1">+91 94943 28999</strong></span>
+            <span>Call Directly for Lowest Spot Quote: <strong className="text-[#16A34A] ml-1">+91 62816 20716</strong></span>
           </a>
         </div>
 

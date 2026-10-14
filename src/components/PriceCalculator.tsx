@@ -90,7 +90,7 @@ I calculated an estimate on your website for my balcony:
 
 Please arrange a Free On-Site Digital Measurement visit.`;
 
-    return `https://wa.me/919494328999?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/916281620716?text=${encodeURIComponent(message)}`;
   };
 
   // Generate QR code when modal opens or calculation changes
@@ -432,7 +432,7 @@ Please arrange a Free On-Site Digital Measurement visit.`;
                           required
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          placeholder="e.g. 9494328999"
+                          placeholder="e.g. 6281620716"
                           className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl text-slate-900 focus:bg-white focus:outline-none focus:border-[#16A34A]"
                         />
                       </div>
