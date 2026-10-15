@@ -1250,15 +1250,17 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   };
 
   const getWhatsAppMessage = () => {
-    return encodeURIComponent(
-      `Hello D-View Invisible Safety Concierge!\n` +
-      `I would like to book a Free Doorstep Site Visit & Precision Laser Measurement.\n\n` +
-      `📍 City Hub: ${selectedHub}\n` +
-      `🏢 Community / Corridor: ${currentCorridorDisplayName}\n` +
-      `🛡️ Requirement: SS-316 Marine Grade Invisible Grills\n` +
-      `👤 Name: ${customerName || 'Resident'}\n` +
-      `📞 Phone: ${customerPhone || 'Via WhatsApp'}`
-    );
+    let msg = `Hello D-view invisible grills, I am interested in invisible safety grills for my balcony. Please share details.`;
+    if (selectedHub && selectedHub !== "Andhra Pradesh") {
+      msg += `\n\n📍 City: ${selectedHub}${currentCorridorDisplayName ? ` (${currentCorridorDisplayName})` : ''}`;
+    }
+    if (customerName) {
+      msg += `\n👤 Name: ${customerName}`;
+    }
+    if (customerPhone) {
+      msg += `\n📞 Phone: ${customerPhone}`;
+    }
+    return encodeURIComponent(msg);
   };
 
   // Society Proof Filter State
@@ -1827,7 +1829,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <span className="text-[10px] text-slate-600 block mt-0.5">We dispatch our engineer with laser toolkit in 2 hours.</span>
               </div>
               <a href="tel:+916281620716" className="mt-2 text-[10px] font-black text-[#16A34A] hover:underline flex items-center gap-1">
-                <span>Call +91 62816 20716</span>
+                <span>Call Now</span>
                 <span>→</span>
               </a>
             </div>
@@ -1871,7 +1873,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
   );
 
   const quickConnectWAMessage = encodeURIComponent(
-    "Hello D-View, I am interested in SS-316 invisible safety grills for my balcony. Please share details and free site measurement availability."
+    "Hello D-view invisible grills, I am interested in invisible safety grills for my balcony. Please share details."
   );
 
   const renderFloatingQuickConnect = () => (
@@ -1898,18 +1900,18 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
 
         {/* Desktop Hover Tooltip */}
         <span className="hidden md:group-hover:block absolute right-full mr-3 px-3.5 py-2 rounded-xl bg-[#101714] border border-[#25D366]/40 text-[#25D366] text-xs font-semibold whitespace-nowrap shadow-xl">
-          WhatsApp Concierge (+91 62816 20716)
+          Chat on WhatsApp
         </span>
       </a>
 
-      {/* 2. Floating Quick Call Button (Bottom-Left on Mobile) */}
+      {/* 2. Floating Quick Call Button (Bottom-Left) */}
       <a
         href="tel:+916281620716"
         aria-label="Direct Phone Call"
-        className="md:hidden fixed bottom-6 left-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#101714]/95 backdrop-blur-md border border-[#7CFF3A]/40 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] active:scale-95 transition-all text-xs font-semibold uppercase tracking-wider group cursor-pointer"
+        className="fixed bottom-6 left-5 sm:left-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#101714]/95 backdrop-blur-md border border-[#7CFF3A]/40 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] hover:scale-105 active:scale-95 transition-all text-xs font-semibold uppercase tracking-wider group cursor-pointer"
       >
         <Phone className="w-4 h-4 text-[#7CFF3A] shrink-0 stroke-[2.5]" />
-        <span className="text-white font-bold tracking-normal">Call +91 62816 20716</span>
+        <span className="text-white font-bold tracking-normal">Call Now</span>
       </a>
     </aside>
   );

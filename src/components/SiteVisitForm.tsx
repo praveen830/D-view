@@ -43,15 +43,13 @@ export default function SiteVisitForm({ defaultCitySlug = 'rajahmundry', cityNam
   const finalArea = area === 'other' ? (customArea || 'Custom Locality') : (area || 'Not specified');
 
   const buildWhatsAppUrl = () => {
-    const text = `Hi, I am interested in a site visit.
+    const text = `Hello D-view invisible grills, I am interested in invisible safety grills for my balcony. Please share details.
 • Name: ${name || 'Customer'}
 • Mobile: +91 ${phone || ''}
 • City: ${activeCity.name}
 • Area: ${finalArea}
 • Requirements: ${selectedRequirements.length > 0 ? selectedRequirements.join(', ') : 'Balcony'}
-${note ? `• Note: ${note}` : ''}
-
-Please share the details.`;
+${note ? `• Note: ${note}` : ''}`;
 
     return `https://wa.me/916281620716?text=${encodeURIComponent(text)}`;
   };
