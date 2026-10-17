@@ -10,6 +10,7 @@ interface Props {
   preloadHeroImage?: string;
   keywords?: string[];
   hideFloatingButtons?: boolean;
+  showIntroAnimation?: boolean;
   faqs?: { question: string; answer: string }[];
 }
 
@@ -22,6 +23,7 @@ const {
   preloadHeroImage,
   keywords = ['invisible grills andhra pradesh', 'balcony safety solutions', 'ss 316 invisible grills', 'coastal balcony safety'],
   hideFloatingButtons = false,
+  showIntroAnimation = false,
   faqs = []
 } = Astro.props;
 
@@ -33,11 +35,11 @@ const absoluteOgImage = ogImage.startsWith('http')
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  "name": "D-VIEW Invisible Safety Grills",
+  "name": "D-VIEW Solutions",
   "image": "https://dviewsolutions.com/assets/locations/rajahmundry.png",
   "telephone": "+916281620716",
   "email": "dviewsolutions32@gmail.com",
-  "url": canonicalUrl,
+  "url": "https://dviewsolutions.com/",
   "priceRange": "₹₹",
   "address": {
     "@type": "PostalAddress",
@@ -130,6 +132,17 @@ const faqSchema = faqs && faqs.length > 0 ? {
     )}
   </head>
   <body class="bg-white text-slate-900 antialiased selection:bg-[#16A34A] selection:text-white">
+    {showIntroAnimation && (
+      <div class="dview-intro" aria-hidden="true">
+        <div class="dview-intro-inner">
+          <div class="dview-intro-grill">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="dview-intro-wordmark">D-VIEW</div>
+          <div class="dview-intro-caption">INVISIBLE GRILLS · OPEN VIEWS</div>
+        </div>
+      </div>
+    )}
 
     <slot />
 

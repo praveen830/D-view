@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   Check, 
   ChevronDown, 
@@ -25,9 +25,25 @@ export default function SiteVisitForm({ defaultCitySlug = 'rajahmundry', cityNam
   const [selectedRequirements, setSelectedRequirements] = useState<string[]>(['BALCONY']);
   const [showNote, setShowNote] = useState(false);
   const [note, setNote] = useState('');
-  const [connectGoogle, setConnectGoogle] = useState(false);
-  const [consentAgreed, setConsentAgreed] = useState(true);
+  const [consentAgreed, setConsentAgreed] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Honour city links such as /contact?city=vizag without trusting arbitrary values.
+  useEffect(() => {
+    const requestedCity = new URLSearchParams(window.location.search).get('city')?.toLowerCase();
+    const aliases: Record<string, string> = {
+      vizag: 'visakhapatnam',
+      rajamahendravaram: 'rajahmundry',
+      vijayawada: 'vijayawada-amaravati',
+      amaravati: 'vijayawada-amaravati'
+    };
+    const resolvedCity = requestedCity ? (aliases[requestedCity] || requestedCity) : '';
+    if (ALL_LOCATIONS.some(loc => loc.slug === resolvedCity)) {
+      setCity(resolvedCity);
+      setArea('');
+      setCustomArea('');
+    }
+  }, []);
 
   const activeCity = ALL_LOCATIONS.find(c => c.slug === city) || ALL_LOCATIONS[0];
   const cityAreas = activeCity.areas || [];
@@ -45,7 +61,7 @@ export default function SiteVisitForm({ defaultCitySlug = 'rajahmundry', cityNam
   const buildWhatsAppUrl = () => {
     const text = `Hello D-view invisible grills, I am interested in invisible safety grills for my balcony. Please share details.
 • Name: ${name || 'Customer'}
-• Mobile: +91 ${phone || ''}
+• Mobile: +91 ${phone.replace(/\D/g, '')}
 • City: ${activeCity.name}
 • Area: ${finalArea}
 • Requirements: ${selectedRequirements.length > 0 ? selectedRequirements.join(', ') : 'Balcony'}
@@ -60,7 +76,7 @@ ${note ? `• Note: ${note}` : ''}`;
       alert('Please enter your name');
       return;
     }
-    if (!phone || phone.replace(/\D/g, '').length < 10) {
+    if (!/^[6-9]\d{9}$/.test(phone.replace(/\D/g, ''))) {
       alert('Please enter a valid 10-digit mobile number');
       return;
     }
@@ -78,8 +94,8 @@ ${note ? `• Note: ${note}` : ''}`;
     }
 
     setIsSubmitted(true);
-    // Direct WhatsApp redirect
-    window.open(buildWhatsAppUrl(), '_blank');
+    // This only opens a draft; the visitor must tap Send in WhatsApp.
+    window.open(buildWhatsAppUrl(), '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -208,7 +224,7 @@ ${note ? `• Note: ${note}` : ''}`;
                   )}
 
                   <p className="text-[11px] text-slate-500 mt-1.5 font-normal">
-                    So we send the nearest checked installer.
+                    This helps us understand your installation location.
                   </p>
                 </div>
               </div>
@@ -297,33 +313,6 @@ ${note ? `• Note: ${note}` : ''}`;
                 </div>
               </div>
 
-              {/* GOOGLE ACCOUNT CONNECT / VERIFY OPTION */}
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
-                <label className="flex items-center gap-2.5 cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    checked={connectGoogle}
-                    onChange={(e) => setConnectGoogle(e.target.checked)}
-                    className="w-4 h-4 rounded accent-[#16A34A] cursor-pointer"
-                  />
-                  <div className="flex items-center gap-1.5">
-                    {/* Google G SVG */}
-                    <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
-                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
-                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
-                    </svg>
-                    <span className="text-xs font-bold text-slate-700">
-                      Connect with Google account
-                    </span>
-                  </div>
-                </label>
-                <span className="text-[10px] text-[#16A34A] bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
-                  Verified
-                </span>
-              </div>
-
               {/* CONSENT CHECKBOX */}
               <div className="pt-1">
                 <label className="flex items-start gap-2.5 cursor-pointer text-[11px] text-slate-500 leading-relaxed select-none">
@@ -334,7 +323,7 @@ ${note ? `• Note: ${note}` : ''}`;
                     className="w-4 h-4 mt-0.5 rounded accent-[#16A34A] cursor-pointer flex-shrink-0"
                   />
                   <span>
-                    I agree that D-VIEW may share my project details with our verified installation expert in {activeCity.name} to schedule a site survey and quote via Call or WhatsApp. See the <a href="/about" className="underline hover:text-slate-900">Privacy Policy</a>.
+                    I agree to share my enquiry details with D-VIEW on WhatsApp to request a quotation for {activeCity.name}. I understand that I must tap Send in WhatsApp. See the <a href="/privacy#privacy" className="underline hover:text-slate-900">Privacy Policy</a>.
                   </span>
                 </label>
               </div>
@@ -350,7 +339,7 @@ ${note ? `• Note: ${note}` : ''}`;
                 </button>
 
                 <p className="text-center text-[11px] text-slate-500 mt-3 font-medium">
-                  Complimentary site visit • One checked installer • No spam
+                  Opening WhatsApp prepares a draft; you must tap Send.
                 </p>
               </div>
 
@@ -361,10 +350,10 @@ ${note ? `• Note: ${note}` : ''}`;
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-black text-slate-900 uppercase">
-                Free Site Visit Request Sent!
+                WhatsApp Message Ready
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
-                Thank you <strong className="text-slate-900">{name}</strong>. Our verified installer for <strong className="text-[#16A34A]">{activeCity.name} ({finalArea})</strong> has been notified.
+                Thank you <strong className="text-slate-900">{name}</strong>. Your enquiry for <strong className="text-[#16A34A]">{activeCity.name} ({finalArea})</strong> is not sent yet. Open WhatsApp and tap Send to share it with D-VIEW.
               </p>
               <div className="pt-4 flex flex-col gap-2.5">
                 <a
@@ -381,7 +370,7 @@ ${note ? `• Note: ${note}` : ''}`;
                   onClick={() => setIsSubmitted(false)}
                   className="text-xs text-slate-500 hover:text-slate-900 underline pt-2"
                 >
-                  Submit another site measurement
+                  Edit enquiry details
                 </button>
               </div>
             </div>

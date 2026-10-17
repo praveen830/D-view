@@ -34,6 +34,7 @@ interface Props {
 
 const { location, slug } = Astro.props;
 const corridorParam = Astro.url.searchParams.get('corridor') || undefined;
+const primaryCitySlug = location.slug === 'vijayawada-amaravati' ? 'vijayawada' : location.slug;
 
 const CITY_SEO: Record<string, { title: string; description: string; canonical: string }> = {
   visakhapatnam: {
@@ -80,9 +81,8 @@ const pageTitle = corridorParam
 const pageDesc = corridorParam
   ? `Certified SS-316 Marine Grade invisible safety grills for ${corridorParam} residences in ${location.name}. 100% unblocked panoramic view, 10-year warranty, child & pet fall protection.`
   : cityMeta.description;
-const canonicalUrl = corridorParam
-  ? `https://dviewsolutions.com/safety-pillars/${slug}?corridor=${encodeURIComponent(corridorParam)}`
-  : `https://dviewsolutions.com/safety-pillars/${slug}`;
+// Query parameters do not produce independently prerendered Astro pages.
+const canonicalUrl = `https://dviewsolutions.com/safety-pillars/${primaryCitySlug}`;
 ---
 
 <Layout
