@@ -174,53 +174,68 @@ const faqSchema = faqs && faqs.length > 0 ? {
 
     <!-- Google Ads Click to Call Conversion Tracking -->
     <script is:inline>
-      document.addEventListener('DOMContentLoaded', () => {
-        const callButtons = document.querySelectorAll('a[href^="tel:"]');
-        callButtons.forEach(btn => {
-          btn.__callTracked = true;
-          btn.addEventListener('click', () => {
-            if (typeof gtag === 'function') {
-              gtag('event', 'conversion', {
-                'send_to': 'AW-18513376665/rhX5CP6v9a8dEJnr7vtE',
-                'value': 1.0,
-                'currency': 'INR'
-              });
-            }
-          });
-        });
-      });
+      (function () {
+        var CONVERSION_ID = 'AW-18513376665/rhX5CP6v9a8dEJnr7vtE';
+        var lastFired = 0;
 
-      // Delegated fallback for dynamically loaded drawers/modals
-      if (typeof document !== 'undefined' && document && typeof document.addEventListener === 'function') {
-        document.addEventListener('click', (e) => {
-          const btn = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
-          if (btn && !btn.__callTracked) {
-            btn.__callTracked = true;
-            if (typeof gtag === 'function') {
-              gtag('event', 'conversion', {
-                'send_to': 'AW-18513376665/rhX5CP6v9a8dEJnr7vtE',
-                'value': 1.0,
-                'currency': 'INR'
-              });
+        function gtag_report_conversion(url) {
+          var now = Date.now();
+          var navigated = false;
+
+          var openDialer = function () {
+            if (!navigated) {
+              navigated = true;
+              if (typeof url !== 'undefined' && url) {
+                window.location.href = url;
+              }
             }
+          };
+
+          // Debounce rapid double-taps within 1.5s while still allowing dialer
+          if (now - lastFired < 1500) {
+            openDialer();
+            return false;
           }
-        });
-      }
+          lastFired = now;
 
-      function gtag_report_conversion(url) {
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-18513376665/rhX5CP6v9a8dEJnr7vtE',
-            'value': 1.0,
-            'currency': 'INR'
-          });
+          var gtagFn = (typeof gtag === 'function')
+            ? gtag
+            : (typeof window !== 'undefined' && typeof window.gtag === 'function')
+              ? window.gtag
+              : null;
+
+          if (gtagFn) {
+            // Fallback timer ensures dialer opens within 600ms if network/adblocker stalls callback
+            setTimeout(openDialer, 600);
+            gtagFn('event', 'conversion', {
+              'send_to': CONVERSION_ID,
+              'value': 1.0,
+              'currency': 'INR',
+              'transport_type': 'beacon',
+              'event_callback': openDialer
+            });
+          } else {
+            openDialer();
+          }
+          return false;
         }
-        if (typeof url !== 'undefined') {
-          window.location = url;
+
+        window.gtag_report_conversion = gtag_report_conversion;
+
+        // Global delegated listener for all static & dynamic <a href="tel:..."> links
+        if (typeof document !== 'undefined' && document && document.addEventListener) {
+          document.addEventListener('click', function (e) {
+            var anchor = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+            if (anchor && !e.defaultPrevented) {
+              var href = anchor.getAttribute('href');
+              if (href) {
+                e.preventDefault();
+                gtag_report_conversion(href);
+              }
+            }
+          }, false);
         }
-        return false;
-      }
-      window.gtag_report_conversion = gtag_report_conversion;
+      })();
     </script>
   </head>
   <body class="bg-white text-slate-900 antialiased selection:bg-[#16A34A] selection:text-white no-scrollbar">
