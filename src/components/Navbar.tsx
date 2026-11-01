@@ -205,12 +205,6 @@ export default function Navbar({ currentSlug }: NavbarProps) {
             {/* 5. Direct Call */}
             <a
               href="tel:+916281620716"
-              onClick={(e) => {
-                if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-                  e.preventDefault();
-                  (window as any).gtag_report_conversion('tel:+916281620716');
-                }
-              }}
               className="flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold text-slate-900 bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition-all ml-1"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#16A34A]" />
@@ -234,12 +228,6 @@ export default function Navbar({ currentSlug }: NavbarProps) {
           <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden">
             <a
               href="tel:+916281620716"
-              onClick={(e) => {
-                if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-                  e.preventDefault();
-                  (window as any).gtag_report_conversion('tel:+916281620716');
-                }
-              }}
               className="p-2 rounded-lg bg-slate-50 border border-slate-200 text-[#16A34A]"
               aria-label="Call D-VIEW Helpline +91 62816 20716"
             >
@@ -381,12 +369,6 @@ export default function Navbar({ currentSlug }: NavbarProps) {
             </a>
             <a
               href="tel:+916281620716"
-              onClick={(e) => {
-                if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-                  e.preventDefault();
-                  (window as any).gtag_report_conversion('tel:+916281620716');
-                }
-              }}
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 text-xs font-semibold"
             >
               <PhoneCall className="w-4 h-4 text-[#16A34A]" />

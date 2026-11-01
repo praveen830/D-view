@@ -292,12 +292,6 @@ Please share quotation details and schedule my site visit measurement.`;
           {/* Direct Phone Call Button */}
           <a
             href="tel:+916281620716"
-            onClick={(e) => {
-              if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-                e.preventDefault();
-                (window as any).gtag_report_conversion('tel:+916281620716');
-              }
-            }}
             className="w-full flex items-center justify-center gap-2 py-2 sm:py-2.5 px-4 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-300 hover:border-[#16A34A] text-slate-800 font-bold text-xs sm:text-sm transition-all shadow-sm active:scale-98 cursor-pointer"
           >
             <span>📞</span>

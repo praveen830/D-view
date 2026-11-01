@@ -1359,13 +1359,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
     setSocietyFilter(activeSlide.id);
   }, [activeSlide.id]);
 
-  const handleCallClick = (e: React.MouseEvent<HTMLAnchorElement>, url = 'tel:+916281620716') => {
-    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-      e.preventDefault();
-      (window as any).gtag_report_conversion(url);
-    }
-  };
-
   const filteredSocieties = societyFilter === 'all'
     ? SOCIETY_INSTALLATIONS
     : SOCIETY_INSTALLATIONS.filter(s => s.cityId === societyFilter);
@@ -1884,7 +1877,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               HELP
             </h4>
             <p className="text-[11px] leading-relaxed text-slate-600 mb-4">
-              Call <a href="tel:+916281620716" onClick={(e) => handleCallClick(e, 'tel:+916281620716')} className="underline font-bold text-slate-900 hover:text-[#16A34A] transition">+91 62816 20716</a> or <a href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`} target="_blank" rel="noopener noreferrer" className="underline font-bold text-[#16A34A] hover:underline">WhatsApp us</a>. You can also <a href="mailto:dviewsolutions32@gmail.com" className="underline font-bold text-slate-900 hover:text-[#16A34A] transition">email us</a>.
+              Call <a href="tel:+916281620716" className="underline font-bold text-slate-900 hover:text-[#16A34A] transition">+91 62816 20716</a> or <a href={`https://wa.me/916281620716?text=${getWhatsAppMessage()}`} target="_blank" rel="noopener noreferrer" className="underline font-bold text-[#16A34A] hover:underline">WhatsApp us</a>. You can also <a href="mailto:dviewsolutions32@gmail.com" className="underline font-bold text-slate-900 hover:text-[#16A34A] transition">email us</a>.
             </p>
             <ul className="space-y-2.5 text-[11px] text-slate-700">
               <li>
@@ -1974,7 +1967,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
             
             <div className="space-y-2 text-[11px] pt-1">
               <span className="text-slate-900 font-bold block uppercase tracking-wider text-[10px]">Direct Support</span>
-              <a href="tel:+916281620716" onClick={(e) => handleCallClick(e, 'tel:+916281620716')} className="flex items-center gap-2 hover:text-[#16A34A] transition text-slate-800 font-semibold">
+              <a href="tel:+916281620716" className="flex items-center gap-2 hover:text-[#16A34A] transition text-slate-800 font-semibold">
                 <span className="text-[#16A34A]">📞</span>
                 <span>+91 62816 20716</span>
               </a>
@@ -2094,7 +2087,7 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
                 <span className="font-black text-slate-900 text-[11px] block">Need Free Measurement?</span>
                 <span className="text-[10px] text-slate-600 block mt-0.5">D-VIEW Solutions provides invisible grill installation and balcony safety services across seven cities in Andhra Pradesh.</span>
               </div>
-              <a href="tel:+916281620716" onClick={(e) => handleCallClick(e, 'tel:+916281620716')} className="mt-2 text-[10px] font-black text-[#16A34A] hover:underline flex items-center gap-1">
+              <a href="tel:+916281620716" className="mt-2 text-[10px] font-black text-[#16A34A] hover:underline flex items-center gap-1">
                 <span>Call Now</span>
                 <span>→</span>
               </a>
@@ -2173,7 +2166,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
       {/* 2. Floating Quick Call Button (Bottom-Left - Logo Only) */}
       <a
         href="tel:+916281620716"
-        onClick={(e) => handleCallClick(e, 'tel:+916281620716')}
         aria-label="Call D-VIEW Helpline +91 62816 20716"
         className="fixed bottom-6 left-5 sm:left-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#101714]/95 backdrop-blur-md border border-[#7CFF3A]/40 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] hover:scale-110 active:scale-95 transition-all group cursor-pointer"
       >
@@ -2262,7 +2254,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
           
           <a
             href="tel:+916281620716"
-            onClick={(e) => handleCallClick(e, 'tel:+916281620716')}
             aria-label="Call D-VIEW Helpline +91 62816 20716"
             className="text-slate-900 hover:text-[#16A34A] transition flex items-center gap-1.5 p-2 sm:p-0"
           >
@@ -2377,7 +2368,6 @@ export default function DViewWebsite({ initialCitySlug, initialCorridor, tier = 
               <p className="text-slate-900 font-bold tracking-wider">Direct Concierge</p>
               <a
                 href="tel:+916281620716"
-                onClick={(e) => handleCallClick(e, 'tel:+916281620716')}
                 aria-label="Call D-VIEW Helpline +91 62816 20716"
                 className="text-slate-800 font-medium hover:text-[#16A34A] transition inline-block"
               >
